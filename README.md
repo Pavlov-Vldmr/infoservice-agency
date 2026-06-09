@@ -5,7 +5,9 @@
 ```bash
 src/
 ├───assets    # Статические файлы (изображения, шрифты)
+│   └───ServicesData
 ├───components    # Глобальные повторяемые компоненты (Button, Header, Footer)
+│   └───Header
 ├───features     # Логика конкретной функциональности
 │   └───FeedbackForm    # Главный компонент формы обратной связи
 ├───layouts      # Обертки для страниц (Header, Footer, Sidebar)
@@ -14,9 +16,10 @@ src/
     │   └───components
     ├───Home
     │   └───components
+    ├───NotFound
     ├───Objects
     │   └───components
     ├───ServiceDetail
-    └───Servives
+    └───Services
         └───components
 ```

@@ -1,0 +1,22 @@
+.hero {
+  background-color: var(--primary);
+
+  .hero-container {
+    display: grid;
+    align-items: center;
+    gap: calc(var(--spacing) * 12);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .hero-main {
+      display: block;
+      border: 1px solid red;
+      .license {
+        background-color: red;
+        padding: 10px 20px;
+        border-radius: 20px;
+        height: 40px;
+        width: 251px;
+      }
+    }
+  }
+}
