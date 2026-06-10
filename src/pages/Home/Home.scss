@@ -1,21 +1,78 @@
 .hero {
   background-color: var(--primary);
+  background-image: linear-gradient(190deg, var(--primary), var(--accent));
+  padding-top: 160px;
+
+  color: var(--text-white);
 
   .hero-container {
     display: grid;
     align-items: center;
     gap: calc(var(--spacing) * 12);
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: calc(var(--spacing) * 10);
 
     .hero-main {
       display: block;
-      border: 1px solid red;
       .license {
-        background-color: red;
+        background-color: oklab(1 0 0 / 0.1);
         padding: 10px 20px;
         border-radius: 20px;
         height: 40px;
         width: 251px;
+        font-size: var(--text-xs);
+      }
+      p {
+        font-size: var(--text-xl);
+      }
+      .hero-main-btns {
+        display: inline-flex;
+        gap: 20px;
+      }
+    }
+
+    .hero-life {
+      height: 100%;
+      width: 100%;
+      background-image: url(../../assets/images/logo-transp-10.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(25deg);
+      filter: grayscale(100%);
+    }
+  }
+}
+
+.achievements {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .achievements-container {
+    padding-block: calc(var(--spacing) * 8);
+    display: grid;
+    gap: calc(var(--spacing) * 8);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      img {
+        margin-bottom: 5px;
+        fill: red;
+        svg path {
+          fill: #ff0000; /* Новый цвет заливки */
+          stroke: #000000; /* Новый цвет обводки */
+        }
+      }
+      .value {
+        color: var(--primary);
+        font-size: var(--text-2xl);
+        margin-bottom: 5px;
+      }
+      .text {
+        font-size: var(--text-sm);
+        color: var(--muted-foreground);
       }
     }
   }

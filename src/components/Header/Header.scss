@@ -1,0 +1,56 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  color: var(--text-white);
+  box-shadow: 1px -2px 9px #00000066;
+
+  .top {
+    display: block;
+    padding-block: calc(var(--spacing) * 2);
+    background-color: var(--primary);
+
+    .top-container {
+      display: flex;
+      gap: calc(var(--spacing) * 6);
+
+      span {
+        flex-grow: 1;
+        text-align: end;
+        font-size: var(--text-xs);
+        // display: inline-flex;
+        // align-items: center; /* Центрирует текст по вертикали */
+        // justify-content: end;
+      }
+    }
+  }
+  .bottom {
+    background-color: #fff;
+    .bottom-container {
+      display: flex;
+      padding-block: calc(var(--spacing) * 3);
+      justify-content: space-between;
+      align-items: center;
+
+      nav {
+        ul {
+          list-style: none;
+          display: inline-flex;
+          gap: calc(var(--spacing) * 8);
+          li {
+            a {
+              color: var(--foreground);
+              text-decoration: none;
+              &:hover {
+                color: var(--accent);
+              }
+            }
+            a.active {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}

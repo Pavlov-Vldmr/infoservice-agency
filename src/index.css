@@ -1,5 +1,5 @@
 :root {
-  --text: #ffffff;
+  --text-white: #ffffff;
   --primary: #1e3a8a;
   --accent: #2563eb;
   --foreground: oklch(14.5% 0 0);
@@ -10,20 +10,27 @@
   --spacing: .25rem;
 
   --font-size: 16px;
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 3rem;
+
+
 
   --spacing: .25rem;
   --container-sm: 24rem;
   --container-lg: 32rem;
-  /* --container-2xl: 42rem;
-  --container-3xl: 48rem; */
   --container-xl: 80rem;
 
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --default-font-famaly: var(--font-sans);
 
 
-  font: var(--font-size);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
+  color: var(--foreground);
   background: var(--bg);
 
 
@@ -51,6 +58,9 @@
 /* ??????????  */
 #root {
   /* width: 1126px; */
+  font-size: var(--font-size);
+  font-family: var(--default-font-famaly);
+
   max-width: 100%;
   margin: 0 auto;
   min-height: 100svh;
@@ -61,16 +71,24 @@
 
 body {
   margin: 0;
+
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 h1,
 h2 {
-  font-family: var(--heading);
   font-weight: 500;
+  line-height: 1;
+
 }
 
 h1 {
-  font-size: 3.65rem;
+  font-size: 3.75rem;
 
   @media (max-width: 1024px) {
     font-size: 36px;
@@ -83,4 +101,10 @@ h2 {
   @media (max-width: 1024px) {
     font-size: 20px;
   }
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
