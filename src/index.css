@@ -5,8 +5,9 @@
   --foreground: oklch(14.5% 0 0);
   --muted-foreground: #717182;
   --border: #0000001a;
-
+  --muted: #ececf0;
   --bg: #fff;
+
   --spacing: .25rem;
 
   --font-size: 16px;
@@ -16,9 +17,6 @@
   --text-2xl: 1.5rem;
   --text-3xl: 3rem;
 
-
-
-  --spacing: .25rem;
   --container-sm: 24rem;
   --container-lg: 32rem;
   --container-xl: 80rem;
@@ -84,7 +82,7 @@ h1,
 h2 {
   font-weight: 500;
   line-height: 1;
-
+  color: var(--primary);
 }
 
 h1 {
@@ -103,8 +101,20 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 1.875rem;
+}
+
 h4 {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--muted-foreground);
 }
