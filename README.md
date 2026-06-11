@@ -1,10 +1,35 @@
-# infoservice-agency
+# React + TypeScript + Vite
 
-## react + vite + react_ts
+- [x] Завершенная задача
+- [ ] Иконки скачать
+- [ ] Иконки в теге img перевести в svg (для перекраски)
+- [ ] Слайдеры (разбить на подзадачи)
+- [ ] Поправить лого в секции hero в home.tsx
+- [ ] Добавить круги на фон секции advantages в home.tsx
+- [ ]
+- [ ]
+- [ ]
 
-## Installed packages
+## App structure
 
-1.
-
-- vite-react [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
-  `npm create vite@latest my-app -- --template react-ts`
+```bash
+src/
+├───assets    # Статические файлы (изображения, шрифты)
+│   └───ServicesData
+├───components    # Глобальные повторяемые компоненты (Button, Header, Footer)
+│   └───Header
+├───features     # Логика конкретной функциональности
+│   └───FeedbackForm    # Главный компонент формы обратной связи
+├───layouts      # Обертки для страниц (Header, Footer, Sidebar)
+└───pages   # Страницы приложения
+    ├───About
+    │   └───components
+    ├───Home
+    │   └───components
+    ├───NotFound
+    ├───Objects
+    │   └───components
+    ├───ServiceDetail
+    └───Services
+        └───components
+```

@@ -1,0 +1,51 @@
+[
+  {
+    "_id": "693c0fbd885112622d609f12",
+    "picture": "http://placehold.it/32x32",
+    "title": "Охрана жилых комплексов",
+    "link": "Ohrana-zhilih-kompl",
+    "about": "Комплексная защита многоквартирных домов и жилых комплексов"
+  },
+  {
+    "_id": "693c0fbd1125f0c01e3960d3",
+    "picture": "http://placehold.it/32x32",
+    "title": "Охрана бизнес-центров",
+    "link": "Ohrana-biz-centr",
+    "about": "Предоставляем комплексные услуги по обеспечению безопасности бизнес-центров любого масштаба. Наши решения включают физическую охрану, технические средства защиты и системы контроля доступа."
+  },
+  {
+    "_id": "693c0fbd40abe71bc435de72",
+    "picture": "http://placehold.it/32x32",
+    "title": "Услуга 3",
+    "link": "asdfasf",
+    "about": "Laboris labore aliqua aliquip ullamco cillum sunt. Aliquip in cillum mollit non id do do ex Lorem ipsum. Labore sint in cupidatat reprehenderit mollit in irure do nulla mollit elit consequat cillum Lorem. Duis adipisicing sunt minim ea magna Lorem eiusmod. Labore qui exercitation tempor consequat est veniam culpa dolor consectetur.\r\n"
+  },
+  {
+    "_id": "693c0fbdef152533068ce654",
+    "picture": "http://placehold.it/32x32",
+    "title": "Услуга 4",
+    "link": "commodo",
+    "about": "Duis fugiat qui elit Lorem cillum consequat. Id exercitation adipisicing exercitation officia amet proident ex dolor. Proident et nisi ea occaecat velit nostrud. Adipisicing excepteur voluptate in aliqua tempor Lorem nulla ad sit aliqua. Dolore esse id duis et irure ea proident incididunt elit consectetur aliquip magna qui veniam. Laborum veniam eu anim ad elit irure aute qui proident veniam mollit. Consectetur mollit aute ullamco ut Lorem nulla aute elit sint elit consectetur amet.\r\n"
+  },
+  {
+    "_id": "693c0fbd43b7b229f7690b1b",
+    "picture": "http://placehold.it/32x32",
+    "title": "Услуга 5",
+    "link": "est",
+    "about": "Officia enim labore duis do exercitation aliqua mollit sint tempor. Mollit ea aute irure enim culpa in incididunt elit voluptate proident reprehenderit. Nulla officia ullamco esse deserunt sit magna ullamco excepteur commodo. Non fugiat est occaecat proident fugiat anim cillum do pariatur aliqua minim exercitation. Exercitation veniam occaecat est in in dolor fugiat labore laboris ex non laborum minim dolore. Anim quis labore et et ipsum eu id. Ex minim ipsum nostrud dolore nulla aliquip ex.\r\n"
+  },
+  {
+    "_id": "693c0fbd312d229c7c9e18da",
+    "picture": "http://placehold.it/32x32",
+    "title": "Услуга 6",
+    "link": "pariatur",
+    "about": "Incididunt anim duis ipsum consectetur quis. Id ullamco anim anim anim. Consectetur commodo culpa aliqua duis deserunt amet minim mollit tempor consectetur magna veniam. Exercitation mollit proident ut eiusmod elit eiusmod velit veniam occaecat sint deserunt laborum. Officia eiusmod cillum ea aute ea ex magna culpa voluptate consequat ea.\r\n"
+  },
+  {
+    "_id": "693c0fbdb340c1e277c1727a",
+    "picture": "http://placehold.it/32x32",
+    "title": "Услуга 7",
+    "link": "incididunt",
+    "about": "Non irure fugiat ipsum aute. Mollit consectetur amet deserunt id duis ullamco do id voluptate mollit reprehenderit laboris consectetur deserunt. Est nisi sit anim dolore minim amet adipisicing excepteur. Elit consequat exercitation Lorem aliqua proident eu ipsum ea. Ullamco est quis aute cillum pariatur amet commodo. Incididunt eiusmod officia non eu nulla.\r\n"
+  }
+]

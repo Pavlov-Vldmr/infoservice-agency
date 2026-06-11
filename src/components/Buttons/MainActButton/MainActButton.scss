@@ -1,0 +1,32 @@
+.btn {
+  background-color: var(--accent);
+  border-radius: 0.25rem;
+  // font-size: var(--font-size);
+  font-family: var(--default-font-famali);
+  font-size: var(--font-size);
+  border: none;
+  cursor: pointer;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 8);
+  line-height: 1.5;
+  min-height: 50px;
+  transition: ease-in 0.1s;
+
+  &:hover {
+    background-color: #681d1d84;
+  }
+}
+S .btn-primary {
+  color: #fff;
+
+  :hover {
+  }
+}
+
+.btn-white {
+  color: var(--primary);
+  background-color: #fff;
+}
+
+.btn-bordered {
+  border: 1px solid rgb(255, 255, 255);
+}

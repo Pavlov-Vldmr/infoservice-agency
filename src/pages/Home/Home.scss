@@ -1,0 +1,242 @@
+.hero {
+  background-color: var(--primary);
+  background-image: linear-gradient(190deg, var(--primary), var(--accent));
+  padding-top: 160px;
+
+  color: var(--text-white);
+
+  .hero-container {
+    display: grid;
+    align-items: center;
+    gap: calc(var(--spacing) * 12);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: calc(var(--spacing) * 10);
+
+    .hero-main {
+      display: block;
+      .license {
+        background-color: oklab(1 0 0 / 0.1);
+        padding: 10px 20px;
+        border-radius: 20px;
+        height: 40px;
+        width: 251px;
+        font-size: var(--text-xs);
+      }
+      h1 {
+        color: var(--text-white);
+      }
+      p {
+        font-size: var(--text-xl);
+      }
+      .hero-main-btns {
+        display: inline-flex;
+        gap: 20px;
+      }
+    }
+
+    .hero-life {
+      height: 100%;
+      width: 100%;
+      background-image: url(../../assets/images/logo-transp-10.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(25deg);
+      filter: grayscale(100%);
+    }
+  }
+}
+
+.achievements {
+  border: 1px solid var(--border);
+  padding-block: calc(var(--spacing) * 4);
+
+  .achievements-container {
+    padding-block: calc(var(--spacing) * 8);
+    display: grid;
+    gap: calc(var(--spacing) * 8);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      img {
+        margin-bottom: 5px;
+        fill: red;
+        svg path {
+          fill: #ff0000; /* Новый цвет заливки */
+          stroke: #000000; /* Новый цвет обводки */
+        }
+      }
+      .value {
+        color: var(--primary);
+        font-size: var(--text-2xl);
+        margin-bottom: 5px;
+      }
+      .text {
+        font-size: var(--text-sm);
+        color: var(--muted-foreground);
+      }
+    }
+  }
+}
+
+.services {
+  padding-inline: calc(var(--spacing) * 8);
+  padding-top: calc(var(--spacing) * 20);
+  padding-block: calc(var(--spacing) * 20);
+
+  .services-title {
+    margin-bottom: calc(var(--spacing) * 20);
+  }
+
+  .services-items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: calc(var(--spacing) * 6);
+
+    div {
+      border: 1px solid var(--border);
+      border-radius: 0.625rem;
+      padding: calc(var(--spacing) * 6);
+      transition: ease-in-out 0.3s;
+      .item-icon {
+        width: calc(var(--spacing) * 6);
+        height: calc(var(--spacing) * 6);
+        display: block;
+        border: none;
+        background-color: color-mix(in oklab, var(--accent) 10%, transparent);
+      }
+      h3 {
+        color: var(--primary);
+        font-size: var(--text-lg);
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      p {
+        font-size: var(--text-sm);
+      }
+
+      &:hover {
+        border-color: var(--accent);
+        box-shadow: 5px 5px 30px rgba(128, 128, 128, 0.207);
+
+        .item-icon {
+          background-color: color-mix(in oklab, var(--accent) 20%, transparent);
+        }
+      }
+    }
+  }
+}
+
+.objects {
+  padding-block: calc(var(--spacing) * 20);
+  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+  .objects-title {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+}
+
+.advantages {
+  color: var(--text-white);
+  background-color: var(--primary);
+  background-image: linear-gradient(-245deg, var(--primary), var(--accent));
+  padding-block: calc(var(--spacing) * 20);
+
+  .advantages-title {
+    h2 {
+      color: var(--text-white);
+    }
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .advantages-plates {
+    user-select: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: calc(var(--spacing) * 6);
+    div {
+      background-color: #dbdbdb2c;
+      border: 1px solid #ffffff2e;
+      border-radius: 0.625rem;
+      padding: calc(var(--spacing) * 6);
+      transition: ease-in-out 0.3s;
+
+      h3 {
+        font-size: var(--text-lg);
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      p {
+        font-size: var(--text-sm);
+        color: #ffffffc5;
+      }
+      &:hover {
+        background-color: #dbdbdb50;
+      }
+    }
+  }
+}
+
+.about {
+  padding-block: calc(var(--spacing) * 20);
+
+  .about-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: calc(var(--spacing) * 8);
+
+    .about-guardian {
+      img {
+        display: block;
+        box-shadow: 3px 5px 30px rgba(128, 128, 128, 0.7);
+        border-radius: 0.625rem;
+      }
+    }
+    .about-article {
+      .about-article-adv {
+        display: flex;
+        flex-direction: column;
+        .about-article-adv-item {
+          display: flex;
+          img {
+            width: 24px;
+            margin-top: calc(var(--spacing));
+            height: 24px;
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+            margin-left: calc(var(--spacing) * 2);
+            margin-bottom: calc(var(--spacing) * 4);
+
+            h4 {
+              color: var(--primary);
+              margin: 0;
+            }
+            p {
+              color: var(--muted-foreground);
+              margin: 0;
+              font-size: var(--text-sm);
+            }
+          }
+        }
+      }
+    }
+  }
+  .achievements-plates {
+    display: grid;
+    gap: calc(var(--spacing) * 8);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    text-align: center;
+    margin-top: calc(var(--spacing) * 20);
+    div {
+      border-radius: 0.625rem;
+      padding: calc(var(--spacing) * 6);
+      color: var(--text-white);
+      background-color: var(--primary);
+      background-image: linear-gradient(-45deg, var(--primary), var(--accent));
+    }
+  }
+}
