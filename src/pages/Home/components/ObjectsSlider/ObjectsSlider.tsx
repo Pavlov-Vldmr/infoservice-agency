@@ -1,23 +1,59 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
+import slideBg from '../../../../assets/images/object1.jpeg';
 
 // Import Swiper styles
 import 'swiper/css';
+import './ObjectsSlider.scss'
+
 export default () => {
+    console.log(slideBg);
+    console.log('sd');
+
+
     return (
         <Swiper
-            modules={[Navigation]}
-            spaceBetween={50}
+            modules={[Navigation, Autoplay]}
+            spaceBetween={3}
             slidesPerView={3}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-            loop={true}
-            navigation
+            // onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
+            // loop={true}
+            speed={1000}
+
+            autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            }}
         >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>
+                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
+                    <h3>Заголовок1</h3>
+                    <p>Короткий текст</p>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
+
+                    <h3>Заголовок</h3>
+                    <p>Короткий текст</p>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
+
+                    <h3>Заголовок</h3>
+                    <p>Короткий текст</p>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
+
+                    <h3>Заголовок</h3>
+                    <p>Короткий текст</p>
+                </div>
+            </SwiperSlide>
 
         </Swiper>
     );

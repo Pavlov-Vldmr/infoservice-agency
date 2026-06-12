@@ -2,12 +2,14 @@ import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import './Home.scss'
 
 import svgExample from '../../assets/icons/svg-example.svg'
+
 import guardian from '../../assets/images/security.jpg'
 import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
-
+import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
+import { Icons } from './components/Icons'
 
 function Home() {
-
+    // const t = "Apply"
 
     return (
         <>
@@ -30,22 +32,25 @@ function Home() {
             <div className="achievements">
                 <div className="container achievements-container">
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+
+                        <Icons.ApplySvg className='achievements-icons' />
                         <span className="value">500+</span>
                         <span className='text'>Охраняемых объектов</span>
                     </div>
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Clock className='achievements-icons' />
                         <span className="value">24\7</span>
                         <span className='text'>Круглосуточная охрана</span>
                     </div>
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Person className='achievements-icons' />
+
                         <span className="value">120+</span>
                         <span className='text'>Охранников</span>
                     </div>
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Shield className='achievements-icons' />
+
                         <span className="value">99.9%</span>
                         <span className='text'>Надёжность</span>
                     </div>
@@ -62,24 +67,32 @@ function Home() {
                     <div className="services-items">
                         <div>
                             <div className='item-icon'>
+                                <Icons.ShieldAlt className='services-icons' />
+
                             </div>
                             <h3>Физическая охрана объектов</h3>
                             <p className='text-muted'>Профессиональные охранники с лицензией для постоянной или временной охраны вашего объекта.</p>
                         </div>
                         <div>
                             <div className='item-icon'>
+                                <Icons.Camera className='services-icons' />
+
                             </div>
                             <h3>Физическая охрана объектов</h3>
                             <p className='text-muted'>Профессиональные охранники с лицензией для постоянной или временной охраны вашего объекта.</p>
                         </div>
                         <div>
                             <div className='item-icon'>
+                                <Icons.Lock className='services-icons' />
+
                             </div>
                             <h3>Системы видеонаблюдения</h3>
                             <p className='text-muted'>Установка и мониторинг современных систем видеонаблюдения с удаленным доступом.</p>
                         </div>
                         <div>
                             <div className='item-icon'>
+                                <Icons.Person className='services-icons' />
+
                             </div>
                             <h3>Контроль доступа</h3>
                             <p className='text-muted'>Современные системы контроля и управления доступом на территорию объекта.</p>
@@ -222,11 +235,13 @@ function Home() {
 
             <div className="reviews">
                 <div className="container">
-                    <div>
+                    <div className='reviews-title'>
                         <h2 className='text-center'>Отзывы наших клиентов</h2>
                         <p className='text-center text-muted'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
                     </div>
-                    <div className="reviews-slider">rev slider</div>
+                    <div className="reviews-slider">
+                        <ReviewsSlider />
+                    </div>
                 </div>
             </div>
 

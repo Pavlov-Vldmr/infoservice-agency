@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "bd885112622d609f12",
+    "text": "Охрана жилых комплексов",
+    "name": "Ohrana-zhilih-kompl",
+    "Powition": "1"
+  },
+  {
+    "_id": "bd1125f0c01e3960d3",
+    "text": "Охрана бизнес-центров",
+    "name": "N1",
+    "Powition": "2"
+  },
+  {
+    "_id": "bd40abe71bc435de72",
+    "text": "Услуга 3",
+    "name": "asdfasf",
+    "Powition": "3"
+  },
+  {
+    "_id": "bdef152533068ce654",
+    "text": "Услуга 4",
+    "name": "commodo",
+    "Powition": "4"
+  }
+]

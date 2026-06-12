@@ -1,0 +1,23 @@
+.slide {
+  height: 200px;
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--spacing) * 4);
+  border-radius: 0.625rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h3 {
+    flex-grow: 1;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    font-size: var(--text-xl);
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  p {
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+}
