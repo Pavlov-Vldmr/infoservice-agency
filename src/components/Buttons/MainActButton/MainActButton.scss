@@ -10,23 +10,26 @@
   line-height: 1.5;
   min-height: 50px;
   transition: ease-in 0.1s;
-
   &:hover {
-    background-color: #681d1d84;
+    // background-color: #ffffff96;
   }
 }
-S .btn-primary {
+.btn_primary {
   color: #fff;
-
-  :hover {
+  &:hover {
+    background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
 }
 
-.btn-white {
+.btn_white {
   color: var(--primary);
   background-color: #fff;
+  &:hover {
+    background-color: rgba(246, 246, 246, 0.8);
+    // background-color: color-mix(in oklab, var(--whtie) 10%, transparent);
+  }
 }
 
-.btn-bordered {
+.btn_bordered {
   border: 1px solid rgb(255, 255, 255);
 }

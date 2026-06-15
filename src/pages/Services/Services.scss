@@ -1,0 +1,9 @@
+.services {
+  background-color: var(--bg-gray);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: calc(var(--spacing) * 6);
+  }
+}

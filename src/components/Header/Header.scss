@@ -10,23 +10,20 @@ header {
     padding-block: calc(var(--spacing) * 2);
     background-color: var(--primary);
 
-    .top-container {
+    &__container {
       display: flex;
       gap: calc(var(--spacing) * 6);
+    }
 
-      span {
-        flex-grow: 1;
-        text-align: end;
-        font-size: var(--text-xs);
-        // display: inline-flex;
-        // align-items: center; /* Центрирует текст по вертикали */
-        // justify-content: end;
-      }
+    &_guard {
+      flex-grow: 1;
+      text-align: end;
+      font-size: var(--text-xs);
     }
   }
   .bottom {
     background-color: #fff;
-    .bottom-container {
+    &__container {
       display: flex;
       padding-block: calc(var(--spacing) * 3);
       justify-content: space-between;
@@ -52,5 +49,41 @@ header {
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .top {
+      padding: calc(var(--spacing));
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+      }
+      &_phone,
+      &_mail {
+        font-size: var(--text-xs);
+      }
+      &_guard {
+        display: none;
+      }
+    }
+    .logo {
+      display: none;
+    }
+    .bottom__button {
+      display: none;
+    }
+
+    .nav__links {
+      display: none;
+    }
+  }
+  .bottom {
+    &__container {
+      justify-content: flex-end;
+    }
+    // align-items: flex-end;
   }
 }

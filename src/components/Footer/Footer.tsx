@@ -36,7 +36,7 @@ function Footer() {
                                 <li><Link to="/">Патрулирование</Link></li>
                             </ul>
                         </nav>
-                        <div className='contacts'>
+                        <div className='footer__contacts'>
                             <h4>Контакты</h4>
                             <ul>
                                 <li>+7 (495) 123-45-67</li>

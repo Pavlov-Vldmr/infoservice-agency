@@ -1,0 +1,47 @@
+.contacts {
+  padding-block: calc(var(--spacing) * 20);
+  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+
+  .contacts__container {
+    .contacts-title {
+      margin-bottom: calc(var(--spacing) * 20);
+    }
+
+    .contacts-title {
+      margin-bottom: calc(var(--spacing) * 20);
+    }
+    .contacts__content {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: calc(var(--spacing) * 10);
+    }
+  }
+}
+
+.map {
+  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+  &__container {
+    border-radius: 0.625rem;
+    background-color: white;
+    padding: calc(var(--spacing) * 0);
+
+    h2 {
+      // margin: ;
+      margin-bottom: calc(var(--spacing) * 4);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    padding-block: calc(var(--spacing) * 4);
+
+    .contacts__container {
+      .contacts__content {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: calc(var(--spacing) * 5);
+      }
+    }
+  }
+}

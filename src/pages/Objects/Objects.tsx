@@ -1,10 +1,12 @@
+import PageTitle from "../../components/PageTitle/PageTitle"
+
 function Objects() {
 
 
     return (
         <>
-            <span>Объекты
-            </span>
+            <PageTitle title="Наши объекты" subTitle="Примеры охраняемых объектов и реализованных проектов" />
+
 
 
         </>

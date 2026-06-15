@@ -7,12 +7,15 @@
   --border: #0000001a;
   --muted: #ececf0;
   --bg: #fff;
+  --bg-gray: color-mix(in oklab, var(--muted) 30%, transparent);
 
-  --spacing: .25rem;
+  --input-background: #f3f3f5;
+
+  --spacing: 0.25rem;
 
   --font-size: 16px;
-  --text-xs: .75rem;
-  --text-sm: .875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
   --text-3xl: 3rem;
@@ -21,16 +24,18 @@
   --container-lg: 32rem;
   --container-xl: 80rem;
 
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --default-font-famaly: var(--font-sans);
-
 
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--foreground);
   background: var(--bg);
-
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -47,11 +52,8 @@
 
   @media (max-width: 1024px) {
     max-width: var(--container-xs);
-
   }
 }
-
-
 
 /* ??????????  */
 #root {
@@ -69,8 +71,6 @@
 
 body {
   margin: 0;
-
-
 }
 
 ul {
@@ -97,24 +97,48 @@ h2 {
   font-size: 2.25rem;
 
   @media (max-width: 1024px) {
-    font-size: 20px;
+    font-size: var(--text-2xl);
   }
 }
 
 h3 {
   font-size: 1.875rem;
+  margin: 0;
 }
 
 h4 {
+  margin: 0;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
 }
 
-.text-center {
+.text_center {
   text-align: center;
 }
 
-.text-muted {
+.text_muted {
   color: var(--muted-foreground);
+}
+
+.text_accent {
+  color: var(--accent);
+}
+
+.text_primary {
+  color: var(--primary);
+}
+
+.icon {
+  &_accent {
+    path {
+      stroke: var(--accent);
+    }
+  }
+
+  &_white {
+    path {
+      stroke: #fff;
+    }
+  }
 }

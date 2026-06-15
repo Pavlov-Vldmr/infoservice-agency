@@ -13,7 +13,7 @@ function MainActButton(props: { title: string, variant?: string, bordered?: bool
     return (
         <>
             <button onClick={() => alert('a')}
-                className={`btn btn-${props.variant} ${props.bordered ? 'btn-bordered' : ''}`} >{props.title}
+                className={`btn btn_${props.variant} ${props.bordered ? 'btn_bordered' : ''}`} >{props.title}
             </button>
         </>
     )

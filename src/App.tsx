@@ -8,6 +8,7 @@ import Objects from './pages/Objects/Objects'
 import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import Contacts from './pages/Contacts/Contacts'
 
 
 
@@ -26,7 +27,7 @@ function App() {
           <Route path='/Objects' element={<Objects />} />
           <Route path='/Services' element={<Services />} />
           <Route path='/Services/:link' element={<ServiceDetail />} />
-          {/* <Route path='/' element={<Services />} /> */}
+          <Route path='/Contacts' element={<Contacts />} />
 
           {/* <Route path="/product/:link" element={<ProductPage />} /> */}
           <Route path='*' element={<NotFound />} />

@@ -4,6 +4,7 @@ import './Header.scss'
 
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import logo from '../../assets/images/logo-full.svg';
+import HamburgerComponent from "./components/HumburgerComponent";
 
 function Header() {
 
@@ -12,19 +13,19 @@ function Header() {
         <>
             <header>
                 <div className="top">
-                    <div className="container top-container">
-                        <div className="phone">+7 (495) 123-45-67</div>
-                        <div className="mail">info@infoservice-охрана.рф</div>
-                        <span>Круглосуточная служба безопасности</span>
+                    <div className="container top__container">
+                        <div className="top_phone">+7 (495) 123-45-67</div>
+                        <div className="top_mail">info@infoservice-охрана.рф</div>
+                        <span className="top_guard">Круглосуточная служба безопасности</span>
                     </div>
-
                 </div>
+
                 <div className="bottom">
-                    <div className="container bottom-container">
+                    <div className="container bottom__container">
                         <div className="logo">
                             <img src={logo} alt="Логотип Инфосервис" />
                         </div>
-                        <nav>
+                        <nav className={`nav__links`}>
                             <ul>
                                 <li> <NavLink to="/">Главная</NavLink></li>
                                 <li> <NavLink to="/About">О компании</NavLink></li>
@@ -33,7 +34,11 @@ function Header() {
                                 <li> <NavLink to="/Contacts">Контакты</NavLink></li>
                             </ul>
                         </nav>
-                        <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
+
+                        <div className="bottom__button">
+                            <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
+                        </div>
+                        <HamburgerComponent />
                     </div>
                 </div>
 
