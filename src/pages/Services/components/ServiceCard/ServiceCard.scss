@@ -1,4 +1,5 @@
 .service-card {
+  text-decoration: none;
   border-radius: 0.625rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -16,16 +17,27 @@
     width: 100%;
     height: 200px;
     background-color: rgb(122, 122, 122);
+    display: flex;
+    align-items: end;
+
+    &__icon {
+      width: 50px;
+      height: 50px;
+      path {
+        stroke: #fff;
+      }
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     // background-color: red;
-    padding: calc(var(--spacing) * 4);
+    // padding: calc(var(--spacing) * 4);
     flex-grow: 1;
     h3 {
       font-size: var(--text-xl);
+      font-weight: 500;
     }
     .text {
       flex-grow: 1;

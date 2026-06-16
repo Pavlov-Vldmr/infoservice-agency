@@ -4,10 +4,10 @@ header {
   z-index: 9999;
   color: var(--text-white);
   box-shadow: 1px -2px 9px #00000066;
-  
-  &.fixed{
+
+  &.fixed {
     position: fixed;
-  } 
+  }
   .top {
     display: block;
     padding-block: calc(var(--spacing) * 2);
@@ -25,7 +25,8 @@ header {
     }
   }
   .bottom {
-    background-color: #fff;
+    background-color: #ffffffd1;
+    backdrop-filter: blur(5px);
     &__container {
       display: flex;
       padding-block: calc(var(--spacing) * 3);

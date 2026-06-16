@@ -4,31 +4,24 @@ import PageTitle from "../../components/PageTitle/PageTitle"
 import ServiceCard from "./components/ServiceCard/ServiceCard"
 import './Services.scss'
 
+// const navigate = useNavigate();
+
+// const handleBlockClick = (event: React.MouseEvent<HTMLDivElement>) => {
+//     console.log('Блок был нажат!', event.currentTarget);
+//     navigate(`/Services/${props.link}`);
+// };
+
+
 function Services() {
     return (
         <>
             <PageTitle title="Наши услуги" subTitle="Комплексные решения по обеспечению безопасности вашей недвижимости" />
 
             <div className="services">
-                <div className="container services__container">
+                <div className="container services__container py-8">
                     {data.map(item => (
                         <>
-                            {/* <div style={
-                        {
-                            border: '1px solid white',
-                            width: '500px',
-                            margin: '20px'
-                        }
-                    }>
-                        <Link key={item._id} to={`/Services/${item.link}`}>
-                            {item.title}
-                        </Link>
-                        <p>{item.about}</p>
-                    </div> */}
-
-                            <ServiceCard key={item._id} title={item.title} about={item.about} link={item.link} />
-
-
+                            <ServiceCard title={item.title} about={item.about} link={item.link} />
                         </>
                     ))}
                 </div>
