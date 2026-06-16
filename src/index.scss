@@ -50,6 +50,34 @@
   padding: 0;
 }
 
+// marging and padding
+$scales: 1, 2, 3, 4, 6, 8, 12, 20;
+
+@each $scale in $scales {
+  // Генерация маргинов (например, .mb-4)
+  .mb-#{$scale} {
+    margin-bottom: calc(var(--spacing) * #{$scale});
+  }
+  .mt-#{$scale} {
+    margin-top: calc(var(--spacing) * #{$scale});
+  }
+
+  // Генерация паддингов (например, .p-4)
+  .p-#{$scale} {
+    padding: calc(var(--spacing) * #{$scale});
+  }
+  .px-#{$scale} {
+    padding-left: calc(var(--spacing) * #{$scale});
+    padding-right: calc(var(--spacing) * #{$scale});
+  }
+  .py-#{$scale} {
+    padding-top: calc(var(--spacing) * #{$scale});
+    padding-bottom: calc(var(--spacing) * #{$scale});
+  }
+}
+
+//
+
 .container {
   margin: auto;
   max-width: var(--container-xl);
@@ -149,8 +177,4 @@ h4 {
       stroke: #fff;
     }
   }
-}
-
-.mb-4 {
-  margin-bottom: calc(var(--spacing) * 4);
 }
