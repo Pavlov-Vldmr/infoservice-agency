@@ -26,6 +26,16 @@ export default () => {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             }}
+            breakpoints={{
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 25
+                }
+            }}
         >
             <SwiperSlide>
                 <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>

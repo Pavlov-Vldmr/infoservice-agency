@@ -4,8 +4,8 @@ import './Home.scss'
 // import svgExample from '../../assets/icons/svg-example.svg'
 
 import guardian from '../../assets/images/security.jpg'
-// import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
-// import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
+import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
+import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
 import { Icons } from '../../components/Icons'
 import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
 import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
@@ -90,14 +90,15 @@ function Home() {
                 </div>
             </section>
 
+            {/* slider here */}
             <section className="objects py-20">
                 <div className="container">
                     <div className='objects__title mb-20'>
                         <h2 className='text_center mb-4'>Охраняемые объекты</h2>
                         <p className='text_center text_muted'>Мы обеспечиваем безопасность разных типов недвижимости</p>
                     </div>
-                    <div className="slider">
-                        {/* <ObjectsSlider /> */}
+                    <div className="objects__slider">
+                        <ObjectsSlider />
                     </div>
                 </div>
             </section>
@@ -219,14 +220,15 @@ function Home() {
                 </div>
             </section>
 
+            {/* slider here */}
             <section className="reviews py-20">
                 <div className="container">
                     <div className='reviews__title mb-10'>
                         <h2 className='text_center mb-4'>Отзывы наших клиентов</h2>
                         <p className='text_center text_muted'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
                     </div>
-                    <div className="reviews-slider">
-                        {/* <ReviewsSlider /> */}
+                    <div className="reviews__slider">
+                        <ReviewsSlider />
                     </div>
                 </div>
             </section>

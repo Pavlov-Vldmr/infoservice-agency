@@ -7,8 +7,8 @@
   --border: #0000001a;
   --muted: #ececf0;
   --bg: #fff;
-  --bg-gray: color-mix(in oklab, var(--muted) 30%, transparent);
-
+  // --bg-gray: color-mix(in oklab, var(--muted) 30%, transparent);
+  --bg-gray: #ececf0;
   --input-background: #f3f3f5;
 
   --spacing: 0.25rem;
@@ -98,6 +98,10 @@ $scales: 1, 2, 3, 4, 6, 8, 10, 12, 20;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
 }
 .main {
   flex-grow: 1;

@@ -14,6 +14,16 @@ export default () => {
             modules={[Navigation, Autoplay]}
             spaceBetween={50}
             slidesPerView={2}
+            breakpoints={{
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 25
+                }
+            }}
             // onSlideChange={() => console.log('slide change')}
             // onSwiper={(swiper) => console.log(swiper)}
             loop={true}
@@ -24,6 +34,7 @@ export default () => {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             }}
+
         >
             <SwiperSlide>
                 <div className="slide">

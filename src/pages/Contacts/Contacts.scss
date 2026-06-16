@@ -1,6 +1,7 @@
 .contacts {
   padding-block: calc(var(--spacing) * 20);
-  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+  // background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+  background-color: var(--bg-gray);
 
   .contacts__container {
     .contacts__title {
@@ -19,7 +20,7 @@
 }
 
 .map {
-  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+  background-color: var(--bg-gray);
   &__container {
     border-radius: 0.625rem;
     background-color: white;
