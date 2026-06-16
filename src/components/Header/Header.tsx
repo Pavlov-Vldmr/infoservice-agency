@@ -11,7 +11,7 @@ function Header() {
 
     return (
         <>
-            <header>
+            <header className="fixed">
                 <div className="top">
                     <div className="container top__container">
                         <div className="top_phone">+7 (495) 123-45-67</div>
@@ -28,10 +28,10 @@ function Header() {
                         <nav className={`nav__links`}>
                             <ul>
                                 <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
-                                <li> <NavLink to="/About">О компании</NavLink></li>
-                                <li> <NavLink to="/Services">Услуги</NavLink></li>
-                                <li> <NavLink to="/Objects">Объъекты</NavLink></li>
-                                <li> <NavLink to="/Contacts">Контакты</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/about">О компании</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/services">Услуги</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/objects">Объъекты</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/contacts">Контакты</NavLink></li>
                             </ul>
                         </nav>
 

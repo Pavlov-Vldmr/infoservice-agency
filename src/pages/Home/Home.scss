@@ -94,6 +94,10 @@
     gap: calc(var(--spacing) * 6);
 
     div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
       border: 1px solid var(--border);
       border-radius: 0.625rem;
       padding: calc(var(--spacing) * 6);

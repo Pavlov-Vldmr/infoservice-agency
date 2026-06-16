@@ -20,20 +20,21 @@ function App() {
 
       <Router>
         <Header />
-        <Routes>
+        <div className='main'>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/infoservice-agency" element={<Home />} />
-
-          <Route path='/About' element={<About />} />
-
-          <Route path='/Objects' element={<Objects />} />
-          <Route path='/Services' element={<Services />} />
-          <Route path='/Services/:link' element={<ServiceDetail />} />
-          <Route path='/Contacts' element={<Contacts />} />
+          <Route path='/infoservice-agency/about' element={<About />} />
+          <Route path='/infoservice-agency/objects' element={<Objects />} />
+          <Route path='/infoservice-agency/services' element={<Services />} />
+          <Route path='/infoservice-agency/services/:link' element={<ServiceDetail />} />
+          <Route path='/infoservice-agency/contacts' element={<Contacts />} />
 
           {/* <Route path="/product/:link" element={<ProductPage />} /> */}
-          <Route path='*' element={<NotFound />} />
+          <Route path='/*' element={<NotFound />} />
         </Routes>
+        </div>
+        
         <Footer />
       </Router>
     </>

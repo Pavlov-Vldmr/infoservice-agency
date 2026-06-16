@@ -1,10 +1,13 @@
 header {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   z-index: 9999;
   color: var(--text-white);
   box-shadow: 1px -2px 9px #00000066;
-
+  
+  &.fixed{
+    position: fixed;
+  } 
   .top {
     display: block;
     padding-block: calc(var(--spacing) * 2);

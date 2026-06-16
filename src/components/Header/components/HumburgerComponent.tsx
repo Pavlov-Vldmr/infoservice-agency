@@ -47,11 +47,11 @@ function HamburgerComponent() {
 
                         <nav className={`hamburger__nav__links`}>
                             <ul>
-                                <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
-                                <li> <NavLink to="/About">О компании</NavLink></li>
-                                <li> <NavLink to="/Services">Услуги</NavLink></li>
-                                <li> <NavLink to="/Objects">Объъекты</NavLink></li>
-                                <li> <NavLink to="/Contacts">Контакты</NavLink></li>
+                               <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/about">О компании</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/services">Услуги</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/objects">Объъекты</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency/contacts">Контакты</NavLink></li>
                             </ul>
                         </nav>
 
