@@ -14,6 +14,7 @@ function ServiceCard(props: { title: string, about: string, link: string }) {
                     <h3 className="text_primary">{props.title}</h3>
                     <p className="text text_muted">{props.about}</p>
                     <Link to={`/Services/${props.link}`} className="service-card_link">Подробнее</Link>
+                    <Icons.Camera />
                 </div>
                 {/* </div> */}
             </div>

@@ -57,6 +57,7 @@ header {
     .top {
       padding: calc(var(--spacing));
       &__container {
+        padding: calc(var(--spacing));
         display: flex;
         justify-content: space-between;
         gap: 1px;
@@ -70,7 +71,7 @@ header {
       }
     }
     .logo {
-      display: none;
+      // display: none;
     }
     .bottom__button {
       display: none;
@@ -83,6 +84,7 @@ header {
   .bottom {
     &__container {
       justify-content: flex-end;
+      padding-inline: calc(var(--spacing) * 2);
     }
     // align-items: flex-end;
   }

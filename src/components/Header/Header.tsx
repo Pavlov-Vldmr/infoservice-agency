@@ -27,7 +27,7 @@ function Header() {
                         </div>
                         <nav className={`nav__links`}>
                             <ul>
-                                <li> <NavLink to="/">Главная</NavLink></li>
+                                <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
                                 <li> <NavLink to="/About">О компании</NavLink></li>
                                 <li> <NavLink to="/Services">Услуги</NavLink></li>
                                 <li> <NavLink to="/Objects">Объъекты</NavLink></li>

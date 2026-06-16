@@ -1,11 +1,11 @@
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import './Home.scss'
 
-import svgExample from '../../assets/icons/svg-example.svg'
+// import svgExample from '../../assets/icons/svg-example.svg'
 
 import guardian from '../../assets/images/security.jpg'
-import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
-import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
+// import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
+// import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
 import { Icons } from '../../components/Icons'
 import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
 import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
