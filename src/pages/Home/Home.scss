@@ -1,4 +1,4 @@
-.hero {
+.home-hero {
   background-color: var(--primary);
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
 
@@ -30,7 +30,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     // padding: calc(var(--spacing) * 10);
 
-    .hero__main {
+    .home-hero__main {
       display: flex;
       flex-direction: column;
       gap: calc(var(--spacing) * 2);
@@ -46,14 +46,14 @@
       p {
         font-size: var(--text-xl);
       }
-      .hero__main__btns {
+      .home-hero__main__btns {
         z-index: 2;
         display: inline-flex;
         gap: 20px;
       }
     }
 
-    // .hero-life {
+    // .home-hero-life {
     //   height: 100%;
     //   width: 100%;
     //   background-image: url(../../assets/images/logo-transp-10.png);
@@ -66,13 +66,13 @@
   }
 }
 
-.achievements {
+.home-achievements {
   background-color: #fff;
 
   border: 1px solid var(--border);
   // padding-block: calc(var(--spacing) * 4);
 
-  .achievements__container {
+  .home-achievements__container {
     // padding-block: calc(var(--spacing) * 10);
     display: grid;
     gap: calc(var(--spacing) * 8);
@@ -82,7 +82,7 @@
       flex-direction: column;
       align-items: center;
       justify-self: center;
-      .achievements__icons {
+      .home-achievements__icons {
         margin-bottom: calc(var(--spacing) * 4);
         height: 50px;
         width: 50px;
@@ -100,19 +100,19 @@
   }
 }
 
-.services {
+.home-services {
   background-color: #fff;
   // padding-inline: calc(var(--spacing) * 8);
   // padding-top: calc(var(--spacing) * 20);
   // padding-block: calc(var(--spacing) * 20);
 
-  .services__title {
+  .home-services__title {
     // margin-bottom: calc(var(--spacing) * 20);
   }
-  .services__container {
+  .home-services__container {
     display: block;
   }
-  .services__items {
+  .home-services__items {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 6);
@@ -153,7 +153,7 @@
         border-color: var(--accent);
         box-shadow: 5px 5px 30px rgba(128, 128, 128, 0.207);
 
-        .services__icons {
+        .home-services__icons {
           background-color: color-mix(in oklab, var(--accent) 20%, transparent);
         }
       }
@@ -161,16 +161,16 @@
   }
 }
 
-.objects {
+.home-objects {
   background-color: var(--bg-gray);
   // padding-block: calc(var(--spacing) * 20);
   // background-color: color-mix(in oklab, var(--muted) 30%, transparent);
-  .objects__title {
+  .home-objects__title {
     // margin-bottom: calc(var(--spacing) * 20);
   }
 }
 
-.advantages {
+.home-advantages {
   color: var(--text-white);
   background-color: var(--primary);
   background-image: linear-gradient(-245deg, var(--primary), var(--accent));
@@ -202,13 +202,13 @@
     z-index: 1;
   }
 
-  .advantages__title {
+  .home-advantages__title {
     h2 {
       color: var(--text-white);
     }
     // margin-bottom: calc(var(--spacing) * 20);
   }
-  .advantages__plates {
+  .home-advantages__plates {
     z-index: 2;
     user-select: none;
     display: grid;
@@ -221,7 +221,7 @@
       padding: calc(var(--spacing) * 6);
       transition: ease-in-out 0.3s;
 
-      .advantages__icons {
+      .home-advantages__icons {
         margin-bottom: calc(var(--spacing) * 6);
 
         width: 50px;
@@ -246,17 +246,17 @@
   }
 }
 
-.about {
+.home-about {
   background-color: #fff;
   // padding-block: calc(var(--spacing) * 20);
 
-  .about__top {
+  .home-about__top {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: calc(var(--spacing) * 12);
 
-    .about__guardian {
+    .home-about__guardian {
       img {
         display: block;
         border-radius: 0.625rem;
@@ -264,13 +264,13 @@
         width: 100%;
       }
     }
-    .about-article {
-      .about-article-adv {
+    .home-about-article {
+      .home-about-article-adv {
         display: flex;
         flex-direction: column;
-        .about-article-adv__item {
+        .home-about-article-adv__item {
           display: flex;
-          .about__icons {
+          .home-about__icons {
             height: 50px;
             margin-top: calc(var(--spacing));
             width: 50px;
@@ -295,7 +295,7 @@
       }
     }
   }
-  .achievements-plates {
+  .home-achievements-plates {
     display: grid;
     gap: calc(var(--spacing) * 8);
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -307,7 +307,7 @@
       color: var(--text-white);
       background-color: var(--primary);
       background-image: linear-gradient(-45deg, var(--primary), var(--accent));
-      .achievements__icons {
+      .home-achievements__icons {
         width: 50px;
         height: 50px;
       }
@@ -315,21 +315,22 @@
   }
 }
 
-.reviews {
+.home-reviews {
   background-color: #fff;
   padding-block: calc(var(--spacing) * 20);
-  .reviews__title {
+  .home-reviews__title {
     margin-bottom: calc(var(--spacing) * 20);
   }
 }
 
-.contacts {
-  .contacts__container {
-    .contacts__title {
+.home-contacts {
+  background-color: var(--bg-gray);
+  .home-contacts__container {
+    .home-contacts__title {
       // margin-bottom: calc(var(--spacing) * 20);
     }
 
-    .contacts__content {
+    .home-contacts__content {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: calc(var(--spacing) * 10);
@@ -338,7 +339,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .home-hero {
     padding-top: 130px;
 
     &::before {
@@ -351,7 +352,7 @@
 
       padding: calc(var(--spacing) * 4);
 
-      .hero__main {
+      .home-hero__main {
         display: flex;
         gap: calc(var(--spacing) * 2);
 
@@ -366,7 +367,7 @@
           max-width: 70%;
           line-height: 1.225rem;
         }
-        .hero__main__btns {
+        .home-hero__main__btns {
           margin-top: 40px;
           display: flex;
           flex-direction: column;
@@ -376,10 +377,10 @@
     }
   }
 
-  .achievements {
+  .home-achievements {
     padding-block: calc(var(--spacing) * 4);
 
-    .achievements__container {
+    .home-achievements__container {
       padding-block: calc(var(--spacing) * 4);
       gap: calc(var(--spacing) * 4);
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -388,7 +389,7 @@
         flex-direction: column;
         align-items: center;
         justify-self: center;
-        .achievements__icons {
+        .home-achievements__icons {
           margin-bottom: calc(var(--spacing) * 3);
           height: 30px;
           width: 30px;
@@ -406,16 +407,16 @@
     }
   }
 
-  .services {
+  .home-services {
     padding-inline: calc(var(--spacing) * 4);
     padding-top: calc(var(--spacing) * 10);
     padding-block: calc(var(--spacing) * 10);
 
-    .services__title {
+    .home-services__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
 
-    .services__items {
+    .home-services__items {
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: calc(var(--spacing) * 3);
 
@@ -455,7 +456,7 @@
           border-color: var(--accent);
           box-shadow: 5px 5px 30px rgba(128, 128, 128, 0.207);
 
-          .services__icons {
+          .home-services__icons {
             background-color: color-mix(
               in oklab,
               var(--accent) 20%,
@@ -467,18 +468,18 @@
     }
   }
 
-  .objects {
+  .home-objects {
     padding-block: calc(var(--spacing) * 10);
-    .objects__title {
+    .home-objects__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
 
-    .objects__slider {
+    .home-objects__slider {
       padding-inline: calc(var(--spacing) * 4);
     }
   }
 
-  .advantages {
+  .home-advantages {
     padding-block: calc(var(--spacing) * 10);
     &::before {
       width: 300px;
@@ -494,12 +495,12 @@
       left: -150px;
     }
 
-    .advantages__title {
+    .home-advantages__title {
       h2 {
       }
       margin-bottom: calc(var(--spacing) * 10);
     }
-    .advantages__plates {
+    .home-advantages__plates {
       padding: calc(var(--spacing) * 4);
 
       grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -507,7 +508,7 @@
       &__item {
         // padding: calc(var(--spacing) * 4);
 
-        .advantages__icons {
+        .home-advantages__icons {
         }
 
         h3 {
@@ -522,14 +523,14 @@
     }
   }
 
-  .about {
+  .home-about {
     padding: calc(var(--spacing) * 4);
 
-    .about__top {
+    .home-about__top {
       grid-template-columns: repeat(1, 1fr);
       gap: calc(var(--spacing) * 12);
 
-      .about__guardian {
+      .home-about__guardian {
         img {
           // display: block;
           // border-radius: 0.625rem;
@@ -538,7 +539,7 @@
           // width: 100%;
         }
       }
-      .about-article {
+      .home-about-article {
         p {
           line-height: 1.4rem;
         }
@@ -546,8 +547,8 @@
           max-width: 70%;
           line-height: 1.2rem;
         }
-        .about-article-adv {
-          .about-article-adv__item {
+        .home-about-article-adv {
+          .home-about-article-adv__item {
             margin-top: calc(var(--spacing) * 4);
             img {
               margin-top: calc(var(--spacing) * 20);
@@ -567,7 +568,7 @@
         }
       }
     }
-    .achievements-plates {
+    .home-achievements-plates {
       display: grid;
       gap: calc(var(--spacing) * 2);
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -583,7 +584,7 @@
           var(--primary),
           var(--accent)
         );
-        .achievements__icons {
+        .home-achievements__icons {
           // width: 50px;
           // height: 50px;
         }
@@ -591,26 +592,26 @@
     }
   }
 
-  .reviews {
+  .home-reviews {
     padding-block: calc(var(--spacing) * 10);
-    .reviews__title {
+    .home-reviews__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
-    .reviews__slider {
+    .home-reviews__slider {
       padding-inline: calc(var(--spacing) * 4);
     }
   }
 
-  .contacts {
+  .home-contacts {
     padding-block: calc(var(--spacing) * 4);
 
-    .contacts__container {
-      .contacts__title {
+    .home-contacts__container {
+      .home-contacts__title {
         margin-bottom: calc(var(--spacing) * 2);
         padding: calc(var(--spacing) * 2);
       }
 
-      .contacts__content {
+      .home-contacts__content {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: calc(var(--spacing) * 5);
