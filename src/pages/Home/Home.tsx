@@ -107,7 +107,7 @@ function Home() {
                 <div className="container">
                     <div className='advantages__title mb-20'>
                         <h2 className='text_center mb-4'>Почему выбирают нас</h2>
-                        <p className='text_center py-4'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
+                        <p className='text_center px-4'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
                     </div>
                     <div className="advantages__plates">
                         <div className='advantages__plates__item'>
