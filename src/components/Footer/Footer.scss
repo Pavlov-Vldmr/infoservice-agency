@@ -1,9 +1,9 @@
 footer {
   background-color: var(--primary);
-  padding-block: calc(var(--spacing) * 12);
+  // padding-block: calc(var(--spacing) * 12);
 
   .top {
-    .top-container {
+    &__container {
       display: grid;
       gap: calc(var(--spacing) * 8);
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -19,19 +19,24 @@ footer {
       }
       nav {
         h4 {
-          margin-top: 0;
+          // margin-top: 0;
           color: var(--text-white);
         }
         ul {
           list-style: none;
-          padding: 0%;
+          // padding: 0%;
           li {
-            margin-bottom: 5px;
+            // margin-bottom: calc(var(--spacing) * 2);
+
             font-size: var(--text-sm);
 
             a {
+              // background-color: red;
+              display: block;
+              padding-block: calc(var(--spacing));
               text-decoration: none;
               color: oklab(1 0 0 / 0.8);
+              max-width: 200px;
             }
           }
         }
@@ -39,13 +44,14 @@ footer {
 
       .footer__contacts {
         h4 {
-          margin-top: 0;
+          // margin-top: 0;
           color: var(--text-white);
         }
         ul {
           color: oklab(1 0 0 / 0.8);
           li {
-            margin-bottom: 5px;
+            margin-bottom: calc(var(--spacing) * 2);
+
             font-size: var(--text-sm);
           }
         }
@@ -73,7 +79,7 @@ footer {
     padding: calc(var(--spacing) * 4);
 
     .top {
-      .top-container {
+      &__container {
         gap: calc(var(--spacing) * 4);
         grid-template-columns: repeat(2, minmax(0, 1fr));
         .logo {

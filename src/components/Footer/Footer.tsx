@@ -9,15 +9,15 @@ function Footer() {
 
     return (
         <>
-            <footer>
-                <div className="top">
-                    <div className="container top-container">
+            <footer className='py-12'>
+                <div className="top mb-4">
+                    <div className="container top__container ">
                         <div className="logo">
                             <img src={logo} alt="Логотип Инфосервис" />
-                            <p>Профессиональные решения по охране недвижимости, которым можно доверять.</p>
+                            <p className='mt-4'>Профессиональные решения по охране недвижимости, которым можно доверять.</p>
                         </div>
                         <nav>
-                            <h4>Навигация</h4>
+                            <h4 className='mb-4'>Навигация</h4>
                             <ul>
                                 <li> <Link to="/">Главная</Link></li>
                                 <li> <Link to="/About">О компании</Link></li>
@@ -27,7 +27,7 @@ function Footer() {
                             </ul>
                         </nav>
                         <nav>
-                            <h4>Наши услуги</h4>
+                            <h4 className='mb-4'>Наши услуги</h4>
                             <ul>
                                 <li><Link to="/">Физическая охрана</Link></li>
                                 <li><Link to="/">Видеонаблюдение</Link></li>
@@ -37,7 +37,7 @@ function Footer() {
                             </ul>
                         </nav>
                         <div className='footer__contacts'>
-                            <h4>Контакты</h4>
+                            <h4 className='mb-4'>Контакты</h4>
                             <ul>
                                 <li>+7 (495) 123-45-67</li>
                                 <li>info@infoservice-охрана.рф</li>

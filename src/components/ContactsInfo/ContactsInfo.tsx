@@ -49,9 +49,9 @@ function ContactsInfo() {
                             </div>
                         </div>
                         <div className="contacts__block__emergency">
-                            <h4>Экстренная связь</h4>
+                            <h4 className='mb-2'>Экстренная связь</h4>
                             <p>Для экстренных случаев и вызова группы быстрого реагирования звоните круглосуточно</p>
-                            <span className="phone">{item.phone.emergency}</span>
+                            <span className="phone py-4">{item.phone.emergency}</span>
                             <span >Круглосуточная диспетчерская служба</span>
                         </div>
                     </div>

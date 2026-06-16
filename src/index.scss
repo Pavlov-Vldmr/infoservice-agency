@@ -51,7 +51,7 @@
 }
 
 // marging and padding
-$scales: 1, 2, 3, 4, 6, 8, 12, 20;
+$scales: 1, 2, 3, 4, 6, 8, 10, 12, 20;
 
 @each $scale in $scales {
   // Генерация маргинов (например, .mb-4)
@@ -67,12 +67,10 @@ $scales: 1, 2, 3, 4, 6, 8, 12, 20;
     padding: calc(var(--spacing) * #{$scale});
   }
   .px-#{$scale} {
-    padding-left: calc(var(--spacing) * #{$scale});
-    padding-right: calc(var(--spacing) * #{$scale});
+    padding-inline: calc(var(--spacing) * #{$scale});
   }
   .py-#{$scale} {
-    padding-top: calc(var(--spacing) * #{$scale});
-    padding-bottom: calc(var(--spacing) * #{$scale});
+    padding-block: calc(var(--spacing) * #{$scale});
   }
 }
 
@@ -105,9 +103,9 @@ $scales: 1, 2, 3, 4, 6, 8, 12, 20;
   flex-grow: 1;
 }
 
-body {
-  margin: 0;
-}
+// body {
+//   margin: 0;
+// }
 
 ul {
   list-style: none;
@@ -118,11 +116,11 @@ h1,
 h2 {
   font-weight: 500;
   line-height: 1;
-  color: var(--primary);
 }
 
 h1 {
   font-size: 3.75rem;
+  color: var(--text-white);
 
   @media (max-width: 1024px) {
     font-size: 36px;
@@ -131,6 +129,7 @@ h1 {
 
 h2 {
   font-size: 2.25rem;
+  color: var(--primary);
 
   @media (max-width: 1024px) {
     font-size: var(--text-2xl);
@@ -139,11 +138,9 @@ h2 {
 
 h3 {
   font-size: 1.875rem;
-  margin: 0;
 }
 
 h4 {
-  margin: 0;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;

@@ -5,14 +5,14 @@
 
   color: var(--text-white);
 
-  .hero-container {
+  &__container {
     display: grid;
     align-items: center;
     gap: calc(var(--spacing) * 12);
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: calc(var(--spacing) * 10);
+    // padding: calc(var(--spacing) * 10);
 
-    .hero-main {
+    .hero__main {
       display: flex;
       flex-direction: column;
       gap: calc(var(--spacing) * 4);
@@ -24,13 +24,11 @@
         font-size: var(--text-xs);
         text-align: center;
       }
-      h1 {
-        color: var(--text-white);
-      }
+
       p {
         font-size: var(--text-xl);
       }
-      .hero-main-btns {
+      .hero__main__btns {
         display: inline-flex;
         gap: 20px;
       }
@@ -51,10 +49,10 @@
 
 .achievements {
   border: 1px solid var(--border);
-  padding-block: calc(var(--spacing) * 4);
+  // padding-block: calc(var(--spacing) * 4);
 
-  .achievements-container {
-    padding-block: calc(var(--spacing) * 8);
+  .achievements__container {
+    // padding-block: calc(var(--spacing) * 10);
     display: grid;
     gap: calc(var(--spacing) * 8);
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -82,20 +80,22 @@
 }
 
 .services {
-  padding-inline: calc(var(--spacing) * 8);
-  padding-top: calc(var(--spacing) * 20);
-  padding-block: calc(var(--spacing) * 20);
+  // padding-inline: calc(var(--spacing) * 8);
+  // padding-top: calc(var(--spacing) * 20);
+  // padding-block: calc(var(--spacing) * 20);
 
-  .services-title {
-    margin-bottom: calc(var(--spacing) * 20);
+  .services__title {
+    // margin-bottom: calc(var(--spacing) * 20);
   }
-
+  .services__container {
+    display: block;
+  }
   .services__items {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 6);
 
-    div {
+    &__item {
       display: flex;
       flex-direction: column;
       gap: calc(var(--spacing) * 4);
@@ -104,7 +104,7 @@
       padding: calc(var(--spacing) * 6);
       transition: ease-in-out 0.3s;
 
-      .services__icons {
+      .item__icons {
         height: 40px;
         width: 40px;
         padding: 16px;
@@ -118,12 +118,13 @@
       }
       h3 {
         color: var(--primary);
-        font-size: var(--text-lg);
-        font-weight: 700;
+        font-size: var(--text-xl);
+        font-weight: 500;
         line-height: 1.5;
       }
       p {
         font-size: var(--text-sm);
+        line-height: 1.675rem;
       }
 
       &:hover {
@@ -139,10 +140,10 @@
 }
 
 .objects {
-  padding-block: calc(var(--spacing) * 20);
+  // padding-block: calc(var(--spacing) * 20);
   background-color: color-mix(in oklab, var(--muted) 30%, transparent);
-  .objects-title {
-    margin-bottom: calc(var(--spacing) * 20);
+  .objects__title {
+    // margin-bottom: calc(var(--spacing) * 20);
   }
 }
 
@@ -150,20 +151,20 @@
   color: var(--text-white);
   background-color: var(--primary);
   background-image: linear-gradient(-245deg, var(--primary), var(--accent));
-  padding-block: calc(var(--spacing) * 20);
+  // padding-block: calc(var(--spacing) * 20);
 
-  .advantages-title {
+  .advantages__title {
     h2 {
       color: var(--text-white);
     }
-    margin-bottom: calc(var(--spacing) * 20);
+    // margin-bottom: calc(var(--spacing) * 20);
   }
-  .advantages-plates {
+  .advantages__plates {
     user-select: none;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 6);
-    div {
+    &__item {
       background-color: #dbdbdb2c;
       border: 1px solid #ffffff2e;
       border-radius: 0.625rem;
@@ -171,40 +172,45 @@
       transition: ease-in-out 0.3s;
 
       .advantages__icons {
+        margin-bottom: calc(var(--spacing) * 6);
+
         width: 50px;
         height: 50px;
       }
 
       h3 {
-        font-size: var(--text-lg);
-        font-weight: 700;
+        font-size: var(--text-xl);
+        font-weight: 500;
         line-height: 1.5;
+        margin-bottom: calc(var(--spacing) * 3);
       }
       p {
         font-size: var(--text-sm);
         color: #ffffffc5;
+        line-height: 1.675rem;
       }
       &:hover {
-        background-color: #dbdbdb50;
+        background-color: #dbdbdb44;
       }
     }
   }
 }
 
 .about {
-  padding-block: calc(var(--spacing) * 20);
+  // padding-block: calc(var(--spacing) * 20);
 
-  .about-top {
+  .about__top {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: calc(var(--spacing) * 8);
+    gap: calc(var(--spacing) * 12);
 
-    .about-guardian {
+    .about__guardian {
       img {
         display: block;
-        box-shadow: 3px 5px 30px rgba(128, 128, 128, 0.7);
         border-radius: 0.625rem;
+        box-shadow: 10px 10px 20px rgba(128, 128, 128, 0.607);
+        width: 100%;
       }
     }
     .about-article {
@@ -213,20 +219,20 @@
         flex-direction: column;
         .about-article-adv__item {
           display: flex;
-          img {
-            width: 24px;
+          .about__icons {
+            height: 50px;
             margin-top: calc(var(--spacing));
-            height: 24px;
+            width: 50px;
           }
-          div {
+          &__text {
+            max-width: 300px;
             display: flex;
             flex-direction: column;
-            margin-left: calc(var(--spacing) * 2);
+            margin-left: calc(var(--spacing) * 4);
             margin-bottom: calc(var(--spacing) * 4);
 
             h4 {
               color: var(--primary);
-              margin: 0;
             }
             p {
               color: var(--muted-foreground);
@@ -260,23 +266,20 @@
 
 .reviews {
   padding-block: calc(var(--spacing) * 20);
-  .reviews-title {
+  .reviews__title {
     margin-bottom: calc(var(--spacing) * 20);
   }
 }
 
 .contacts {
-  padding-block: calc(var(--spacing) * 20);
+  // padding-block: calc(var(--spacing) * 20);
   background-color: var(--bg-gray);
 
   .contacts__container {
-    .contacts-title {
-      margin-bottom: calc(var(--spacing) * 20);
+    .contacts__title {
+      // margin-bottom: calc(var(--spacing) * 20);
     }
 
-    .contacts-title {
-      margin-bottom: calc(var(--spacing) * 20);
-    }
     .contacts__content {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -289,12 +292,12 @@
   .hero {
     padding-top: 130px;
 
-    .hero-container {
+    &__container {
       display: block;
 
       padding: calc(var(--spacing) * 4);
 
-      .hero-main {
+      .hero__main {
         display: block;
         .license {
           font-size: var(--text-xs);
@@ -303,7 +306,7 @@
         p {
           font-size: var(--text-xl);
         }
-        .hero-main-btns {
+        .hero__main__btns {
           margin-top: 40px;
           display: flex;
           flex-direction: column;
@@ -316,7 +319,7 @@
   .achievements {
     padding-block: calc(var(--spacing) * 4);
 
-    .achievements-container {
+    .achievements__container {
       padding-block: calc(var(--spacing) * 4);
       gap: calc(var(--spacing) * 4);
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -348,7 +351,7 @@
     padding-top: calc(var(--spacing) * 10);
     padding-block: calc(var(--spacing) * 10);
 
-    .services-title {
+    .services__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
 
@@ -356,12 +359,12 @@
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: calc(var(--spacing) * 3);
 
-      div {
+      &__item {
         padding: calc(var(--spacing) * 2);
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
-        .services__icons {
+        .item__icons {
           grid-row: span 2 / span 2;
           height: 20px;
           width: 20px;
@@ -396,7 +399,7 @@
 
   .objects {
     padding-block: calc(var(--spacing) * 10);
-    .objects-title {
+    .objects__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
   }
@@ -404,17 +407,17 @@
   .advantages {
     padding-block: calc(var(--spacing) * 10);
 
-    .advantages-title {
+    .advantages__title {
       h2 {
       }
       margin-bottom: calc(var(--spacing) * 10);
     }
-    .advantages-plates {
+    .advantages__plates {
       padding: calc(var(--spacing) * 2);
 
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: calc(var(--spacing) * 3);
-      div {
+      &__item {
         padding: calc(var(--spacing) * 2);
 
         .advantages__icons {
@@ -425,7 +428,7 @@
         p {
         }
         &:hover {
-          background-color: #dbdbdb50;
+          background-color: #dbdbdb2c;
         }
       }
     }
@@ -434,7 +437,7 @@
   .about {
     padding: calc(var(--spacing) * 4);
 
-    .about-top {
+    .about__top {
       grid-template-columns: repeat(1, 1fr);
       gap: calc(var(--spacing) * 4);
 
@@ -451,7 +454,7 @@
             img {
               margin-top: calc(var(--spacing) * 20);
             }
-            div {
+            &__text {
               display: flex;
               flex-direction: column;
               margin-left: calc(var(--spacing) * 2);
@@ -468,7 +471,7 @@
     }
     .achievements-plates {
       display: grid;
-      gap: calc(var(--spacing) * 8);
+      gap: calc(var(--spacing) * 2);
       grid-template-columns: repeat(2, minmax(0, 1fr));
       text-align: center;
       margin-top: calc(var(--spacing) * 20);
@@ -492,7 +495,7 @@
 
   .reviews {
     padding-block: calc(var(--spacing) * 10);
-    .reviews-title {
+    .reviews__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
   }
@@ -501,7 +504,7 @@
     padding-block: calc(var(--spacing) * 4);
 
     .contacts__container {
-      .contacts-title {
+      .contacts__title {
         margin-bottom: calc(var(--spacing) * 2);
         padding: calc(var(--spacing) * 2);
       }
