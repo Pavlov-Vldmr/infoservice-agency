@@ -1,7 +1,7 @@
 .hero {
   background-color: var(--primary);
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
-  padding-top: 160px;
+  padding-top: 120px;
 
   color: var(--text-white);
 
@@ -15,7 +15,7 @@
     .hero__main {
       display: flex;
       flex-direction: column;
-      gap: calc(var(--spacing) * 4);
+      gap: calc(var(--spacing) * 2);
       .license {
         background-color: oklab(1 0 0 / 0.1);
         padding: 10px 20px;
