@@ -1,9 +1,27 @@
 .hero {
   background-color: var(--primary);
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
-  padding-top: 120px;
 
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
   color: var(--text-white);
+
+  &::before {
+    content: "";
+    position: absolute;
+    padding-top: calc(var(--spacing) * 20);
+    top: 0%;
+    left: 30%;
+    width: 80%;
+    height: 100%;
+    background-image: url(../../assets/images/logo-transp-10.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    z-index: 1;
+    transform: rotate(25deg);
+  }
 
   &__container {
     display: grid;
@@ -29,6 +47,7 @@
         font-size: var(--text-xl);
       }
       .hero__main__btns {
+        z-index: 2;
         display: inline-flex;
         gap: 20px;
       }
@@ -152,6 +171,32 @@
   background-color: var(--primary);
   background-image: linear-gradient(-245deg, var(--primary), var(--accent));
   // padding-block: calc(var(--spacing) * 20);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 600px;
+    height: 600px;
+    background-color: #ffffff1c;
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+    z-index: 1;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 600px;
+    height: 600px;
+    background-color: #ffffff1c;
+    border-radius: 50%;
+    bottom: -390px;
+    left: -300px;
+    z-index: 1;
+  }
 
   .advantages__title {
     h2 {
@@ -160,6 +205,7 @@
     // margin-bottom: calc(var(--spacing) * 20);
   }
   .advantages__plates {
+    z-index: 2;
     user-select: none;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -292,6 +338,11 @@
   .hero {
     padding-top: 130px;
 
+    &::before {
+      background-size: 95%;
+      // z-index: 1;
+    }
+
     &__container {
       display: block;
 
@@ -422,6 +473,19 @@
 
   .advantages {
     padding-block: calc(var(--spacing) * 10);
+    &::before {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -150px;
+    }
+
+    &::after {
+      width: 300px;
+      height: 300px;
+      bottom: -150px;
+      left: -150px;
+    }
 
     .advantages__title {
       h2 {
