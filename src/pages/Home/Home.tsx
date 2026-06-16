@@ -1,193 +1,193 @@
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import './Home.scss'
 
-import svgExample from '../../assets/icons/svg-example.svg'
+// import svgExample from '../../assets/icons/svg-example.svg'
+
 import guardian from '../../assets/images/security.jpg'
 import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
-
+import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
+import { Icons } from '../../components/Icons'
+import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
+import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
 
 function Home() {
-
+    // const t = "Apply"
 
     return (
         <>
-            <div className="hero">
-                <div className="container hero-container">
-                    <div className='hero-main'>
+            <section className="home-hero">
+                <div className="container home-hero__container p-10">
+                    <div className='home-hero__main'>
                         <span className='license'>Лицензия № 123456 от 01.01.2010</span>
                         <h1>Охрана недвижимости под надежной защитой</h1>
                         <p>Профессиональная охрана коммерческой и жилой недвижимости. Круглосуточный мониторинг, современное оборудование и опытные специалисты.</p>
-                        <div className='hero-main-btns'>
+                        <div className='home-hero__main__btns mt-4'>
                             <MainActButton variant='white' title="Заказать онлайн"></MainActButton>
-                            <MainActButton variant=" primary" title="Наши услуги" bordered ></MainActButton>
+                            <MainActButton variant="primary" title="Наши услуги" bordered ></MainActButton>
                         </div>
                     </div>
-                    <div className='hero-life'>
-                    </div>
+                    {/* <div className='home-hero-life'>
+                    </div> */}
                 </div>
-            </div >
+            </section >
 
-            <div className="achievements">
-                <div className="container achievements-container">
+            <section className="home-achievements py-4">
+                <div className="container home-achievements__container p-2">
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Chart className='home-achievements__icons icon_accent' />
                         <span className="value">500+</span>
                         <span className='text'>Охраняемых объектов</span>
                     </div>
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Clock className='home-achievements__icons icon_accent' />
                         <span className="value">24\7</span>
                         <span className='text'>Круглосуточная охрана</span>
                     </div>
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Person className='home-achievements__icons icon_accent' />
+
                         <span className="value">120+</span>
                         <span className='text'>Охранников</span>
                     </div>
                     <div>
-                        <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <Icons.Shield className='home-achievements__icons icon_accent' />
+
                         <span className="value">99.9%</span>
                         <span className='text'>Надёжность</span>
                     </div>
                 </div>
 
-            </div>
+            </section>
 
-            <div className="services">
-                <div className="container services-container">
-                    <div className='services-title'>
-                        <h2 className='text-center'>Наши услуги по охране</h2>
-                        <p className='text-center text-muted'>Комплексные решения по безопасности для защиты вашей недвижимости</p>
+            <section className="home-services px-8 py-20">
+                <div className="container home-services__container">
+                    <div className='home-services__title mb-20'>
+                        <h2 className='text_center mb-4'>Наши услуги по охране</h2>
+                        <p className='text_center text_muted py-4'>Комплексные решения по безопасности для защиты вашей недвижимости</p>
                     </div>
-                    <div className="services-items">
-                        <div>
-                            <div className='item-icon'>
-                            </div>
+                    <div className="home-services__items">
+                        <div className='home-services__items__item'>
+                            <Icons.ShieldAlt className='item__icons icon_accent' />
                             <h3>Физическая охрана объектов</h3>
-                            <p className='text-muted'>Профессиональные охранники с лицензией для постоянной или временной охраны вашего объекта.</p>
+                            <p className='text_muted'>Профессиональные охранники с лицензией для постоянной или временной охраны вашего объекта.</p>
                         </div>
-                        <div>
-                            <div className='item-icon'>
-                            </div>
+                        <div className='home-services__items__item'>
+                            <Icons.Camera className='item__icons icon_accent' />
                             <h3>Физическая охрана объектов</h3>
-                            <p className='text-muted'>Профессиональные охранники с лицензией для постоянной или временной охраны вашего объекта.</p>
+                            <p className='text_muted'>Профессиональные охранники с лицензией для постоянной или временной охраны вашего объекта.</p>
                         </div>
-                        <div>
-                            <div className='item-icon'>
-                            </div>
+                        <div className='home-services__items__item'>
+                            <Icons.Lock className='item__icons icon_accent' />
                             <h3>Системы видеонаблюдения</h3>
-                            <p className='text-muted'>Установка и мониторинг современных систем видеонаблюдения с удаленным доступом.</p>
+                            <p className='text_muted'>Установка и мониторинг современных систем видеонаблюдения с удаленным доступом.</p>
                         </div>
-                        <div>
-                            <div className='item-icon'>
-                            </div>
+                        <div className='home-services__items__item'>
+                            <Icons.Person className='item__icons icon_accent' />
                             <h3>Контроль доступа</h3>
-                            <p className='text-muted'>Современные системы контроля и управления доступом на территорию объекта.</p>
+                            <p className='text_muted'>Современные системы контроля и управления доступом на территорию объекта.</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="objects">
+            {/* slider here */}
+            <section className="home-objects py-20">
                 <div className="container">
-                    <div className='objects-title'>
-                        <h2 className='text-center'>Охраняемые объекты</h2>
-                        <p className='text-center text-muted'>Мы обеспечиваем безопасность разных типов недвижимости</p>
+                    <div className='home-objects__title mb-20'>
+                        <h2 className='text_center mb-4'>Охраняемые объекты</h2>
+                        <p className='text_center text_muted py-4'>Мы обеспечиваем безопасность разных типов недвижимости</p>
                     </div>
-                    <div className="slider">
+                    <div className="home-objects__slider">
                         <ObjectsSlider />
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="advantages">
+            <section className="home-advantages py-20">
                 <div className="container">
-                    <div className='advantages-title'>
-                        <h2 className='text-center'>Почему выбирают нас</h2>
-                        <p className='text-center'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
+                    <div className='home-advantages__title mb-20'>
+                        <h2 className='text_center mb-4'>Почему выбирают нас</h2>
+                        <p className='text_center px-4'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
                     </div>
-                    <div className="advantages-plates">
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                    <div className="home-advantages__plates">
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-
-                        <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                        <div className='home-advantages__plates__item'>
+                            <Icons.ShieldAlt className='home-advantages__icons icon_white' />
                             <h3>Полная лицензия</h3>
                             <p>Все необходимые лицензии и разрешения на ведение охранной деятельности</p>
                         </div>
-
-
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="about">
-                <div className="container about-container">
-                    <div className='about-top'>
-                        <div className='about-guardian'>
-                            <img src={guardian} width={'100%'} height={''} alt="" />
+            <section className="home-about py-20">
+                <div className="container home-about-container">
+                    <div className='home-about__top'>
+                        <div className='home-about__guardian mt-8'>
+                            <img src={guardian} alt="" />
                         </div>
-                        <div className='about-article'>
-                            <h2>О компании ООО "ИнфоСервис"</h2>
+                        <div className='home-about-article'>
+                            <h2 className='mb-4'>О компании ООО "ИнфоСервис"</h2>
                             <p>Более 15 лет опыта в сфере частной охраны позволили компании ИнфоСервис стать надежным партнером в области безопасности недвижимости. Мы специализируемся на защите жилой и коммерческой недвижимости, используя передовые технологии и высококвалифицированный персонал.</p>
-                            <p className='text-muted'>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
-                            <div className='about-article-adv'>
-                                <div className='about-article-adv-item'>
-                                    <img src={svgExample} alt="" />
-                                    <div>
+                            <p className='some__text text_muted mt-4'>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
+                            <div className='home-about-article-adv mt-8'>
+                                <div className='home-about-article-adv__item'>
+                                    <Icons.Shield className='home-about__icons icon_accent' />
+
+                                    <div className='home-about-article-adv__item__text'>
                                         <h4>Лицензия и страхование</h4>
                                         <p>Полный пакет лицензий и комплексное страхование ответственности</p>
                                     </div>
                                 </div>
-                                <div className='about-article-adv-item'>
-                                    <img src={svgExample} alt="" />
-                                    <div>
+                                <div className='home-about-article-adv__item'>
+                                    <Icons.Shield className='home-about__icons icon_accent' />
+
+                                    <div className='home-about-article-adv__item__text'>
                                         <h4>Лицензия и страхование</h4>
                                         <p>Полный пакет лицензий и комплексное страхование ответственности</p>
                                     </div>
                                 </div>
-                                <div className='about-article-adv-item'>
-                                    <img src={svgExample} alt="" />
-                                    <div>
+                                <div className='home-about-article-adv__item'>
+                                    <Icons.Shield className='home-about__icons icon_accent' />
+
+                                    <div className='home-about-article-adv__item__text'>
                                         <h4>Лицензия и страхование</h4>
                                         <p>Полный пакет лицензий и комплексное страхование ответственности</p>
                                     </div>
                                 </div>
-                                <div className='about-article-adv-item'>
-                                    <img src={svgExample} alt="" />
-                                    <div>
+                                <div className='home-about-article-adv__item'>
+                                    <Icons.Shield className='home-about__icons icon_accent' />
+
+                                    <div className='home-about-article-adv__item__text'>
                                         <h4>Лицензия и страхование</h4>
                                         <p>Полный пакет лицензий и комплексное страхование ответственности</p>
                                     </div>
@@ -195,49 +195,56 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="achievements-plates">
+                    <div className="home-achievements-plates">
                         <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
                             <h3>15+</h3>
                             <span>Лет</span>
                         </div>
                         <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
                             <h3>15+</h3>
                             <span>Лет</span>
                         </div>
                         <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
                             <h3>15+</h3>
                             <span>Лет</span>
                         </div>
                         <div>
-                            <img src={svgExample} width={'50px'} height={'50px'} alt="" />
+                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
                             <h3>15+</h3>
                             <span>Лет</span>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="reviews">
+            {/* slider here */}
+            <section className="home-reviews py-20">
                 <div className="container">
-                    <div>
-                        <h2 className='text-center'>Отзывы наших клиентов</h2>
-                        <p className='text-center text-muted'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
+                    <div className='home-reviews__title mb-10'>
+                        <h2 className='text_center mb-4'>Отзывы наших клиентов</h2>
+                        <p className='text_center text_muted py-4'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
                     </div>
-                    <div className="reviews-slider">rev slider</div>
+                    <div className="home-reviews__slider">
+                        <ReviewsSlider />
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="contacts">
-                <div className="container">
-                    <div>
-                        <h2 className='text-center'>Контакты</h2>
-                        <p className='text-center text-muted'>Свяжитесь с нашими специалистами по безопасности для обсуждения защиты вашей недвижимости</p>
+            <section className="home-contacts py-20">
+                <div className="container home-contacts__container">
+                    <div className='home-contacts__title mb-20'>
+                        <h2 className='text_center mb-4'>Контакты</h2>
+                        <p className='text_center text_muted py-4'>Свяжитесь с нашими специалистами по безопасности для обсуждения защиты вашей недвижимости</p>
+                    </div>
+                    <div className="home-contacts__content">
+                        <ContactsInfo />
+                        <FeedbackForm />
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

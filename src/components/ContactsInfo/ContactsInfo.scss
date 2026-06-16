@@ -1,0 +1,96 @@
+.contacts__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--spacing) * 10);
+  padding-bottom: 0;
+  &__item {
+    display: flex;
+    gap: calc(var(--spacing) * 4);
+    margin-bottom: calc(var(--spacing) * 8);
+    align-items: flex-start;
+
+    .contacts__icon {
+      height: 30px;
+      width: 30px;
+      padding: 8px;
+      background-color: color-mix(in oklab, var(--accent) 10%, transparent);
+      border-radius: 0.625rem;
+    }
+
+    .item__info {
+      display: flex;
+      flex-direction: column;
+      h4 {
+        margin: 0;
+        color: var(--rimary);
+        margin-bottom: calc(var(--spacing));
+      }
+      .text_accent {
+        padding-top: calc(var(--spacing) * 2);
+      }
+    }
+  }
+
+  &__emergency {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-white);
+    background-color: var(--primary);
+    background-image: linear-gradient(190deg, var(--primary), var(--accent));
+    padding: calc(var(--spacing) * 8);
+    border-radius: 0.625rem;
+    max-width: 500px;
+    .phone {
+      font-size: var(--text-2xl);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts__block {
+    padding: calc(var(--spacing) * 4);
+    padding-bottom: 0;
+    &__item {
+      display: flex;
+      gap: calc(var(--spacing) * 4);
+      margin-bottom: calc(var(--spacing) * 8);
+      align-items: flex-start;
+
+      .contacts__icon {
+        height: 30px;
+        width: 30px;
+        padding: 8px;
+        background-color: color-mix(in oklab, var(--accent) 10%, transparent);
+        border-radius: 0.625rem;
+      }
+
+      .item__info {
+        display: flex;
+        flex-direction: column;
+        h4 {
+          margin: 0;
+          color: var(--rimary);
+          margin-bottom: calc(var(--spacing));
+        }
+        .text_accent {
+          padding-top: calc(var(--spacing) * 2);
+        }
+      }
+    }
+
+    &__emergency {
+      display: flex;
+      flex-direction: column;
+      color: var(--text-white);
+      background-color: var(--primary);
+      background-image: linear-gradient(190deg, var(--primary), var(--accent));
+      padding: calc(var(--spacing) * 8);
+      border-radius: 0.625rem;
+      max-width: 500px;
+      .phone {
+        font-size: var(--text-2xl);
+      }
+    }
+  }
+}

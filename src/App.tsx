@@ -8,6 +8,7 @@ import Objects from './pages/Objects/Objects'
 import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import Contacts from './pages/Contacts/Contacts'
 
 
 
@@ -19,18 +20,21 @@ function App() {
 
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/About' element={<About />} />
+        <div className='main'>
+          <Routes>
+            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/infoservice-agency" element={<Home />} />
+            <Route path='/infoservice-agency/about' element={<About />} />
+            <Route path='/infoservice-agency/objects' element={<Objects />} />
+            <Route path='/infoservice-agency/services' element={<Services />} />
+            <Route path='/infoservice-agency/services/:link' element={<ServiceDetail />} />
+            <Route path='/infoservice-agency/contacts' element={<Contacts />} />
 
-          <Route path='/Objects' element={<Objects />} />
-          <Route path='/Services' element={<Services />} />
-          <Route path='/Services/:link' element={<ServiceDetail />} />
-          {/* <Route path='/' element={<Services />} /> */}
+            {/* <Route path="/product/:link" element={<ProductPage />} /> */}
+            <Route path='/infoservice-agency/*' element={<NotFound />} />
+          </Routes>
+        </div>
 
-          {/* <Route path="/product/:link" element={<ProductPage />} /> */}
-          <Route path='*' element={<NotFound />} />
-        </Routes>
         <Footer />
       </Router>
     </>

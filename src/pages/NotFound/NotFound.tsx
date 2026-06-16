@@ -1,10 +1,15 @@
+import { NavLink } from "react-router-dom"
+import "./NotFound.scss"
 function NotFound() {
 
 
     return (
         <>
-            <span>404
-            </span>
+            <div className="not_found">
+                <span>404</span>
+                <NavLink to="/infoservice-agency">Главная</NavLink>
+
+            </div>
 
 
         </>

@@ -1,0 +1,183 @@
+:root {
+  --text-white: #ffffff;
+  --primary: #1e3a8a;
+  --accent: #2563eb;
+  --foreground: oklch(14.5% 0 0);
+  --muted-foreground: #717182;
+  --border: #0000001a;
+  --muted: #ececf0;
+  --bg: #fff;
+  // --bg-gray: color-mix(in oklab, var(--muted) 30%, transparent);
+  --bg-gray: #ececf0;
+  --input-background: #f3f3f5;
+
+  --spacing: 0.25rem;
+
+  --font-size: 16px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-2-5xl: 2.2rem;
+
+  --text-3xl: 3rem;
+
+  --container-sm: 24rem;
+  --container-lg: 32rem;
+  --container-xl: 80rem;
+
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --default-font-famaly: var(--font-sans);
+
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--foreground);
+  background: var(--bg);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// marging and padding
+$scales: 1, 2, 3, 4, 6, 8, 10, 12, 20;
+
+@each $scale in $scales {
+  // Генерация маргинов (например, .mb-4)
+  .mb-#{$scale} {
+    margin-bottom: calc(var(--spacing) * #{$scale});
+  }
+  .mt-#{$scale} {
+    margin-top: calc(var(--spacing) * #{$scale});
+  }
+
+  // Генерация паддингов (например, .p-4)
+  .p-#{$scale} {
+    padding: calc(var(--spacing) * #{$scale});
+  }
+  .px-#{$scale} {
+    padding-inline: calc(var(--spacing) * #{$scale});
+  }
+  .py-#{$scale} {
+    padding-block: calc(var(--spacing) * #{$scale});
+  }
+}
+
+//
+
+.container {
+  margin: auto;
+  max-width: var(--container-xl);
+
+  @media (max-width: 1024px) {
+    max-width: var(--container-xs);
+  }
+}
+
+/* ??????????  */
+#root {
+  /* width: 1126px; */
+  font-size: var(--font-size);
+  font-family: var(--default-font-famaly);
+
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
+}
+.main {
+  flex-grow: 1;
+}
+
+// body {
+//   margin: 0;
+// }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3.75rem;
+  color: var(--text-white);
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+  color: var(--primary);
+
+  @media (max-width: 1024px) {
+    font-size: var(--text-2xl);
+  }
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_muted {
+  color: var(--muted-foreground);
+}
+
+.text_accent {
+  color: var(--accent);
+}
+
+.text_primary {
+  color: var(--primary);
+}
+
+.icon {
+  &_accent {
+    path {
+      stroke: var(--accent);
+    }
+  }
+
+  &_white {
+    path {
+      stroke: #fff;
+    }
+  }
+}
