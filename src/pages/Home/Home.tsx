@@ -63,7 +63,7 @@ function Home() {
             <div className="services">
                 <div className="container services-container">
                     <div className='services-title'>
-                        <h2 className='text_center'>Наши услуги по охране</h2>
+                        <h2 className='text_center mb-4'>Наши услуги по охране</h2>
                         <p className='text_center text_muted'>Комплексные решения по безопасности для защиты вашей недвижимости</p>
                     </div>
                     <div className="services__items">
@@ -94,7 +94,7 @@ function Home() {
             <div className="objects">
                 <div className="container">
                     <div className='objects-title'>
-                        <h2 className='text_center'>Охраняемые объекты</h2>
+                        <h2 className='text_center mb-4'>Охраняемые объекты</h2>
                         <p className='text_center text_muted'>Мы обеспечиваем безопасность разных типов недвижимости</p>
                     </div>
                     <div className="slider">
@@ -106,7 +106,7 @@ function Home() {
             <div className="advantages">
                 <div className="container">
                     <div className='advantages-title'>
-                        <h2 className='text_center'>Почему выбирают нас</h2>
+                        <h2 className='text_center mb-4'>Почему выбирают нас</h2>
                         <p className='text_center'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
                     </div>
                     <div className="advantages-plates">
@@ -170,7 +170,7 @@ function Home() {
                             <img src={guardian} alt="" />
                         </div>
                         <div className='about-article'>
-                            <h2>О компании ООО "ИнфоСервис"</h2>
+                            <h2 className='mb-4'>О компании ООО "ИнфоСервис"</h2>
                             <p>Более 15 лет опыта в сфере частной охраны позволили компании ИнфоСервис стать надежным партнером в области безопасности недвижимости. Мы специализируемся на защите жилой и коммерческой недвижимости, используя передовые технологии и высококвалифицированный персонал.</p>
                             <p className='text_muted'>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
                             <div className='about-article-adv'>
@@ -237,7 +237,7 @@ function Home() {
             <div className="reviews">
                 <div className="container">
                     <div className='reviews-title'>
-                        <h2 className='text_center'>Отзывы наших клиентов</h2>
+                        <h2 className='text_center mb-4'>Отзывы наших клиентов</h2>
                         <p className='text_center text_muted'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
                     </div>
                     <div className="reviews-slider">
