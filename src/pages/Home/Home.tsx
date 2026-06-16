@@ -63,7 +63,7 @@ function Home() {
                 <div className="container services__container">
                     <div className='services__title mb-20'>
                         <h2 className='text_center mb-4'>Наши услуги по охране</h2>
-                        <p className='text_center text_muted'>Комплексные решения по безопасности для защиты вашей недвижимости</p>
+                        <p className='text_center text_muted py-4'>Комплексные решения по безопасности для защиты вашей недвижимости</p>
                     </div>
                     <div className="services__items">
                         <div className='services__items__item'>
@@ -95,7 +95,7 @@ function Home() {
                 <div className="container">
                     <div className='objects__title mb-20'>
                         <h2 className='text_center mb-4'>Охраняемые объекты</h2>
-                        <p className='text_center text_muted'>Мы обеспечиваем безопасность разных типов недвижимости</p>
+                        <p className='text_center text_muted py-4'>Мы обеспечиваем безопасность разных типов недвижимости</p>
                     </div>
                     <div className="objects__slider">
                         <ObjectsSlider />
@@ -107,7 +107,7 @@ function Home() {
                 <div className="container">
                     <div className='advantages__title mb-20'>
                         <h2 className='text_center mb-4'>Почему выбирают нас</h2>
-                        <p className='text_center'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
+                        <p className='text_center py-4'>Наши преимущества делают нас лидером в сфере охраны недвижимости</p>
                     </div>
                     <div className="advantages__plates">
                         <div className='advantages__plates__item'>
@@ -225,7 +225,7 @@ function Home() {
                 <div className="container">
                     <div className='reviews__title mb-10'>
                         <h2 className='text_center mb-4'>Отзывы наших клиентов</h2>
-                        <p className='text_center text_muted'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
+                        <p className='text_center text_muted py-4'>Что говорят о нас руководители компаний и владельцы недвижимости</p>
                     </div>
                     <div className="reviews__slider">
                         <ReviewsSlider />
@@ -237,7 +237,7 @@ function Home() {
                 <div className="container contacts__container">
                     <div className='contacts__title mb-20'>
                         <h2 className='text_center mb-4'>Контакты</h2>
-                        <p className='text_center text_muted'>Свяжитесь с нашими специалистами по безопасности для обсуждения защиты вашей недвижимости</p>
+                        <p className='text_center text_muted py-4'>Свяжитесь с нашими специалистами по безопасности для обсуждения защиты вашей недвижимости</p>
                     </div>
                     <div className="contacts__content">
                         <ContactsInfo />
