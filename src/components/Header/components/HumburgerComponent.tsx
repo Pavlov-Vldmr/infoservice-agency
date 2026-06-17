@@ -11,6 +11,18 @@ function HamburgerComponent() {
     const location = useLocation();
 
     useEffect(() => {
+        if (open) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [open]);
+
+    useEffect(() => {
         setOpen(false);
     }, [location]); // Срабатывает каждый раз, когда меняется URL
 
