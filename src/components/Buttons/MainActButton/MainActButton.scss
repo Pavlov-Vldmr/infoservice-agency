@@ -9,13 +9,15 @@
   padding: calc(var(--spacing) * 3) calc(var(--spacing) * 8);
   line-height: 1.5;
   min-height: 50px;
+  color: #fff;
+
   transition: ease-in 0.1s;
   &:hover {
     // background-color: #ffffff96;
   }
 }
 .btn_primary {
-  color: #fff;
+  // color: #fff;
   &:hover {
     background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }

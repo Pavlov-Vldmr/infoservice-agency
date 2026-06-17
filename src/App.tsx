@@ -9,7 +9,7 @@ import ServiceDetail from './pages/ServiceDetail/ServiceDetail'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Contacts from './pages/Contacts/Contacts'
-
+import ScrollToTop from './features/ScrollToTop'
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     <>
 
       <Router>
+        <ScrollToTop />
         <Header />
         <div className='main'>
           <Routes>
