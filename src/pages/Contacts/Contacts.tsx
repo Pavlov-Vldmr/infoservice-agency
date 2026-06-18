@@ -22,9 +22,9 @@ function Contacts() {
             <div className="contacts__map pb-8 m_px-4">
 
                 <div className="container contacts__map__container">
-                    <h2 className="text_primary px-8 pt-8">Карта проезда</h2>
+                    <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
 
-                    <div className="map__element p-8">
+                    <div className="map__element p-8 m_p-4">
                         <YandexMap />
                     </div>
                 </div>
