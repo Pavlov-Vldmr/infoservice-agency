@@ -9,11 +9,11 @@ function Footer() {
 
     return (
         <>
-            <footer className='py-12'>
+            <footer className='py-12 m_p-4'>
                 <div className="top mb-4">
                     <div className="container top__container ">
-                        <div className="logo">
-                            <img src={logo} alt="Логотип Инфосервис" />
+                        <div className="logo m_mt-4">
+                            <img className='logo__img' src={logo} alt="Логотип Инфосервис" />
                             <p className='mt-4'>Профессиональные решения по охране недвижимости, которым можно доверять.</p>
                         </div>
                         <nav>
