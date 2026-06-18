@@ -17,15 +17,15 @@ function Services() {
         <>
             <PageTitle title="Наши услуги" subTitle="Комплексные решения по обеспечению безопасности вашей недвижимости" />
 
-            <div className="services">
-                <div className="container services__container py-8">
+            <section className="services">
+                <div className="container services__container  p-10 m_p-4">
                     {data.map(item => (
                         <>
                             <ServiceCard title={item.title} about={item.about} link={item.link} />
                         </>
                     ))}
                 </div>
-            </div>
+            </section>
 
 
         </>

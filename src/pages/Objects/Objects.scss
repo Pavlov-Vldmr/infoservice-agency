@@ -1,4 +1,4 @@
-.services {
+.objects {
   background-color: var(--bg-gray);
 
   &__container {
@@ -8,9 +8,14 @@
   }
 }
 
+.objects-proposal {
+  background-color: var(--bg-gray);
+}
+
 @media (max-width: 768px) {
-  .services {
+  .objects {
     &__container {
+      display: grid;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: calc(var(--spacing) * 3);
     }

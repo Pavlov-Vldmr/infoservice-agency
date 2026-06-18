@@ -1,47 +1,92 @@
 .hamburger {
   display: none;
   .hamburger__nav {
-    padding: calc(var(--spacing) * 4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-30px);
     position: absolute;
     left: 0;
-    color: red;
-    top: 120px;
-    width: calc(100% - var(--spacing) * 8);
-    height: fit-content;
-    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Blurs the underlying elements */
-    -webkit-backdrop-filter: blur(10px);
-    transition: opacity ease-in-out 1s;
+    top: 85px;
+    width: 100%;
+    height: calc(100vh - 85px);
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+
+    &._active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0); // Возвращаем в исходную позицию
+    }
+    &__links {
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        li {
+          display: flex;
+          text-align: start;
+          a {
+            padding: calc(var(--spacing) * 4);
+            font-size: var(--text-xl);
+            flex-grow: 1;
+            color: var(--primary);
+            user-select: none;
+            &:active {
+              background-color: #ffffff61;
+            }
+          }
+        }
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--spacing) * 2);
+    }
+
+    &__phone {
+      flex-grow: 1;
+      margin-left: 20px;
+
+      a {
+        display: block;
+        // background-color: red;
+        color: gray;
+        text-decoration: none;
+        position: relative;
+        width: fit-content;
+
+        &.phone::before {
+          // position: absolute;
+          color: #fff;
+          content: "\1F4DE";
+          padding-right: 4px;
+        }
+        &.mail::before {
+          // position: absolute;
+          color: #fff;
+          content: "\2709";
+          padding-right: 4px;
+        }
+      }
+    }
+
+    &__footer {
+      background-color: var(--primary);
+      height: 30px;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    .hamburger__nav {
-      &__links {
-        ul {
-          display: flex;
-          flex-direction: column;
-          li {
-            display: flex;
-            text-align: end;
-
-            a {
-              flex-grow: 1;
-              // background-color: green;
-              padding-block: calc(var(--spacing) * 2);
-              color: var(--primary);
-              border-bottom: 1px solid #92b2cf;
-              user-select: none;
-
-              &:active {
-                background-color: #ffffff61;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }

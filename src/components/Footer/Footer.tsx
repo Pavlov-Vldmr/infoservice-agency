@@ -9,27 +9,27 @@ function Footer() {
 
     return (
         <>
-            <footer className='py-12'>
+            <footer className='py-12 m_p-4'>
                 <div className="top mb-4">
                     <div className="container top__container ">
-                        <div className="logo">
-                            <img src={logo} alt="Логотип Инфосервис" />
+                        <div className="logo m_mt-4">
+                            <img className='logo__img' src={logo} alt="Логотип Инфосервис" />
                             <p className='mt-4'>Профессиональные решения по охране недвижимости, которым можно доверять.</p>
                         </div>
                         <nav>
                             <h4 className='mb-4'>Навигация</h4>
                             <ul>
-                                <li> <Link to="/">Главная</Link></li>
-                                <li> <Link to="/About">О компании</Link></li>
-                                <li> <Link to="/Services">Услуги</Link></li>
-                                <li> <Link to="/Objects">Объъекты</Link></li>
-                                <li> <Link to="/Contacts">Контакты</Link></li>
+                                <li> <Link to="/infoservice-agency/">Главная</Link></li>
+                                <li> <Link to="/infoservice-agency/about">О компании</Link></li>
+                                <li> <Link to="/infoservice-agency/services">Услуги</Link></li>
+                                <li> <Link to="/infoservice-agency/objects">Объъекты</Link></li>
+                                <li> <Link to="/infoservice-agency/contacts">Контакты</Link></li>
                             </ul>
                         </nav>
                         <nav>
                             <h4 className='mb-4'>Наши услуги</h4>
                             <ul>
-                                <li><Link to="/">Физическая охрана</Link></li>
+                                <li><Link to="/infoservice-agency/services/Ohrana-zhilih-kompl">Охрана жилых комплексов</Link></li>
                                 <li><Link to="/">Видеонаблюдение</Link></li>
                                 <li><Link to="/">Контроль доступа</Link></li>
                                 <li><Link to="/">Пультовая охрана</Link></li>

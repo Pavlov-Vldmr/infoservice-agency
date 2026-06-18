@@ -10,6 +10,8 @@
   // --bg-gray: color-mix(in oklab, var(--muted) 30%, transparent);
   --bg-gray: #ececf0;
   --input-background: #f3f3f5;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.4);
 
   --spacing: 0.25rem;
 
@@ -53,7 +55,7 @@
 }
 
 // marging and padding
-$scales: 1, 2, 3, 4, 6, 8, 10, 12, 20;
+$scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20;
 
 @each $scale in $scales {
   // Генерация маргинов (например, .mb-4)
@@ -74,8 +76,46 @@ $scales: 1, 2, 3, 4, 6, 8, 10, 12, 20;
   .py-#{$scale} {
     padding-block: calc(var(--spacing) * #{$scale});
   }
+
+  .pt-#{$scale} {
+    padding-top: calc(var(--spacing) * #{$scale});
+  }
+
+  .pb-#{$scale} {
+    padding-bottom: calc(var(--spacing) * #{$scale});
+  }
 }
 
+@media (max-width: 768px) {
+  @each $scale in $scales {
+    // Генерация маргинов (например, .mb-4)
+    .m_mb-#{$scale} {
+      margin-bottom: calc(var(--spacing) * #{$scale});
+    }
+    .m_mt-#{$scale} {
+      margin-top: calc(var(--spacing) * #{$scale});
+    }
+
+    // Генерация паддингов (например, .p-4)
+    .m_p-#{$scale} {
+      padding: calc(var(--spacing) * #{$scale});
+    }
+    .m_px-#{$scale} {
+      padding-inline: calc(var(--spacing) * #{$scale});
+    }
+    .m_py-#{$scale} {
+      padding-block: calc(var(--spacing) * #{$scale});
+    }
+
+    .m_pt-#{$scale} {
+      padding-top: calc(var(--spacing) * #{$scale});
+    }
+
+    .m_pb-#{$scale} {
+      padding-bottom: calc(var(--spacing) * #{$scale});
+    }
+  }
+}
 //
 
 .container {
@@ -158,6 +198,10 @@ h4 {
 
 .text_muted {
   color: var(--muted-foreground);
+}
+
+.text_white {
+  color: #fff;
 }
 
 .text_accent {
