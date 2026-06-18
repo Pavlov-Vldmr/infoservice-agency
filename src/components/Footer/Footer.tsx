@@ -19,17 +19,17 @@ function Footer() {
                         <nav>
                             <h4 className='mb-4'>Навигация</h4>
                             <ul>
-                                <li> <Link to="/">Главная</Link></li>
-                                <li> <Link to="/About">О компании</Link></li>
-                                <li> <Link to="/Services">Услуги</Link></li>
-                                <li> <Link to="/Objects">Объъекты</Link></li>
-                                <li> <Link to="/Contacts">Контакты</Link></li>
+                                <li> <Link to="/infoservice-agency/">Главная</Link></li>
+                                <li> <Link to="/infoservice-agency/about">О компании</Link></li>
+                                <li> <Link to="/infoservice-agency/services">Услуги</Link></li>
+                                <li> <Link to="/infoservice-agency/objects">Объъекты</Link></li>
+                                <li> <Link to="/infoservice-agency/contacts">Контакты</Link></li>
                             </ul>
                         </nav>
                         <nav>
                             <h4 className='mb-4'>Наши услуги</h4>
                             <ul>
-                                <li><Link to="/">Физическая охрана</Link></li>
+                                <li><Link to="/infoservice-agency/services/Ohrana-zhilih-kompl">Охрана жилых комплексов</Link></li>
                                 <li><Link to="/">Видеонаблюдение</Link></li>
                                 <li><Link to="/">Контроль доступа</Link></li>
                                 <li><Link to="/">Пультовая охрана</Link></li>

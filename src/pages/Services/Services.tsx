@@ -17,7 +17,7 @@ function Services() {
         <>
             <PageTitle title="Наши услуги" subTitle="Комплексные решения по обеспечению безопасности вашей недвижимости" />
 
-            <div className="services">
+            <section className="services">
                 <div className="container services__container  p-10 m_p-4">
                     {data.map(item => (
                         <>
@@ -25,7 +25,7 @@ function Services() {
                         </>
                     ))}
                 </div>
-            </div>
+            </section>
 
 
         </>

@@ -82,8 +82,7 @@ footer {
         grid-template-columns: repeat(1, minmax(0, 1fr));
         .logo {
           p {
-            font-size: var(--text-xs);
-            width: 75%;
+            display: none;
           }
         }
         nav {
@@ -94,7 +93,7 @@ footer {
               font-size: var(--text-xs);
               a {
                 margin: 0;
-                padding: 0;
+                padding-bottom: calc(var(--spacing) * 0);
               }
             }
           }
@@ -107,10 +106,10 @@ footer {
             li {
               margin-bottom: calc(var(--spacing));
               font-size: var(--text-xs);
-              a {
-                margin: 0;
-                padding: 0;
-              }
+
+              display: block;
+              margin: 0;
+              padding-bottom: calc(var(--spacing) * 1);
             }
           }
         }

@@ -9,9 +9,9 @@ function AboutComponent() {
 
     return (
         <div className='about-component'>
-            <div className="container about-component__container">
+            <div className="container about-component__container p-10 m_p-4">
                 <div className='about-component__top'>
-                    <div className='about-component__guardian mt-8'>
+                    <div className='about-component__guardian mt-8 m_mt-0'>
                         <img src={guardian} alt="" />
                     </div>
                     <div className='about-component__article'>

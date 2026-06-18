@@ -150,80 +150,13 @@ function Home() {
                 </div>
             </section>
 
-            <section className="home-about py-20">
-                {/* <div className="container home-about-container">
-                    <div className='home-about__top'>
-                        <div className='home-about__guardian mt-8'>
-                            <img src={guardian} alt="" />
-                        </div>
-                        <div className='home-about-article'>
-                            <h2 className='mb-4'>О компании ООО "ИнфоСервис"</h2>
-                            <p>Более 15 лет опыта в сфере частной охраны позволили компании ИнфоСервис стать надежным партнером в области безопасности недвижимости. Мы специализируемся на защите жилой и коммерческой недвижимости, используя передовые технологии и высококвалифицированный персонал.</p>
-                            <p className='some__text text_muted mt-4'>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
-                            <div className='home-about-article-adv mt-8'>
-                                <div className='home-about-article-adv__item'>
-                                    <Icons.Shield className='home-about__icons icon_accent' />
+            <section className="home-about py-20 m_py-0">
 
-                                    <div className='home-about-article-adv__item__text'>
-                                        <h4>Лицензия и страхование</h4>
-                                        <p>Полный пакет лицензий и комплексное страхование ответственности</p>
-                                    </div>
-                                </div>
-                                <div className='home-about-article-adv__item'>
-                                    <Icons.Shield className='home-about__icons icon_accent' />
-
-                                    <div className='home-about-article-adv__item__text'>
-                                        <h4>Лицензия и страхование</h4>
-                                        <p>Полный пакет лицензий и комплексное страхование ответственности</p>
-                                    </div>
-                                </div>
-                                <div className='home-about-article-adv__item'>
-                                    <Icons.Shield className='home-about__icons icon_accent' />
-
-                                    <div className='home-about-article-adv__item__text'>
-                                        <h4>Лицензия и страхование</h4>
-                                        <p>Полный пакет лицензий и комплексное страхование ответственности</p>
-                                    </div>
-                                </div>
-                                <div className='home-about-article-adv__item'>
-                                    <Icons.Shield className='home-about__icons icon_accent' />
-
-                                    <div className='home-about-article-adv__item__text'>
-                                        <h4>Лицензия и страхование</h4>
-                                        <p>Полный пакет лицензий и комплексное страхование ответственности</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="home-achievements-plates">
-                        <div>
-                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                            <h3>15+</h3>
-                            <span>Лет</span>
-                        </div>
-                        <div>
-                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                            <h3>15+</h3>
-                            <span>Лет</span>
-                        </div>
-                        <div>
-                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                            <h3>15+</h3>
-                            <span>Лет</span>
-                        </div>
-                        <div>
-                            <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                            <h3>15+</h3>
-                            <span>Лет</span>
-                        </div>
-                    </div>
-                </div> */}
                 <AboutComponent />
             </section>
 
             {/* slider here */}
-            <section className="home-reviews py-20">
+            <section className="home-reviews py-20 ">
                 <div className="container">
                     <div className='home-reviews__title mb-10'>
                         <h2 className='text_center mb-4'>Отзывы наших клиентов</h2>

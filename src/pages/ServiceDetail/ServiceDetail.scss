@@ -46,6 +46,7 @@
 .list-component {
   border-radius: 0.625rem;
   box-shadow: var(--box-shadow);
+  height: -webkit-fill-available;
   height: stretch;
 
   h2 {
