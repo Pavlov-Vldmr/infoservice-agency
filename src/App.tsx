@@ -11,6 +11,8 @@ import Footer from './components/Footer/Footer'
 import Contacts from './pages/Contacts/Contacts'
 import ScrollToTop from './features/ScrollToTop'
 
+// Расширяем глобальный объект Window, чтобы TS знал про window.ymaps3
+
 
 function App() {
 

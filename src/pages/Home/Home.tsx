@@ -9,6 +9,7 @@ import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
 import { Icons } from '../../components/Icons'
 import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
 import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
+import AboutComponent from '@/components/AboutComonent/AboutComonent'
 
 function Home() {
     // const t = "Apply"
@@ -150,7 +151,7 @@ function Home() {
             </section>
 
             <section className="home-about py-20">
-                <div className="container home-about-container">
+                {/* <div className="container home-about-container">
                     <div className='home-about__top'>
                         <div className='home-about__guardian mt-8'>
                             <img src={guardian} alt="" />
@@ -217,7 +218,8 @@ function Home() {
                             <span>Лет</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
+                <AboutComponent />
             </section>
 
             {/* slider here */}
