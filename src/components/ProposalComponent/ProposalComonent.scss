@@ -1,0 +1,22 @@
+.proposal__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.625rem;
+  background-color: var(--accent);
+}
+.proposal__buttons {
+  display: flex;
+  gap: calc(var(--spacing) * 4);
+}
+
+@media (max-width: 768px) {
+  .proposal__container {
+  }
+
+  .proposal__buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: calc(var(--spacing) * 2);
+  }
+}

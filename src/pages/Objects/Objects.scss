@@ -10,18 +10,6 @@
 
 .objects-proposal {
   background-color: var(--bg-gray);
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0.625rem;
-    background-color: var(--accent);
-  }
-  &__buttons {
-    display: flex;
-    gap: calc(var(--spacing) * 4);
-  }
 }
 
 @media (max-width: 768px) {
@@ -30,17 +18,6 @@
       display: grid;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: calc(var(--spacing) * 3);
-    }
-  }
-
-  .objects-proposal {
-    &__container {
-    }
-
-    &__buttons {
-      flex-direction: column;
-      width: 100%;
-      gap: calc(var(--spacing) * 2);
     }
   }
 }

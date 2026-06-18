@@ -1,3 +1,102 @@
 .service-detail {
-  background-color: #fff;
+  background-color: var(--bg-gray);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: calc(var(--spacing) * 8);
+  }
+
+  &__img {
+    border-radius: 0.625rem;
+    background-color: gray;
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &_text {
+      flex-grow: 1;
+    }
+  }
+}
+
+.service-detail-proposal {
+  background-color: var(--bg-gray);
+}
+
+// в компонент
+.consultation-component {
+  border-radius: 0.625rem;
+  background-color: var(--accent);
+  h3 {
+    font-size: var(--text-2xl);
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.list-component {
+  border-radius: 0.625rem;
+  box-shadow: var(--box-shadow);
+  height: stretch;
+
+  h2 {
+    font-weight: 500;
+    font-size: var(--text-xl);
+  }
+
+  ul {
+    li {
+      margin-bottom: calc(var(--spacing) * 2);
+      display: flex;
+      align-items: center;
+
+      .list-component__img {
+        width: 25px;
+        height: 25px;
+        stroke: var(--accent);
+
+        path {
+          stroke: var(--accent);
+        }
+      }
+
+      .list-component__text {
+        margin-left: calc(var(--spacing) * 2);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail {
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+      gap: calc(var(--spacing) * 4);
+    }
+
+    &__img {
+      border-radius: 0.625rem;
+      background-color: gray;
+      min-height: 200px;
+      max-height: 400px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+
+      &_text {
+        flex-grow: 1;
+      }
+    }
+  }
 }
