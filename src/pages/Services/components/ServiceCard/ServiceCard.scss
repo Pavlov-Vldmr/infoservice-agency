@@ -1,12 +1,13 @@
 .service-card {
   text-decoration: none;
+  background-color: #fff;
   border-radius: 0.625rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.3s;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.8);
