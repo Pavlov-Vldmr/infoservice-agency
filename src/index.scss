@@ -53,7 +53,7 @@
 }
 
 // marging and padding
-$scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 20;
+$scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20;
 
 @each $scale in $scales {
   // Генерация маргинов (например, .mb-4)

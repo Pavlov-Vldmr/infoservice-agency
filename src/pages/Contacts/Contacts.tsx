@@ -9,7 +9,7 @@ function Contacts() {
 
     return (
         <>
-            <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом" />
+            <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
             <div className="contacts">
                 <div className="container contacts__container">
 

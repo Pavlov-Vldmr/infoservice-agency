@@ -7,9 +7,9 @@ function PageTitle(props: { title: string, subTitle: string }) {
 
     return (
         <>
-            <div className="title py-12 mt-20">
-                <div className="container title__container">
-                    <h1>{props.title}</h1>
+            <div className="title-component pt-20 pb-12 mt-14 m_mt-4">
+                <div className="container title-component__container m_p-4">
+                    <h1 className='m_mb-4'>{props.title}</h1>
                     <p>{props.subTitle}</p>
                 </div>
             </div>
