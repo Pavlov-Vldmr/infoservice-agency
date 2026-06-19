@@ -24,8 +24,10 @@ function Objects() {
                     {/* </div> */}
                 </div>
             </section>
-            <section className="objects-proposal pb-8 px-8 m_px-4">
-                <ProposalComonent />
+            <section className="objects-proposal pb-8 ">
+                <div className="container objects-proposal__container p-10 m_p-4">
+                    <ProposalComonent />
+                </div>
             </section>
 
         </>
