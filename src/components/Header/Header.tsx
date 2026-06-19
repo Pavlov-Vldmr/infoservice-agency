@@ -4,6 +4,7 @@ import './Header.scss'
 
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import logo from '../../assets/images/logo-full.svg';
+
 import HamburgerComponent from "./components/HumburgerComponent";
 
 function Header() {
@@ -24,6 +25,7 @@ function Header() {
                     <div className="container bottom__container px-8 m_px-0">
                         <div className="logo">
                             <img src={logo} alt="Логотип Инфосервис" />
+
                         </div>
                         <nav className={`nav__links`}>
                             <ul>
