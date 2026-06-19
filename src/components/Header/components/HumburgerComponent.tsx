@@ -5,6 +5,13 @@ import { NavLink, useLocation } from "react-router-dom"
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
 
 function HamburgerComponent() {
+
+    const setHeight = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    window.addEventListener('resize', setHeight);
+    setHeight();
     const [open, setOpen] = useState(false)
     // const menuRef = useRef(null);
     const menuRef = useRef<HTMLDivElement>(null);

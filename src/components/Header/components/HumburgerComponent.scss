@@ -8,7 +8,8 @@
     left: 0;
     top: 85px;
     width: 100%;
-    height: calc(100vh - 85px);
+    height: calc(100svh - 85px);
+    height: calc(var(--vh, 1vh) * 100 - 85px);
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
@@ -17,6 +18,15 @@
       opacity 0.3s ease,
       visibility 0.3s ease,
       transform 0.3s ease;
+
+    // 2. Включает плавный скролл внутри меню на iOS
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+
+    // 3. Фикс аппаратного ускорения анимации в Safari
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     &._active {
       opacity: 1;
@@ -37,6 +47,8 @@
             flex-grow: 1;
             color: var(--primary);
             user-select: none;
+
+            -webkit-tap-highlight-color: transparent; // Убирает серый квадрат при тапе
             &:active {
               background-color: #ffffff61;
             }
@@ -57,20 +69,17 @@
 
       a {
         display: block;
-        // background-color: red;
         color: gray;
         text-decoration: none;
         position: relative;
         width: fit-content;
 
         &.phone::before {
-          // position: absolute;
           color: #fff;
           content: "\1F4DE";
           padding-right: 4px;
         }
         &.mail::before {
-          // position: absolute;
           color: #fff;
           content: "\2709";
           padding-right: 4px;
