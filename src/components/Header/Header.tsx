@@ -13,7 +13,7 @@ function Header() {
         <>
             <header className="fixed">
                 <div className="top">
-                    <div className="container top__container">
+                    <div className="container top__container px-8 m_px-0">
                         <div className="top_phone">+7 (495) 123-45-67</div>
                         <div className="top_mail">info@infoservice-охрана.рф</div>
                         <span className="top_guard">Круглосуточная служба безопасности</span>
@@ -21,7 +21,7 @@ function Header() {
                 </div>
 
                 <div className="bottom">
-                    <div className="container bottom__container">
+                    <div className="container bottom__container px-8 m_px-0">
                         <div className="logo">
                             <img src={logo} alt="Логотип Инфосервис" />
                         </div>
