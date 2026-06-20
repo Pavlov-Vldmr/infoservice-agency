@@ -20,9 +20,9 @@ function Contacts() {
                     </div>
                 </div>
             </div>
-            <div className="contacts__map pb-8 m_px-4">
+            <div className="contacts__map pb-8 px-4 m_px-4">
 
-                <div className="container contacts__map__container">
+                <div className="container contacts__map__container ">
                     <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
 
                     <div className="map__element p-8 m_p-4">

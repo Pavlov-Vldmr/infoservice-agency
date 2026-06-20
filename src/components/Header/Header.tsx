@@ -5,7 +5,8 @@ import './Header.scss'
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import logo from '../../assets/images/logo-full.svg';
 
-import HamburgerComponent from "./components/HumburgerComponent";
+import HamburgerComponent from "./components/HamburgerComponent/HumburgerComponent";
+import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 
 function Header() {
 
@@ -28,13 +29,7 @@ function Header() {
 
                         </div>
                         <nav className={`nav__links`}>
-                            <ul>
-                                <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/about">О компании</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/services">Услуги</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/objects">Объекты</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/contacts">Контакты</NavLink></li>
-                            </ul>
+                            <NavLinksComponent />
                         </nav>
 
                         <div className="bottom__button">

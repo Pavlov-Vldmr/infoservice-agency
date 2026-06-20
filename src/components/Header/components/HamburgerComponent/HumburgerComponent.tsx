@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import './HumburgerComponent.scss'
 import { NavLink, useLocation } from "react-router-dom"
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
+import NavLinksComponent from "../NavLinksComponent/NavLinksComponent"
 
 function HamburgerComponent() {
 
@@ -59,13 +60,7 @@ function HamburgerComponent() {
                 {/* {open && */}
                 <div className={`hamburger__nav ${open ? '_active' : ''}`}>
                     <nav className={`hamburger__nav__links`}>
-                        <ul>
-                            <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/about">О компании</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/services">Услуги</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/objects">Объъекты</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/contacts">Контакты</NavLink></li>
-                        </ul>
+                        <NavLinksComponent />
                     </nav>
                     <div className="hamburger__nav__buttons p-4">
                         <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
