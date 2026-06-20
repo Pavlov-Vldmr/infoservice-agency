@@ -1,17 +1,23 @@
 // import { useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
 import './ReviewsSlider.scss'
 
 export default () => {
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index: number, className: string) {
+            return '<span class="' + className + '">' + '</span>';
+        },
+    };
 
     return (
         <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Pagination, Autoplay]}
             spaceBetween={50}
             slidesPerView={2}
             breakpoints={{
@@ -24,6 +30,8 @@ export default () => {
                     spaceBetween: 25
                 }
             }}
+            pagination={pagination}
+            className="reviews-slider-swiper"
             // onSlideChange={() => console.log('slide change')}
             // onSwiper={(swiper) => console.log(swiper)}
             loop={true}

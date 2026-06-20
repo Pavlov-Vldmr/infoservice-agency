@@ -31,3 +31,34 @@
     }
   }
 }
+
+.reviews-slider-swiper {
+  .swiper-pagination {
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    .swiper-pagination-bullet {
+      margin-top: calc(var(--spacing) * 8);
+      padding: calc(var(--spacing));
+      margin-inline: calc(var(--spacing));
+      width: 4px;
+      height: 4px;
+      background-color: rgba(128, 128, 128, 0.262);
+      border-radius: 50%;
+      opacity: 1;
+      transition: background-color 0.5s;
+
+      &-active {
+        background-color: var(--primary);
+        background-image: linear-gradient(
+          190deg,
+          var(--primary),
+          var(--accent)
+        );
+      }
+    }
+  }
+}
