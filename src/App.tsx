@@ -11,8 +11,20 @@ import Footer from './components/Footer/Footer'
 import Contacts from './pages/Contacts/Contacts'
 import ScrollToTop from './features/ScrollToTop'
 
-// Расширяем глобальный объект Window, чтобы TS знал про window.ymaps3
+import { ErrorBoundary, type FallbackProps } from 'react-error-boundary';
 
+// function FallbackComponent({ error, resetErrorBoundary }: FallbackProps) {
+//   return (
+//     <div role="alert">
+//       <p>Что-то пошло не так:</p>
+//       {/* Приводим ошибку к строке, так как unknown/any нельзя безопасно читать напрямую */}
+//       <pre style={{ color: 'red' }}>
+//         {error instanceof Error ? error.message : String(error)}
+//       </pre>
+//       <button onClick={resetErrorBoundary}>Попробовать снова</button>
+//     </div>
+//   );
+// }
 
 function App() {
 
@@ -24,6 +36,14 @@ function App() {
         <ScrollToTop />
         <Header />
         <div className='main'>
+
+          {/* <ErrorBoundary
+            // FallbackComponent={FallbackComponent}
+            fallback="Error occurred"
+            onReset={() => {
+              // Reset error boundary logic here
+            }}
+          > */}
           <Routes>
             {/* <Route path="/" element={<Home />} /> */}
             <Route path="/infoservice-agency" element={<Home />} />
@@ -36,10 +56,17 @@ function App() {
             {/* <Route path="/product/:link" element={<ProductPage />} /> */}
             <Route path='/infoservice-agency/*' element={<NotFound />} />
           </Routes>
+          {/* </ErrorBoundary> */}
+
+
         </div>
 
         <Footer />
-      </Router>
+      </Router >
+
+
+
+
     </>
   )
 }

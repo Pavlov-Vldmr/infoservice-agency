@@ -10,12 +10,14 @@ import { Icons } from '../../components/Icons'
 import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
 import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
 import AboutComponent from '@/components/AboutComonent/AboutComonent'
+import { ErrorBoundary } from 'react-error-boundary'
 
 function Home() {
     // const t = "Apply"
 
     return (
         <>
+
             <section className="home-hero">
                 <div className="container home-hero__container p-10">
                     <div className='home-hero__main'>
@@ -31,6 +33,7 @@ function Home() {
                     </div> */}
                 </div>
             </section >
+
 
             <section className="home-achievements py-4">
                 <div className="container home-achievements__container p-2">
@@ -99,7 +102,9 @@ function Home() {
                         <p className='text_center text_muted py-4'>Мы обеспечиваем безопасность разных типов недвижимости</p>
                     </div>
                     <div className="home-objects__slider">
+
                         <ObjectsSlider />
+
                     </div>
                 </div>
             </section>
