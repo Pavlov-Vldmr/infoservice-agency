@@ -31,17 +31,17 @@
       border-radius: 0.625rem;
       background-color: rgb(241, 241, 241);
       padding: calc(var(--spacing) * 6);
+      a {
+        display: block;
+        color: var(--primary);
+        margin-bottom: calc(var(--spacing) * 4);
+        text-decoration: underline;
+      }
       p {
-        &:first-child {
-          color: var(--primary);
-          margin-bottom: calc(var(--spacing) * 4);
-        }
-        &:last-child {
-          color: var(--muted-foreground);
-          font-size: var(--text-xs);
-          max-width: 60%;
-          margin: 0 auto;
-        }
+        color: var(--muted-foreground);
+        font-size: var(--text-xs);
+        max-width: 60%;
+        margin: 0 auto;
       }
     }
   }
