@@ -32,6 +32,13 @@
   }
 }
 
+.btn_callback {
+  flex-grow: 1;
+  &:hover {
+    background-color: color-mix(in oklab, var(--primary) 30%, transparent);
+  }
+}
+
 .btn_bordered {
   border: 1px solid rgb(255, 255, 255);
 }

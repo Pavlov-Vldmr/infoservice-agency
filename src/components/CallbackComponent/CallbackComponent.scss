@@ -1,0 +1,69 @@
+.callback-component {
+  display: flex;
+  flex-grow: 1;
+  // display: none;
+  .callback-component-form {
+    position: absolute;
+
+    z-index: 1000;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-30px);
+    left: 0;
+    top: 85px;
+    width: 100%;
+    height: calc(100svh - 85px);
+    height: calc(var(--vh, 1vh) * 100 - 85px);
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.736);
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+
+    // 2. Включает плавный скролл внутри меню на iOS
+    -webkit-overflow-scrolling: touch;
+    // overflow-y: auto;
+
+    // 3. Фикс аппаратного ускорения анимации в Safari
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    .callback-form {
+      max-width: 300px;
+      margin: auto;
+
+      .btn-close {
+        // position: absolute;
+        // top: 10px;
+        width: 24px;
+        height: 24px;
+
+        // right: 10px;
+        background: var(--accent);
+        border: none;
+        border-radius: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+
+        display: flex;
+        /* margin-right: auto; */
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-left: auto;
+      }
+    }
+
+    &._active {
+      position: fixed;
+      backdrop-filter: blur(10px);
+      opacity: 1;
+      z-index: 1000;
+      visibility: visible;
+      transform: translateY(0); // Возвращаем в исходную позицию
+    }
+  }
+}

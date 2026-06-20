@@ -10,10 +10,22 @@ import { Icons } from '../../components/Icons'
 import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
 import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
 import AboutComponent from '@/components/AboutComonent/AboutComonent'
+import CallbackComponent from '@/components/CallbackComponent/CallbackComponent'
+
 import { ErrorBoundary } from 'react-error-boundary'
 
 function Home() {
     // const t = "Apply"
+
+    const testA = () => {
+        alert('testA')
+    }
+    const testB = () => {
+        alert('testB')
+    }
+    const handleCallClick = () => {
+        alert('')
+    }
 
     return (
         <>
@@ -25,8 +37,12 @@ function Home() {
                         <h1>Охрана недвижимости под надежной защитой</h1>
                         <p>Профессиональная охрана коммерческой и жилой недвижимости. Круглосуточный мониторинг, современное оборудование и опытные специалисты.</p>
                         <div className='home-hero__main__btns mt-4'>
-                            <MainActButton variant='white' title="Заказать онлайн"></MainActButton>
-                            <MainActButton variant="primary" title="Наши услуги" bordered ></MainActButton>
+                            <MainActButton onClick={testA} variant='white' title="Заказать онлайн"></MainActButton>
+                            <MainActButton onClick={testB} variant="primary" title="Наши услуги" bordered ></MainActButton>
+                            <div className='callback-btn'>
+                                <CallbackComponent />
+
+                            </div>
                         </div>
                     </div>
                     {/* <div className='home-hero-life'>
