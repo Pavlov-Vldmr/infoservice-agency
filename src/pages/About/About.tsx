@@ -1,7 +1,7 @@
 import AboutComponent from "@/components/AboutComonent/AboutComonent"
 import PageTitle from "../../components/PageTitle/PageTitle"
 import './About.scss'
-
+import license from '@/assets/ServicesData/license.txt'
 function About() {
 
 
@@ -19,15 +19,15 @@ function About() {
                     </div>
                     <div className="about-sertificate__list ">
                         <div className="about-sertificate__list__item">
-                            <p>Лицензия на охранную деятельность</p>
+                            <a href={license} download={'license.txt'}>Лицензия на охранную деятельность</a>
                             <p>Свидетельство о государственной регистрации</p>
                         </div>
                         <div className="about-sertificate__list__item">
-                            <p >Лицензия на охранную деятельность</p>
+                            <a href={license} download={'license.txt'}>Лицензия на охранную деятельность</a>
                             <p>Свидетельство о государственной регистрации</p>
                         </div>
                         <div className="about-sertificate__list__item">
-                            <p>Лицензия на охранную деятельность</p>
+                            <a href={license} download={'license.txt'}>Лицензия на охранную деятельность</a>
                             <p>Свидетельство о государственной регистрации</p>
                         </div>
                     </div>

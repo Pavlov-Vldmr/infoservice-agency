@@ -1,22 +1,37 @@
-import './MainActButton.scss'
+import { memo, type MouseEventHandler } from 'react';
+import './MainActButton.scss';
 
+interface MainActButtonProps {
+    title: string;
+    variant?: string;
+    bordered?: boolean;
+    onClick?: MouseEventHandler<HTMLButtonElement>; // для внешней функции
+    href?: string;
+    target?: string; // ex , '_blank')
+}
 
-// interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-//     //   children: ReactNode; // Содержимое внутри тега кнопки
-//     variant?: 'primary' | 'secondary'; // Кастомный проп для стилей
-// }
+const MainActButton = memo(({
+    title,
+    variant = 'default',
+    bordered = false,
+    onClick,
+    href,
+    target
+}: MainActButtonProps) => {
 
+    const className = [
+        'btn',
+        `btn_${variant}`,
+        bordered ? 'btn_bordered' : ''
+    ].filter(Boolean).join(' ');
 
-function MainActButton(props: { title: string, variant?: string, bordered?: boolean }) {
 
 
     return (
-        <>
-            <button onClick={() => alert('a')}
-                className={`btn btn_${props.variant} ${props.bordered ? 'btn_bordered' : ''}`} >{props.title}
-            </button>
-        </>
-    )
-}
+        <button onClick={onClick as MouseEventHandler<HTMLButtonElement>} className={className}>
+            {title}
+        </button>
+    );
+});
 
-export default MainActButton
+export default MainActButton;

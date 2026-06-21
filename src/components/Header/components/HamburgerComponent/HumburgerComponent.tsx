@@ -1,8 +1,9 @@
 import Hamburger from "hamburger-react"
 import { useEffect, useRef, useState } from "react"
 import './HumburgerComponent.scss'
-import { NavLink, useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
+import NavLinksComponent from "../NavLinksComponent/NavLinksComponent"
 
 function HamburgerComponent() {
 
@@ -13,7 +14,6 @@ function HamburgerComponent() {
     window.addEventListener('resize', setHeight);
     setHeight();
     const [open, setOpen] = useState(false)
-    // const menuRef = useRef(null);
     const menuRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
 
@@ -31,7 +31,7 @@ function HamburgerComponent() {
 
     useEffect(() => {
         setOpen(false);
-    }, [location]); // Срабатывает каждый раз, когда меняется URL
+    }, [location]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -44,7 +44,15 @@ function HamburgerComponent() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [open]); // Зависит от состояния open для экономии ресурсов
+    }, [open]);
+
+    const navigate = useNavigate();
+
+    const handleGoToSection = () => {
+        navigate('/infoservice-agency/contacts', { state: { scrollToSection: true } });
+    };
+
+
     return (
         <>
             <div ref={menuRef} className="hamburger">
@@ -56,20 +64,14 @@ function HamburgerComponent() {
                     rounded
                     hideOutline={false}
                 />
-                {/* {open && */}
                 <div className={`hamburger__nav ${open ? '_active' : ''}`}>
                     <nav className={`hamburger__nav__links`}>
-                        <ul>
-                            <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/about">О компании</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/services">Услуги</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/objects">Объъекты</NavLink></li>
-                            <li> <NavLink to="/infoservice-agency/contacts">Контакты</NavLink></li>
-                        </ul>
+                        <NavLinksComponent />
                     </nav>
                     <div className="hamburger__nav__buttons p-4">
                         <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
-                        <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
+                        <MainActButton onClick={handleGoToSection} variant="white" bordered title="Позвоните мне"></MainActButton>
+
 
                     </div>
                     <div className="hamburger__nav__phone mt-6">

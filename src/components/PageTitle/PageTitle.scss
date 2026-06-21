@@ -1,6 +1,7 @@
 .title-component {
   --size100: 100px;
 
+  background-image: linear-gradient(190deg, var(--primary), var(--accent));
   background-color: var(--primary);
   color: #fff;
   position: relative;

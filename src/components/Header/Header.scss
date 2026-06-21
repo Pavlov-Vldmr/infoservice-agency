@@ -34,34 +34,17 @@ header {
 
       .logo {
       }
-
-      nav {
-        ul {
-          list-style: none;
-          display: inline-flex;
-          gap: calc(var(--spacing) * 8);
-          li {
-            a {
-              color: var(--foreground);
-              text-decoration: none;
-              &:hover {
-                color: var(--accent);
-              }
-            }
-            a.active {
-              font-weight: 600;
-            }
-          }
-        }
-      }
+    }
+    &__buttons {
+      display: flex;
+      gap: calc(var(--spacing) * 2);
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1340px) {
   header {
     .top {
-      display: none;
       padding: calc(var(--spacing));
       &__container {
         padding: calc(var(--spacing));
@@ -79,7 +62,7 @@ header {
     }
     .logo {
     }
-    .bottom__button {
+    .bottom__buttons {
       display: none;
     }
 
@@ -93,5 +76,13 @@ header {
       padding-inline: calc(var(--spacing) * 2);
     }
     // align-items: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .top {
+      display: none;
+    }
   }
 }

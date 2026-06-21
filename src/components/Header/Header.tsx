@@ -1,14 +1,25 @@
-import { NavLink } from "react-router-dom"
-
 import './Header.scss'
 
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import logo from '../../assets/images/logo-full.svg';
 
-import HamburgerComponent from "./components/HumburgerComponent";
+import HamburgerComponent from "./components/HamburgerComponent/HumburgerComponent";
+import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 
 function Header() {
 
+    const handleScroll = () => {
+        const element = document.getElementById('callBackForm');
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offset = 140;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
         <>
@@ -28,17 +39,12 @@ function Header() {
 
                         </div>
                         <nav className={`nav__links`}>
-                            <ul>
-                                <li> <NavLink to="/infoservice-agency">Главная</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/about">О компании</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/services">Услуги</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/objects">Объекты</NavLink></li>
-                                <li> <NavLink to="/infoservice-agency/contacts">Контакты</NavLink></li>
-                            </ul>
+                            <NavLinksComponent />
                         </nav>
 
-                        <div className="bottom__button">
-                            <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
+                        <div className="bottom__buttons">
+                            {/* <MainActButton variant="primary" title="Заказать онлайн"></MainActButton> */}
+                            <MainActButton onClick={handleScroll} variant="white" bordered title="Позвоните мне"></MainActButton>
                         </div>
                         <HamburgerComponent />
                     </div>

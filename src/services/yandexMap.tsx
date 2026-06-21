@@ -9,6 +9,8 @@ export default function App() {
     zoom: 17,
   };
 
+  // throw new Error("Тестовая ошибка карты!");
+
   return (
     <YMaps query={{ apikey: config.YMAP_API_KEY }}>
 
