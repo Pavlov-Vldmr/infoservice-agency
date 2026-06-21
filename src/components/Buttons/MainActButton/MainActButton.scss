@@ -21,6 +21,10 @@
   &:hover {
     background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
+
+  &.btn_bordered {
+    border: 1px solid rgb(255, 255, 255);
+  }
 }
 
 .btn_white {
@@ -30,6 +34,9 @@
     background-color: rgba(246, 246, 246, 0.8);
     // background-color: color-mix(in oklab, var(--whtie) 10%, transparent);
   }
+  &.btn_bordered {
+    border: 1px solid var(--accent);
+  }
 }
 
 .btn_callback {
@@ -37,8 +44,4 @@
   &:hover {
     background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
-}
-
-.btn_bordered {
-  border: 1px solid rgb(255, 255, 255);
 }

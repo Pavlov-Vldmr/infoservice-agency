@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom"
-
 import './Header.scss'
 
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
@@ -10,6 +8,18 @@ import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent"
 
 function Header() {
 
+    const handleScroll = () => {
+        const element = document.getElementById('callBackForm');
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offset = 140;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
         <>
@@ -32,8 +42,9 @@ function Header() {
                             <NavLinksComponent />
                         </nav>
 
-                        <div className="bottom__button">
-                            <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
+                        <div className="bottom__buttons">
+                            {/* <MainActButton variant="primary" title="Заказать онлайн"></MainActButton> */}
+                            <MainActButton onClick={handleScroll} variant="white" bordered title="Позвоните мне"></MainActButton>
                         </div>
                         <HamburgerComponent />
                     </div>

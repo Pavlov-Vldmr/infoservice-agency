@@ -34,26 +34,10 @@ header {
 
       .logo {
       }
-
-      nav {
-        // ul {
-        //   list-style: none;
-        //   display: inline-flex;
-        //   gap: calc(var(--spacing) * 8);
-        //   li {
-        //     a {
-        //       color: var(--foreground);
-        //       text-decoration: none;
-        //       &:hover {
-        //         color: var(--accent);
-        //       }
-        //     }
-        //     a.active {
-        //       font-weight: 600;
-        //     }
-        //   }
-        // }
-      }
+    }
+    &__buttons {
+      display: flex;
+      gap: calc(var(--spacing) * 2);
     }
   }
 }
@@ -78,7 +62,7 @@ header {
     }
     .logo {
     }
-    .bottom__button {
+    .bottom__buttons {
       display: none;
     }
 

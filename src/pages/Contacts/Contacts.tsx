@@ -4,17 +4,36 @@ import PageTitle from "../../components/PageTitle/PageTitle"
 import FeedbackForm from "../../features/FeedbackForm/FeedbackForm"
 import './Contacts.scss'
 import YandexMap from "@/services/yandexMap"
+import { useLocation } from "react-router-dom"
+import { useEffect, useRef } from "react"
 
 function Contacts() {
 
+    const location = useLocation();
+    const targetRef = useRef(null);
 
+    useEffect(() => {
+        // Проверяем, перешли ли мы с нужным флагом
+        if (location.state?.scrollToSection && targetRef.current) {
+            const element = document.getElementById('callBackForm');
+            console.log(element)
+            if (element) {
+                const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                const offset = 100;
+                const offsetPosition = elementPosition - offset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [location]);
     return (
         <>
             <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
             <div className="contacts">
                 <div className="container contacts__container">
-
-                    <div className="contacts__content">
+                    <div className="contacts__content" ref={targetRef}>
                         <ContactsInfo />
                         <FeedbackForm />
                     </div>
@@ -28,7 +47,6 @@ function Contacts() {
                     <div className="map__element p-8 m_p-4">
                         <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
                             <YandexMap />
-
                         </ErrorBoundary>
                     </div>
                 </div>

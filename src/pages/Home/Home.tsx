@@ -1,5 +1,6 @@
 import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import './Home.scss'
+import { useNavigate } from 'react-router-dom';
 
 // import svgExample from '../../assets/icons/svg-example.svg'
 
@@ -15,16 +16,10 @@ import CallbackComponent from '@/components/CallbackComponent/CallbackComponent'
 import { ErrorBoundary } from 'react-error-boundary'
 
 function Home() {
-    // const t = "Apply"
 
-    const testA = () => {
-        alert('testA')
-    }
-    const testB = () => {
-        alert('testB')
-    }
-    const handleCallClick = () => {
-        alert('')
+    const navigate = useNavigate();
+    const handleNavigateToServices = () => {
+        navigate('/infoservice-agency/services');
     }
 
     return (
@@ -37,16 +32,12 @@ function Home() {
                         <h1>Охрана недвижимости под надежной защитой</h1>
                         <p>Профессиональная охрана коммерческой и жилой недвижимости. Круглосуточный мониторинг, современное оборудование и опытные специалисты.</p>
                         <div className='home-hero__main__btns mt-4'>
-                            <MainActButton onClick={testA} variant='white' title="Заказать онлайн"></MainActButton>
-                            <MainActButton onClick={testB} variant="primary" title="Наши услуги" bordered ></MainActButton>
-                            <div className='callback-btn'>
-                                <CallbackComponent />
-
-                            </div>
+                            {/* // калькулятор */}
+                            <MainActButton variant='white' title="Заказать онлайн"></MainActButton>
+                            {/* // на страницу услуги */}
+                            <MainActButton onClick={handleNavigateToServices} variant="primary" title="Наши услуги" bordered ></MainActButton>
                         </div>
                     </div>
-                    {/* <div className='home-hero-life'>
-                    </div> */}
                 </div>
             </section >
 
@@ -189,7 +180,7 @@ function Home() {
                 </div>
             </section>
 
-            <section className="home-contacts py-20">
+            <section id='scrollTest' className="home-contacts py-20">
                 <div className="container home-contacts__container">
                     <div className='home-contacts__title mb-20'>
                         <h2 className='text_center mb-4'>Контакты</h2>
