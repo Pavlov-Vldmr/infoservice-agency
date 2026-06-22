@@ -45,8 +45,7 @@ function Header() {
                         </nav>
 
                         <div className="bottom__buttons">
-                            {/* <MainActButton variant="primary" title="Заказать онлайн"></MainActButton> */}
-                            <MainActButton onClick={handleScroll} variant="white" bordered title="Позвоните мне"></MainActButton>
+                            <MainActButton onClick={handleScroll} variant="primary" bordered title="Позвоните мне"></MainActButton>
                         </div>
                         <HamburgerComponent />
                     </div>
