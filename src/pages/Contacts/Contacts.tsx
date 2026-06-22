@@ -5,7 +5,8 @@ import FeedbackForm from "../../features/FeedbackForm/FeedbackForm"
 import './Contacts.scss'
 import YandexMap from "@/services/yandexMap"
 import { useLocation } from "react-router-dom"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { fetchCompanyInfo } from '@/services/api'
 
 function Contacts() {
 
@@ -28,12 +29,51 @@ function Contacts() {
             }
         }
     }, [location]);
+
+
+    interface CompanyInfo {
+        id: number;
+        documentId: string;
+        companyId: string;
+        phoneMain: string;
+        phoneAdd: string;
+        mailMain: string;
+        mailSupport: string;
+        location: string;
+        workTime: string;
+    }
+
+    const [datas, setDatas] = useState<CompanyInfo | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const loadCompanyInfo = async () => {
+            try {
+                const data = await fetchCompanyInfo();
+                setDatas(data);
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'Failed to load data');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadCompanyInfo();
+    }, []);
+    console.log('str')
+    console.log(datas)
+
+
+    // if (loading) return <div>Loading data...</div>;
+    // if (error) return <div>Error: {error}</div>;
     return (
         <>
             <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
             <div className="contacts">
                 <div className="container contacts__container">
                     <div className="contacts__content" ref={targetRef}>
+                        <a href="" className="test text_primary">123{datas?.phoneMain}</a>
                         <ContactsInfo />
                         <FeedbackForm />
                     </div>
