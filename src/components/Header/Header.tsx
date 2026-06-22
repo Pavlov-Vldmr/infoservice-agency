@@ -7,6 +7,8 @@ import HamburgerComponent from "./components/HamburgerComponent/HumburgerCompone
 import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 import PhoneComponent from '@/features/model/PhoneComponent';
 
+import { usePhones } from '@/contexts/CompanyInfoContext';
+
 function Header() {
 
     const handleScroll = () => {
@@ -22,13 +24,14 @@ function Header() {
         }
     };
 
+    const { phoneMain } = usePhones();
+
     return (
         <>
             <header className="fixed">
                 <div className="top">
                     <div className="container top__container px-8 m_px-0">
-                        <div className="top_phone">+7 (495) 123-45-67</div>
-                        {/* <PhoneComponent phone={dataCompanyInfo[0].phone.add} className='text_white' /> */}
+                        <PhoneComponent phone={phoneMain} className='text_white top_phone' />
                         <div className="top_mail">info@infoservice-охрана.рф</div>
                         <span className="top_guard">Круглосуточная служба безопасности</span>
                     </div>
