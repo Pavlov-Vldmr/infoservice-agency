@@ -1,37 +1,46 @@
-import { createContext, useContext, type ReactNode } from 'react';
-import companyData from '@/assets/ServicesData/companyInfo.json';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { type CompanyInfo, fetchCompanyInfo } from "@/services/api"
 
-// 1. Интерфейсы данных
-export interface IPhoneContacts {
-  phoneMain: string;
-  phoneAdd: string;
-  phoneEmergency: string;
+interface CompanyContextType {
+  companyInfo: CompanyInfo | null;
+  isLoading: boolean;
+  error: string | null;
 }
 
-export interface IMailContacts {
-  mailMain: string;
-  mailSpport: string;
-}
+const CompanyContext = createContext<CompanyContextType | undefined>(undefined);
 
-export interface ICompanyContacts {
-  phone: IPhoneContacts;
-  mail: IMailContacts;
-  'ofice-location': string;
-  'work-time': string;
-}
+export const CompanyProvider = ({ children }: { children: ReactNode }) => {
+  const [companyInfo, setCompanyInfo] = useState<CompanyInfo | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-const ContactsContext = createContext<ICompanyContacts>(companyData[0] as ICompanyContacts);
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setIsLoading(true);
+        const data = await fetchCompanyInfo();
+        setCompanyInfo(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
-interface ContactsProviderProps {
-  children: ReactNode;
-}
+    loadData();
+  }, []);
 
-export const ContactsProvider: React.FC<ContactsProviderProps> = ({ children }) => (
-  <ContactsContext.Provider value={companyData[0] as ICompanyContacts}>
-    {children}
-  </ContactsContext.Provider>
-);
+  return (
+    <CompanyContext.Provider value={{ companyInfo, isLoading, error }}>
+      {children}
+    </CompanyContext.Provider>
+  );
+};
 
-// 4. Кастомные хуки для удобного доступа
-export const useCompanyContacts = () => useContext(ContactsContext);
-export const usePhones = () => useContext(ContactsContext).phone;
+export const useCompany = () => {
+  const context = useContext(CompanyContext);
+  if (context === undefined) {
+    throw new Error('useCompany must be used within a CompanyProvider');
+  }
+  return context;
+};

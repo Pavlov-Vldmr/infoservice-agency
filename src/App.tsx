@@ -12,7 +12,7 @@ import Contacts from './pages/Contacts/Contacts'
 import ScrollToTop from './features/ScrollToTop'
 
 import { ErrorBoundary, type FallbackProps } from 'react-error-boundary';
-import { ContactsProvider } from '@/contexts/CompanyInfoContext'
+import { CompanyProvider } from '@/contexts/CompanyInfoContext'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
     <>
 
       <Router>
-        <ContactsProvider>
+        <CompanyProvider>
           <ScrollToTop />
           <Header />
           <div className='main'>
@@ -36,7 +36,7 @@ function App() {
             </Routes>
           </div>
           <Footer />
-        </ContactsProvider>
+        </CompanyProvider>
       </Router >
 
 

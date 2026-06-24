@@ -6,8 +6,7 @@ import logo from '../../assets/images/logo-full.svg';
 import HamburgerComponent from "./components/HamburgerComponent/HumburgerComponent";
 import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 import PhoneComponent from '@/features/model/PhoneComponent';
-
-import { usePhones } from '@/contexts/CompanyInfoContext';
+import { useCompany } from "@/contexts/CompanyInfoContext"
 
 function Header() {
 
@@ -24,14 +23,14 @@ function Header() {
         }
     };
 
-    const { phoneMain } = usePhones();
-
+    const { companyInfo } = useCompany();
+    console.log(companyInfo?.phoneMain)
     return (
         <>
             <header className="fixed">
                 <div className="top">
                     <div className="container top__container px-8 m_px-0">
-                        <PhoneComponent phone={phoneMain} className='text_white top_phone' />
+                        <PhoneComponent phone={`${companyInfo?.phoneMain}`} className='text_white top_phone' />
                         <div className="top_mail">info@infoservice-охрана.рф</div>
                         <span className="top_guard">Круглосуточная служба безопасности</span>
                     </div>
