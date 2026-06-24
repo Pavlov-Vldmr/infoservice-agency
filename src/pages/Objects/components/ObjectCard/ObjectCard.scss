@@ -1,6 +1,7 @@
 .object-card {
   display: block;
   overflow: hidden;
+  position: relative;
   // max-width: 400px;
   border-radius: 0.625rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -11,16 +12,23 @@
   }
   &__img {
     height: 200px;
+    width: 100%;
     background-color: rgb(178, 178, 178);
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
-    span {
-      display: block;
-      border-radius: 0.425rem;
-      font-size: var(--text-xs);
-      background-color: var(--accent);
-    }
+  }
+
+  .pseudo {
+    display: block;
+    width: 130px;
+    border-radius: 0.425rem;
+    font-size: var(--text-sm);
+    color: #fff;
+    background-color: var(--accent);
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
   &__content {
     h3 {

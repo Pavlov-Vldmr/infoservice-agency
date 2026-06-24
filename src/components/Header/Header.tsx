@@ -24,7 +24,6 @@ function Header() {
     };
 
     const { companyInfo } = useCompany();
-    console.log(companyInfo?.phoneMain)
     return (
         <>
             <header className="fixed">
