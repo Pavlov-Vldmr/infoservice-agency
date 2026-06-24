@@ -24,7 +24,6 @@ function Objects() {
                 setLoading(false);
             }
         }
-
         loadObjects();
     }, []);
 

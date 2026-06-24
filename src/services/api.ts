@@ -15,40 +15,11 @@ interface StrapiCollectionResponse<T> {
 
 export type { ICompanyInfo, ICompanyObject } from './api.types';
 
-// export interface CompanyInfo {
-//     id: number;
-//     documentId: string;
-//     companyId: string;
-//     phoneMain: string;
-//     phoneAdd: string;
-//     mailMain: string;
-//     mailSupport: string;
-//     location: string;
-//     workTime: string;
-// }
-
-// export interface CompanyObject {
-//     id: number;
-//     documentId: string;
-//     title: string;
-//     text: string;
-//     values: {
-//         square: string;
-//         guardians: string;
-//         since: string;
-//     }
-//     img?: [{
-//         url: string;
-
-//     }
-//     ]
-//     img_text: string;
-// }
-
-export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
-
-    const response = await fetch(`${API_URL}/api/company-infos/vd1hcwpxc5x40rpxgav2iphx`, {
-
+async function strapiFetch<T>(endpoint: string): Promise<T> {
+    if (!API_TOKEN) {
+        console.warn("API_TOKEN не задан. Запрос может завершиться ошибкой авторизации.");
+    }
+    const response = await fetch(`${API_URL}/api/${endpoint}`, {
         headers: {
             'Authorization': `Bearer ${API_TOKEN}`,
             'Content-Type': 'application/json',
@@ -56,27 +27,29 @@ export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
     });
 
     if (!response.ok) {
-        throw new Error(`Failed to fetch company info: ${response.statusText}`);
+        throw new Error(`Strapi error [${response.status}]: ${response.statusText}`);
     }
-    const result: StrapiSingleResponse<ICompanyInfo> = await response.json();
-    return result.data || null;
+
+    return response.json();
 }
 
+export async function fetchCompanyInfo(documentId: string): Promise<ICompanyInfo | null> {
+    try {
+        const result = await strapiFetch<StrapiSingleResponse<ICompanyInfo>>(`company-infos/${documentId}`);
+        return result.data || null;
+    } catch (error) {
+        console.error("Ошибка при получении инфо о компании:", error);
+        return null;
+    }
+}
 
 export async function fetchCompanyObjects(): Promise<ICompanyObject[]> {
-    const response = await fetch(`${API_URL}/api/company-objects?populate=*`, {
-        headers: {
-            'Authorization': `Bearer ${API_TOKEN}`,
-            'Content-Type': 'application/json',
-        },
-    });
-
-    if (!response.ok) {
-        throw new Error(`Failed to fetch articles: ${response.statusText}`);
+    try {
+        const query = new URLSearchParams({ populate: '*' }).toString();
+        const result = await strapiFetch<StrapiCollectionResponse<ICompanyObject>>(`company-objects?${query}`);
+        return result.data || [];
+    } catch (error) {
+        console.error("Ошибка при получении объектов компании:", error);
+        return [];
     }
-
-    const result: StrapiCollectionResponse<ICompanyObject> = await response.json();
-    console.log("Сырой ответ от Strapi:", result);
-    return result.data || [];
 }
-
