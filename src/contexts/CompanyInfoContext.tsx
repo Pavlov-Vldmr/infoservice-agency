@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-import { type CompanyInfo, fetchCompanyInfo } from "@/services/api"
+import { type ICompanyInfo, fetchCompanyInfo } from "@/services/api"
 
 interface CompanyContextType {
-  companyInfo: CompanyInfo | null;
+  companyInfo: ICompanyInfo | null;
   isLoading: boolean;
   error: string | null;
 }
@@ -10,7 +10,7 @@ interface CompanyContextType {
 const CompanyContext = createContext<CompanyContextType | undefined>(undefined);
 
 export const CompanyProvider = ({ children }: { children: ReactNode }) => {
-  const [companyInfo, setCompanyInfo] = useState<CompanyInfo | null>(null);
+  const [companyInfo, setCompanyInfo] = useState<ICompanyInfo | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

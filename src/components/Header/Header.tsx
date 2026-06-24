@@ -7,6 +7,7 @@ import HamburgerComponent from "./components/HamburgerComponent/HumburgerCompone
 import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 import PhoneComponent from '@/features/model/PhoneComponent';
 import { useCompany } from "@/contexts/CompanyInfoContext"
+import { CitySelector } from '@/features/CitySelector';
 
 function Header() {
 
@@ -31,7 +32,9 @@ function Header() {
                     <div className="container top__container px-8 m_px-0">
                         <PhoneComponent phone={`${companyInfo?.phoneMain}`} className='text_white top_phone' />
                         <div className="top_mail">info@infoservice-охрана.рф</div>
-                        <span className="top_guard">Круглосуточная служба безопасности</span>
+                        {/* <span className="top_guard">Круглосуточная служба безопасности</span>
+                         */}
+                        <CitySelector />
                     </div>
                 </div>
 

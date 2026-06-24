@@ -15,7 +15,10 @@ import CallbackComponent from '@/components/CallbackComponent/CallbackComponent'
 
 import { ErrorBoundary } from 'react-error-boundary'
 
+
+
 function Home() {
+
 
     const navigate = useNavigate();
     const handleNavigateToServices = () => {

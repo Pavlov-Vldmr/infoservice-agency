@@ -1,6 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
+import { data } from "react-router-dom";
 import { type ICompanyInfo, type ICompanyObject } from "./api.types"
 
 interface StrapiSingleResponse<T> {
@@ -33,16 +34,25 @@ async function strapiFetch<T>(endpoint: string): Promise<T> {
     return response.json();
 }
 
-export async function fetchCompanyInfo(documentId: string): Promise<ICompanyInfo | null> {
+export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
     try {
-        const result = await strapiFetch<StrapiSingleResponse<ICompanyInfo>>(`company-infos/${documentId}`);
-        return result.data || null;
+        // Запрашиваем обертку StrapiSingleResponse, содержащую ICompanyInfo
+        const result = await strapiFetch<StrapiSingleResponse<ICompanyInfo>>(
+            `company-infos/vd1hcwpxc5x40rpxgav2iphx?populate=*`
+        );
+
+        if (!result || !result.data) {
+            throw new Error("Данные о компании не найдены в ответе API");
+        }
+
+        return result.data;
     } catch (error) {
         console.error("Ошибка при получении инфо о компании:", error);
-        return null;
+        // Пробрасываем ошибку, чтобы React Context смог записать её в state.error
+        throw error;
+
     }
 }
-
 export async function fetchCompanyObjects(): Promise<ICompanyObject[]> {
     try {
         const query = new URLSearchParams({ populate: '*' }).toString();

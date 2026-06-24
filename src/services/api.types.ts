@@ -9,6 +9,16 @@ interface ICompanyInfo {
     mailSupport: string;
     location: string;
     workTime: string;
+    yuS: {
+        city: string;
+        address: string;
+        phone: string;
+    }[];
+    korsakov: {
+        city: string;
+        address: string;
+        phone: string;
+    }[]
 }
 
 interface ICompanyObject {

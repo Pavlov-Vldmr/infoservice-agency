@@ -29,7 +29,7 @@ function Contacts() {
     }, [location]);
 
     const { companyInfo } = useCompany();
-
+    console.log(companyInfo?.yuS[0].city)
     return (
         <>
             <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
