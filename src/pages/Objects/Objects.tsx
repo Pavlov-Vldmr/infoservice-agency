@@ -4,11 +4,11 @@ import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
 import ProposalComonent from "@/components/ProposalComponent/ProposalComonent"
-import { fetchCompanyObjects, type CompanyObject } from "@/services/api"
+import { fetchCompanyObjects, type ICompanyObject } from "@/services/api"
 import { useEffect, useState } from "react"
 
 function Objects() {
-    const [objects, setObjects] = useState<CompanyObject[]>([]);
+    const [objects, setObjects] = useState<ICompanyObject[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
