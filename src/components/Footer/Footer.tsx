@@ -3,6 +3,9 @@ import './Footer.scss'
 import logo from '../../assets/images/logo-full-light.svg';
 import { Link } from 'react-router-dom';
 
+import PhoneComponent from '@/features/model/PhoneComponent';
+
+
 
 function Footer() {
 
@@ -39,7 +42,8 @@ function Footer() {
                         <div className='footer__contacts'>
                             <h4 className='mb-4'>Контакты</h4>
                             <ul>
-                                <li>+7 (495) 123-45-67</li>
+                                <li>                        123
+                                </li>
                                 <li>info@infoservice-охрана.рф</li>
                                 <li>г. Москва, ул. Охранная, д. 123</li>
                                 <li>Деловой центр, 3 этаж</li>

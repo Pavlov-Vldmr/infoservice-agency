@@ -1,13 +1,13 @@
 [
   {
     "phone": {
-      "main": "+7 (495) 123-45-67",
-      "add": "+7 (495) 123-45-68",
-      "emergency": "+7 (495) 911-00-00"
+      "phoneMain": "+7 (777) 123-45-67",
+      "phoneAdd": "+7 (495) 123-45-68",
+      "phoneEmergency": "+7 (495) 911-00-00"
     },
     "mail": {
-      "main": "info@infoservice-охрана.рф",
-      "support": "support@infoservice-охрана.рф"
+      "mailMain": "info@infoservice-охрана.рф",
+      "mailSpport": "support@infoservice-охрана.рф"
     },
     "ofice-location": "г. Москва, ул. Охранная, д. 123 Деловой центр, 3 этаж",
     "work-time": "Пн-Пт: 9:00 - 18:00"

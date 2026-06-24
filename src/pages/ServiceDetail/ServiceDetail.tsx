@@ -1,16 +1,19 @@
 import { useParams } from 'react-router-dom';
-import data from '../../assets/ServicesData/generatedData.json'
+
 import './ServiceDetail.scss'
+import { Icons } from '@/components/Icons';
 import PageTitle from '@/components/PageTitle/PageTitle';
 import ProposalComonent from '@/components/ProposalComponent/ProposalComonent';
-import { Icons } from '@/components/Icons';
+import PhoneComponent from '@/features/model/PhoneComponent';
+
+import dataCompanyInfo from '../../assets/ServicesData/companyInfo.json'
+import data from '../../assets/ServicesData/generatedData.json'
 
 function ServiceDetail() {
     const { link } = useParams();
-
     const filteredData = data.filter(service => service.link === link);
 
-    //filteredData[0].valueName
+
     return (
         <>
             <PageTitle title={filteredData[0].title} subTitle={'Подзаголовок'} />
@@ -26,7 +29,7 @@ function ServiceDetail() {
                         <div className="consultation-component p-4">
                             <h3 className='text_white mb-4 '>Нужна консультация?</h3>
                             <p className='text_white mb-4'>Свяжитесь с нами для получения подробной информации</p>
-                            <a className='text_white' href="">+7-(123)-455-34-34</a>
+                            <PhoneComponent phone={dataCompanyInfo[0].phone.add} className='text_white' />
                         </div>
                     </div>
                     <div className='service-detail__options'>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@pbe/react-yandex-maps": "^1.2.5",
     "hamburger-react": "^2.5.2",
+    "imask": "^7.6.1",
     "normalize.css": "^8.0.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

@@ -6,14 +6,13 @@ import './Contacts.scss'
 import YandexMap from "@/services/yandexMap"
 import { useLocation } from "react-router-dom"
 import { useEffect, useRef } from "react"
-
+import { useCompany } from "@/contexts/CompanyInfoContext"
 function Contacts() {
 
     const location = useLocation();
     const targetRef = useRef(null);
 
     useEffect(() => {
-        // Проверяем, перешли ли мы с нужным флагом
         if (location.state?.scrollToSection && targetRef.current) {
             const element = document.getElementById('callBackForm');
             console.log(element)
@@ -28,12 +27,17 @@ function Contacts() {
             }
         }
     }, [location]);
+
+    const { companyInfo } = useCompany();
+    console.log(companyInfo?.yuS[0].city)
     return (
         <>
             <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
             <div className="contacts">
                 <div className="container contacts__container">
                     <div className="contacts__content" ref={targetRef}>
+                        <a href="" className="test text_primary">123{companyInfo?.phoneMain}</a>
+
                         <ContactsInfo />
                         <FeedbackForm />
                     </div>
