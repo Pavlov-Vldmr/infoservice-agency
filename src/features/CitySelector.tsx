@@ -1,9 +1,10 @@
 // src/components/CitySelector.tsx
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useCity } from '@/contexts/CityContext';
+// import { useCity } from '@/contexts/CityContext';
+import { useCity, type CityCode } from '@/contexts/CityContext';
 
-const CITIES = ['yuS', 'korsakov'];
+const CITIES: CityCode[] = ['yuS', 'korsakov'];
 
 export const CitySelector = () => {
     const { city, setCity } = useCity();
@@ -11,12 +12,13 @@ export const CitySelector = () => {
 
     useEffect(() => {
         const cityFromUrl = searchParams.get('city');
-        if (cityFromUrl && cityFromUrl !== city) {
-            setCity(cityFromUrl);
-        }
-    }, []);
 
-    const handleCityChange = (newCity: string) => {
+        if (cityFromUrl && CITIES.includes(cityFromUrl as CityCode) && cityFromUrl !== city) {
+            setCity(cityFromUrl as CityCode);
+        }
+    }, [searchParams, city, setCity]);
+
+    const handleCityChange = (newCity: CityCode) => {
         setCity(newCity);
         setSearchParams({ city: newCity });
     };
@@ -24,7 +26,7 @@ export const CitySelector = () => {
     return (
         <div className="city-selector">
             <span>Текущий город: {city}</span>
-            <select value={city} onChange={(e) => handleCityChange(e.target.value)}>
+            <select value={city} onChange={(e) => handleCityChange(e.target.value as CityCode)}>
                 {CITIES.map((c) => (
                     <option key={c} value={c}>
                         {c}
