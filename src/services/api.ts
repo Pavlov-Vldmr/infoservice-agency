@@ -36,7 +36,6 @@ async function strapiFetch<T>(endpoint: string): Promise<T> {
 
 export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
     try {
-        // Запрашиваем обертку StrapiSingleResponse, содержащую ICompanyInfo
         const result = await strapiFetch<StrapiSingleResponse<ICompanyInfo>>(
             `company-infos/vd1hcwpxc5x40rpxgav2iphx?populate=*`
         );
@@ -48,7 +47,6 @@ export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
         return result.data;
     } catch (error) {
         console.error("Ошибка при получении инфо о компании:", error);
-        // Пробрасываем ошибку, чтобы React Context смог записать её в state.error
         throw error;
 
     }
