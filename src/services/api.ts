@@ -1,7 +1,6 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
-import { data } from "react-router-dom";
 import { type ICompanyInfo, type ICompanyObject } from "./api.types"
 
 interface StrapiSingleResponse<T> {
@@ -37,7 +36,7 @@ async function strapiFetch<T>(endpoint: string): Promise<T> {
 export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
     try {
         const result = await strapiFetch<StrapiSingleResponse<ICompanyInfo>>(
-            `company-infos/vd1hcwpxc5x40rpxgav2iphx?populate=*`
+            `company-info?populate[city][populate]=*`
         );
 
         if (!result || !result.data) {

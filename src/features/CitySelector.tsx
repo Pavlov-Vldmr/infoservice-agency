@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useCity } from '@/contexts/CityContext';
 
-const CITIES = ['Москва', 'Санкт-Петербург', 'Казань', 'Новосибирск'];
+const CITIES = ['yuS', 'korsakov'];
 
 export const CitySelector = () => {
     const { city, setCity } = useCity();
