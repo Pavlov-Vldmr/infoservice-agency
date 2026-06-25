@@ -2,14 +2,7 @@ import { createContext, useContext, useState, useEffect, type ReactNode } from '
 // 1. Импортируем интерфейс компании
 import { type ICompanyInfo } from "@/services/api";
 
-/* 
-  2. Автоматически извлекаем ключи городов:
-  - 'typeof ICompanyInfo' здесь не нужен, берем сразу 'ICompanyInfo'
-  - ['city'] обращается к объекту городов внутри интерфейса
-  - NonNullable защищает от ошибки, если в интерфейсе city помечен как необязательный (city?)
-*/
 export type CityCode = keyof NonNullable<ICompanyInfo['city']>;
-// Результат будет автоматически равен: 'yuS' | 'korsakov'
 
 interface CityContextType {
   city: CityCode;

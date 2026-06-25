@@ -30,10 +30,9 @@ function Header() {
             <header className="fixed">
                 <div className="top">
                     <div className="container top__container px-8 m_px-0">
-                        <PhoneComponent phone={`${companyInfo?.phoneMain}`} className='text_white top_phone' />
-                        <div className="top_mail">info@infoservice-охрана.рф</div>
-                        {/* <span className="top_guard">Круглосуточная служба безопасности</span>
-                         */}
+                        <PhoneComponent phone={`${companyInfo?.phoneMain}`} className='text_white top_phone check' />
+                        {/* <div className="top_mail">info@infoservice-охрана.рф</div> */}
+
                         <CitySelector />
                     </div>
                 </div>
