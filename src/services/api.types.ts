@@ -1,24 +1,27 @@
 
 interface ICompanyInfo {
-    id: number;
     documentId: string;
     companyId: string;
     phoneMain: string;
     phoneAdd: string;
+    phoneEmergency: string;
     mailMain: string;
     mailSupport: string;
-    location: string;
-    workTime: string;
-    yuS: {
-        city: string;
-        address: string;
-        phone: string;
-    }[];
-    korsakov: {
-        city: string;
-        address: string;
-        phone: string;
-    }[]
+    city: {
+        yuS: {
+            url: string;
+            name: string;
+            address: string;
+            phone: string;
+        };
+        korsakov: {
+            url: string;
+            name: string;
+            address: string;
+            phone: string;
+        }
+    }
+
 }
 
 interface ICompanyObject {

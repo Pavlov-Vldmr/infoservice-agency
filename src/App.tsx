@@ -22,27 +22,27 @@ function App() {
   return (
     <>
 
-      <Router>
-        <CityProvider>
-          <CompanyProvider>
-            <ScrollToTop />
-            <Header />
-            <div className='main'>
-              <Routes>
-                <Route path="/infoservice-agency" element={<Home />} />
-                <Route path='/infoservice-agency/about' element={<About />} />
-                <Route path='/infoservice-agency/objects' element={<Objects />} />
-                <Route path='/infoservice-agency/services' element={<Services />} />
-                <Route path='/infoservice-agency/services/:link' element={<ServiceDetail />} />
-                <Route path='/infoservice-agency/contacts' element={<Contacts />} />
-                <Route path='/infoservice-agency/*' element={<NotFound />} />
-              </Routes>
-            </div>
-            <Footer />
-          </CompanyProvider>
-        </CityProvider>
+      {/* <Router> */}
+      {/* <CityProvider> */}
+      <CompanyProvider>
+        <ScrollToTop />
+        <Header />
+        <div className='main'>
+          <Routes>
+            <Route path="/infoservice-agency" element={<Home />} />
+            <Route path='/infoservice-agency/about' element={<About />} />
+            <Route path='/infoservice-agency/objects' element={<Objects />} />
+            <Route path='/infoservice-agency/services' element={<Services />} />
+            <Route path='/infoservice-agency/services/:link' element={<ServiceDetail />} />
+            <Route path='/infoservice-agency/contacts' element={<Contacts />} />
+            <Route path='/infoservice-agency/*' element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </CompanyProvider>
+      {/* </CityProvider> */}
 
-      </Router >
+      {/* </Router > */}
 
 
 
