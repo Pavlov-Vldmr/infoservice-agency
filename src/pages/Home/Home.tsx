@@ -1,17 +1,11 @@
-import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import './Home.scss'
-import { useNavigate } from 'react-router-dom';
-
-// import svgExample from '../../assets/icons/svg-example.svg'
-
-import guardian from '../../assets/images/security.jpg'
+import MainActButton from '../../components/Buttons/MainActButton/MainActButton'
 import ObjectsSlider from './components/ObjectsSlider/ObjectsSlider'
 import ReviewsSlider from './components/ReviewsSlider/ReviewsSlider'
 import { Icons } from '../../components/Icons'
 import ContactsInfo from '../../components/ContactsInfo/ContactsInfo'
 import FeedbackForm from '../../features/FeedbackForm/FeedbackForm'
 import AboutComponent from '@/components/AboutComonent/AboutComonent'
-import CallbackComponent from '@/components/CallbackComponent/CallbackComponent'
 
 import { ErrorBoundary } from 'react-error-boundary'
 
@@ -19,14 +13,6 @@ import { ErrorBoundary } from 'react-error-boundary'
 
 function Home() {
 
-
-    const navigate = useNavigate();
-    const handleNavigateToServices = () => {
-        navigate('/infoservice-agency/services');
-    }
-    const handleNavigateToCalculator = () => {
-        navigate('/infoservice-agency/calculator');
-    }
 
 
     return (
@@ -40,9 +26,9 @@ function Home() {
                         <p>Профессиональная охрана коммерческой и жилой недвижимости. Круглосуточный мониторинг, современное оборудование и опытные специалисты.</p>
                         <div className='home-hero__main__btns mt-4'>
                             {/* // калькулятор */}
-                            <MainActButton onClick={handleNavigateToCalculator} variant='white' title="Заказать онлайн"></MainActButton>
+                            <MainActButton to="/infoservice-agency/calculator" variant='white' title="Заказать онлайн"></MainActButton>
                             {/* // на страницу услуги */}
-                            <MainActButton onClick={handleNavigateToServices} variant="primary" title="Наши услуги" bordered ></MainActButton>
+                            <MainActButton to='/infoservice-agency/services' variant="primary" title="Наши услуги" bordered ></MainActButton>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,6 @@ export const CityProvider = ({ children }: { children: ReactNode }) => {
   const [city, setCity] = useState<CityCode>(() => {
     const saved = localStorage.getItem('selectedCity') as CityCode;
 
-    // Безопасная проверка: если в localStorage лежит старая или чужая строка
     const validCities: CityCode[] = ['yuS', 'korsakov'];
     return validCities.includes(saved) ? saved : 'yuS';
   });

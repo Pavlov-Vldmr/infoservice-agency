@@ -1,14 +1,17 @@
 import { memo, type MouseEventHandler } from 'react';
 import './MainActButton.scss';
+import { Link } from 'react-router-dom';
 
 interface MainActButtonProps {
+    to?: string;
     title: string;
     variant?: string;
     bordered?: boolean;
-    onClick?: MouseEventHandler<HTMLButtonElement>; // для внешней функции
+    onClick?: MouseEventHandler<HTMLAnchorElement>; // для внешней функции
 }
 
 const MainActButton = memo(({
+    to = "",
     title,
     variant = 'default',
     bordered = false,
@@ -25,9 +28,9 @@ const MainActButton = memo(({
 
 
     return (
-        <button onClick={onClick as MouseEventHandler<HTMLButtonElement>} className={className}>
+        <Link to={`${to}`} onClick={onClick} className={className}>
             {title}
-        </button>
+        </Link>
     );
 });
 

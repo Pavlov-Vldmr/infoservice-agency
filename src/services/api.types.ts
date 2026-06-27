@@ -4,21 +4,24 @@ interface ICompanyInfo {
     companyId: string;
     phoneMain: string;
     phoneAdd: string;
-    phoneEmergency: string;
+    phoneEmergency?: string;
     mailMain: string;
     mailSupport: string;
+    license: string;
     city: {
         yuS: {
             url: string;
             name: string;
             address: string;
             phone: string;
+            workTime: string;
         };
         korsakov: {
             url: string;
             name: string;
             address: string;
             phone: string;
+            workTime: string;
         }
     }
 
