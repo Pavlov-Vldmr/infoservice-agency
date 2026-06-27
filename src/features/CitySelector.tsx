@@ -4,10 +4,19 @@ import { useSearchParams } from 'react-router-dom';
 // import { useCity } from '@/contexts/CityContext';
 import { useCity, type CityCode } from '@/contexts/CityContext';
 
+import { useCompany } from "@/contexts/CompanyInfoContext"
+
+// const { companyInfo } = useCompany();
+// const { city: cityC } = useCity();
+
+
+
+
 const CITIES: CityCode[] = ['yuS', 'korsakov'];
 
 export const CitySelector = () => {
     const { city, setCity } = useCity();
+    const { companyInfo } = useCompany();
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
@@ -25,11 +34,10 @@ export const CitySelector = () => {
 
     return (
         <div className="city-selector">
-            <span>Текущий город: {city}</span>
             <select value={city} onChange={(e) => handleCityChange(e.target.value as CityCode)}>
                 {CITIES.map((c) => (
                     <option key={c} value={c}>
-                        {c}
+                        {companyInfo?.city[c]?.name || c}
                     </option>
                 ))}
             </select>
