@@ -47,7 +47,6 @@ function HamburgerComponent() {
     }, [open]);
 
     const navigate = useNavigate();
-
     const handleGoToSection = () => {
         navigate('/infoservice-agency/contacts', { state: { scrollToSection: true } });
     };
@@ -69,7 +68,7 @@ function HamburgerComponent() {
                         <NavLinksComponent />
                     </nav>
                     <div className="hamburger__nav__buttons p-4">
-                        <MainActButton variant=" primary" title="Заказать онлайн"></MainActButton>
+                        <MainActButton to="/infoservice-agency/calculator" variant=" primary" title="Заказать онлайн"></MainActButton>
                         <MainActButton onClick={handleGoToSection} variant="white" bordered title="Позвоните мне"></MainActButton>
 
 

@@ -1,4 +1,6 @@
 .btn {
+  display: inline-block;
+  box-sizing: border-box;
   background-color: var(--accent);
   border-radius: 0.25rem;
   // font-size: var(--font-size);
@@ -10,7 +12,7 @@
   line-height: 1.5;
   min-height: 50px;
   color: #fff;
-
+  text-align: center;
   transition: ease-in 0.1s;
   &:hover {
     // background-color: #ffffff96;

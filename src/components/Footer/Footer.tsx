@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 
 import PhoneComponent from '@/features/model/PhoneComponent';
 
+import { useCompany } from "@/contexts/CompanyInfoContext"
+import { useCity } from "@/contexts/CityContext"
 
 
 function Footer() {
 
+    const { companyInfo } = useCompany();
+    const { city: cityC } = useCity();
 
     return (
         <>
@@ -42,12 +46,12 @@ function Footer() {
                         <div className='footer__contacts'>
                             <h4 className='mb-4'>Контакты</h4>
                             <ul>
-                                <li>                        123
+                                <li><PhoneComponent phone={`${companyInfo?.city[cityC].phone}`} />
                                 </li>
-                                <li>info@infoservice-охрана.рф</li>
-                                <li>г. Москва, ул. Охранная, д. 123</li>
-                                <li>Деловой центр, 3 этаж</li>
-                                <li>24/7 Круглосуточно</li>
+                                <li>{companyInfo?.mailMain}</li>
+                                <li>{companyInfo?.city[cityC].address}</li>
+                                <li>{companyInfo?.city[cityC].workTime}</li>
+
                             </ul>
                         </div>
                     </div>
@@ -56,7 +60,7 @@ function Footer() {
 
                 <div className="copyright">
                     <div className="container copyright-container">
-                        <span>© 2026 ООО "ИнфоСервис". Все права защищены. Лицензия № 123456. Застрахованная ответственность.</span>
+                        <span>{companyInfo?.license}</span>
                     </div>
                 </div>
             </footer >
