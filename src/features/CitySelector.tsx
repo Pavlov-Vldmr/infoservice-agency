@@ -1,16 +1,8 @@
-// src/components/CitySelector.tsx
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-// import { useCity } from '@/contexts/CityContext';
 import { useCity, type CityCode } from '@/contexts/CityContext';
 
 import { useCompany } from "@/contexts/CompanyInfoContext"
-
-// const { companyInfo } = useCompany();
-// const { city: cityC } = useCity();
-
-
-
 
 const CITIES: CityCode[] = ['yuS', 'korsakov'];
 

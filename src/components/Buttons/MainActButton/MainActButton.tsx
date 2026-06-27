@@ -6,8 +6,6 @@ interface MainActButtonProps {
     variant?: string;
     bordered?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>; // для внешней функции
-    href?: string;
-    target?: string; // ex , '_blank')
 }
 
 const MainActButton = memo(({
@@ -15,8 +13,7 @@ const MainActButton = memo(({
     variant = 'default',
     bordered = false,
     onClick,
-    href,
-    target
+
 }: MainActButtonProps) => {
 
     const className = [

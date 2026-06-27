@@ -14,6 +14,8 @@ import ScrollToTop from './features/ScrollToTop'
 import { ErrorBoundary, type FallbackProps } from 'react-error-boundary';
 import { CompanyProvider } from '@/contexts/CompanyInfoContext'
 import { CityProvider } from '@/contexts/CityContext'
+import Calculator from './pages/Calculator/Calculator'
+import Order from './pages/Order/Order'
 
 
 function App() {
@@ -22,8 +24,6 @@ function App() {
   return (
     <>
 
-      {/* <Router> */}
-      {/* <CityProvider> */}
       <CompanyProvider>
         <ScrollToTop />
         <Header />
@@ -35,17 +35,13 @@ function App() {
             <Route path='/infoservice-agency/services' element={<Services />} />
             <Route path='/infoservice-agency/services/:link' element={<ServiceDetail />} />
             <Route path='/infoservice-agency/contacts' element={<Contacts />} />
+            <Route path='/infoservice-agency/calculator' element={<Calculator />} />
+            <Route path='/infoservice-agency/order' element={<Order />} />
             <Route path='/infoservice-agency/*' element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
       </CompanyProvider>
-      {/* </CityProvider> */}
-
-      {/* </Router > */}
-
-
-
 
     </>
   )

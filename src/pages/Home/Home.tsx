@@ -24,6 +24,10 @@ function Home() {
     const handleNavigateToServices = () => {
         navigate('/infoservice-agency/services');
     }
+    const handleNavigateToCalculator = () => {
+        navigate('/infoservice-agency/calculator');
+    }
+
 
     return (
         <>
@@ -36,7 +40,7 @@ function Home() {
                         <p>Профессиональная охрана коммерческой и жилой недвижимости. Круглосуточный мониторинг, современное оборудование и опытные специалисты.</p>
                         <div className='home-hero__main__btns mt-4'>
                             {/* // калькулятор */}
-                            <MainActButton variant='white' title="Заказать онлайн"></MainActButton>
+                            <MainActButton onClick={handleNavigateToCalculator} variant='white' title="Заказать онлайн"></MainActButton>
                             {/* // на страницу услуги */}
                             <MainActButton onClick={handleNavigateToServices} variant="primary" title="Наши услуги" bordered ></MainActButton>
                         </div>
