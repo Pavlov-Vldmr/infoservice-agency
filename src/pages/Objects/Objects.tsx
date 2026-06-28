@@ -3,35 +3,18 @@ import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
 import ProposalComonent from "@/components/ProposalComponent/ProposalComonent"
-import { useEffect, useState } from "react"
-import { fetchCompanyObjects, type ICompanyObject } from "@/services/objects"
-
+import { fetchCompanyObjects } from "@/services/objects"
+import { getStrapiMediaUrl } from "@/services/strapiClient";
+import { useFetch } from "@/hooks/useFetch"
 
 function Objects() {
-    const [objects, setObjects] = useState<ICompanyObject[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        async function loadObjects() {
-            try {
-                setLoading(true);
-                const data = await fetchCompanyObjects();
-                setObjects(data);
-            } catch (err) {
-                setError(err instanceof Error ? err.message : 'Ошибка загрузки объектов');
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadObjects();
-    }, []);
+    const { data: objects, loading, error } = useFetch(fetchCompanyObjects);
 
     if (loading) return <div>Загрузка объектов...</div>;
     if (error) return <div>Ошибка: {error}</div>;
     if (objects.length === 0) return <div>Объекты не найдены</div>;
 
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
 
     return (
         <>
@@ -43,7 +26,7 @@ function Objects() {
                             key={obj.documentId || obj.id}
                             title={obj.title}
                             text={obj.text}
-                            imgURL={obj.img?.[0].url ? `${API_URL}${obj.img?.[0].url}` : ''}
+                            imgURL={getStrapiMediaUrl(obj.img?.[0].url)}
                             imgTitle={obj.img_text}
                             square={obj.values?.square}
                             guardians={obj.values?.guardians}
