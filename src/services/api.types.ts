@@ -53,6 +53,7 @@ export interface ICompanyService {
     title: string;
     text: string;
     price: number;
+    link: string;
     img?: IStrapiMedia[];
 
 }

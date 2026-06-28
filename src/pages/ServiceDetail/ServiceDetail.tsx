@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { data, useParams } from 'react-router-dom';
 
 import './ServiceDetail.scss'
 import { Icons } from '@/components/Icons';
@@ -6,13 +6,19 @@ import PageTitle from '@/components/PageTitle/PageTitle';
 import ProposalComonent from '@/components/ProposalComponent/ProposalComonent';
 import PhoneComponent from '@/features/model/PhoneComponent';
 
-import dataCompanyInfo from '../../assets/ServicesData/companyInfo.json'
-import data from '../../assets/ServicesData/generatedData.json'
+import { useFetch } from '@/hooks/useFetch';
+import { fetchCompanyServices } from '@/services/services';
 
 function ServiceDetail() {
-    const { link } = useParams();
-    const filteredData = data.filter(service => service.link === link);
 
+    const { data: services, loading, error } = useFetch(fetchCompanyServices);
+
+    if (loading) return <div>Загрузка сервисов...</div>;
+    if (error) return <div>Ошибка: {error}</div>;
+    if (services.length === 0) return <div>Сервисы не найдены</div>;
+
+    const { link } = useParams();
+    const filteredData = services.filter(service => service.link === link);
 
     return (
         <>
@@ -25,11 +31,11 @@ function ServiceDetail() {
                     </div>
                     <div className='service-detail__info'>
                         <h2 className='mb-8 m_mb-4'>{filteredData[0].title}</h2>
-                        <p className='service-detail__info_text mb-4 m_mb-8'>{filteredData[0].about} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel voluptatem recusandae dignissimos eveniet! Quod, officia nobis ex excepturi quidem mollitia dicta ullam aliquam nemo corrupti, cupiditate quam accusamus dolorum? lore</p>
+                        <p className='service-detail__info_text mb-4 m_mb-8'>{filteredData[0].text} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel voluptatem recusandae dignissimos eveniet! Quod, officia nobis ex excepturi quidem mollitia dicta ullam aliquam nemo corrupti, cupiditate quam accusamus dolorum? lore</p>
                         <div className="consultation-component p-4">
                             <h3 className='text_white mb-4 '>Нужна консультация?</h3>
                             <p className='text_white mb-4'>Свяжитесь с нами для получения подробной информации</p>
-                            <PhoneComponent phone={dataCompanyInfo[0].phone.add} className='text_white' />
+                            {/* <PhoneComponent phone={dataCompanyInfo[0].phone.add} className='text_white' /> */}
                         </div>
                     </div>
                     <div className='service-detail__options'>
