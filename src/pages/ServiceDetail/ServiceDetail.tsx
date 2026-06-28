@@ -31,7 +31,7 @@ function ServiceDetail() {
                     </div>
                     <div className='service-detail__info'>
                         <h2 className='mb-8 m_mb-4'>{filteredData[0].title}</h2>
-                        <p className='service-detail__info_text mb-4 m_mb-8'>{filteredData[0].text} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel voluptatem recusandae dignissimos eveniet! Quod, officia nobis ex excepturi quidem mollitia dicta ullam aliquam nemo corrupti, cupiditate quam accusamus dolorum? lore</p>
+                        <p className='service-detail__info_text mb-4 m_mb-8'>{filteredData[0].text} </p>
                         <div className="consultation-component p-4">
                             <h3 className='text_white mb-4 '>Нужна консультация?</h3>
                             <p className='text_white mb-4'>Свяжитесь с нами для получения подробной информации</p>
