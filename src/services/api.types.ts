@@ -44,4 +44,16 @@ interface ICompanyObject {
     ]
     img_text: string;
 }
-export type { ICompanyInfo, ICompanyObject }
+
+interface ICompanyService {
+    documentId: string;
+    title: string;
+    text: string;
+    price: number;
+    img?: [{
+        url: string;
+
+    }
+    ]
+}
+export type { ICompanyInfo, ICompanyObject, ICompanyService }

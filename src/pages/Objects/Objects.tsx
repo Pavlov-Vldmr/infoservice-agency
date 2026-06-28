@@ -1,11 +1,11 @@
-import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
 import PageTitle from "../../components/PageTitle/PageTitle"
 import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
 import ProposalComonent from "@/components/ProposalComponent/ProposalComonent"
-import { fetchCompanyObjects, type ICompanyObject } from "@/services/api"
 import { useEffect, useState } from "react"
+import { fetchCompanyObjects, type ICompanyObject } from "@/services/objects"
+
 
 function Objects() {
     const [objects, setObjects] = useState<ICompanyObject[]>([]);
