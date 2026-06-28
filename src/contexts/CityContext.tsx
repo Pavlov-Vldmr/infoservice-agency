@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 // 1. Импортируем интерфейс компании
-import { type ICompanyInfo } from "@/services/api";
+import { type ICompanyInfo } from "@/services/api.types";
 
 export type CityCode = keyof NonNullable<ICompanyInfo['city']>;
 

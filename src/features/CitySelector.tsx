@@ -36,22 +36,3 @@ export const CitySelector = () => {
         </div>
     );
 };
-
-
-// // src/components/ProductList.tsx
-// import { useEffect, useState } from 'react';
-// import { useCity } from '../context/CityContext';
-
-// export const ProductList = () => {
-//   const { city } = useCity();
-//   const [items, setItems] = useState([]);
-
-//   useEffect(() => {
-//     // fetchData(city) — отправляем город в запросе на бэкенд
-//     fetch(`/api/products?city=${encodeURIComponent(city)}`)
-//       .then(res => res.json())
-//       .then(data => setItems(data));
-//   }, [city]); // Запрос перезапустится автоматически при смене города
-
-//   return <div>Список товаров для города {city}</div>;
-// };

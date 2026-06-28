@@ -1,5 +1,12 @@
+export interface IStrapiMedia {
+    id?: number;
+    documentId?: string;
+    url: string;
+    name?: string;
+    alternativeText?: string;
+}
 
-interface ICompanyInfo {
+export interface ICompanyInfo {
     documentId: string;
     companyId: string;
     phoneMain: string;
@@ -27,7 +34,7 @@ interface ICompanyInfo {
 
 }
 
-interface ICompanyObject {
+export interface ICompanyObject {
     id: number;
     documentId: string;
     title: string;
@@ -37,11 +44,16 @@ interface ICompanyObject {
         guardians: string;
         since: string;
     }
-    img?: [{
-        url: string;
-
-    }
-    ]
+    img?: IStrapiMedia[];
     img_text: string;
 }
-export type { ICompanyInfo, ICompanyObject }
+
+export interface ICompanyService {
+    documentId: string;
+    title: string;
+    text: string;
+    price: number;
+    link: string;
+    img?: IStrapiMedia[];
+
+}
