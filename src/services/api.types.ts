@@ -57,3 +57,12 @@ export interface ICompanyService {
     img?: IStrapiMedia[];
 
 }
+
+export interface IIsActiveSection {
+    documentId: string;
+    reviews: {
+        active: boolean;
+        title: string;
+        subtitle: string;
+    }
+}
