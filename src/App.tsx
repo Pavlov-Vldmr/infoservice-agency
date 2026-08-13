@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home/Home'
 import NotFound from './pages/NotFound/NotFound'
@@ -16,6 +16,8 @@ import { CompanyProvider } from '@/contexts/CompanyInfoContext'
 import { CityProvider } from '@/contexts/CityContext'
 import Calculator from './pages/Calculator/Calculator'
 import Order from './pages/Order/Order'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
+import CookieConsent from 'react-cookie-consent'
 
 
 function App() {
@@ -38,8 +40,23 @@ function App() {
             <Route path='/infoservice-agency/calculator' element={<Calculator />} />
             <Route path='/infoservice-agency/order' element={<Order />} />
             <Route path='/infoservice-agency/*' element={<NotFound />} />
+            <Route path="/infoservice-agency/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </div>
+
+        <CookieConsent
+          buttonText="Принять"
+          cookieName="site_privacy_cookie"
+          style={{ background: "#2B373B", color: "#FFF" }}
+          buttonStyle={{ background: "#4eaff3", color: "#FFF", fontSize: "14px" }}
+          expires={150}
+        >
+          Этот сайт использует файлы cookie. Продолжая работу, вы соглашаетесь с нашей{" "}
+          <Link to="/infoservice-agency/privacy-policy" style={{ color: "#4eaff3" }}>
+            Политикой конфиденциальности
+          </Link>.
+        </CookieConsent>
+
         <Footer />
       </CompanyProvider>
 

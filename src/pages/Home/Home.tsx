@@ -156,7 +156,6 @@ function Home() {
             </section>
 
             <section className="home-about py-20 m_py-0">
-
                 <AboutComponent />
             </section>
 
