@@ -1,9 +1,27 @@
 # React + TypeScript + Vite
 
+### vite start
+
 ```
 npm i
 npm run dev
 npm run deploy
+
+```
+
+### strapi
+
+```
+npm run develop
+```
+
+strapi/.env
+check strapi serv URL ex: URL=http://192.168.0.94:1337
+
+### legacy-install
+
+```
+npm install pkg-name --legacy-peer-deps
 ```
 
 ## TODO list
@@ -46,8 +64,7 @@ npm run deploy
 
 ### strapi \ api \ cms \
 
-- [ ] Регулярки
-- [ ] постфиксы данных ex: m^2, человеки итд
+- [ ]
 
 ## App structure
 
@@ -60,6 +77,7 @@ src/
 ├───features     # Логика конкретной функциональности
 │   └───FeedbackForm    # Главный компонент формы обратной связи
 ├───layouts      # Обертки для страниц (Header, Footer, Sidebar)
+├───services # типы интерфейсы итп
 └───pages   # Страницы приложения
     ├───About
     │   └───components
