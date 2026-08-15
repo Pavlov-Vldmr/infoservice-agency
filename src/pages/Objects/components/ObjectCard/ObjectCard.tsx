@@ -12,20 +12,26 @@ function ObjectCard(props: { title?: string, text?: string, imgURL?: string, img
 
                 <div className="object-card__content p-8 m_p-4">
                     <h3 className="text_primary mb-2 mt-4 m_mt-2">{props.title}</h3>
-                    <p className="text text_muted mb-4 m_mb-8">Круглосуточная охрана жилого комплекса премиум-класса. Контроль территории, парковок и входных групп.</p>
+                    <p className="text text_muted mb-4 m_mb-8">{props.text}</p>
                     <div className="object-card__content__info">
-                        <div className="info-value">
-                            <span className="text_muted">Площадь:</span>
-                            <span className="text_primary">{props.square + 'm2'}</span>
-                        </div>
-                        <div className="info-value">
-                            <span className="text_muted">Охранников:</span>
-                            <span className="text_primary">{props.guardians}</span>
-                        </div>
-                        <div className="info-value">
-                            <span className="text_muted">Охраняем с:</span>
-                            <span className="text_primary">{props.since}</span>
-                        </div>
+                        {props.square && (
+                            <div className="info-value">
+                                <span className="text_muted">Площадь:</span>
+                                <span className="text_primary">{props.square + 'm2'}</span>
+                            </div>
+                        )}
+                        {props.guardians && (
+                            <div className="info-value">
+                                <span className="text_muted">Охранников:</span>
+                                <span className="text_primary">{props.guardians}</span>
+                            </div>
+                        )}
+                        {props.since && (
+                            <div className="info-value">
+                                <span className="text_muted">Охраняем с:</span>
+                                <span className="text_primary">{props.since}</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
