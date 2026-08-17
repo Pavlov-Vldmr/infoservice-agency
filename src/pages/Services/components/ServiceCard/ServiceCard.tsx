@@ -4,7 +4,6 @@ import { Icons } from "@/components/Icons"
 import './ServiceCard.scss'
 
 function ServiceCard(props: { title: string, text: string, link: string, price: number, imgURL?: string }) {
-    console.log("url " + '${props.imgURL}');
     return (
         <>
             <div className="service-card"  >

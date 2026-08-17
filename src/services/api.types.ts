@@ -50,21 +50,17 @@ export interface ICompanyObject {
 
 export interface ICompanyService {
     id: number;
-
     documentId: string;
     title: string;
     text: string;
     price: number;
     link: string;
     img?: IStrapiMedia;
-
 }
 
-export interface IIsActiveSection {
-    documentId: string;
-    reviews: {
-        active: boolean;
-        title: string;
-        subtitle: string;
-    }
+export interface IStrapiFile {
+    id: number;
+    documentId?: string;
+    title: string;
+    file?: IStrapiMedia;
 }

@@ -4,16 +4,27 @@ import { getStrapiMediaUrl } from "@/services/strapiClient";
 import PageTitle from "../../components/PageTitle/PageTitle"
 import ServiceCard from "./components/ServiceCard/ServiceCard"
 import './Services.scss'
+import { fetchFiles } from "@/services/files";
 
 function Services() {
 
-    const { data: services, loading, error } = useFetch(fetchCompanyServices);
+    const {
+        data: services = [],
+        loading: servicesLoading,
+        error: servicesError
+    } = useFetch(fetchCompanyServices);
 
-    if (loading) return <div>Загрузка сервисов...</div>;
-    if (error) return <div>Ошибка: {error}</div>;
+    const {
+        data: files = [],
+        loading: filesLoading,
+        error: filesError
+    } = useFetch(fetchFiles);
+
+    if (servicesLoading || filesLoading) return <div>Загрузка...</div>;
+    if (servicesError || filesError) return <div>Ошибка: {servicesError || filesError}</div>;
     if (services.length === 0) return <div>Сервисы не найдены</div>;
 
-    console.log(services[0].img)
+    console.log(files[0])
 
     return (
         <>
@@ -23,7 +34,6 @@ function Services() {
                 <div className="container services__container  p-10 m_p-4">
                     {services.map(item => (
                         <>
-
                             <ServiceCard
                                 key={item.documentId || item.id}
                                 title={item.title}
@@ -35,7 +45,32 @@ function Services() {
                         </>
                     ))}
                 </div>
-            </section>
+
+
+                <h2>Документы для скачивания</h2>
+                <div>
+
+                    {files.map(file => (
+                        <>
+                            <span>{file.title} </span>
+
+                            <a
+                                href={file.file?.url}
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="download-button"
+                            >
+                                <button>Скачать</button>
+                            </a>
+                        </>
+                    ))}
+                </div>
+
+
+
+            </section >
+
         </>
     )
 }
