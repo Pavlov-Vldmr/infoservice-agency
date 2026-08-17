@@ -2,11 +2,23 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 import slideBg from '../../../../assets/images/object1.jpeg';
 
+import { fetchCompanyObjects } from "@/services/objects"
+import { getStrapiMediaUrl } from "@/services/strapiClient";
+import { useFetch } from "@/hooks/useFetch"
+
 // Import Swiper styles
 import 'swiper/css';
 import './ObjectsSlider.scss'
+import Slide from './Slide/Slide';
 
 export default () => {
+
+
+    const { data: objects, loading, error } = useFetch(fetchCompanyObjects);
+
+    if (loading) return <div>Загрузка объектов...</div>;
+    if (error) return <div>Ошибка: {error}</div>;
+    if (objects.length === 0) return <div>Объекты не найдены</div>;
 
 
     const pagination = {
@@ -21,8 +33,6 @@ export default () => {
             modules={[Pagination, Autoplay]}
             spaceBetween={3}
             slidesPerView={3}
-            // onSlideChange={() => console.log('slide change')}
-            // onSwiper={(swiper) => console.log(swiper)}
             loop={true}
             speed={1000}
             pagination={pagination}
@@ -43,41 +53,17 @@ export default () => {
                 }
             }}
         >
-            <SwiperSlide>
-                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
-                    <h3>Заголовок1</h3>
-                    <p>Короткий текст</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
 
-                    <h3>Заголовок</h3>
-                    <p>Короткий текст</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
-
-                    <h3>Заголовок</h3>
-                    <p>Короткий текст</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
-
-                    <h3>Заголовок</h3>
-                    <p>Короткий текст</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide' style={{ backgroundImage: ` linear-gradient(0deg, #000000b0, #3c313100), url(../../..` + `${slideBg})` }}>
-
-                    <h3>Заголовок</h3>
-                    <p>Короткий текст</p>
-                </div>
-            </SwiperSlide>
-
+            {objects.map((obj) => (
+                <SwiperSlide>
+                    <Slide
+                        key={obj.documentId || obj.id}
+                        title={obj.title}
+                        text={obj.text}
+                        imgURL={getStrapiMediaUrl(obj.img?.url)}
+                    />
+                </SwiperSlide>
+            ))}
         </Swiper>
     );
 };

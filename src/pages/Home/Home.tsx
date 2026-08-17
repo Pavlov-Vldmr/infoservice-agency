@@ -95,7 +95,7 @@ function Home() {
             </section>
 
             {/* slider here */}
-            <section className="home-objects py-20">
+            <section className="home-objects px-8 m_px-4 py-20">
                 <div className="container">
                     <div className='home-objects__title mb-20'>
                         <h2 className='text_center mb-4'>Охраняемые объекты</h2>
