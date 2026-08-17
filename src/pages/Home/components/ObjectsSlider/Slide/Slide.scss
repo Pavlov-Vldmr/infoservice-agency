@@ -23,19 +23,24 @@
   }
 
   &__text {
-    position: absolute;
-    padding: calc(var(--spacing) * 4);
+    padding: calc(var(--spacing) * 2);
     bottom: 0;
-    color: #fbf7f7;
+    border-radius: 0.425rem;
+    color: #fff;
+    background-color: var(--accent);
 
-    h3 {
-      flex-grow: 1;
-      margin: 0;
-      display: flex;
-      align-items: flex-end;
-      font-size: var(--text-xl);
-      margin-bottom: calc(var(--spacing) * 2);
+    .pseudo {
+      display: block;
+      width: 130px;
+      border-radius: 0.425rem;
+      font-size: var(--text-sm);
+      color: #fff;
+      background-color: var(--accent);
+      position: absolute;
+      top: 10px;
+      right: 20px;
     }
+
     p {
       margin: 0;
       font-size: var(--text-sm);
