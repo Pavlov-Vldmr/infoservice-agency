@@ -3,19 +3,25 @@ import { Icons } from "@/components/Icons"
 
 import './ServiceCard.scss'
 
-function ServiceCard(props: { title: string, about: string, link: string }) {
+function ServiceCard(props: { title: string, text: string, link: string, price: number, imgURL?: string }) {
+    console.log("url " + '${props.imgURL}');
     return (
         <>
-            <Link to={`/infoservice-agency/services/${props.link}`} className="service-card"  >
-                <div className="service-card__img">
-                    <Icons.Camera className="service-card__img__icon p-2" />
-                </div>
+            <div className="service-card"  >
+
+                {/* <Link to={`/infoservice-agency/services/${props.link}`} className="service-card"  > */}
+                <img src={props.imgURL} className="service-card__img ">
+                    {/* <Icons.Camera className="service-card__img__icon p-2" /> */}
+                </img>
                 <div className="service-card__content p-8">
                     <h3 className="text_primary mb-2">{props.title}</h3>
-                    <p className="text text_muted mb-4">{props.about}</p>
-                    <span className="service-card_link">Подробнее</span>
+                    <p className="text text_muted mb-4">{props.text}</p>
+                    {/* <span className="service-card_link">Подробнее</span> */}
+                    <span className="service-card_price">{props.price} руб</span>
+
                 </div>
-            </Link>
+                {/* </Link> */}
+            </div>
         </>
     )
 }

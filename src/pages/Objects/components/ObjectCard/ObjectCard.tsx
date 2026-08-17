@@ -1,6 +1,7 @@
 import "./ObjectCard.scss"
 
 function ObjectCard(props: { title?: string, text?: string, imgURL?: string, imgTitle?: string, square?: string, guardians?: string, since?: string }) {
+    console.log("url " + props.imgURL);
 
     return (
         <>

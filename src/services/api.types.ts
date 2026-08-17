@@ -1,7 +1,7 @@
 export interface IStrapiMedia {
     id?: number;
     documentId?: string;
-    url: string;
+    url?: string;
     name?: string;
     alternativeText?: string;
 }
@@ -44,17 +44,19 @@ export interface ICompanyObject {
         guardians: string;
         since: string;
     }
-    img?: IStrapiMedia[];
+    img?: IStrapiMedia;
     img_text: string;
 }
 
 export interface ICompanyService {
+    id: number;
+
     documentId: string;
     title: string;
     text: string;
     price: number;
     link: string;
-    img?: IStrapiMedia[];
+    img?: IStrapiMedia;
 
 }
 
