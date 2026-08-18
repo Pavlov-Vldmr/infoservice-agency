@@ -16,6 +16,11 @@ import Lock from '../assets/icons/lock-svgrepo-com.svg?react'
 // adv
 import Headphones from '../assets/icons/headphones-alt-svgrepo-com.svg?react'
 
+import Map from '../assets/icons/map.svg?react'
+import Phone from '../assets/icons/phone.svg?react'
+import Mail from '../assets/icons/mail.svg?react'
+import Tech from '../assets/icons/tech.svg?react'
+
 export const Icons = {
     Chart,
     Clock,
@@ -33,6 +38,11 @@ export const Icons = {
 
 
     ApplySvg,
-    TimeSvg
+    TimeSvg,
+    Map,
+    Phone,
+    Mail,
+    Tech
+
 };
 

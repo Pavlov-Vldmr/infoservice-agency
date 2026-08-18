@@ -5,7 +5,8 @@ export type { ICompanyInfo }
 export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {
     try {
         const result = await strapiFetch<StrapiSingleResponse<ICompanyInfo>>(
-            `company-info?populate[city][populate]=*`
+            // `company-info?populate[personal][populate]=*&populate[city][populate]=*`
+            `company-info?populate[personal][populate][phisical]=*&populate[personal][populate][technical]=*&populate[city][populate]=*`
         );
 
         if (!result || !result.data) {

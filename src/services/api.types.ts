@@ -31,7 +31,26 @@ export interface ICompanyInfo {
             workTime: string;
         }
     }
-
+    personal: {
+        phisical?: {
+            name: string;
+            department: string;
+            job: string;
+            phone: string;
+            phoneExt: string;
+            jobTime: string;
+            jobBreak: string;
+        } | null;
+        technical?: {
+            name: string;
+            department: string;
+            job: string;
+            phone: string;
+            phoneExt: string;
+            jobTime: string;
+            jobBreak: string;
+        } | null;
+    }
 }
 
 export interface ICompanyObject {
