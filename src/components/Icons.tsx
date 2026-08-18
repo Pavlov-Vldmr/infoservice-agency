@@ -21,6 +21,12 @@ import Phone from '../assets/icons/phone.svg?react'
 import Mail from '../assets/icons/mail.svg?react'
 import Tech from '../assets/icons/tech.svg?react'
 
+import Recomendation from '../assets/icons/recomendation.svg?react'
+import Cube from '../assets/icons/cube.svg?react'
+import Reputation from '../assets/icons/reputation.svg?react'
+
+// https://www.svgrepo.com/collection/dazzle-line-icons/1
+
 export const Icons = {
     Chart,
     Clock,
@@ -35,6 +41,9 @@ export const Icons = {
 
     //adv
     Headphones,
+    Recomendation,
+    Cube,
+    Reputation,
 
 
     ApplySvg,

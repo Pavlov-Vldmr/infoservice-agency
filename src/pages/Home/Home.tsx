@@ -155,7 +155,7 @@ function Home() {
           </div>
           <div className="home-advantages__plates">
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.Reputation className="home-advantages__icons icon_white" />
               <h3>Коммерческая репутация</h3>
               <p>
                 Нашему предприятию 28 лет доверяют охранять свое имущество более
@@ -163,7 +163,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.ApplySvg className="home-advantages__icons icon_white" />
               <h3>Финансовая проверка</h3>
               <p>
                 Отсутствие задолженностей в местные, региональные, федеральные
@@ -173,7 +173,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.Person className="home-advantages__icons icon_white" />
               <h3>Профессиональный состав</h3>
               <p>
                 184 сотрудника охраны, лицензированных в соответствии с
@@ -181,7 +181,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.Lock className="home-advantages__icons icon_white" />
               <h3>Проверка работы в прошлом</h3>
               <p>
                 Проверки деятельности контролирующими государственными органами
@@ -190,7 +190,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.Headphones className="home-advantages__icons icon_white" />
               <h3>Всегда рядом</h3>
               <p>
                 Услуги оказываются 24 часа в сутки. Имеется круглосуточные
@@ -199,7 +199,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.Cube className="home-advantages__icons icon_white" />
               <h3>Проверка рекомендаций</h3>
               <p>
                 Охрана более 1000 объектов: физическая охрана и с помощью
@@ -209,7 +209,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+              <Icons.Cube className="home-advantages__icons icon_white" />
               <h3>Прозрачность в работе</h3>
               <p>
                 Отчет по работе по договору предоставляется по запросу Клиента
