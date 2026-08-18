@@ -1,7 +1,7 @@
 export interface IStrapiMedia {
     id?: number;
     documentId?: string;
-    url: string;
+    url?: string;
     name?: string;
     alternativeText?: string;
 }
@@ -31,7 +31,26 @@ export interface ICompanyInfo {
             workTime: string;
         }
     }
-
+    personal: {
+        phisical?: {
+            name: string;
+            department: string;
+            job: string;
+            phone: string;
+            phoneExt: string;
+            jobTime: string;
+            jobBreak: string;
+        } | null;
+        technical?: {
+            name: string;
+            department: string;
+            job: string;
+            phone: string;
+            phoneExt: string;
+            jobTime: string;
+            jobBreak: string;
+        } | null;
+    }
 }
 
 export interface ICompanyObject {
@@ -44,25 +63,23 @@ export interface ICompanyObject {
         guardians: string;
         since: string;
     }
-    img?: IStrapiMedia[];
+    img?: IStrapiMedia;
     img_text: string;
 }
 
 export interface ICompanyService {
+    id: number;
     documentId: string;
     title: string;
     text: string;
     price: number;
     link: string;
-    img?: IStrapiMedia[];
-
+    img?: IStrapiMedia;
 }
 
-export interface IIsActiveSection {
-    documentId: string;
-    reviews: {
-        active: boolean;
-        title: string;
-        subtitle: string;
-    }
+export interface IStrapiFile {
+    id: number;
+    documentId?: string;
+    title: string;
+    file?: IStrapiMedia;
 }

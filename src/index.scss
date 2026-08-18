@@ -88,7 +88,7 @@ $scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20;
 
 @media (max-width: 768px) {
   @each $scale in $scales {
-    // Генерация маргинов (например, .mb-4)
+    // Генерация маргинов (например, .m_mb-4)
     .m_mb-#{$scale} {
       margin-bottom: calc(var(--spacing) * #{$scale});
     }
@@ -96,7 +96,7 @@ $scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20;
       margin-top: calc(var(--spacing) * #{$scale});
     }
 
-    // Генерация паддингов (например, .p-4)
+    // Генерация паддингов (например, .m_p-4)
     .m_p-#{$scale} {
       padding: calc(var(--spacing) * #{$scale});
     }
@@ -148,11 +148,10 @@ body {
 .main {
   flex-grow: 1;
 }
-
-// body {
-//   margin: 0;
-// }
-
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -207,7 +206,9 @@ a {
 .text_white {
   color: #fff;
 }
-
+.text_white-8 {
+  color: oklab(1 0 0 / 0.8);
+}
 .text_accent {
   color: var(--accent);
 }

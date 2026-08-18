@@ -1,5 +1,6 @@
 .object-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
   // max-width: 400px;
@@ -13,6 +14,7 @@
   &__img {
     height: 200px;
     width: 100%;
+    object-fit: cover;
     background-color: rgb(178, 178, 178);
     display: flex;
     align-items: flex-start;
@@ -31,9 +33,17 @@
     right: 20px;
   }
   &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
     h3 {
       font-size: var(--text-2xl);
       font-weight: 500;
+    }
+
+    p {
+      flex-grow: 1;
     }
 
     &__info {

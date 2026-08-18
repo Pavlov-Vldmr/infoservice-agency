@@ -15,7 +15,6 @@ function Objects() {
     if (error) return <div>Ошибка: {error}</div>;
     if (objects.length === 0) return <div>Объекты не найдены</div>;
 
-
     return (
         <>
             <PageTitle title="Наши объекты" subTitle="Примеры охраняемых объектов и реализованных проектов" />
@@ -26,7 +25,7 @@ function Objects() {
                             key={obj.documentId || obj.id}
                             title={obj.title}
                             text={obj.text}
-                            imgURL={getStrapiMediaUrl(obj.img?.[0].url)}
+                            imgURL={getStrapiMediaUrl(obj.img?.url)}
                             imgTitle={obj.img_text}
                             square={obj.values?.square}
                             guardians={obj.values?.guardians}

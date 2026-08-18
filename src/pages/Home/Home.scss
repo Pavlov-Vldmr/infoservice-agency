@@ -104,7 +104,6 @@
     }
   }
 }
-
 .home-services {
   background-color: #fff;
 
@@ -118,48 +117,6 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 6);
-
-    &__item {
-      display: flex;
-      flex-direction: column;
-      gap: calc(var(--spacing) * 4);
-      border: 1px solid var(--border);
-      border-radius: 0.625rem;
-      padding: calc(var(--spacing) * 6);
-      transition: ease-in-out 0.3s;
-
-      .item__icons {
-        height: 40px;
-        width: 40px;
-        padding: 16px;
-        background-color: color-mix(in oklab, var(--accent) 10%, transparent);
-        border-radius: 0.625rem;
-        transition: ease-in-out 0.3s;
-
-        path {
-          stroke: var(--accent);
-        }
-      }
-      h3 {
-        color: var(--primary);
-        font-size: var(--text-xl);
-        font-weight: 500;
-        line-height: 1.5;
-      }
-      p {
-        font-size: var(--text-sm);
-        line-height: 1.675rem;
-      }
-
-      &:hover {
-        border-color: var(--accent);
-        box-shadow: 5px 5px 30px rgba(128, 128, 128, 0.207);
-
-        .home-services__icons {
-          background-color: color-mix(in oklab, var(--accent) 20%, transparent);
-        }
-      }
-    }
   }
 }
 
@@ -428,28 +385,6 @@
       gap: calc(var(--spacing) * 3);
 
       &__item {
-        // padding: calc(var(--spacing) * 2);
-        // display: grid;
-        // grid-template-columns: repeat(5, 1fr);
-        // grid-template-rows: repeat(5, 1fr);
-        // .item__icons {
-        //   grid-row: span 2 / span 2;
-        //   height: 20px;
-        //   width: 20px;
-        // }
-        // h3 {
-        //   // margin-top: 0;
-        //   max-width: 75%;
-        //   line-height: 1;
-        //   grid-column: span 4 / span 4;
-        //   grid-row: span 2 / span 2;
-        // }
-        // p {
-        //   grid-column: span 5 / span 5;
-        //   grid-row: span 3 / span 3;
-        //   grid-row-start: 3;
-        // }
-
         .item__icons {
           height: 30px;
           width: 30px;
@@ -476,13 +411,13 @@
   }
 
   .home-objects {
-    padding-block: calc(var(--spacing) * 10);
+    // padding-block: calc(var(--spacing) * 10);
     .home-objects__title {
       margin-bottom: calc(var(--spacing) * 10);
     }
 
     .home-objects__slider {
-      padding-inline: calc(var(--spacing) * 4);
+      // padding-inline: calc(var(--spacing) * 4);
     }
   }
 
