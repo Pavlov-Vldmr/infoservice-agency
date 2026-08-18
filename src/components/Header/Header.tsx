@@ -13,7 +13,8 @@ import { useCompany } from "@/contexts/CompanyInfoContext";
 
 function Header() {
   const handleScroll = () => {
-    const element = document.getElementById("callBackForm");
+    // const element = document.getElementById("callBackForm");
+    const element = document.getElementById("contactsForm");
     if (element) {
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
@@ -27,6 +28,7 @@ function Header() {
   };
 
   const { companyInfo } = useCompany();
+
   return (
     <>
       <header className="fixed">
@@ -36,7 +38,9 @@ function Header() {
               phone={`${companyInfo?.phoneMain}`}
               className="text_white top_phone"
             />
-            <div className="top_mail">infoservice_2016@mail.ru</div>
+            <a href={`mailto:${companyInfo?.mailMain}`} className="top_mail text_white">
+              {companyInfo?.mailMain}
+            </a>
             {/* <CitySelector /> */}
           </div>
         </div>
@@ -58,7 +62,7 @@ function Header() {
                 onClick={handleScroll}
                 variant="primary"
                 bordered
-                title="Позвоните мне"
+                title="Позвоните нам"
               ></MainActButton>
             </div>
             <HamburgerComponent />

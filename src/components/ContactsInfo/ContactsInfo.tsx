@@ -19,7 +19,7 @@ function ContactsInfo() {
         <>
             {data.map(item => (
                 <>
-                    <div className="contacts__block p-0">
+                    <div id="contactsForm" className="contacts__block p-0">
                         <div className="contacts__block__items">
                             <div className='contacts__block__item'>
                                 <Icons.Phone className="contacts__icon icon_accent" width={20} hanging={20} />

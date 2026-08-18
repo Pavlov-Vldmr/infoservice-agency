@@ -11,6 +11,9 @@ import { useFetch } from "@/hooks/useFetch";
 import { ErrorBoundary } from "react-error-boundary";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
 import { Link } from "react-router-dom";
+import YandexMap from "@/services/yandexMap";
+
+
 
 function Home() {
   const {
@@ -22,6 +25,7 @@ function Home() {
   if (servicesLoading) return <div>Загрузка...</div>;
   if (servicesError) return <div>Ошибка: {servicesError}</div>;
   if (services.length === 0) return <div>Сервисы не найдены</div>;
+
   return (
     <>
       <section className="home-hero">
@@ -240,7 +244,17 @@ function Home() {
           </div>
           <div className="home-contacts__content">
             <ContactsInfo />
-            <FeedbackForm />
+            <div className="contacts__map pb-8 px-4 m_px-4">
+              <div className="container contacts__map__container ">
+                <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
+                <div className="map__element p-8 m_p-4">
+                  <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
+                    <YandexMap />
+                  </ErrorBoundary>
+                </div>
+              </div>
+            </div>
+            {/* <FeedbackForm /> */}
           </div>
         </div>
       </section>
