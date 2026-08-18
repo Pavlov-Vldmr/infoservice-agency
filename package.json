@@ -17,6 +17,7 @@
     "pkg-name": "^1.0.2",
     "react": "^19.2.6",
     "react-cookie-consent": "^10.0.2",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.2.6",
     "react-error-boundary": "^6.1.2",
     "react-hook-form": "^7.79.0",

@@ -12,10 +12,13 @@ import { ErrorBoundary } from "react-error-boundary";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
 import { Link } from "react-router-dom";
 import YandexMap from "@/services/yandexMap";
+import ReactCountUp from "react-countup";
 
 
 
 function Home() {
+
+  const CountUp = (ReactCountUp as any).default || ReactCountUp;
   const {
     data: services = [],
     loading: servicesLoading,
@@ -59,24 +62,30 @@ function Home() {
         <div className="container home-achievements__container p-2">
           <div>
             <Icons.Chart className="home-achievements__icons icon_accent" />
-            <span className="value">1000+</span>
+            <span className="value"><CountUp end={1000} duration={4} suffix="+" enableScrollSpy={true}
+              scrollSpyOnce={true} /></span>
             <span className="text">Охраняемых объектов</span>
           </div>
           <div>
             <Icons.Clock className="home-achievements__icons icon_accent" />
-            <span className="value">24\7</span>
+            <span className="value"><CountUp end={24} duration={4} suffix="\" enableScrollSpy={true} scrollSpyOnce={true} />
+              <CountUp end={7} duration={4} enableScrollSpy={true} scrollSpyOnce={true} />
+
+            </span>
             <span className="text">Круглосуточная охрана</span>
           </div>
           <div>
             <Icons.Person className="home-achievements__icons icon_accent" />
 
-            <span className="value">184</span>
+            <span className="value"><CountUp end={184} duration={4} enableScrollSpy={true}
+              scrollSpyOnce={true} /></span>
             <span className="text">Охранника</span>
           </div>
           <div>
             <Icons.Shield className="home-achievements__icons icon_accent" />
 
-            <span className="value">99.9%</span>
+            <span className="value"><CountUp end={99.9} duration={4} decimals={1} suffix="%" enableScrollSpy={true}
+              scrollSpyOnce={true} /></span>
             <span className="text">Надёжность</span>
           </div>
         </div>
