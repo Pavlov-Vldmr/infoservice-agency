@@ -67,6 +67,16 @@ export interface ICompanyObject {
     img_text: string;
 }
 
+export interface ICompanyReview {
+    id: number;
+    documentId: string;
+    text: string;
+    name: string;
+    company: string;
+
+
+}
+
 export interface ICompanyService {
     id: number;
     documentId: string;
