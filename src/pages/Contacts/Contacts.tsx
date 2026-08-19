@@ -41,20 +41,20 @@ function Contacts() {
                     <div className="contacts__content m_py-8" ref={targetRef}>
                         {/* <a href="" className="test text_primary">{companyInfo?.city[cityC].name}</a> */}
                         <ContactsInfo />
-                        <div className="contacts__map pb-8  ">
+                        <div className="contacts__map  ">
                             <div className="container contacts__map__container ">
                                 <h2 className="text_primary px-8 pt-8 ">Карта проезда</h2>
-                                <div className="map__element p-8 ">
+                                <div className="map__element p-4 ">
                                     <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
                                         <YandexMap />
                                     </ErrorBoundary>
                                 </div>
                             </div>
-                            <PhoneCallbackComponent />
+
                         </div>
                         {/* <FeedbackForm /> */}
                     </div>
-
+                    <PhoneCallbackComponent />
 
                 </div>
             </section>

@@ -32,7 +32,7 @@ function AboutComponent() {
                                 </div>
                             </div>
                             <div className='about-component__article-adv__item'>
-                                <Icons.Shield className='about-component__icons icon_accent' />
+                                <Icons.Cube className='about-component__icons icon_accent' />
 
                                 <div className='about-component__article-adv__item__text'>
                                     <h4>Оперативность и вооружение</h4>
@@ -40,7 +40,7 @@ function AboutComponent() {
                                 </div>
                             </div>
                             <div className='about-component__article-adv__item'>
-                                <Icons.Shield className='about-component__icons icon_accent' />
+                                <Icons.Chart className='about-component__icons icon_accent' />
 
                                 <div className='about-component__article-adv__item__text'>
                                     <h4>Собственная техника и оружие</h4>
@@ -48,7 +48,7 @@ function AboutComponent() {
                                 </div>
                             </div>
                             <div className='about-component__article-adv__item'>
-                                <Icons.Shield className='about-component__icons icon_accent' />
+                                <Icons.Tech className='about-component__icons icon_accent' />
 
                                 <div className='about-component__article-adv__item__text'>
                                     <h4>Прозрачность и контроль

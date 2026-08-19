@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 import ReactCountUp from "react-countup";
 import { ErrorBoundary } from "react-error-boundary";
 import { Link } from "react-router-dom";
@@ -35,6 +35,12 @@ function Home() {
   if (servicesLoading) return <div>Загрузка...</div>;
   if (servicesError) return <div>Ошибка: {servicesError}</div>;
   if (services.length === 0) return <div>Сервисы не найдены</div>;
+
+  const iconArr: ReactNode[] = [
+    <Icons.ShieldAlt key="shield" className="item__icons icon_accent" />,
+    <Icons.Phone key="user" className="item__icons icon_accent" />,
+    <Icons.Shield key="settings" className="item__icons icon_accent" />
+  ];
 
   return (
     <>
@@ -107,12 +113,13 @@ function Home() {
             </p>
           </div>
           <div className="home-services__items mb-8">
-            {services.slice(0, 3).map((item) => (
+            {services.slice(0, 3).map((item, index) => (
               <>
                 <ServiceCard
                   key={item.documentId || item.id}
                   title={item.title}
                   text={item.text}
+                  icon={iconArr[index] || ""}
                 />
               </>
             ))}
@@ -128,7 +135,7 @@ function Home() {
         </div>
       </section>
 
-      {/* slider here */}
+      {/* slider OBJECTS */}
       <section className="home-objects px-8 m_px-4 py-20">
         <div className="container">
           <div className="home-objects__title mb-20">
@@ -170,7 +177,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ApplySvg className="home-advantages__icons icon_white" />
+              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
               <h3>Финансовая проверка</h3>
               <p>
                 Отсутствие задолженностей в местные, региональные, федеральные
@@ -206,7 +213,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.Cube className="home-advantages__icons icon_white" />
+              <Icons.Recomendation className="home-advantages__icons icon_white" />
               <h3>Проверка рекомендаций</h3>
               <p>
                 Охрана более 1000 объектов: физическая охрана и с помощью
@@ -234,8 +241,8 @@ function Home() {
         <AboutComponent />
       </section>
 
-      {/* slider here */}
-      <section className="home-reviews py-20 ">
+      {/* slider REVIEWS */}
+      <section className="home-reviews py-20 m_px-4">
         <div className="container">
           <div className="home-reviews__title mb-10">
             <h2 className="text_center mb-4">Отзывы наших клиентов</h2>
@@ -260,7 +267,7 @@ function Home() {
           </div>
           <div className="home-contacts__content">
             <ContactsInfo />
-            <div className="contacts__map pb-8">
+            <div className="contacts__map">
               <div className="container contacts__map__container ">
                 <h2 className="text_primary px-8 pt-8">Карта проезда</h2>
                 <div className="map__element p-8 m_p-4">

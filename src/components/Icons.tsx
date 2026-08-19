@@ -14,7 +14,6 @@ import Reputation from '../assets/icons/reputation.svg?react'
 // services
 import ShieldAlt from '../assets/icons/shield-alt-svgrepo-com.svg?react'
 import Shield from '../assets/icons/shield-check-svgrepo-com.svg?react'
-import ApplySvg from '../assets/icons/svg-example.svg?react'
 import Tech from '../assets/icons/tech.svg?react'
 import TimeSvg from '../assets/icons/time.svg?react'
 import Person from '../assets/icons/user-plus-svgrepo-com.svg?react'
@@ -40,7 +39,6 @@ export const Icons = {
     Reputation,
 
 
-    ApplySvg,
     TimeSvg,
     Map,
     Phone,

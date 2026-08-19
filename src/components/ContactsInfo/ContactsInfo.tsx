@@ -12,8 +12,6 @@ function ContactsInfo() {
     const { companyInfo } = useCompany();
     const { city: cityC } = useCity();
 
-    console.log('companyInfo тех', companyInfo?.personal?.technical?.department)
-    console.log('companyInfo', companyInfo)
     return (
         <>
 

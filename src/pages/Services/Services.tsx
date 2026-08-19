@@ -1,3 +1,4 @@
+import PhoneCallbackComponent from "@/components/PhoneCallbackComponent/PhoneCallbackComponent";
 import { useFetch } from "@/hooks/useFetch";
 import { fetchFiles } from "@/services/files";
 import { fetchCompanyServices } from "@/services/services";
@@ -57,23 +58,6 @@ function Services() {
         <div className="container services__container  p-10 m_p-4">
           <h2>Документы для скачивания РАБОТАЕТ</h2>
           <div>
-
-            {/* {files.map(file => ( */}
-            {/* <>
-                <span>{file.title} </span>
-
-                <a
-                  href={getStrapiMediaUrl(file.file?.url)}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="download-button"
-                >
-                  <button>Скачать</button>
-                </a>
-              </> */}
-            {/* ))} */}
-
             <span>{files[0]?.title}</span>
             <a
               href={getStrapiMediaUrl(files[0]?.file?.url)}
@@ -82,10 +66,10 @@ function Services() {
               rel="noopener noreferrer"
               className="download-button"
             > <button>Скачать</button></a>
-
           </div>
         </div>
       </section>
+
     </>
   );
 }

@@ -12,7 +12,6 @@ import Contacts from './pages/Contacts/Contacts'
 import Home from './pages/Home/Home'
 import NotFound from './pages/NotFound/NotFound'
 import Objects from './pages/Objects/Objects'
-import Order from './pages/Order/Order'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Services from './pages/Services/Services'
 
@@ -37,7 +36,6 @@ function App() {
             {/* <Route path='/infoservice-agency/services/:link' element={<ServiceDetail />} /> */}
             <Route path='/infoservice-agency/contacts' element={<Contacts />} />
             <Route path='/infoservice-agency/calculator' element={<Calculator />} />
-            <Route path='/infoservice-agency/order' element={<Order />} />
             <Route path='/infoservice-agency/*' element={<NotFound />} />
             <Route path="/infoservice-agency/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
