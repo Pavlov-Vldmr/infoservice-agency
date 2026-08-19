@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
+import { useCompany } from "@/contexts/CompanyInfoContext"
+import PhoneComponent from "@/features/model/PhoneComponent"
 
 import NavLinksComponent from "../NavLinksComponent/NavLinksComponent"
 
@@ -49,12 +51,8 @@ function HamburgerComponent() {
         };
     }, [open]);
 
-    const navigate = useNavigate();
-    const handleGoToSection = () => {
-        navigate('/infoservice-agency/contacts', { state: { scrollToSection: true } });
-    };
 
-
+    const { companyInfo } = useCompany();
     return (
         <>
             <div ref={menuRef} className="hamburger">
@@ -71,18 +69,21 @@ function HamburgerComponent() {
                         <NavLinksComponent />
                     </nav>
                     <div className="hamburger__nav__buttons p-4">
-                        <MainActButton to="/infoservice-agency/calculator" variant=" primary" title="Заказать онлайн"></MainActButton>
-                        <MainActButton onClick={handleGoToSection} variant="white" bordered title="Позвоните мне"></MainActButton>
-
-
+                        {/* <MainActButton to="/infoservice-agency/calculator" variant=" primary" title="Заказать онлайн"></MainActButton> */}
+                        <MainActButton to="/infoservice-agency/contacts" variant="white" bordered title="Позвоните нам"></MainActButton>
                     </div>
                     <div className="hamburger__nav__phone mt-6">
-                        <a href="tel:1234455566" className="phone p-2">1234455544</a>
-                        <a href="mail:12344@asdf.ru" className="mail p-2">12344@asdf.ru</a>
-
+                        <PhoneComponent
+                            phone={`${companyInfo?.phoneMain}`}
+                            className="phone p-2"
+                        />
+                        <a href={`mailto:${companyInfo?.mailMain}`} className="mail p-2">
+                            {companyInfo?.mailMain}
+                        </a>
                     </div>
 
                     <div className="hamburger__nav__footer">
+                        <span className="text_muted">© 2026 {companyInfo?.companyName}</span>
                     </div>
                 </div>
                 {/* // } */}

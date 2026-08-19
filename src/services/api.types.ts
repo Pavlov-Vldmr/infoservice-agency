@@ -9,11 +9,13 @@ export interface IStrapiMedia {
 export interface ICompanyInfo {
     documentId: string;
     companyId: string;
+    companyName: string;
     phoneMain: string;
     phoneAdd: string;
     phoneEmergency?: string;
     mailMain: string;
     mailSupport: string;
+    licenseShort: string;
     license: string;
     city: {
         yuS: {

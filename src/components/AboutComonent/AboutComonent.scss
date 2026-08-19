@@ -17,6 +17,9 @@
       }
     }
     .about-component__article {
+      p {
+        margin-bottom: calc(var(--spacing) * 4);
+      }
       .about-component__article-adv {
         display: flex;
         flex-direction: column;

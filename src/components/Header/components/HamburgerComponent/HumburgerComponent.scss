@@ -90,6 +90,13 @@
     &__footer {
       background-color: var(--primary);
       height: 30px;
+      display: flex;
+      align-items: center;
+      span {
+        font-size: var(--text-sm);
+        color: #c5c2c2;
+        margin-left: 20px;
+      }
     }
   }
 }
