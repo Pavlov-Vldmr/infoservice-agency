@@ -44,9 +44,70 @@
   &__policy {
     position: relative;
     text-align: right;
+
+    input[type="checkbox"] {
+      accent-color: #1f82c0;
+      width: 20px;
+      height: 20px;
+      margin-right: calc(var(--spacing) * 2);
+    }
     p {
       position: absolute;
       right: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .callback {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--spacing) * 4);
+
+      span {
+        flex-grow: 1;
+        margin-top: calc(var(--spacing) * 4);
+      }
+
+      .callback__phone {
+        width: 100%;
+        input {
+          box-sizing: border-box;
+          margin-top: calc(var(--spacing) * 4);
+
+          width: 100%;
+
+          &:focus {
+          }
+        }
+        p {
+        }
+      }
+      .callback__btn {
+        width: 100%;
+
+        button {
+          margin-top: calc(var(--spacing) * 4);
+
+          width: 100%;
+        }
+      }
+    }
+    .callback__policy {
+      margin-top: calc(var(--spacing) * 4);
+      margin-bottom: calc(var(--spacing) * 8);
+      display: flex;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-evenly;
+      }
+      p {
+        top: 40px;
+      }
     }
   }
 }

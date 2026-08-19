@@ -36,29 +36,29 @@ function Contacts() {
     return (
         <>
             <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
-            <div className="contacts">
-                <div className="container contacts__container">
-                    <PhoneCallbackComponent />
-
+            <section className="contacts">
+                <div className="container contacts__container  p-10 m_p-4">
                     <div className="contacts__content m_py-8" ref={targetRef}>
                         {/* <a href="" className="test text_primary">{companyInfo?.city[cityC].name}</a> */}
-
-
                         <ContactsInfo />
-                        <div className="contacts__map pb-8 px-4 m_px-4">
+                        <div className="contacts__map pb-8  ">
                             <div className="container contacts__map__container ">
-                                <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
-                                <div className="map__element p-8 m_p-4">
+                                <h2 className="text_primary px-8 pt-8 ">Карта проезда</h2>
+                                <div className="map__element p-8 ">
                                     <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
                                         <YandexMap />
                                     </ErrorBoundary>
                                 </div>
                             </div>
+                            <PhoneCallbackComponent />
                         </div>
                         {/* <FeedbackForm /> */}
                     </div>
+
+
                 </div>
-            </div>
+            </section>
+
 
         </>
     )

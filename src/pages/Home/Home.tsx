@@ -34,8 +34,8 @@ function Home() {
 
   return (
     <>
-      <section className="home-hero">
-        <div className="container home-hero__container p-10">
+      <section className="home-hero ">
+        <div className="container home-hero__container m_px-4 p-10">
           <div className="home-hero__main">
             <span className="license">
               Лицензия № Л056-00106/00029316 от 19.08.2014г.
@@ -94,7 +94,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-services px-8 py-20">
+      <section className="home-services px-8 m_px-4 py-20">
         <div className="container home-services__container">
           <div className="home-services__title mb-20">
             <h2 className="text_center mb-4">Наши услуги по охране</h2>
@@ -103,7 +103,7 @@ function Home() {
             </p>
           </div>
           <div className="home-services__items mb-8">
-            {services.map((item) => (
+            {services.slice(0, 3).map((item) => (
               <>
                 <ServiceCard
                   key={item.documentId || item.id}
@@ -246,7 +246,7 @@ function Home() {
       </section>
 
       <section id="scrollTest" className="home-contacts py-20">
-        <div className="container home-contacts__container">
+        <div className="container home-contacts__container  p-10 m_p-4">
           <div className="home-contacts__title mb-20">
             <h2 className="text_center mb-4">Контакты</h2>
             <p className="text_center text_muted py-4">
@@ -256,9 +256,9 @@ function Home() {
           </div>
           <div className="home-contacts__content">
             <ContactsInfo />
-            <div className="contacts__map pb-8 px-4 m_px-4">
+            <div className="contacts__map pb-8">
               <div className="container contacts__map__container ">
-                <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
+                <h2 className="text_primary px-8 pt-8">Карта проезда</h2>
                 <div className="map__element p-8 m_p-4">
                   <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
                     <YandexMap />

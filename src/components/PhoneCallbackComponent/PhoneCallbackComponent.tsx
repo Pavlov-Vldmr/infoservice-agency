@@ -81,7 +81,7 @@ function PhoneCallbackComponent() {
 
     return (
 
-        <div className="callback p-10 m_p-4 ">
+        <div className="callback p-10 m_p-4 mt-8 m_px-4">
             <div className="container callback__container">
                 <h2 className="text_white">Обратный звонок</h2>
                 <form onSubmit={handleSubmit(onSubmit)} >
