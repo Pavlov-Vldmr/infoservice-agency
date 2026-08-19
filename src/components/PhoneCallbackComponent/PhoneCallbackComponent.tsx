@@ -1,42 +1,47 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
-// Данные формы
+import "./PhoneCallbackComponent.scss"
 interface PhoneFormData {
     phone: string;
 }
 
-// Структура запроса, которую ожидает Strapi
 interface StrapiRequestData {
     data: PhoneFormData;
 }
 
-// Примерная структура ответа от Strapi (для v4 и v5)
 interface StrapiResponse {
     data: {
         id: number;
-        attributes?: PhoneFormData; // в Strapi v4 свойства внутри attributes
-        phone?: string;             // в Strapi v5 свойства лежат на одном уровне с id
+        attributes?: PhoneFormData;
+        phone?: string;
     };
 }
-import React, { type FormEvent, useState } from 'react';
-import { useForm } from 'react-hook-form';
 
+import React, { useState } from 'react';
+import { type SubmitHandler, useForm } from 'react-hook-form';
+
+type Inputs = {
+    phone: string;
+    policy: boolean;
+};
 
 function PhoneCallbackComponent() {
-
-
-
-    const [phone, setPhone] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const [message, setMessage] = useState<string>('');
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>({
+        mode: "onBlur",
+        defaultValues: {
+            phone: '',
+            policy: false
+        }
+    });
+
+    const onSubmit: SubmitHandler<Inputs> = async (formData) => {
         setLoading(true);
         setMessage('');
 
         const requestBody: StrapiRequestData = {
-            data: { phone }
+            data: { phone: formData.phone }
         };
 
         try {
@@ -53,7 +58,7 @@ function PhoneCallbackComponent() {
             }
 
             setMessage(`Успешно отправлено!`);
-            setPhone('');
+            reset(); // Очищает всю форму, включая чекбокс
         } catch (error) {
             setMessage(error instanceof Error ? error.message : 'Произошла ошибка');
         } finally {
@@ -61,41 +66,70 @@ function PhoneCallbackComponent() {
         }
     };
 
-    type Inputs = {
-        name: string;
-        phone: string;
+
+    const VALIDATION_RULES = {
+
+        phone: {
+            required: "Номер обязателен",
+            pattern: {
+                value: /^7\d{10}$/,
+                message: "Неверный формат"
+            }
+        },
+
     };
 
-    const { register, formState: { errors } } = useForm<Inputs>({
-        mode: "onBlur"
-    });
-
     return (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '300px' }}>
-            <label htmlFor="phone">Номер телефона:</label>
-            <input
-                type="tel"
-                {...register("phone", {
-                    required: "Номер телефона обязателен",
-                    pattern: { value: /^\+?[1-9]\d{1,14}$/, message: "Неверный формат" }
-                })}
-                id="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="+7 (999) 000-00-00"
-                required
-                disabled={loading}
-            />
-            {errors.phone && <p className="pb-4 pt-1 px-2" style={{ color: "red" }}>{errors.phone.message}</p>}
 
-            <button type="submit" disabled={loading}>
-                {loading ? 'Отправка...' : 'Отправить'}
-            </button>
-            {message && <p>{message}</p>}
-        </form>
+        <div className="callback p-10 m_p-4 ">
+            <div className="container callback__container">
+                <h2 className="text_white">Обратный звонок</h2>
+                <form onSubmit={handleSubmit(onSubmit)} >
+                    <span className="text_white">Проведем индивидуальную консультацию и поможем найти подходящее решение</span>
+
+                    <div className="callback__phone">
+                        <input
+                            className="text_primary "
+                            type="tel"
+                            {...register("phone", VALIDATION_RULES.phone)}
+                            id="phone"
+                            placeholder="+7 (999) 000-00-00"
+                            disabled={loading}
+                        />
+                        {errors.phone && <p className="p" style={{ color: "red" }}>{errors.phone.message}</p>}
+                    </div>
+                    <div className="callback__btn">
+                        <button type="submit" disabled={loading} className="btn btn_primary">
+                            {loading ? 'Отправка...' : 'Отправить'}
+                        </button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </form>
+
+                <div className="callback__policy mt-8">
+                    <input
+                        type="checkbox"
+                        id="policy"
+                        disabled={loading}
+                        {...register("policy", {
+                            required: "Необходимо согласиться с политикой конфиденциальности" // Валидация на true
+                        })}
+                    />
+                    <label htmlFor="policy" className="text_white-8">
+                        Я согласен с <a href="/infoservice-agency/privacy-policy" target="_blank" rel="noopener noreferrer" className="text_white-8">
+                            политикой конфиденциальности
+                        </a>
+                    </label>
+                    {errors.policy && <p style={{ color: "red", margin: 0 }}>{errors.policy.message}</p>}
+                </div>
+
+            </div>
+
+
+
+        </div>
+
     );
 };
-
-
 
 export default PhoneCallbackComponent;

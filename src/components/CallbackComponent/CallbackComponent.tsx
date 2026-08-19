@@ -77,10 +77,9 @@ function CallbackComponent() {
             />
 
             <div className={`callback-component-form ${open ? '_active' : ''} p-4 pt-20`}>
-                {/* Перенесли обработчик отправки на форму */}
                 <form onSubmit={handleSubmit(onSubmit)} className="callback-form m-0">
                     <button
-                        type="button" // Обязательно type="button", чтобы кнопка не отправляла форму
+                        type="button"
                         onClick={() => setOpen(false)}
                         className="btn-close"
                         aria-label="Close"
