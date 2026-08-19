@@ -80,6 +80,7 @@ export interface ICompanyService {
 export interface IStrapiFile {
     id: number;
     documentId?: string;
+    url: string;
     title: string;
     file?: IStrapiMedia;
 }
