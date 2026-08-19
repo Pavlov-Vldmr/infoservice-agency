@@ -58,8 +58,8 @@ function Services() {
           <h2>Документы для скачивания РАБОТАЕТ</h2>
           <div>
 
-            {files.map(file => (
-              <>
+            {/* {files.map(file => ( */}
+            {/* <>
                 <span>{file.title} </span>
 
                 <a
@@ -71,8 +71,18 @@ function Services() {
                 >
                   <button>Скачать</button>
                 </a>
-              </>
-            ))}
+              </> */}
+            {/* ))} */}
+
+            <span>{files[0]?.title}</span>
+            <a
+              href={getStrapiMediaUrl(files[0]?.file?.url)}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-button"
+            > <button>Скачать</button></a>
+
           </div>
         </div>
       </section>
