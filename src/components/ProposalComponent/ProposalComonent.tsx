@@ -1,5 +1,6 @@
 
 import MainActButton from '../Buttons/MainActButton/MainActButton'
+
 import './ProposalComonent.scss'
 
 

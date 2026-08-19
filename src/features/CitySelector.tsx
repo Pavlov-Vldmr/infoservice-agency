@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useCity, type CityCode } from '@/contexts/CityContext';
 
+import { type CityCode,useCity } from '@/contexts/CityContext';
 import { useCompany } from "@/contexts/CompanyInfoContext"
 
 const CITIES: CityCode[] = ['yuS', 'korsakov'];

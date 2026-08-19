@@ -1,7 +1,8 @@
 
-import { Icons } from '../Icons'
-import './AboutComonent.scss'
 import guardian from '../../assets/images/security.jpg'
+import { Icons } from '../Icons'
+
+import './AboutComonent.scss'
 
 
 function AboutComponent() {

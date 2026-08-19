@@ -1,5 +1,5 @@
-import { strapiFetch, type StrapiSingleResponse } from "./strapiClient";
 import type { ICompanyInfo } from "./api.types";
+import { strapiFetch, type StrapiSingleResponse } from "./strapiClient";
 export type { ICompanyInfo }
 
 export async function fetchCompanyInfo(): Promise<ICompanyInfo | null> {

@@ -1,14 +1,14 @@
-import "./Header.scss";
-
 import { NavLink } from "react-router-dom";
 
-import MainActButton from "../Buttons/MainActButton/MainActButton";
-import logo from "../../assets/images/logo-full.svg";
+import { useCompany } from "@/contexts/CompanyInfoContext";
+import PhoneComponent from "@/features/model/PhoneComponent";
 
+import logo from "../../assets/images/logo-full.svg";
+import MainActButton from "../Buttons/MainActButton/MainActButton";
 import HamburgerComponent from "./components/HamburgerComponent/HumburgerComponent";
 import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
-import PhoneComponent from "@/features/model/PhoneComponent";
-import { useCompany } from "@/contexts/CompanyInfoContext";
+
+import "./Header.scss";
 // import { CitySelector } from "@/features/CitySelector";
 
 function Header() {

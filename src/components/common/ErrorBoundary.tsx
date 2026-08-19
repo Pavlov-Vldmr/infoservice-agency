@@ -1,4 +1,4 @@
-import React, { Component, type ErrorInfo, type ReactNode } from 'react';
+import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
     children: ReactNode;
@@ -15,6 +15,7 @@ class ErrorBoundary extends Component<Props, State> {
     };
 
     // Метод обновляет состояние, чтобы следующий рендер показал запасной UI
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     public static getDerivedStateFromError(_: Error): State {
         return { hasError: true };
     }

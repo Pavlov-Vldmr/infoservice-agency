@@ -1,5 +1,5 @@
-import { strapiFetch, type StrapiCollectionResponse } from "./strapiClient";
 import type { ICompanyObject } from "./api.types";
+import { type StrapiCollectionResponse,strapiFetch } from "./strapiClient";
 
 export type { ICompanyObject }
 

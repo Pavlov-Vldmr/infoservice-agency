@@ -1,5 +1,5 @@
-import { strapiFetch, type StrapiCollectionResponse } from "./strapiClient";
 import type { ICompanyService } from "./api.types";
+import { type StrapiCollectionResponse,strapiFetch } from "./strapiClient";
 export type { ICompanyService }
 
 export async function fetchCompanyServices(): Promise<ICompanyService[]> {

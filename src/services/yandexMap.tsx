@@ -1,7 +1,8 @@
 import React from 'react';
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
-import config from "@/config/congig.json"
+import { Map, Placemark,YMaps } from '@pbe/react-yandex-maps';
 import { Zoom } from 'swiper/modules';
+
+import config from "@/config/congig.json"
 
 export default function App() {
   const defaultState = {

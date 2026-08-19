@@ -1,5 +1,6 @@
 
 import PageTitle from '@/components/PageTitle/PageTitle'
+
 import './Calculator.scss'
 
 

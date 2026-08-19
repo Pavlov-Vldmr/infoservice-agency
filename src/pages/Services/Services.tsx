@@ -1,10 +1,12 @@
 import { useFetch } from "@/hooks/useFetch";
+import { fetchFiles } from "@/services/files";
 import { fetchCompanyServices } from "@/services/services";
 import { getStrapiMediaUrl } from "@/services/strapiClient";
+
 import PageTitle from "../../components/PageTitle/PageTitle";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
+
 import "./Services.scss";
-import { fetchFiles } from "@/services/files";
 
 function Services() {
   const {

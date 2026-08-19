@@ -1,5 +1,6 @@
-import "./ServiceCard.scss";
 import { Icons } from "@/components/Icons";
+
+import "./ServiceCard.scss";
 
 function ServiceCard(props: { title: string; text: string }) {
   return (

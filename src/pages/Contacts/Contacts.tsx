@@ -1,19 +1,19 @@
+import { useEffect, useRef } from "react"
+import { useLocation } from "react-router-dom"
+
 import ErrorBoundary from "@/components/common/ErrorBoundary"
+import YandexMap from "@/services/yandexMap"
+
 import ContactsInfo from "../../components/ContactsInfo/ContactsInfo"
 import PageTitle from "../../components/PageTitle/PageTitle"
-import FeedbackForm from "../../features/FeedbackForm/FeedbackForm"
+
 import './Contacts.scss'
-import YandexMap from "@/services/yandexMap"
-import { useLocation } from "react-router-dom"
-import { useEffect, useRef } from "react"
-import { useCompany } from "@/contexts/CompanyInfoContext"
-import { useCity } from "@/contexts/CityContext"
 
 function Contacts() {
 
     const location = useLocation();
-    const { companyInfo } = useCompany();
-    const { city: cityC } = useCity();
+    // const { companyInfo } = useCompany();
+    // const { city: cityC } = useCity();
     const targetRef = useRef(null);
 
     useEffect(() => {

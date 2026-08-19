@@ -1,13 +1,14 @@
 // import { useState } from 'react';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import './ReviewsSlider.scss'
 
 // Import Swiper styles
 import 'swiper/css';
-import './ReviewsSlider.scss'
 
-export default () => {
+function ReviewsSlider() {
     const pagination = {
         clickable: true,
         renderBullet: function (index: number, className: string) {
@@ -108,4 +109,6 @@ export default () => {
 
         </Swiper >
     );
-};
+}
+
+export default ReviewsSlider;

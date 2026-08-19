@@ -1,24 +1,27 @@
-import "./Home.scss";
-import MainActButton from "../../components/Buttons/MainActButton/MainActButton";
+import type { ComponentType } from 'react';
+import ReactCountUp from "react-countup";
+import { ErrorBoundary } from "react-error-boundary";
+import { Link } from "react-router-dom";
+
+import AboutComponent from "@/components/AboutComonent/AboutComonent";
+import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
+import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
+import { Icons } from "@/components/Icons";
+import { useFetch } from "@/hooks/useFetch";
+import { fetchCompanyServices } from "@/services/services";
+import YandexMap from "@/services/yandexMap";
+
 import ObjectsSlider from "./components/ObjectsSlider/ObjectsSlider";
 import ReviewsSlider from "./components/ReviewsSlider/ReviewsSlider";
-import { Icons } from "../../components/Icons";
-import ContactsInfo from "../../components/ContactsInfo/ContactsInfo";
-import FeedbackForm from "../../features/FeedbackForm/FeedbackForm";
-import AboutComponent from "@/components/AboutComonent/AboutComonent";
-import { fetchCompanyServices } from "@/services/services";
-import { useFetch } from "@/hooks/useFetch";
-import { ErrorBoundary } from "react-error-boundary";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
-import { Link } from "react-router-dom";
-import YandexMap from "@/services/yandexMap";
-import ReactCountUp from "react-countup";
 
+import "./Home.scss";
 
 
 function Home() {
 
-  const CountUp = (ReactCountUp as any).default || ReactCountUp;
+  const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
+
   const {
     data: services = [],
     loading: servicesLoading,

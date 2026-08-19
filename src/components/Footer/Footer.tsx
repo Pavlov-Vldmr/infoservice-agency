@@ -1,12 +1,13 @@
 
-import './Footer.scss'
-import logo from '../../assets/images/logo-full-light.svg';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+import { useCity } from "@/contexts/CityContext"
+import { useCompany } from "@/contexts/CompanyInfoContext"
 import PhoneComponent from '@/features/model/PhoneComponent';
 
-import { useCompany } from "@/contexts/CompanyInfoContext"
-import { useCity } from "@/contexts/CityContext"
+import logo from '../../assets/images/logo-full-light.svg';
+
+import './Footer.scss'
 
 
 function Footer() {

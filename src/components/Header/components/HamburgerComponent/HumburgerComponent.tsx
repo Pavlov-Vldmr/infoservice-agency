@@ -1,9 +1,12 @@
-import Hamburger from "hamburger-react"
 import { useEffect, useRef, useState } from "react"
-import './HumburgerComponent.scss'
 import { useLocation, useNavigate } from "react-router-dom"
+import Hamburger from "hamburger-react"
+
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
+
 import NavLinksComponent from "../NavLinksComponent/NavLinksComponent"
+
+import './HumburgerComponent.scss'
 
 function HamburgerComponent() {
 
