@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, type ReactNode, useContext, useEffect, useState } from 'react';
+
 // 1. Импортируем интерфейс компании
 import { type ICompanyInfo } from "@/services/api.types";
 
@@ -30,6 +31,7 @@ export const CityProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCity = () => {
   const context = useContext(CityContext);
   if (!context) throw new Error('useCity должен использоваться внутри CityProvider');

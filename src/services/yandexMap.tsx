@@ -1,7 +1,6 @@
-import React from 'react';
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
+import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
+
 import config from "@/config/congig.json"
-import { Zoom } from 'swiper/modules';
 
 export default function App() {
   const defaultState = {
@@ -14,7 +13,7 @@ export default function App() {
   return (
     <YMaps query={{ apikey: config.YMAP_API_KEY }}>
 
-      <Map className='yandex-map' style={{ overflow: "hidden", borderRadius: ".625rem", width: "", height: "100%" }} defaultState={defaultState}>
+      <Map className='yandex-map' style={{ overflow: "hidden", borderRadius: ".625rem", width: "", height: "100%", minHeight: "300px" }} defaultState={defaultState}>
         <Placemark geometry={defaultState.center} />
 
       </Map>

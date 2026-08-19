@@ -1,19 +1,20 @@
+import { useEffect, useRef } from "react"
+import { useLocation } from "react-router-dom"
+
 import ErrorBoundary from "@/components/common/ErrorBoundary"
+import PhoneCallbackComponent from "@/components/PhoneCallbackComponent/PhoneCallbackComponent"
+import YandexMap from "@/services/yandexMap"
+
 import ContactsInfo from "../../components/ContactsInfo/ContactsInfo"
 import PageTitle from "../../components/PageTitle/PageTitle"
-import FeedbackForm from "../../features/FeedbackForm/FeedbackForm"
+
 import './Contacts.scss'
-import YandexMap from "@/services/yandexMap"
-import { useLocation } from "react-router-dom"
-import { useEffect, useRef } from "react"
-import { useCompany } from "@/contexts/CompanyInfoContext"
-import { useCity } from "@/contexts/CityContext"
 
 function Contacts() {
 
     const location = useLocation();
-    const { companyInfo } = useCompany();
-    const { city: cityC } = useCity();
+    // const { companyInfo } = useCompany();
+    // const { city: cityC } = useCity();
     const targetRef = useRef(null);
 
     useEffect(() => {
@@ -35,25 +36,29 @@ function Contacts() {
     return (
         <>
             <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
-            <div className="contacts">
-                <div className="container contacts__container">
+            <section className="contacts">
+                <div className="container contacts__container  p-10 m_p-4">
                     <div className="contacts__content m_py-8" ref={targetRef}>
                         {/* <a href="" className="test text_primary">{companyInfo?.city[cityC].name}</a> */}
                         <ContactsInfo />
-                        <div className="contacts__map pb-8 px-4 m_px-4">
+                        <div className="contacts__map  ">
                             <div className="container contacts__map__container ">
-                                <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
-                                <div className="map__element p-8 m_p-4">
+                                <h2 className="text_primary px-8 pt-8 ">Карта проезда</h2>
+                                <div className="map__element p-4 ">
                                     <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
                                         <YandexMap />
                                     </ErrorBoundary>
                                 </div>
                             </div>
+
                         </div>
                         {/* <FeedbackForm /> */}
                     </div>
+                    <PhoneCallbackComponent />
+
                 </div>
-            </div>
+            </section>
+
 
         </>
     )

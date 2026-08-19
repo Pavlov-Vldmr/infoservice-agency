@@ -1,0 +1,113 @@
+.callback {
+  align-items: center;
+  border-radius: 0.625rem;
+  background-color: var(--accent);
+  background-image: linear-gradient(190deg, var(--primary), var(--accent));
+
+  form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: calc(var(--spacing) * 4);
+
+    span {
+      flex-grow: 1;
+    }
+
+    .callback__phone {
+      position: relative;
+      input {
+        padding: calc(var(--spacing) * 4);
+        border: 1px solid var(--muted-foreground);
+        border-radius: 0.325rem;
+        font-size: var(--text-sm);
+        color: var(--text-muted);
+        background-color: var(--input-background);
+        border-color: var(--border);
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary);
+          box-shadow: 0px 0px 0px 3px
+            color-mix(in oklab, var(--primary) 20%, transparent);
+        }
+      }
+      p {
+        position: absolute;
+        right: 0;
+      }
+    }
+    .callback__btn {
+    }
+  }
+
+  &__policy {
+    position: relative;
+    text-align: right;
+
+    input[type="checkbox"] {
+      accent-color: #1f82c0;
+      width: 20px;
+      height: 20px;
+      margin-right: calc(var(--spacing) * 2);
+    }
+    p {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .callback {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--spacing) * 4);
+
+      span {
+        flex-grow: 1;
+        margin-top: calc(var(--spacing) * 4);
+      }
+
+      .callback__phone {
+        width: 100%;
+        input {
+          box-sizing: border-box;
+          margin-top: calc(var(--spacing) * 4);
+
+          width: 100%;
+
+          &:focus {
+          }
+        }
+        p {
+        }
+      }
+      .callback__btn {
+        width: 100%;
+
+        button {
+          margin-top: calc(var(--spacing) * 4);
+
+          width: 100%;
+        }
+      }
+    }
+    .callback__policy {
+      margin-top: calc(var(--spacing) * 4);
+      margin-bottom: calc(var(--spacing) * 8);
+      display: flex;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-evenly;
+      }
+      p {
+        top: 40px;
+      }
+    }
+  }
+}

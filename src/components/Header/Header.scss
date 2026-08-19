@@ -84,5 +84,10 @@ header {
     .top {
       display: none;
     }
+    .bottom {
+      .logo {
+        margin-left: calc(var(--spacing) * 4);
+      }
+    }
   }
 }

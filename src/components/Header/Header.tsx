@@ -1,17 +1,39 @@
-import "./Header.scss";
+import { matchPath, NavLink, useLocation } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
+import { useCompany } from "@/contexts/CompanyInfoContext";
+import PhoneComponent from "@/features/model/PhoneComponent";
 
-import MainActButton from "../Buttons/MainActButton/MainActButton";
 import logo from "../../assets/images/logo-full.svg";
-
+import MainActButton from "../Buttons/MainActButton/MainActButton";
 import HamburgerComponent from "./components/HamburgerComponent/HumburgerComponent";
 import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
-import PhoneComponent from "@/features/model/PhoneComponent";
-import { useCompany } from "@/contexts/CompanyInfoContext";
+
+import "./Header.scss";
 // import { CitySelector } from "@/features/CitySelector";
 
+interface ButtonProps {
+  text: string;
+  to: string;
+}
+
 function Header() {
+  const location = useLocation();
+
+  const getButtonProps = (): ButtonProps | null => {
+    const path = location.pathname;
+
+    if (path === '/infoservice-agency') {
+      return { text: 'Позвоните нам', to: '/infoservice-agency' };
+    }
+
+    if (matchPath({ path: '/infoservice-agency/*' }, path)) {
+      return { text: 'Позвоните нам', to: '/infoservice-agency/contacts' };
+    }
+
+    return null;
+  };
+
+
   const handleScroll = () => {
     // const element = document.getElementById("callBackForm");
     const element = document.getElementById("contactsForm");
@@ -28,6 +50,7 @@ function Header() {
   };
 
   const { companyInfo } = useCompany();
+  const buttonProps = getButtonProps();
 
   return (
     <>
@@ -57,13 +80,24 @@ function Header() {
             </nav>
 
             <div className="bottom__buttons">
-              <MainActButton
+              {buttonProps && (
+                <MainActButton
+                  to={buttonProps.to}
+                  onClick={handleScroll}
+                  variant="primary"
+                  bordered
+                  title={buttonProps.text}
+                />
+              )}
+
+
+              {/* <MainActButton
                 to="/infoservice-agency"
                 onClick={handleScroll}
                 variant="primary"
                 bordered
                 title="Позвоните нам"
-              ></MainActButton>
+              ></MainActButton> */}
             </div>
             <HamburgerComponent />
           </div>

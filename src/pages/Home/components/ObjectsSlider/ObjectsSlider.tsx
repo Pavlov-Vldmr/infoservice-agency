@@ -1,17 +1,18 @@
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
-import slideBg from "../../../../assets/images/object1.jpeg";
 
+import { useFetch } from "@/hooks/useFetch";
 import { fetchCompanyObjects } from "@/services/objects";
 import { getStrapiMediaUrl } from "@/services/strapiClient";
-import { useFetch } from "@/hooks/useFetch";
+
+import Slide from "./Slide/Slide";
+
+import "./ObjectsSlider.scss";
 
 // Import Swiper styles
 import "swiper/css";
-import "./ObjectsSlider.scss";
-import Slide from "./Slide/Slide";
 
-export default () => {
+function ObjectsSlider() {
   const { data: objects, loading, error } = useFetch(fetchCompanyObjects);
 
   if (loading) return <div>Загрузка объектов...</div>;
@@ -20,7 +21,7 @@ export default () => {
 
   const pagination = {
     clickable: true,
-    renderBullet: function (index: number, className: string) {
+    renderBullet: function (_index: number, className: string) {
       return '<span class="' + className + '">' + "</span>";
     },
   };
@@ -61,4 +62,6 @@ export default () => {
       ))}
     </Swiper>
   );
-};
+}
+
+export default ObjectsSlider;

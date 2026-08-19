@@ -1,6 +1,7 @@
 import { memo, type MouseEventHandler } from 'react';
-import './MainActButton.scss';
 import { Link } from 'react-router-dom';
+
+import './MainActButton.scss';
 
 interface MainActButtonProps {
     to?: string;

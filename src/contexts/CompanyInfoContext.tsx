@@ -1,5 +1,6 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-import { type ICompanyInfo, fetchCompanyInfo } from "@/services/company"
+import { createContext, type ReactNode,useContext, useEffect, useState } from 'react';
+
+import { fetchCompanyInfo,type ICompanyInfo } from "@/services/company"
 
 interface CompanyContextType {
   companyInfo: ICompanyInfo | null;

@@ -1,7 +1,9 @@
-import AboutComponent from "@/components/AboutComonent/AboutComonent"
-import PageTitle from "../../components/PageTitle/PageTitle"
-import './About.scss'
 import license from '@/assets/ServicesData/license.txt'
+import AboutComponent from "@/components/AboutComonent/AboutComonent"
+
+import PageTitle from "../../components/PageTitle/PageTitle"
+
+import './About.scss'
 function About() {
 
 

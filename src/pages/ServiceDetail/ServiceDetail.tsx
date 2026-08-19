@@ -1,13 +1,13 @@
 import { data, useParams } from 'react-router-dom';
 
-import './ServiceDetail.scss'
 import { Icons } from '@/components/Icons';
 import PageTitle from '@/components/PageTitle/PageTitle';
 import ProposalComonent from '@/components/ProposalComponent/ProposalComonent';
 import PhoneComponent from '@/features/model/PhoneComponent';
-
 import { useFetch } from '@/hooks/useFetch';
 import { fetchCompanyServices } from '@/services/services';
+
+import './ServiceDetail.scss'
 
 function ServiceDetail() {
 

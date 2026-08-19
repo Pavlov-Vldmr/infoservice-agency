@@ -1,24 +1,31 @@
-import "./Home.scss";
-import MainActButton from "../../components/Buttons/MainActButton/MainActButton";
+import type { ComponentType, ReactNode } from 'react';
+import ReactCountUp from "react-countup";
+import { ErrorBoundary } from "react-error-boundary";
+import { Link } from "react-router-dom";
+
+import AboutComponent from "@/components/AboutComonent/AboutComonent";
+import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
+import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
+import { Icons } from "@/components/Icons";
+import { useCompany } from '@/contexts/CompanyInfoContext';
+import { useFetch } from "@/hooks/useFetch";
+import { fetchCompanyServices } from "@/services/services";
+import YandexMap from "@/services/yandexMap";
+
 import ObjectsSlider from "./components/ObjectsSlider/ObjectsSlider";
 import ReviewsSlider from "./components/ReviewsSlider/ReviewsSlider";
-import { Icons } from "../../components/Icons";
-import ContactsInfo from "../../components/ContactsInfo/ContactsInfo";
-import FeedbackForm from "../../features/FeedbackForm/FeedbackForm";
-import AboutComponent from "@/components/AboutComonent/AboutComonent";
-import { fetchCompanyServices } from "@/services/services";
-import { useFetch } from "@/hooks/useFetch";
-import { ErrorBoundary } from "react-error-boundary";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
-import { Link } from "react-router-dom";
-import YandexMap from "@/services/yandexMap";
-import ReactCountUp from "react-countup";
 
+import "./Home.scss";
 
 
 function Home() {
 
-  const CountUp = (ReactCountUp as any).default || ReactCountUp;
+  const { companyInfo } = useCompany();
+
+
+  const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
+
   const {
     data: services = [],
     loading: servicesLoading,
@@ -29,13 +36,19 @@ function Home() {
   if (servicesError) return <div>Ошибка: {servicesError}</div>;
   if (services.length === 0) return <div>Сервисы не найдены</div>;
 
+  const iconArr: ReactNode[] = [
+    <Icons.ShieldAlt key="shield" className="item__icons icon_accent" />,
+    <Icons.Phone key="user" className="item__icons icon_accent" />,
+    <Icons.Shield key="settings" className="item__icons icon_accent" />
+  ];
+
   return (
     <>
-      <section className="home-hero">
-        <div className="container home-hero__container p-10">
+      <section className="home-hero ">
+        <div className="container home-hero__container m_px-4 p-10">
           <div className="home-hero__main">
             <span className="license">
-              Лицензия № Л056-00106/00029316 от 19.08.2014г.
+              {companyInfo?.licenseShort}
             </span>
             <h1>Охрана недвижимости под надежной защитой</h1>
             <p>
@@ -91,7 +104,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-services px-8 py-20">
+      <section className="home-services px-8 m_px-4 py-20">
         <div className="container home-services__container">
           <div className="home-services__title mb-20">
             <h2 className="text_center mb-4">Наши услуги по охране</h2>
@@ -100,12 +113,13 @@ function Home() {
             </p>
           </div>
           <div className="home-services__items mb-8">
-            {services.map((item) => (
+            {services.slice(0, 3).map((item, index) => (
               <>
                 <ServiceCard
                   key={item.documentId || item.id}
                   title={item.title}
                   text={item.text}
+                  icon={iconArr[index] || ""}
                 />
               </>
             ))}
@@ -121,7 +135,7 @@ function Home() {
         </div>
       </section>
 
-      {/* slider here */}
+      {/* slider OBJECTS */}
       <section className="home-objects px-8 m_px-4 py-20">
         <div className="container">
           <div className="home-objects__title mb-20">
@@ -163,7 +177,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.ApplySvg className="home-advantages__icons icon_white" />
+              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
               <h3>Финансовая проверка</h3>
               <p>
                 Отсутствие задолженностей в местные, региональные, федеральные
@@ -199,7 +213,7 @@ function Home() {
               </p>
             </div>
             <div className="home-advantages__plates__item">
-              <Icons.Cube className="home-advantages__icons icon_white" />
+              <Icons.Recomendation className="home-advantages__icons icon_white" />
               <h3>Проверка рекомендаций</h3>
               <p>
                 Охрана более 1000 объектов: физическая охрана и с помощью
@@ -227,8 +241,8 @@ function Home() {
         <AboutComponent />
       </section>
 
-      {/* slider here */}
-      <section className="home-reviews py-20 ">
+      {/* slider REVIEWS */}
+      <section className="home-reviews py-20 m_px-4">
         <div className="container">
           <div className="home-reviews__title mb-10">
             <h2 className="text_center mb-4">Отзывы наших клиентов</h2>
@@ -243,7 +257,7 @@ function Home() {
       </section>
 
       <section id="scrollTest" className="home-contacts py-20">
-        <div className="container home-contacts__container">
+        <div className="container home-contacts__container  p-10 m_p-4">
           <div className="home-contacts__title mb-20">
             <h2 className="text_center mb-4">Контакты</h2>
             <p className="text_center text_muted py-4">
@@ -253,9 +267,9 @@ function Home() {
           </div>
           <div className="home-contacts__content">
             <ContactsInfo />
-            <div className="contacts__map pb-8 px-4 m_px-4">
+            <div className="contacts__map">
               <div className="container contacts__map__container ">
-                <h2 className="text_primary px-8 pt-8 m_px-4">Карта проезда</h2>
+                <h2 className="text_primary px-8 pt-8">Карта проезда</h2>
                 <div className="map__element p-8 m_p-4">
                   <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>
                     <YandexMap />

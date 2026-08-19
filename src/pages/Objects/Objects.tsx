@@ -1,11 +1,12 @@
+import ProposalComonent from "@/components/ProposalComponent/ProposalComonent"
+import { useFetch } from "@/hooks/useFetch"
+import { fetchCompanyObjects } from "@/services/objects"
+import { getStrapiMediaUrl } from "@/services/strapiClient";
+
 import PageTitle from "../../components/PageTitle/PageTitle"
 import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
-import ProposalComonent from "@/components/ProposalComponent/ProposalComonent"
-import { fetchCompanyObjects } from "@/services/objects"
-import { getStrapiMediaUrl } from "@/services/strapiClient";
-import { useFetch } from "@/hooks/useFetch"
 
 function Objects() {
 

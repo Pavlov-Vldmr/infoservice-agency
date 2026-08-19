@@ -83,11 +83,13 @@ footer {
         gap: calc(var(--spacing) * 4);
         grid-template-columns: repeat(1, minmax(0, 1fr));
         .logo {
+          display: none;
           p {
             display: none;
           }
         }
         nav {
+          grid-column-start: 1;
           ul {
             li {
               margin-bottom: calc(var(--spacing));

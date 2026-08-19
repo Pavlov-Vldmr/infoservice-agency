@@ -9,11 +9,13 @@ export interface IStrapiMedia {
 export interface ICompanyInfo {
     documentId: string;
     companyId: string;
+    companyName: string;
     phoneMain: string;
     phoneAdd: string;
     phoneEmergency?: string;
     mailMain: string;
     mailSupport: string;
+    licenseShort: string;
     license: string;
     city: {
         yuS: {
@@ -67,6 +69,16 @@ export interface ICompanyObject {
     img_text: string;
 }
 
+export interface ICompanyReview {
+    id: number;
+    documentId: string;
+    text: string;
+    name: string;
+    company: string;
+
+
+}
+
 export interface ICompanyService {
     id: number;
     documentId: string;
@@ -80,6 +92,7 @@ export interface ICompanyService {
 export interface IStrapiFile {
     id: number;
     documentId?: string;
+    url: string;
     title: string;
     file?: IStrapiMedia;
 }
