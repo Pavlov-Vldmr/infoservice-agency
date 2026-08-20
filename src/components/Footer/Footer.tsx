@@ -1,6 +1,7 @@
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import { useCity } from "@/contexts/CityContext"
 import { useCompany } from "@/contexts/CompanyInfoContext"
 import PhoneComponent from '@/features/model/PhoneComponent';
@@ -59,13 +60,13 @@ function Footer() {
                         <div className='footer__contacts'>
                             <h4 className='mb-4'>Контакты</h4>
                             <ul>
-                                <li><PhoneComponent className='text_white-8' phone={`${companyInfo?.city[cityC].phone}`} />
+                                <li><PhoneComponent className='text_white-8' phone={`${companyInfo?.city[cityC].phone || extraCompData.city[cityC].phone}`} />
                                 </li>
-                                <li><a href={`mailto:${companyInfo?.mailMain}`} className="top_mail text_white-8">
-                                    {companyInfo?.mailMain}
+                                <li><a href={`mailto:${companyInfo?.mailMain || extraCompData.mailMain}`} className="top_mail text_white-8">
+                                    {companyInfo?.mailMain || extraCompData.mailMain}
                                 </a></li>
-                                <li>{companyInfo?.city[cityC].address}</li>
-                                <li>{companyInfo?.city[cityC].workTime}</li>
+                                <li>{companyInfo?.city[cityC].address || extraCompData.city[cityC].address}</li>
+                                <li>{companyInfo?.city[cityC].workTime || extraCompData.city[cityC].workTime}</li>
 
                             </ul>
                         </div>
@@ -75,7 +76,7 @@ function Footer() {
 
                 <div className="copyright">
                     <div className="container copyright-container">
-                        <span>{companyInfo?.license}</span>
+                        <span>{companyInfo?.license || extraCompData.license}</span>
                     </div>
                 </div>
             </footer >

@@ -1,15 +1,58 @@
-[
-  {
-    "phone": {
-      "phoneMain": "+7 (777) 123-45-67",
-      "phoneAdd": "+7 (495) 123-45-68",
-      "phoneEmergency": "+7 (495) 911-00-00"
+{
+  "id": 12,
+  "documentId": "vd1hcwpxc5x40rpxgav2iphx",
+  "phoneMain": "+7(4242) 755-202",
+  "phoneAdd": "+7(4242) 755-202",
+  "mailMain": "infoservice_2016@mail.ru",
+  "mailSupport": null,
+  "createdAt": "2026-06-22T18:35:47.272Z",
+  "updatedAt": "2026-08-19T16:34:36.726Z",
+  "publishedAt": "2026-08-19T16:34:36.756Z",
+  "phoneEmergency": "+7(4242) 755-202",
+  "license": "Охранная деятельность, выдана ЦЛРР Управления\nРосгвардии РФ по Сахалинской обл.,\n№ Л056-00106/00029316 (412) от 19.08.2014 г., срок\nдействия до 19.08.2029 г.",
+  "companyName": "ООО ЧОП «Инфосервис»",
+  "licenseShort": "№ Л056-00106/00029316 (412) от 19.08.2014 г.",
+  "personal": {
+    "id": 5,
+    "phisical": {
+      "id": 10,
+      "name": "Руслан Алексеевич",
+      "department": "Физическая охрана",
+      "job": "Начальник отдела охраны",
+      "phone": "8(4242)755-202",
+      "phoneExt": "105",
+      "jobTime": "09:00-18:00",
+      "jobBreak": "13:00-1400"
     },
-    "mail": {
-      "mailMain": "info@infoservice-охрана.рф",
-      "mailSpport": "support@infoservice-охрана.рф"
+    "technical": {
+      "id": 11,
+      "name": "Андрей Викторович",
+      "department": "Техническая охрана",
+      "job": "Главный инженер",
+      "phone": "8(4242)755-202",
+      "phoneExt": "102",
+      "jobTime": "09:00-18:00",
+      "jobBreak": "13:00-1400"
+    }
+  },
+  "city": {
+    "id": 9,
+    "korsakov": {
+      "id": 21,
+      "address": "г. Корсаков д 123",
+      "phone": "123455 6",
+      "url": "korsakov",
+      "name": "Корсаков",
+      "workTime": "12:00-19:00"
     },
-    "ofice-location": "г. Москва, ул. Охранная, д. 123 Деловой центр, 3 этаж",
-    "work-time": "Пн-Пт: 9:00 - 18:00"
-  }
-]
+    "yuS": {
+      "id": 22,
+      "address": "г. Южно-Сахалинск, ул. Пуркаева, 35А, оф.25",
+      "phone": "+7(4242) 755-202",
+      "url": "yuszhno-sakhalinskm",
+      "name": "Южно-Сахалинск",
+      "workTime": "10:00-21:00"
+    }
+  },
+  "meta": {}
+}

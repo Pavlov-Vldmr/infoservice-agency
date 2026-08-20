@@ -1,0 +1,54 @@
+[
+  {
+    "id": 9,
+    "title": "Сахалинэнерго",
+    "text": "Физическая охрана, охрана имущества, осуществление контрольно-пропускного и внутриобъектового режимов на объектах по всей Сахалинской области с 2018 года.",
+    "img_text": "Сахалинэнерго",
+    "values": {
+      "square": "123 м2",
+      "guardians": "4 человека",
+      "since": "1980 года"
+    },
+    "imageUrl": "/uploads/T5_T70b_e_en_R_Lq_Lkjj_Gs_Dv_L_cu7_Hdu_BK_Hy_Ha_I6_i_U5_Q_Cx_A2_Eo_Cz_aj_GM_Xn_Q_Vk_Lqk_Bl5_P_Gvqu_Eq_Q_Iyp_EWZ_282do_c7935f7201.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Горный Воздух",
+    "text": "Физическая охрана, охрана имущества, осуществление контрольно-пропускного и внутриобъектового режимов, осуществление охраны порядка при проведении мероприятий с 2018 года.",
+    "img_text": "Горный Воздух",
+    "values": {
+      "square": "8000 м2",
+      "guardians": "6 человек",
+      "since": "2020 года"
+    },
+    "imageUrl": "/uploads/RPW_70_J_Qo_4w_H6_LG_9x_S5v_CJZ_6_U9fmt8y_Yx_Kne3o_N_Jn_Mq_Y1qm_D4_ZZ_9zp_Pk_EHZ_2vd_K_Rgg09bn_N7_Qu7_Fcs_Z_Hj8_N7o_7fe3f1b3c0.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Кристалл",
+    "text": "",
+    "img_text": "Кристалл",
+    "values": null,
+    "imageUrl": "/uploads/Tah4eq_Dv_O_Ls_Jo_B8y_Jon_kbd_DT_2_F_Xgmw_Rjn3_QQ_7a_VX_Jc_Mvvg_O_Alha_BD_85m_Ifma_Jm_Et_Mtj_Ne4_SF_0_P_Ckyqi_P_Uvobd_Nq_bbca0c9cbd.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Газпром",
+    "text": "",
+    "img_text": "Газпром",
+    "values": null,
+    "imageUrl": "/uploads/y_T_Sha_G6_S5_ZYO_Sb_XK_Vsok_Qo_D4_In6_F4z5_Nq_sj_Ulb_Fm5_TS_Fv_U_426_HPFM_0_Lj_I0_E_Nd_Xz07_Y5_H3v_ep_G_Ux_L4_O4_L_Cu_DRC_63957cb9d3.jpg"
+  },
+  {
+    "id": 15,
+    "title": "ННК",
+    "text": "текст Ннк",
+    "img_text": "ННК",
+    "values": {
+      "square": "18000",
+      "guardians": "12 человек",
+      "since": "1200"
+    },
+    "imageUrl": "/uploads/33454c2d_822b_41ef_9979_6955f3f5328d_797ba3701d.png"
+  }
+]
