@@ -1,8 +1,11 @@
 import type { ComponentType, ReactNode } from 'react';
 import ReactCountUp from "react-countup";
 import { ErrorBoundary } from "react-error-boundary";
+import { TailSpin } from 'react-loader-spinner';
 import { Link } from "react-router-dom";
 
+import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
+import servicesExtra from "@/assets/ServicesData/servicesExtra.json";
 import AboutComponent from "@/components/AboutComonent/AboutComonent";
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
 import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
@@ -18,11 +21,33 @@ import ServiceCard from "./components/ServiceCard/ServiceCard";
 
 import "./Home.scss";
 
-
 function Home() {
 
-  const { companyInfo } = useCompany();
 
+  interface IObjectsItem {
+    id: number;
+    title: string;
+    text: string;
+    values: {
+      square: string;
+      guardians: string;
+      since: string;
+    } | null;
+    img_text: string;
+  }
+
+  interface IServiceItem {
+    id: number;
+    title: string;
+    text: string;
+    price: number;
+    imageUrl: string;
+  }
+
+  const servicesEx: IServiceItem[] = servicesExtra
+  const objectsEx: IObjectsItem[] = objectsExtra
+
+  const { companyInfo } = useCompany();
 
   const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
 
@@ -32,15 +57,39 @@ function Home() {
     error: servicesError,
   } = useFetch(fetchCompanyServices);
 
-  if (servicesLoading) return <div>Загрузка...</div>;
+  // if (servicesLoading) return <div>Загрузка...</div>;
   if (servicesError) return <div>Ошибка: {servicesError}</div>;
-  if (services.length === 0) return <div>Сервисы не найдены</div>;
+  // if (services.length === 0) return <div>Сервисы не найдены</div>;
 
   const iconArr: ReactNode[] = [
     <Icons.ShieldAlt key="shield" className="item__icons icon_accent" />,
     <Icons.Phone key="user" className="item__icons icon_accent" />,
     <Icons.Shield key="settings" className="item__icons icon_accent" />
   ];
+
+  if (servicesLoading) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '800px',
+        width: '100%',
+        top: '40%'
+      }}>
+        <TailSpin
+          visible={true}
+          height="80"
+          width="80"
+          color="#2563eb"
+          ariaLabel="tail-spin-loading"
+          radius="1"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -113,16 +162,25 @@ function Home() {
             </p>
           </div>
           <div className="home-services__items mb-8">
-            {services.slice(0, 3).map((item, index) => (
-              <>
+            {services && services.length > 0 ? (
+              services.slice(0, 3).map((item, index) => (
                 <ServiceCard
                   key={item.documentId || item.id}
                   title={item.title}
                   text={item.text}
                   icon={iconArr[index] || ""}
                 />
-              </>
-            ))}
+              ))
+            ) : (
+              servicesEx.slice(0, 3).map((item, index) => (
+                <ServiceCard
+                  key={item.id}
+                  title={item.title}
+                  text={item.text}
+                  icon={iconArr[index] || ""}
+                />
+              ))
+            )}
           </div>
           <div className="home-services__btn flex-center">
             <Link

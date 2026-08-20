@@ -1,5 +1,6 @@
 import { matchPath, NavLink, useLocation } from "react-router-dom";
 
+import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import { useCompany } from "@/contexts/CompanyInfoContext";
 import PhoneComponent from "@/features/model/PhoneComponent";
 
@@ -58,11 +59,11 @@ function Header() {
         <div className="top">
           <div className="container top__container px-8 m_px-0">
             <PhoneComponent
-              phone={`${companyInfo?.phoneMain}`}
+              phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`}
               className="text_white top_phone"
             />
-            <a href={`mailto:${companyInfo?.mailMain}`} className="top_mail text_white">
-              {companyInfo?.mailMain}
+            <a href={`mailto:${companyInfo?.mailMain || extraCompData.mailMain}`} className="top_mail text_white">
+              {companyInfo?.mailMain || extraCompData.mailMain}
             </a>
             {/* <CitySelector /> */}
           </div>

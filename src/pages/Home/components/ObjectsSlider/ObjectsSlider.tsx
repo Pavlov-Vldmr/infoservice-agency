@@ -17,7 +17,7 @@ function ObjectsSlider() {
 
   if (loading) return <div>Загрузка объектов...</div>;
   if (error) return <div>Ошибка: {error}</div>;
-  if (objects.length === 0) return <div>Объекты не найдены</div>;
+  if (objects.length === 0) return console.log('objects nf');
 
   const pagination = {
     clickable: true,

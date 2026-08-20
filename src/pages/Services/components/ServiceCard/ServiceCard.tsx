@@ -4,7 +4,7 @@ import "./ServiceCard.scss";
 function ServiceCard(props: {
   title: string;
   text: string;
-  link: string;
+  link?: string;
   price: number;
   imgURL?: string;
 }) {

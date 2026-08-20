@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 
+import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
 import { useCompany } from "@/contexts/CompanyInfoContext"
 import PhoneComponent from "@/features/model/PhoneComponent"
@@ -74,16 +75,16 @@ function HamburgerComponent() {
                     </div>
                     <div className="hamburger__nav__phone mt-6">
                         <PhoneComponent
-                            phone={`${companyInfo?.phoneMain}`}
+                            phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`}
                             className="phone p-2"
                         />
-                        <a href={`mailto:${companyInfo?.mailMain}`} className="mail p-2">
-                            {companyInfo?.mailMain}
+                        <a href={`mailto:${companyInfo?.mailMain || extraCompData.mailMain}`} className="mail p-2">
+                            {companyInfo?.mailMain || extraCompData.mailMain}
                         </a>
                     </div>
 
                     <div className="hamburger__nav__footer">
-                        <span className="text_muted">© 2026 {companyInfo?.companyName}</span>
+                        <span className="text_muted">© 2026 {companyInfo?.companyName || extraCompData.companyName}</span>
                     </div>
                 </div>
                 {/* // } */}
