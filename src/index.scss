@@ -4,6 +4,8 @@
   --accent: #2563eb;
   --foreground: oklch(14.5% 0 0);
   --muted-foreground: #717182;
+  --muted-foreground-g: #0000cdef;
+
   --border: #0000001a;
   --muted: #ececf0;
   --bg: #fff;
@@ -198,7 +200,9 @@ a {
 .text_center {
   text-align: center;
 }
-
+.text_muted-g {
+  color: var(--muted-foreground-g);
+}
 .text_muted {
   color: var(--muted-foreground);
 }
@@ -215,6 +219,10 @@ a {
 
 .text_primary {
   color: var(--primary);
+}
+
+.bg_white {
+  background-color: #fff;
 }
 
 .icon {

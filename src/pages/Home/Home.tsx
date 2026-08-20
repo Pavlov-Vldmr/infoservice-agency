@@ -4,12 +4,13 @@ import { ErrorBoundary } from "react-error-boundary";
 import { TailSpin } from 'react-loader-spinner';
 import { Link } from "react-router-dom";
 
-import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
+import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import servicesExtra from "@/assets/ServicesData/servicesExtra.json";
 import AboutComponent from "@/components/AboutComonent/AboutComonent";
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
 import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
 import { Icons } from "@/components/Icons";
+import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent';
 import { useCompany } from '@/contexts/CompanyInfoContext';
 import { useFetch } from "@/hooks/useFetch";
 import { fetchCompanyServices } from "@/services/services";
@@ -23,19 +24,6 @@ import "./Home.scss";
 
 function Home() {
 
-
-  interface IObjectsItem {
-    id: number;
-    title: string;
-    text: string;
-    values: {
-      square: string;
-      guardians: string;
-      since: string;
-    } | null;
-    img_text: string;
-  }
-
   interface IServiceItem {
     id: number;
     title: string;
@@ -45,7 +33,6 @@ function Home() {
   }
 
   const servicesEx: IServiceItem[] = servicesExtra
-  const objectsEx: IObjectsItem[] = objectsExtra
 
   const { companyInfo } = useCompany();
 
@@ -97,7 +84,7 @@ function Home() {
         <div className="container home-hero__container m_px-4 p-10">
           <div className="home-hero__main">
             <span className="license">
-              {companyInfo?.licenseShort}
+              {companyInfo?.licenseShort || extraCompData.licenseShort}
             </span>
             <h1>Охрана недвижимости под надежной защитой</h1>
             <p>
@@ -194,7 +181,7 @@ function Home() {
       </section>
 
       {/* slider OBJECTS */}
-      <section className="home-objects px-8 m_px-4 py-20">
+      <section className="home-objects py-20 m_px-4">
         <div className="container">
           <div className="home-objects__title mb-20">
             <h2 className="text_center mb-4">Охраняемые объекты</h2>
@@ -295,10 +282,14 @@ function Home() {
         </div>
       </section>
 
+
+
       <section className="home-about py-20 m_py-0">
         <AboutComponent />
       </section>
-
+      <section className='home-phoneCallback px-8 m_px-4 py-20 pb-0 bg_white'>
+        <PhoneCallbackComponent />
+      </section>
       {/* slider REVIEWS */}
       <section className="home-reviews py-20 m_px-4">
         <div className="container">

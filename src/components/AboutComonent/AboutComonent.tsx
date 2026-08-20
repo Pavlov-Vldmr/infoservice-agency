@@ -1,4 +1,7 @@
 
+import type { ComponentType } from "react";
+import ReactCountUp from "react-countup";
+
 import guardian from '../../assets/images/security.jpg'
 import { Icons } from '../Icons'
 
@@ -6,6 +9,8 @@ import './AboutComonent.scss'
 
 
 function AboutComponent() {
+    const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
+
 
 
     return (
@@ -62,23 +67,27 @@ function AboutComponent() {
                 <div className="home-achievements-plates">
                     <div>
                         <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                        <h3>15+</h3>
+                        <h3><CountUp end={28} duration={4} suffix="+" enableScrollSpy={true}
+                            scrollSpyOnce={true} /></h3>
                         <span>Лет</span>
                     </div>
                     <div>
                         <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                        <h3>15+</h3>
-                        <span>Лет</span>
+                        <h3><CountUp end={5} duration={4} suffix="+" enableScrollSpy={true}
+                            scrollSpyOnce={true} /></h3>
+                        <span>Городов</span>
                     </div>
                     <div>
                         <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                        <h3>15+</h3>
-                        <span>Лет</span>
+                        <h3><CountUp end={184} duration={4} suffix="+" enableScrollSpy={true}
+                            scrollSpyOnce={true} /></h3>
+                        <span>Охранника</span>
                     </div>
                     <div>
                         <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                        <h3>15+</h3>
-                        <span>Лет</span>
+                        <h3><CountUp end={1000} duration={4} suffix="+" enableScrollSpy={true}
+                            scrollSpyOnce={true} /></h3>
+                        <span>Клиентов</span>
                     </div>
                 </div>
             </div>

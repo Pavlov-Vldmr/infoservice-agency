@@ -8,9 +8,9 @@ function PrivacyPolicy() {
 
     return (
         <>
-            <section className="privavy-policy py-4 px-8">
-                <div className="сontainer privavy-policy__container mt-20 px-20 py-20">
-                    <div id="inputResult" className="container px-20">
+            <section className="privavy-policy py-4 px-8 m_px-4">
+                <div className="сontainer privavy-policy__container mt-20 px-20 py-20 m_p-4">
+                    <div id="inputResult" className="container px-20 m_px-0">
                         <div className="row mb-4">
                             <div className="col">
                                 <h4 className="flex-center"><strong>Политика в&nbsp;отношении обработки персональных данных</strong></h4>

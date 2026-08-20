@@ -80,15 +80,20 @@ footer {
   footer {
     .top {
       &__container {
-        gap: calc(var(--spacing) * 4);
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: calc(var(--spacing) * 0);
+        // grid-template-columns: repeat(2, minmax(0, 1fr));
+        flex-direction: column;
+        display: flex;
+        justify-content: flex-end;
         .logo {
-          display: none;
+          // display: none;
+
           p {
             display: none;
           }
         }
-        nav {
+        .footer__nav {
+          display: none;
           grid-column-start: 1;
           ul {
             li {
@@ -105,15 +110,21 @@ footer {
 
         .footer__contacts {
           h4 {
+            display: none;
           }
           ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
             li {
               margin-bottom: calc(var(--spacing));
               font-size: var(--text-xs);
 
-              display: block;
               margin: 0;
-              padding-bottom: calc(var(--spacing) * 1);
+              a {
+                padding-bottom: calc(var(--spacing) * 1);
+              }
             }
           }
         }
@@ -124,6 +135,7 @@ footer {
       .copyright-container {
         span {
           padding-top: calc(var(--spacing) * 4);
+          color: #babac0e4;
         }
       }
     }

@@ -68,7 +68,7 @@ function Services() {
     <>
       <PageTitle
         title="Наши услуги"
-        subTitle="Комплексные решения по обеспечение безопасности вашей недвижимости"
+        subTitle="Комплексные решения по обеспечению безопасности вашей недвижимости"
       />
 
       <section className="services">
@@ -99,7 +99,7 @@ function Services() {
 
       <section className="services">
         <div className="container services__container  p-10 m_p-4">
-          <h2>Документы для скачивания РАБОТАЕТ</h2>
+          <h2>Прайс лист</h2>
           <div>
             <span>{files[0]?.title}</span>
             <a

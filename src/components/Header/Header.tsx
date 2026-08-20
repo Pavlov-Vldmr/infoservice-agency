@@ -66,6 +66,7 @@ function Header() {
               {companyInfo?.mailMain || extraCompData.mailMain}
             </a>
             {/* <CitySelector /> */}
+            <span>Круглосуточная служба безопасности</span>
           </div>
         </div>
 
