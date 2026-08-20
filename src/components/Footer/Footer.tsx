@@ -33,11 +33,11 @@ function Footer() {
             <footer className='py-12 m_p-4'>
                 <div className="top mb-4">
                     <div className="container top__container ">
-                        <div onClick={handleLogoClick} style={{ cursor: 'pointer' }} className="logo m_mt-4">
+                        <div onClick={handleLogoClick} style={{ cursor: 'pointer' }} className="logo m_mt-2">
                             <img className='logo__img' src={logo} alt="Логотип Инфосервис" />
                             <p className='mt-4'>Профессиональные решения по охране недвижимости, которым можно доверять.</p>
                         </div>
-                        <nav>
+                        <nav className='footer__nav'>
                             <h4 className='mb-4'>Навигация</h4>
                             <ul>
                                 <li> <Link to="/infoservice-agency/">Главная</Link></li>
@@ -57,7 +57,7 @@ function Footer() {
                                 <li><Link to="/">Патрулирование</Link></li>
                             </ul>
                         </nav> */}
-                        <div className='footer__contacts'>
+                        <nav className='footer__contacts m_mt-8'>
                             <h4 className='mb-4'>Контакты</h4>
                             <ul>
                                 <li><PhoneComponent className='text_white-8' phone={`${companyInfo?.city[cityC].phone || extraCompData.city[cityC].phone}`} />
@@ -66,17 +66,15 @@ function Footer() {
                                     {companyInfo?.mailMain || extraCompData.mailMain}
                                 </a></li>
                                 <li>{companyInfo?.city[cityC].address || extraCompData.city[cityC].address}</li>
-                                <li>{companyInfo?.city[cityC].workTime || extraCompData.city[cityC].workTime}</li>
-
                             </ul>
-                        </div>
+                        </nav>
                     </div>
                 </div>
 
 
                 <div className="copyright">
                     <div className="container copyright-container">
-                        <span>{companyInfo?.license || extraCompData.license}</span>
+                        <span className="text_muted-g">© 2026 {companyInfo?.companyName || extraCompData.companyName}</span>
                     </div>
                 </div>
             </footer >
