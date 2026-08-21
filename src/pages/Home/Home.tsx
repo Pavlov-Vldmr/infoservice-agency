@@ -1,6 +1,8 @@
 import type { ComponentType, ReactNode } from 'react';
 import ReactCountUp from "react-countup";
 import { ErrorBoundary } from "react-error-boundary";
+// import Marquee from 'react-fast-marquee';
+// import { default as Marquee } from 'react-fast-marquee';
 import { TailSpin } from 'react-loader-spinner';
 import { Link } from "react-router-dom";
 
@@ -16,6 +18,7 @@ import { useFetch } from "@/hooks/useFetch";
 import { fetchCompanyServices } from "@/services/services";
 import YandexMap from "@/services/yandexMap";
 
+import MarqueeLogo from './components/MarqueeLogo/MarqueeLogo';
 import ObjectsSlider from "./components/ObjectsSlider/ObjectsSlider";
 import ReviewsSlider from "./components/ReviewsSlider/ReviewsSlider";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
@@ -37,6 +40,8 @@ function Home() {
   const { companyInfo } = useCompany();
 
   const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
+
+
 
   const {
     data: services = [],
@@ -106,6 +111,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+
+
 
       <section className="home-achievements py-4">
         <div className="container home-achievements__container p-2">
@@ -282,14 +290,20 @@ function Home() {
         </div>
       </section>
 
-
+      <section className='home-marquee bg_white'>
+        <MarqueeLogo />
+      </section>
 
       <section className="home-about py-20 m_py-0">
         <AboutComponent />
       </section>
-      <section className='home-phoneCallback px-8 m_px-4 py-20 pb-0 bg_white'>
+
+
+      <section className='home-phoneCallback px-8 m_px-4 py-10 pb-0 bg_white'>
         <PhoneCallbackComponent />
       </section>
+
+
       {/* slider REVIEWS */}
       <section className="home-reviews py-20 m_px-4">
         <div className="container">
@@ -304,6 +318,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+
 
       <section id="scrollTest" className="home-contacts py-20">
         <div className="container home-contacts__container  p-10 m_p-4">

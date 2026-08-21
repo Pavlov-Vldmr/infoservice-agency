@@ -1,4 +1,5 @@
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
+// import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
+import { Map, Placemark, YMaps } from '@iminside/react-yandex-maps';
 
 import config from "@/config/congig.json"
 
@@ -12,11 +13,9 @@ export default function App() {
 
   return (
     <YMaps query={{ apikey: config.YMAP_API_KEY }}>
-
-      <Map className='yandex-map' style={{ overflow: "hidden", borderRadius: ".625rem", width: "", height: "100%", minHeight: "300px" }} defaultState={defaultState}>
+      <Map className='yandex-map' style={{ overflow: "hidden", borderRadius: ".625rem", width: "", height: "100%", minHeight: "400px" }} defaultState={defaultState}>
         <Placemark geometry={defaultState.center} />
-
       </Map>
     </YMaps>
-  );
-} 
+  )
+}

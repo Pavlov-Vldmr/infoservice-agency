@@ -10,40 +10,62 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@pbe/react-yandex-maps": "^1.2.5",
+    "@iminside/react-yandex-maps": "^1.2.7",
     "hamburger-react": "^2.5.2",
     "imask": "^7.6.1",
     "normalize.css": "^8.0.1",
-    "pkg-name": "^1.0.2",
-    "react": "^19.2.6",
+    "react": "^19.2.8",
     "react-cookie-consent": "^10.0.2",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.2.6",
-    "react-error-boundary": "^6.1.2",
-    "react-hook-form": "^7.79.0",
+    "react-dom": "^19.2.8",
+    "react-error-boundary": "^6.1.3",
+    "react-fast-marquee": "^1.6.5",
+    "react-hook-form": "^7.85.0",
     "react-loader-spinner": "^8.0.2",
-    "react-router-dom": "^7.17.0",
-    "swiper": "^12.2.0"
+    "react-router-dom": "^7.18.2",
+    "swiper": "^14.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^24.13.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "@yandex/ymaps3-types": "^1.0.19996773",
-    "eslint": "^10.3.0",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "eslint": "^10.8.1",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-react-refresh": "^0.5.4",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "gh-pages": "^6.3.0",
-    "globals": "^17.6.0",
-    "sass-embedded": "^1.100.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12",
+    "globals": "^17.11.0",
+    "sass-embedded": "^1.103.1",
+    "typescript": "~7.0.2",
+    "typescript-eslint": "^8.67.0",
+    "vite": "^8.2.2",
     "vite-plugin-svgr": "^5.2.0"
   },
-  "homepage": "https://Pavlov-Vldmr.github.io/infoservice-agency"
+  "homepage": "https://Pavlov-Vldmr.github.io/infoservice-agency",
+  "overrides": {
+    "typescript-eslint": {
+      "typescript": "$typescript"
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "typescript": "$typescript"
+    },
+    "@typescript-eslint/parser": {
+      "typescript": "$typescript"
+    },
+    "@typescript-eslint/type-utils": {
+      "typescript": "$typescript"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "typescript": "$typescript"
+    },
+    "@typescript-eslint/utils": {
+      "typescript": "$typescript"
+    },
+    "ts-api-utils": {
+      "typescript": "$typescript"
+    }
+  }
 }

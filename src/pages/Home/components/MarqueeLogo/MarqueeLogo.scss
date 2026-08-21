@@ -1,0 +1,23 @@
+.marquee-logo {
+  background-color: var(--bg-gray);
+  width: 100%;
+  padding-block: 40px;
+
+  img {
+    box-sizing: border-box;
+    background-size: cover;
+    padding-inline: 80px;
+    filter: grayscale(100%);
+    opacity: 80%;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-logo {
+    img {
+      padding-inline: 20px;
+      height: 60px;
+    }
+  }
+}
