@@ -242,3 +242,9 @@ a {
 .check {
   color: red !important;
 }
+
+@media (max-width: 768px) {
+  .m_w100 {
+    width: 100%;
+  }
+}

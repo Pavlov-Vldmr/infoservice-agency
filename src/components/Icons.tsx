@@ -1,8 +1,13 @@
+import Award from '../assets/icons/award.svg?react'
 import Camera from '../assets/icons/camera-svgrepo-com.svg?react'
 // achievments
 import Chart from '../assets/icons/chart-mixed-alt-svgrepo-com.svg?react'
+import City from '../assets/icons/city.svg?react'
+import Client from '../assets/icons/client.svg?react'
 import Clock from '../assets/icons/clock.svg?react'
 import Cube from '../assets/icons/cube.svg?react'
+import Flag from '../assets/icons/flag.svg?react'
+import Guardian from '../assets/icons/guardian.svg?react'
 // adv
 import Headphones from '../assets/icons/headphones-alt-svgrepo-com.svg?react'
 import Lock from '../assets/icons/lock-svgrepo-com.svg?react'
@@ -43,7 +48,14 @@ export const Icons = {
     Map,
     Phone,
     Mail,
-    Tech
+    Tech,
+    Flag,
+
+
+    Client,
+    Award,
+    City,
+    Guardian
 
 };
 

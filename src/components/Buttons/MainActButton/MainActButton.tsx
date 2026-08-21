@@ -7,6 +7,8 @@ interface MainActButtonProps {
     to?: string;
     title: string;
     variant?: string;
+    type?: string;
+
     bordered?: boolean;
     onClick?: MouseEventHandler<HTMLAnchorElement>; // для внешней функции
 }
@@ -14,6 +16,7 @@ interface MainActButtonProps {
 const MainActButton = memo(({
     to = "",
     title,
+    type = '',
     variant = 'default',
     bordered = false,
     onClick,
@@ -23,6 +26,8 @@ const MainActButton = memo(({
     const className = [
         'btn',
         `btn_${variant}`,
+        `btn_${type}`,
+
         bordered ? 'btn_bordered' : ''
     ].filter(Boolean).join(' ');
 

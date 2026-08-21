@@ -12,8 +12,8 @@ import './AboutComonent.scss'
 
 function AboutComponent() {
     const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
-    const FadeContentDuraton: number = 1000
-    const AnimContentDuraton: number = 1.2
+    const FadeContentDuraton: number = 2000
+    const AnimContentDuraton: number = 1.4
 
     return (
         <div className='about-component'>
@@ -87,7 +87,6 @@ function AboutComponent() {
 
                         </AnimatedContent>
 
-
                         <div className='about-component__article-adv mt-8'>
                             <FadeContent blur={true} duration={FadeContentDuraton} easing="ease-out" initialOpacity={0}>
                                 <div className='about-component__article-adv__item'>
@@ -130,27 +129,27 @@ function AboutComponent() {
                         </div>
                     </div>
                 </div>
-                <div className="home-achievements-plates">
+                <div className="home-achievements-plates m_mt-8">
                     <div>
-                        <Icons.ShieldAlt className='home-achievements__icons icon_white' />
+                        <Icons.Award className='home-achievements__icons icon_white' />
                         <h3><CountUp end={28} duration={4} suffix="+" enableScrollSpy={true}
                             scrollSpyOnce={true} /></h3>
                         <span>Лет</span>
                     </div>
                     <div>
-                        <Icons.ShieldAlt className='home-achievements__icons icon_white' />
-                        <h3><CountUp end={5} duration={4} suffix="+" enableScrollSpy={true}
+                        <Icons.City className='home-achievements__icons icon_white' />
+                        <h3><CountUp end={15} duration={4} suffix="+" enableScrollSpy={true}
                             scrollSpyOnce={true} /></h3>
                         <span>Городов</span>
                     </div>
                     <div>
-                        <Icons.ShieldAlt className='home-achievements__icons icon_white' />
+                        <Icons.Guardian className='home-achievements__icons icon_white' />
                         <h3><CountUp end={184} duration={4} suffix="+" enableScrollSpy={true}
                             scrollSpyOnce={true} /></h3>
                         <span>Охранника</span>
                     </div>
                     <div>
-                        <Icons.ShieldAlt className='home-achievements__icons icon_white' />
+                        <Icons.Client className='home-achievements__icons icon_white' />
                         <h3><CountUp end={1000} duration={4} suffix="+" enableScrollSpy={true}
                             scrollSpyOnce={true} /></h3>
                         <span>Клиентов</span>
