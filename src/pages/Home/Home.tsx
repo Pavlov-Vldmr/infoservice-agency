@@ -84,6 +84,8 @@ function Home() {
     );
   }
 
+
+  const FadeAdvDuration: number = 500
   return (
     <>
       <section className="home-hero ">
@@ -172,7 +174,7 @@ function Home() {
           <div className="home-services__items mb-8">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
-                <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+                <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.documentId || item.id}
                     title={item.title}
@@ -186,7 +188,7 @@ function Home() {
             ) : (
               servicesEx.slice(0, 3).map((item, index) => (
 
-                <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.id}
                     title={item.title}
@@ -243,8 +245,8 @@ function Home() {
           </div>
           <div className="home-advantages__plates">
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Reputation className="home-advantages__icons icon_white" />
                 <h3>Коммерческая репутация</h3>
                 <p>
@@ -254,8 +256,8 @@ function Home() {
               </div>
             </FadeContent>
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Reputation className="home-advantages__icons icon_white" />
                 <h3>Коммерческая репутация</h3>
                 <p>
@@ -265,8 +267,8 @@ function Home() {
               </div>
             </FadeContent>
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.ShieldAlt className="home-advantages__icons icon_white" />
                 <h3>Финансовая проверка</h3>
                 <p>
@@ -278,8 +280,8 @@ function Home() {
               </div>
             </FadeContent>
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Person className="home-advantages__icons icon_white" />
                 <h3>Профессиональный состав</h3>
                 <p>
@@ -289,8 +291,8 @@ function Home() {
               </div>
             </FadeContent>
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Lock className="home-advantages__icons icon_white" />
                 <h3>Проверка работы в прошлом</h3>
                 <p>
@@ -301,8 +303,8 @@ function Home() {
               </div>
             </FadeContent>
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Headphones className="home-advantages__icons icon_white" />
                 <h3>Всегда рядом</h3>
                 <p>
@@ -313,8 +315,8 @@ function Home() {
               </div>
             </FadeContent>
 
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Recomendation className="home-advantages__icons icon_white" />
                 <h3>Проверка рекомендаций</h3>
                 <p>
@@ -325,8 +327,8 @@ function Home() {
                 </p>
               </div>
             </FadeContent>
-            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
-              <div className="home-advantages__plates__item">
+            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
+              <div >
                 <Icons.Cube className="home-advantages__icons icon_white" />
                 <h3>Прозрачность в работе</h3>
                 <p>
