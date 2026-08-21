@@ -12,8 +12,8 @@ import './AboutComonent.scss'
 
 function AboutComponent() {
     const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
-    const FadeContentDuraton: number = 2000
-    const AnimContentDuraton: number = 1.8
+    const FadeContentDuraton: number = 1000
+    const AnimContentDuraton: number = 1.2
 
     return (
         <div className='about-component'>

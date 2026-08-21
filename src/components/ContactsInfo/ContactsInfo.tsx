@@ -14,7 +14,7 @@ function ContactsInfo() {
     const { companyInfo } = useCompany();
     const { city: cityC } = useCity();
 
-    const AnimContentDuraton: number = 1.8
+    const AnimContentDuraton: number = 1.2
 
     return (
         <>
