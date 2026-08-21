@@ -202,8 +202,9 @@ function Home() {
           </div>
           <div className="home-services__btn flex-center">
             <Link
-              className="btn btn_primary btn_bordered"
+              className="btn btn_primary btn_bordered m_w100"
               to="/infoservice-agency/services"
+
             >
               Все услуги
             </Link>
@@ -225,8 +226,9 @@ function Home() {
           </div>
           <div className="home-objects__btn flex-center">
             <Link
-              className="btn btn_primary btn_bordered"
+              className="btn btn_primary btn_bordered m_w100"
               to="/infoservice-agency/objects"
+
             >
               Все объекты
             </Link>
@@ -356,8 +358,8 @@ function Home() {
       </section>
 
 
-      <section className='home-phoneCallback px-8 m_px-4 py-10 pb-0 bg_white'>
-        <PhoneCallbackComponent />
+      <section className='home-phoneCallback m_px-4 m_pt-8 bg_white'>
+        <PhoneCallbackComponent className='' />
       </section>
 
 

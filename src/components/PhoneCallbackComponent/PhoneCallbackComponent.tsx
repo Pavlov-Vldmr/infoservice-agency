@@ -24,7 +24,7 @@ type Inputs = {
     policy: boolean;
 };
 
-function PhoneCallbackComponent() {
+function PhoneCallbackComponent(props: { className?: string }) {
     const [loading, setLoading] = useState<boolean>(false);
     const [message, setMessage] = useState<string>('');
 
@@ -81,7 +81,7 @@ function PhoneCallbackComponent() {
 
     return (
 
-        <div className="callback ">
+        <div className={`${props.className} callback`}>
             <div className="container callback__container p-10 m_p-4 mt-4 m_px-4">
                 <h2 className="text_white">Обратный звонок</h2>
                 <form onSubmit={handleSubmit(onSubmit)} >

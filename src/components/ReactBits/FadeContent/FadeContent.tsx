@@ -51,7 +51,7 @@ const FadeContent: React.FC<FadeContentProps> = ({
             scrollerTarget = document.querySelector(scrollerTarget);
         }
 
-        const startPct = (1 - threshold) * 100;
+        const startPct = (1 - threshold) * 130;
         const getSeconds = (val: number) => (val > 10 ? val / 1000 : val);
 
         gsap.set(el, {
