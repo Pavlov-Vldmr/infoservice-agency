@@ -1,6 +1,8 @@
 import type { ComponentType, ReactNode } from 'react';
 import ReactCountUp from "react-countup";
 import { ErrorBoundary } from "react-error-boundary";
+// import Marquee from 'react-fast-marquee';
+// import { default as Marquee } from 'react-fast-marquee';
 import { TailSpin } from 'react-loader-spinner';
 import { Link } from "react-router-dom";
 
@@ -11,11 +13,15 @@ import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
 import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
 import { Icons } from "@/components/Icons";
 import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent';
+import FadeContent from '@/components/ReactBits/FadeContent/FadeContent';
+// import FoldText from '@/components/ReactBits/FoldText/FoldText';
+import ShinyText from '@/components/ReactBits/ShinyText/ShinyText';
 import { useCompany } from '@/contexts/CompanyInfoContext';
 import { useFetch } from "@/hooks/useFetch";
 import { fetchCompanyServices } from "@/services/services";
 import YandexMap from "@/services/yandexMap";
 
+import MarqueeLogo from './components/MarqueeLogo/MarqueeLogo';
 import ObjectsSlider from "./components/ObjectsSlider/ObjectsSlider";
 import ReviewsSlider from "./components/ReviewsSlider/ReviewsSlider";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
@@ -86,7 +92,19 @@ function Home() {
             <span className="license">
               {companyInfo?.licenseShort || extraCompData.licenseShort}
             </span>
-            <h1>Охрана недвижимости под надежной защитой</h1>
+            {/* <h1>Охрана недвижимости под надежной защитой</h1> */}
+
+            <ShinyText
+              text="Охрана недвижимости под надежной защитой"
+              speed={5}
+              delay={0}
+              color="#fff"
+              shineColor="#879cd3"
+              spread={120}
+              direction="left"
+            />
+
+
             <p>
               Профессиональная охрана коммерческой и жилой недвижимости.
               Круглосуточный мониторинг, современное оборудование и опытные
@@ -148,24 +166,35 @@ function Home() {
               Комплексные решения по безопасности для защиты вашей недвижимости
             </p>
           </div>
+
+
+
           <div className="home-services__items mb-8">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
-                <ServiceCard
-                  key={item.documentId || item.id}
-                  title={item.title}
-                  text={item.text}
-                  icon={iconArr[index] || ""}
-                />
+                <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+                  <ServiceCard
+                    key={item.documentId || item.id}
+                    title={item.title}
+                    text={item.text}
+                    icon={iconArr[index] || ""}
+                  />
+                </FadeContent>
+
+
               ))
             ) : (
               servicesEx.slice(0, 3).map((item, index) => (
-                <ServiceCard
-                  key={item.id}
-                  title={item.title}
-                  text={item.text}
-                  icon={iconArr[index] || ""}
-                />
+
+                <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+                  <ServiceCard
+                    key={item.id}
+                    title={item.title}
+                    text={item.text}
+                    icon={iconArr[index] || ""}
+                  />
+                </FadeContent>
+
               ))
             )}
           </div>
@@ -213,83 +242,123 @@ function Home() {
             </p>
           </div>
           <div className="home-advantages__plates">
-            <div className="home-advantages__plates__item">
-              <Icons.Reputation className="home-advantages__icons icon_white" />
-              <h3>Коммерческая репутация</h3>
-              <p>
-                Нашему предприятию 28 лет доверяют охранять свое имущество более
-                1000 клиентов на территории Сахалинской области.
-              </p>
-            </div>
-            <div className="home-advantages__plates__item">
-              <Icons.ShieldAlt className="home-advantages__icons icon_white" />
-              <h3>Финансовая проверка</h3>
-              <p>
-                Отсутствие задолженностей в местные, региональные, федеральные
-                бюджеты, фонды обязательных платежей в течение всего срока
-                существования предприятия. Отсутствие неисполненных обязательств
-                перед заказчиками, клиентами.
-              </p>
-            </div>
-            <div className="home-advantages__plates__item">
-              <Icons.Person className="home-advantages__icons icon_white" />
-              <h3>Профессиональный состав</h3>
-              <p>
-                184 сотрудника охраны, лицензированных в соответствии с
-                действующим законодательством России.
-              </p>
-            </div>
-            <div className="home-advantages__plates__item">
-              <Icons.Lock className="home-advantages__icons icon_white" />
-              <h3>Проверка работы в прошлом</h3>
-              <p>
-                Проверки деятельности контролирующими государственными органами
-                (ЦЛРР Росгвардии, налоговые органы, Пенсионный фонд, Инспекция
-                по труду, военкомат), нарушений не выявлено.
-              </p>
-            </div>
-            <div className="home-advantages__plates__item">
-              <Icons.Headphones className="home-advantages__icons icon_white" />
-              <h3>Всегда рядом</h3>
-              <p>
-                Услуги оказываются 24 часа в сутки. Имеется круглосуточные
-                службы мониторинга, охраны, операторов и дежурного технического
-                персонала в городах Южно-Сахалинск, Корсаков, Холмск.
-              </p>
-            </div>
-            <div className="home-advantages__plates__item">
-              <Icons.Recomendation className="home-advantages__icons icon_white" />
-              <h3>Проверка рекомендаций</h3>
-              <p>
-                Охрана более 1000 объектов: физическая охрана и с помощью
-                различных технических средств охраны в городах: Южно-Сахалинск,
-                Корсаков, Холмск, Оха, Невельск, Ноглики, Макаров, Поронайск,
-                Смирных, Тымовское, Озерское, Долинск.
-              </p>
-            </div>
-            <div className="home-advantages__plates__item">
-              <Icons.Cube className="home-advantages__icons icon_white" />
-              <h3>Прозрачность в работе</h3>
-              <p>
-                Отчет по работе по договору предоставляется по запросу Клиента
-                или с частотой, указанной в договоре (отчет включает в себя
-                графики несения службы, количество отработанных часов,
-                количество задействованных сотрудников, инциденты, принятые
-                меры, нанесенный и возмещенный ущерб и т.д.).
-              </p>
-            </div>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Reputation className="home-advantages__icons icon_white" />
+                <h3>Коммерческая репутация</h3>
+                <p>
+                  Нашему предприятию 28 лет доверяют охранять свое имущество более
+                  1000 клиентов на территории Сахалинской области.
+                </p>
+              </div>
+            </FadeContent>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Reputation className="home-advantages__icons icon_white" />
+                <h3>Коммерческая репутация</h3>
+                <p>
+                  Нашему предприятию 28 лет доверяют охранять свое имущество более
+                  1000 клиентов на территории Сахалинской области.
+                </p>
+              </div>
+            </FadeContent>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.ShieldAlt className="home-advantages__icons icon_white" />
+                <h3>Финансовая проверка</h3>
+                <p>
+                  Отсутствие задолженностей в местные, региональные, федеральные
+                  бюджеты, фонды обязательных платежей в течение всего срока
+                  существования предприятия. Отсутствие неисполненных обязательств
+                  перед заказчиками, клиентами.
+                </p>
+              </div>
+            </FadeContent>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Person className="home-advantages__icons icon_white" />
+                <h3>Профессиональный состав</h3>
+                <p>
+                  184 сотрудника охраны, лицензированных в соответствии с
+                  действующим законодательством России.
+                </p>
+              </div>
+            </FadeContent>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Lock className="home-advantages__icons icon_white" />
+                <h3>Проверка работы в прошлом</h3>
+                <p>
+                  Проверки деятельности контролирующими государственными органами
+                  (ЦЛРР Росгвардии, налоговые органы, Пенсионный фонд, Инспекция
+                  по труду, военкомат), нарушений не выявлено.
+                </p>
+              </div>
+            </FadeContent>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Headphones className="home-advantages__icons icon_white" />
+                <h3>Всегда рядом</h3>
+                <p>
+                  Услуги оказываются 24 часа в сутки. Имеется круглосуточные
+                  службы мониторинга, охраны, операторов и дежурного технического
+                  персонала в городах Южно-Сахалинск, Корсаков, Холмск.
+                </p>
+              </div>
+            </FadeContent>
+
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Recomendation className="home-advantages__icons icon_white" />
+                <h3>Проверка рекомендаций</h3>
+                <p>
+                  Охрана более 1000 объектов: физическая охрана и с помощью
+                  различных технических средств охраны в городах: Южно-Сахалинск,
+                  Корсаков, Холмск, Оха, Невельск, Ноглики, Макаров, Поронайск,
+                  Смирных, Тымовское, Озерское, Долинск.
+                </p>
+              </div>
+            </FadeContent>
+            <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <div className="home-advantages__plates__item">
+                <Icons.Cube className="home-advantages__icons icon_white" />
+                <h3>Прозрачность в работе</h3>
+                <p>
+                  Отчет по работе по договору предоставляется по запросу Клиента
+                  или с частотой, указанной в договоре (отчет включает в себя
+                  графики несения службы, количество отработанных часов,
+                  количество задействованных сотрудников, инциденты, принятые
+                  меры, нанесенный и возмещенный ущерб и т.д.).
+                </p>
+              </div>
+            </FadeContent>
+
+
+
           </div>
         </div>
       </section>
 
+      <section className='home-marquee bg_white'>
+        <MarqueeLogo />
+      </section>
 
-
-      <section className="home-about py-20 m_py-0">
+      <section className="home-about py-20 m_py-0 ">
         <AboutComponent />
       </section>
-      <section className='home-phoneCallback px-8 m_px-4 py-20 pb-0 bg_white'>
+
+
+      <section className='home-phoneCallback px-8 m_px-4 py-10 pb-0 bg_white'>
         <PhoneCallbackComponent />
       </section>
+
+
       {/* slider REVIEWS */}
       <section className="home-reviews py-20 m_px-4">
         <div className="container">
@@ -304,6 +373,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+
 
       <section id="scrollTest" className="home-contacts py-20">
         <div className="container home-contacts__container  p-10 m_p-4">
