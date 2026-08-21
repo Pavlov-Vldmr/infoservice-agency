@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@iminside/react-yandex-maps": "^1.2.7",
+    "gsap": "^3.15.0",
     "hamburger-react": "^2.5.2",
     "imask": "^7.6.1",
+    "motion": "^13.1.1",
     "normalize.css": "^8.0.1",
     "react": "^19.2.8",
     "react-cookie-consent": "^10.0.2",
