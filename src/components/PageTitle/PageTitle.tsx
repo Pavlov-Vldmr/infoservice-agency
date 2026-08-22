@@ -10,7 +10,7 @@ function PageTitle(props: { title: string, subTitle: string }) {
     return (
         <>
             {/* <div className="title-component pt-20 pb-12 px-8 mt-14 m_px-0"> */}
-            <div className="title-component pt-30 m_pt-20 pb-12">
+            <div className="title-component">
 
                 <Grainient
                     className=' m_px-0 title-componenet__grainient'
@@ -38,8 +38,7 @@ function PageTitle(props: { title: string, subTitle: string }) {
                     zoom={0.9}
                 />
 
-
-                <div className="container title-component__container m_p-4">
+                <div className="container title-component__container pt-30 pb-14 m_pt-10 m_pb-8 m_px-6">
                     <ShinyText
                         className='m_mb-4 pt-6'
                         text={props.title}

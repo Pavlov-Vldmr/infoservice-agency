@@ -38,7 +38,7 @@ header {
       justify-content: space-between;
       align-items: center;
 
-      .logo {
+      .logoB {
       }
     }
     &__buttons {
@@ -91,7 +91,7 @@ header {
       display: none;
     }
     .bottom {
-      .logo {
+      .logoB {
         margin-left: calc(var(--spacing) * 4);
       }
     }
