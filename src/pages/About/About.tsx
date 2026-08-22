@@ -14,7 +14,7 @@ const items = [
         links: [
             { label: "Company", ariaLabel: "About Company", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/src/assets/images/estimates/1.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/1.png"
     },
     {
         label: "Projects",
@@ -22,7 +22,7 @@ const items = [
         links: [
             { label: "Featured", ariaLabel: "Featured Projects", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/src/assets/images/estimates/2.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/2.png"
     },
     {
         label: "Contact",
@@ -30,7 +30,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/src/assets/images/estimates/3.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/3.png"
     },
     {
         label: "Contact2",
@@ -38,7 +38,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/src/assets/images/estimates/4.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/4.png"
     },
     {
         label: "Contact3",
@@ -46,9 +46,53 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/src/assets/images/estimates/5.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/5.png"
     }
 ];
+
+
+// const items = [
+//     {
+//         label: "About",
+//         textColor: "#fff",
+//         links: [
+//             { label: "Company", ariaLabel: "About Company", href: '/' },
+//         ],
+//         imageUrl: "/infoservice-agency/src/assets/images/estimates/1.png"
+//     },
+//     {
+//         label: "Projects",
+//         textColor: "#fff",
+//         links: [
+//             { label: "Featured", ariaLabel: "Featured Projects", href: '/' },
+//         ],
+//         imageUrl: "/infoservice-agency/src/assets/images/estimates/2.png"
+//     },
+//     {
+//         label: "Contact",
+//         textColor: "#fff",
+//         links: [
+//             { label: "Email", ariaLabel: "Email us", href: '/' },
+//         ],
+//         imageUrl: "/infoservice-agency/src/assets/images/estimates/3.png"
+//     },
+//     {
+//         label: "Contact2",
+//         textColor: "#fff",
+//         links: [
+//             { label: "Email", ariaLabel: "Email us", href: '/' },
+//         ],
+//         imageUrl: "/infoservice-agency/src/assets/images/estimates/4.png"
+//     },
+//     {
+//         label: "Contact3",
+//         textColor: "#fff",
+//         links: [
+//             { label: "Email", ariaLabel: "Email us", href: '/' },
+//         ],
+//         imageUrl: "/infoservice-agency/src/assets/images/estimates/5.png"
+//     }
+// ];
 
 function About() {
 
