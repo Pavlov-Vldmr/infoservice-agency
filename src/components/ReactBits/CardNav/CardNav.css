@@ -108,12 +108,9 @@
     left: 0;
     right: 0;
     top: 70px;
-    /* Должно соответствовать закрытой высоте topBarHeight */
-    /* bottom: 0; <-- УДАЛИТЬ ИЛИ ЗАКОММЕНТИРОВАТЬ */
     padding: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); <-- УДАЛИТЬ, чтобы карточки не растягивались искусственно */
     gap: 12px;
     visibility: hidden;
     pointer-events: none;
@@ -177,36 +174,52 @@
 
 @media (max-width: 768px) {
     .card-nav-container {
-        width: 90%;
+        width: 100%;
         top: 1.2em;
     }
 
     .card-nav-top {
         padding: 0.5rem 1rem;
         justify-content: space-between;
+        height: -webkit-fill-available;
+        flex-direction: row;
+        align-items: flex-start;
+
     }
 
     .hamburger-menu {
         order: 2;
+        justify-content: flex-start;
     }
 
-    .logo-container {
+    /* .logo-container {
         position: static;
         transform: none;
         order: 1;
-    }
-
+    } */
+    /* 
     .card-nav-cta-button {
         display: none;
-    }
+    } */
 
     .card-nav-content {
+        grid-template-columns: repeat(2, 1fr);
+
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
         padding: 0.5rem;
         bottom: 0;
         justify-content: flex-start;
+    }
+
+    .card-nav {
+        flex-direction: column;
+
+    }
+
+    .logo {
+        display: none;
     }
 
     .nav-card {
