@@ -7,6 +7,13 @@
   position: relative;
   overflow: hidden;
 
+  .title-componenet__grainient {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -35,6 +42,8 @@
   }
 
   &__container {
+    position: relative;
+    z-index: 3;
     h1 {
       color: #fff;
       font-size: var(--text-2-5xl);

@@ -27,6 +27,7 @@ import ReviewsSlider from "./components/ReviewsSlider/ReviewsSlider";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
 
 import "./Home.scss";
+import Grainient from '@/components/ReactBits/Grainient/Grainient';
 
 function Home() {
 
@@ -84,18 +85,46 @@ function Home() {
     );
   }
 
-
   const FadeAdvDuration: number = 500
   return (
     <>
-      <section className="home-hero ">
+      <section className="home-hero m_pt-20 pt-30">
+        <Grainient
+          className='m-0 p-0 m_px-0 home-hero__grainient'
+          color1="#1e3a8a"
+          color2="#2563eb"
+          color3="#3B82F6"
+          timeSpeed={0.2}
+          colorBalance={0.31}
+          warpStrength={1.15}
+          warpFrequency={5.7}
+          warpSpeed={2}
+          warpAmplitude={5}
+          blendAngle={0}
+          blendSoftness={0.55}
+          rotationAmount={750}
+          noiseScale={2}
+          grainAmount={0}
+          grainScale={0.2}
+          grainAnimated={false}
+          contrast={1}
+          gamma={1}
+          saturation={1}
+          centerX={0}
+          centerY={0}
+          zoom={0.9}
+        />
         <div className="container home-hero__container m_px-4 p-10">
+
+          {/* <div style={{ width: '100%', height: '100%', position: 'absolute' }}> */}
+
+          {/* </div> */}
+
+
           <div className="home-hero__main">
             <span className="license">
               {companyInfo?.licenseShort || extraCompData.licenseShort}
             </span>
-            {/* <h1>Охрана недвижимости под надежной защитой</h1> */}
-
             <ShinyText
               text="Охрана недвижимости под надежной защитой"
               speed={5}
@@ -105,17 +134,12 @@ function Home() {
               spread={120}
               direction="left"
             />
-
-
             <p>
               Профессиональная охрана коммерческой и жилой недвижимости.
               Круглосуточный мониторинг, современное оборудование и опытные
               специалисты.
             </p>
             <div className="home-hero__main__btns mt-4">
-              {/* // калькулятор */}
-              {/* <MainActButton to="/infoservice-agency/calculator" variant='white' title="Заказать онлайн"></MainActButton> */}
-              {/* // на страницу услуги */}
               <MainActButton
                 to="/infoservice-agency/services"
                 variant="primary"
