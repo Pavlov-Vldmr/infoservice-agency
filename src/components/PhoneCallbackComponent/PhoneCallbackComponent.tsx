@@ -66,17 +66,42 @@ function PhoneCallbackComponent(props: { className?: string }) {
         }
     };
 
-
+    const phoneRegex = /^(?:\+7|7|8)?\s?\(?\d{3}\)?\s?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/;
     const VALIDATION_RULES = {
 
         phone: {
             required: "Номер обязателен",
             pattern: {
-                value: /^7\d{10}$/,
+                value: phoneRegex,
                 message: "Неверный формат"
             }
         },
 
+    };
+
+    const [phone, setPhone] = useState<string>('');
+    const [isValid, setIsValid] = useState<boolean | null>(null);
+
+    const validatePhone = (value: string): boolean => {
+        const cleanNumber = value.replace(/\D/g, '');
+        if (cleanNumber.length === 11) {
+            return cleanNumber.startsWith('7') || cleanNumber.startsWith('8');
+        }
+        return cleanNumber.length === 10;
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputValue = e.target.value;
+        const filteredValue = inputValue.replace(/[^0-9\s\-()+]/g, '');
+
+        setPhone(filteredValue);
+
+        if (filteredValue === '') {
+            setIsValid(null);
+            return;
+        }
+
+        setIsValid(validatePhone(filteredValue));
     };
 
     return (
@@ -95,6 +120,9 @@ function PhoneCallbackComponent(props: { className?: string }) {
                             id="phone"
                             placeholder="+7 (999) 000-00-00"
                             disabled={loading}
+                            onChange={handleChange}
+                            value={phone}
+                            maxLength={20}
                         />
                         {errors.phone && <p className="p" style={{ color: "red" }}>{errors.phone.message}</p>}
                     </div>
