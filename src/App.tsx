@@ -18,35 +18,23 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 
 import './App.css'
 
-// Ленивая загрузка страниц
 const Services = lazy(() => import('./pages/Services/Services'));
 
-// 1. Компактный спиннер специально для ленивых страниц (не ломает шапку/футер)
 const PageLoader = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px', width: '100%' }}>
     <RotatingLines strokeColor="#4eaff3" strokeWidth="5" animationDuration="0.75" width="64" visible={true} />
   </div>
 );
 
-// // 2. Полноэкранный спиннер (если раскомментируете LoadingProvider для первой инициализации)
-// const GlobalLoader = () => (
-//   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw', fixed: 'absolute', top: 0, left: 0, background: '#fff', zIndex: 9999 }}>
-//     <RotatingLines strokeColor="grey" strokeWidth="5" animationDuration="0.75" width="96" visible={true} />
-//   </div>
-// );
-
 function App() {
   return (
     <>
-      {/* Раскомментируйте, если внутри LoadingProvider настроена логика стартового экрана */}
-      {/* <LoadingProvider fallback={<GlobalLoader />}> */}
 
       <CompanyProvider>
         <ScrollToTop />
         <Header />
 
         <div className='main'>
-          {/* Переносим Suspense ТОЛЬКО на контентную часть, чтобы Header и Footer оставались на месте */}
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/infoservice-agency" element={<Home />} />
@@ -73,11 +61,9 @@ function App() {
             Политикой конфиденциальности
           </Link>.
         </CookieConsent>
-
         <Footer />
       </CompanyProvider>
 
-      {/* </LoadingProvider> */}
     </>
   )
 }
