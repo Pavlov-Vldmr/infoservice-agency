@@ -11,6 +11,7 @@ interface FadeContentProps extends React.HTMLAttributes<HTMLDivElement> {
     blur?: boolean;
     duration?: number;
     ease?: string;
+    easing?: string;
     delay?: number;
     threshold?: number;
     initialOpacity?: number;
