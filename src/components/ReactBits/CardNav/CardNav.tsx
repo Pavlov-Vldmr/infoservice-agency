@@ -163,10 +163,6 @@ const CardNav: React.FC<CardNavProps> = ({
         return tl;
     };
 
-
-
-
-
     useLayoutEffect(() => {
         const tl = createTimeline();
         tlRef.current = tl;

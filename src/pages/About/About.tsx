@@ -58,12 +58,7 @@ function About() {
             <PageTitle title="О компании ИнфоСервис" subTitle="Профессиональная охрана недвижимости с 2010 года" />
 
 
-            <section className="about-info pt-20 m_py-0">
-                <AboutComponent />
-            </section>
-
-
-            <section className=' py-20 bg_white'>
+            <section className=' py-20 bg_white m_p-4'>
                 <div className="container">
                     <CardNav
                         logoAlt="Благодарственные письма"
@@ -77,6 +72,13 @@ function About() {
                     />
                 </div>
             </section>
+
+            <section className="about-info pt-20 m_py-0">
+                <AboutComponent />
+            </section>
+
+
+
 
 
             <section className=' m_px-4 m_pt-8 bg_white'>
