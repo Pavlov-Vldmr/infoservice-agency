@@ -129,7 +129,7 @@ function AboutComponent() {
                         </div>
                     </div>
                 </div>
-                <div className="home-achievements-plates m_mt-8">
+                <div className="home-achievements-plates m_mt-8 mt-8">
                     <div>
                         <Icons.Award className='home-achievements__icons icon_white' />
                         <h3><CountUp end={28} duration={4} suffix="+" enableScrollSpy={true}
