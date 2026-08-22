@@ -91,6 +91,8 @@ function Services() {
                 title={item.title}
                 text={item.text}
                 price={item.price}
+                imgURL={item.imageUrl}
+
               />
             ))
           )}
