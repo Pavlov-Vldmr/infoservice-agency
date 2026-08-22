@@ -1,8 +1,51 @@
-.home-hero {
-  background-color: var(--primary);
-  background-image: linear-gradient(190deg, var(--primary), var(--accent));
+// ============================================================
+//  Переменные и миксины
+// ============================================================
 
-  // padding-top: 120px;
+$spacing-unit: var(--spacing);
+$icon-size-sm: var(--text-sm);
+$border-radius-default: 20px;
+$transition-speed: 0.3s;
+
+@mixin gradient-bg($start, $end, $deg: 190deg) {
+  background-color: $start;
+  background-image: linear-gradient($deg, $start, $end);
+}
+
+@mixin pseudo-circle(
+  $size: 600px,
+  $top: 0,
+  $right: 0,
+  $bottom: auto,
+  $left: auto
+) {
+  position: absolute;
+  content: "";
+  width: $size;
+  height: $size;
+  background-color: rgba(255, 255, 255, 0.11);
+  border-radius: 50%;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: 1;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// ============================================================
+//  .home-hero
+// ============================================================
+
+.home-hero {
+  @include gradient-bg(var(--primary), var(--accent), 190deg);
   position: relative;
   overflow: hidden;
   color: var(--text-white);
@@ -17,54 +60,54 @@
   &::before {
     content: "";
     position: absolute;
-    padding-top: calc(var(--spacing) * 20);
-    top: 0%;
+    top: 0;
     left: 30%;
     width: 80%;
     height: 100%;
-    background-image: url(../../assets/images/logo-transp-10.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 30%;
+    background: url(../../assets/images/logo-transp-10.png) no-repeat center /
+      30%;
     z-index: 2;
     transform: rotate(25deg);
+    padding-top: calc(#{$spacing-unit} * 20);
   }
 
   &__container {
     display: grid;
     align-items: center;
-    gap: calc(var(--spacing) * 12);
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: calc(#{$spacing-unit} * 12);
+    grid-template-columns: repeat(2, 1fr);
     position: relative;
-    // padding: calc(var(--spacing) * 10);
 
     .home-hero__main {
       display: flex;
       flex-direction: column;
-      gap: calc(var(--spacing) * 2);
+      gap: calc(#{$spacing-unit} * 2);
       z-index: 10;
+
       .license {
-        z-index: 3;
         background-color: oklab(1 0 0 / 0.1);
         padding: 10px 20px;
-        border-radius: 20px;
+        border-radius: $border-radius-default;
         width: fit-content;
         font-size: var(--text-xs);
         text-align: center;
+        z-index: 3;
       }
 
-      h1 {
+      h1,
+      p {
         z-index: 3;
       }
 
       p {
-        z-index: 3;
         font-size: var(--text-xl);
       }
+
       .home-hero__main__btns {
-        z-index: 3;
         display: inline-flex;
         gap: 20px;
+        z-index: 3;
+
         .callback-btn {
           display: flex;
           align-items: center;
@@ -74,33 +117,39 @@
   }
 }
 
+// ============================================================
+//  .home-achievements
+// ============================================================
+
 .home-achievements {
   background-color: #fff;
   position: relative;
   z-index: 1;
   border: 1px solid var(--border);
-  // padding-block: calc(var(--spacing) * 4);
 
-  .home-achievements__container {
-    // padding-block: calc(var(--spacing) * 10);
+  &__container {
     display: grid;
-    gap: calc(var(--spacing) * 8);
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    div {
+    gap: calc(#{$spacing-unit} * 8);
+    grid-template-columns: repeat(4, 1fr);
+
+    > div {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-self: center;
+
       .home-achievements__icons {
-        margin-bottom: calc(var(--spacing) * 4);
+        margin-bottom: calc(#{$spacing-unit} * 4);
         height: 50px;
         width: 50px;
       }
+
       .value {
         color: var(--primary);
         font-size: var(--text-2xl);
         margin-bottom: 5px;
       }
+
       .text {
         font-size: var(--text-sm);
         color: var(--muted-foreground);
@@ -109,83 +158,68 @@
   }
 }
 
+// ============================================================
+//  .home-services
+// ============================================================
+
 .home-services {
   background-color: #fff;
 
-  .home-services__title {
-  }
-  .home-services__container {
-    display: block;
-  }
-  .home-services__items {
+  &__items {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: calc(var(--spacing) * 6);
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(#{$spacing-unit} * 6);
   }
 }
+
+// ============================================================
+//  .home-objects
+// ============================================================
 
 .home-objects {
   background-color: var(--bg-gray);
-  .home-objects__title {
-  }
 }
 
-.home-marquee {
-}
+// ============================================================
+//  .home-advantages
+// ============================================================
 
 .home-advantages {
+  @include gradient-bg(var(--primary), var(--accent), -245deg);
   color: var(--text-white);
-  background-color: var(--primary);
-  background-image: linear-gradient(-245deg, var(--primary), var(--accent));
   position: relative;
   overflow: hidden;
 
   &::before {
-    position: absolute;
-    content: "";
-    width: 600px;
-    height: 600px;
-    background-color: #ffffff1c;
-    border-radius: 50%;
-    top: -300px;
-    right: -300px;
-    z-index: 1;
+    @include pseudo-circle(600px, -300px, -300px);
   }
-
   &::after {
-    position: absolute;
-    content: "";
-    width: 600px;
-    height: 600px;
-    background-color: #ffffff1c;
-    border-radius: 50%;
-    bottom: -390px;
-    left: -300px;
-    z-index: 1;
+    @include pseudo-circle(600px, auto, auto, -390px, -300px);
   }
 
-  .home-advantages__title {
+  &__title {
     h2 {
       color: var(--text-white);
     }
-    // margin-bottom: calc(var(--spacing) * 20);
   }
-  .home-advantages__plates {
+
+  &__plates {
+    position: relative;
     z-index: 2;
     user-select: none;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: calc(var(--spacing) * 6);
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(#{$spacing-unit} * 6);
+
     &__item {
-      background-color: #dbdbdb2c;
-      border: 1px solid #ffffff2e;
+      background-color: rgba(219, 219, 219, 0.17);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 0.625rem;
-      padding: calc(var(--spacing) * 6);
-      transition: ease-in-out 0.3s;
+      padding: calc(#{$spacing-unit} * 6);
+      transition: ease-in-out $transition-speed;
 
       .home-advantages__icons {
-        margin-bottom: calc(var(--spacing) * 6);
-
+        margin-bottom: calc(#{$spacing-unit} * 6);
         width: 50px;
         height: 50px;
       }
@@ -194,63 +228,76 @@
         font-size: var(--text-xl);
         font-weight: 500;
         line-height: 1.5;
-        margin-bottom: calc(var(--spacing) * 3);
+        margin-bottom: calc(#{$spacing-unit} * 3);
       }
+
       p {
         font-size: var(--text-sm);
-        color: #ffffffc5;
+        color: rgba(255, 255, 255, 0.77);
         line-height: 1.675rem;
       }
+
       &:hover {
-        background-color: #dbdbdb44;
+        background-color: rgba(219, 219, 219, 0.27);
       }
     }
   }
 }
+
+// ============================================================
+//  .home-about
+// ============================================================
 
 .home-about {
   background-color: #fff;
 }
 
+// ============================================================
+//  .home-reviews
+// ============================================================
+
 .home-reviews {
   background-color: #fff;
-  padding-block: calc(var(--spacing) * 20);
-  .home-reviews__title {
-    margin-bottom: calc(var(--spacing) * 20);
+  padding-block: calc(#{$spacing-unit} * 20);
+
+  &__title {
+    margin-bottom: calc(#{$spacing-unit} * 20);
   }
 }
+
+// ============================================================
+//  .home-contacts
+// ============================================================
 
 .home-contacts {
   background-color: var(--bg-gray);
-  .home-contacts__container {
-    .home-contacts__title {
-    }
 
+  &__container {
     .home-contacts__content {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: calc(var(--spacing) * 10);
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc(#{$spacing-unit} * 10);
     }
   }
 }
 
-@media (max-width: 768px) {
-  .home-hero {
-    // padding-top: 130px;
+// ============================================================
+//  Адаптив (планшеты и мобильные)
+// ============================================================
 
+@include respond-to(tablet) {
+  // ---- .home-hero ----
+  .home-hero {
     &::before {
       background-size: 95%;
-      // z-index: 1;
     }
 
     &__container {
       display: block;
 
-      // padding: calc(var(--spacing) * 4);
-
       .home-hero__main {
         display: flex;
-        gap: calc(var(--spacing) * 2);
+        gap: calc(#{$spacing-unit} * 2);
 
         .license {
           font-size: var(--text-xs);
@@ -261,75 +308,63 @@
           max-width: 70%;
           line-height: 1.225rem;
         }
+
         .home-hero__main__btns {
           margin-top: 40px;
-          display: flex;
           flex-direction: column;
-          gap: calc(var(--spacing) * 2);
+          gap: calc(#{$spacing-unit} * 2);
+
           .callback-btn {
             width: 100%;
             display: flex;
-            button {
-            }
           }
         }
       }
     }
   }
 
+  // ---- .home-achievements ----
   .home-achievements {
-    padding-block: calc(var(--spacing) * 4);
+    padding-block: calc(#{$spacing-unit} * 4);
 
-    .home-achievements__container {
-      padding-block: calc(var(--spacing) * 4);
-      gap: calc(var(--spacing) * 4);
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
+    &__container {
+      padding-block: calc(#{$spacing-unit} * 4);
+      gap: calc(#{$spacing-unit} * 4);
+      grid-template-columns: repeat(2, 1fr);
+
+      > div {
         .home-achievements__icons {
-          margin-bottom: calc(var(--spacing) * 3);
-          height: 30px;
-          width: 30px;
-        }
-        .value {
-          color: var(--primary);
-          font-size: var(--text-2xl);
-          margin-bottom: 5px;
-        }
-        .text {
-          font-size: var(--text-sm);
-          color: var(--muted-foreground);
+          margin-bottom: calc(#{$spacing-unit} * 3);
+          height: $icon-size-sm;
+          width: $icon-size-sm;
         }
       }
     }
   }
 
+  // ---- .home-services ----
   .home-services {
-    padding-inline: calc(var(--spacing) * 4);
-    padding-top: calc(var(--spacing) * 10);
-    padding-block: calc(var(--spacing) * 10);
+    padding: calc(#{$spacing-unit} * 10) calc(#{$spacing-unit} * 4);
 
-    .home-services__title {
-      margin-bottom: calc(var(--spacing) * 10);
+    &__title {
+      margin-bottom: calc(#{$spacing-unit} * 10);
     }
 
-    .home-services__items {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: calc(var(--spacing) * 3);
+    &__items {
+      grid-template-columns: 1fr;
+      gap: calc(#{$spacing-unit} * 3);
 
       &__item {
         .item__icons {
-          height: 30px;
-          width: 30px;
-          padding: calc(var(--spacing) * 3);
+          height: $icon-size-sm;
+          width: $icon-size-sm;
+          padding: calc(#{$spacing-unit} * 3);
         }
 
         p {
           line-height: 1.2rem;
         }
+
         &:active {
           border-color: var(--accent);
           box-shadow: 5px 5px 30px rgba(128, 128, 128, 0.207);
@@ -346,84 +381,63 @@
     }
   }
 
+  // ---- .home-objects ----
   .home-objects {
-    .home-objects__title {
-      margin-bottom: calc(var(--spacing) * 10);
-    }
-
-    .home-objects__slider {
+    &__title {
+      margin-bottom: calc(#{$spacing-unit} * 10);
     }
   }
 
+  // ---- .home-advantages ----
   .home-advantages {
-    padding-block: calc(var(--spacing) * 10);
+    padding-block: calc(#{$spacing-unit} * 10);
+
     &::before {
-      width: 300px;
-      height: 300px;
-      top: -150px;
-      right: -150px;
+      @include pseudo-circle(300px, -150px, -150px);
     }
-
     &::after {
-      width: 300px;
-      height: 300px;
-      bottom: -150px;
-      left: -150px;
+      @include pseudo-circle(300px, auto, auto, -150px, -150px);
     }
 
-    .home-advantages__title {
-      h2 {
-      }
-      margin-bottom: calc(var(--spacing) * 10);
+    &__title {
+      margin-bottom: calc(#{$spacing-unit} * 10);
     }
-    .home-advantages__plates {
-      padding: calc(var(--spacing) * 4);
 
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: calc(var(--spacing) * 3);
+    &__plates {
+      padding: calc(#{$spacing-unit} * 4);
+      grid-template-columns: 1fr;
+      gap: calc(#{$spacing-unit} * 3);
+
       &__item {
-        // padding: calc(var(--spacing) * 4);
-
-        .home-advantages__icons {
-        }
-
-        h3 {
-        }
-        p {
-          line-height: 1.2rem;
-        }
         &:active {
-          background-color: #dbdbdb2c;
+          background-color: rgba(219, 219, 219, 0.17);
         }
       }
     }
   }
 
-  .home-about {
-  }
-
+  // ---- .home-reviews ----
   .home-reviews {
-    padding-block: calc(var(--spacing) * 10);
-    .home-reviews__title {
-      margin-bottom: calc(var(--spacing) * 10);
-    }
-    .home-reviews__slider {
+    padding-block: calc(#{$spacing-unit} * 10);
+
+    &__title {
+      margin-bottom: calc(#{$spacing-unit} * 10);
     }
   }
 
+  // ---- .home-contacts ----
   .home-contacts {
-    padding-block: calc(var(--spacing) * 4);
+    padding-block: calc(#{$spacing-unit} * 4);
 
-    .home-contacts__container {
+    &__container {
       .home-contacts__title {
-        margin-bottom: calc(var(--spacing) * 2);
-        padding: calc(var(--spacing) * 2);
+        margin-bottom: calc(#{$spacing-unit} * 2);
+        padding: calc(#{$spacing-unit} * 2);
       }
 
       .home-contacts__content {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: calc(var(--spacing) * 5);
+        grid-template-columns: 1fr;
+        gap: calc(#{$spacing-unit} * 5);
       }
     }
   }

@@ -4,20 +4,20 @@
     "title": "Замена,установка датчиков охраны",
     "text": "",
     "price": 650,
-    "imageUrl": "/uploads/motion_sensor_ohran_ulitsi_24_f8fe9aa362.jpeg"
+    "imageUrl": "/infoservice-agency/src/assets/images/services/motion_sensor_ohran_ulitsi_24.jpeg"
   },
   {
     "id": 16,
     "title": "Замена установка пожарных извещателей,оповещателей",
     "text": "",
     "price": 650,
-    "imageUrl": "/uploads/6670897338_f2529058d8.jpg"
+    "imageUrl": "/infoservice-agency/src/assets/images/services/sens.jpg"
   },
   {
     "id": 17,
     "title": "Настройка удалённого доступа, для системы видеонаблюдения",
     "text": "",
     "price": 1500,
-    "imageUrl": "/uploads/4bd7b8882a829a6b133066232b203b12_9ff2ac20c7.jpg"
+    "imageUrl": "/infoservice-agency/src/assets/images/services/cabel.jpg"
   }
 ]

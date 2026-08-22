@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
 import { Oval } from 'react-loader-spinner';
 
 interface LoadingContextType {

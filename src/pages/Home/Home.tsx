@@ -198,7 +198,7 @@ function Home() {
           <div className="home-services__items mb-8">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
-                <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.documentId || item.id}
                     title={item.title}

@@ -23,6 +23,7 @@ function Objects() {
             since: string;
         } | null;
         img_text: string;
+        imageUrl: string;
 
     }
     const objectsEx: IObjectsItem[] = objectsExtra
@@ -86,6 +87,8 @@ function Objects() {
                                 square={obj.values?.square}
                                 guardians={obj.values?.guardians}
                                 since={obj.values?.since}
+                                imgURL={obj.imageUrl}
+
                             />
                         ))
                     )}
