@@ -9,7 +9,7 @@
       "guardians": "4 человека",
       "since": "1980 года"
     },
-    "imageUrl": "/infoservice-agency/src/assets/images/objects/se.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/se.jpg"
   },
   {
     "id": 10,
@@ -21,7 +21,7 @@
       "guardians": "6 человек",
       "since": "2020 года"
     },
-    "imageUrl": "/infoservice-agency/src/assets/images/objects/gv.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/gv.jpg"
   },
   {
     "id": 12,
@@ -29,7 +29,7 @@
     "text": "",
     "img_text": "Кристалл",
     "values": null,
-    "imageUrl": "/infoservice-agency/src/assets/images/objects/kris.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/kris.jpg"
   },
   {
     "id": 14,
@@ -37,7 +37,7 @@
     "text": "",
     "img_text": "Газпром",
     "values": null,
-    "imageUrl": "/infoservice-agency/src/assets/images/objects/gp.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/gp.jpg"
   },
   {
     "id": 15,
@@ -49,6 +49,6 @@
       "guardians": "12 человек",
       "since": "1200"
     },
-    "imageUrl": "/infoservice-agency/src/assets/images/objects/nnk.png"
+    "imageUrl": "/infoservice-agency/assets/images/objects/nnk.png"
   }
 ]
