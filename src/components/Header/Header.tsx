@@ -4,7 +4,7 @@ import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import { useCompany } from "@/contexts/CompanyInfoContext";
 import PhoneComponent from "@/features/model/PhoneComponent";
 
-import logo from "../../assets/images/logo-full.svg";
+import logo from "@/assets/images/logo-full.svg";
 import MainActButton from "../Buttons/MainActButton/MainActButton";
 import HamburgerComponent from "./components/HamburgerComponent/HumburgerComponent";
 import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
@@ -73,8 +73,8 @@ function Header() {
         <div className="bottom">
           <div className="container bottom__container px-8 m_px-0">
             <NavLink to="/infoservice-agency" end>
-              <div className="logo">
-                <img src={logo} alt="Логотип Инфосервис" />
+              <div className="logoB">
+                <img src={logo} alt="Логотип Инфосервис" height={50} width={'100%'} />
               </div>
             </NavLink>
             <nav className={`nav__links`}>
