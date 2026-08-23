@@ -6,10 +6,10 @@
     transform: translateX(-30px);
     position: absolute;
     left: 0;
-    top: 85px;
+    top: 76px;
     width: 100%;
-    height: calc(100svh - 85px);
-    height: calc(var(--vh, 1vh) * 100 - 85px);
+    height: calc(100svh - 76px);
+    // height: calc(var(--vh, 1vh) * 100 - 0px);
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
