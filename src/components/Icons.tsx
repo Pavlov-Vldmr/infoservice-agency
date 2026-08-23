@@ -22,12 +22,14 @@ import Shield from '../assets/icons/shield-check-svgrepo-com.svg?react'
 import Tech from '../assets/icons/tech.svg?react'
 import TimeSvg from '../assets/icons/time.svg?react'
 import Person from '../assets/icons/user-plus-svgrepo-com.svg?react'
+import ClockAlt from '../assets/icons/clock-seven-svgrepo-com.svg?react'
 
 // https://www.svgrepo.com/collection/dazzle-line-icons/1
 
 export const Icons = {
     Chart,
     Clock,
+    ClockAlt,
     Person,
     Shield,
 
