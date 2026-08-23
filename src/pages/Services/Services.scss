@@ -6,6 +6,22 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 6);
   }
+  .price-download {
+    display: flex;
+  }
+}
+
+.services-feedback {
+  background-color: white;
+
+  &__container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__contacts {
+    grid-column: span 2 / span 2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -13,6 +29,10 @@
     &__container {
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: calc(var(--spacing) * 3);
+    }
+
+    .price-download {
+      flex-direction: column;
     }
   }
 }
