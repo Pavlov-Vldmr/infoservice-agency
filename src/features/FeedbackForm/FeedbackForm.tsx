@@ -1,4 +1,4 @@
-import { type SubmitHandler,useForm } from 'react-hook-form';
+import { type SubmitHandler, useForm } from 'react-hook-form';
 
 import './FeedbackForm.scss';
 
@@ -78,7 +78,7 @@ function FeedbackForm() {
 
 
     return (
-        <form id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
+        <form className='feedbackform' id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
             <h4 className="text_primary">Свяжитесь со мной</h4>
 
             {/* Поле: Имя */}
@@ -123,13 +123,13 @@ function FeedbackForm() {
             )}
 
             {/* Поле: Услуга */}
-            <label htmlFor="service">Услуга</label>
+            {/* <label htmlFor="service">Услуга</label>
             <select id="service" {...register("service")}>
                 <option value="" className='text-muted'>-- Не выбрано --</option>
                 <option value="service1">Услуга 1</option>
                 <option value="service2">Услуга 2</option>
                 <option value="service3">Услуга 3</option>
-            </select>
+            </select> */}
 
             {/* Поле: Сообщение */}
             <label htmlFor="comment">Сообщение</label>
