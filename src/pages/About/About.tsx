@@ -60,7 +60,7 @@ function About() {
                 <AboutComponent />
             </section>
 
-            <section className='  bg_white m_p-4'>
+            <section className='  bg_white m_p-4 pt-10'>
                 <div className="container">
                     <CardNav
                         logoAlt="Благодарственные письма"
@@ -100,7 +100,7 @@ function About() {
 
             <section className='pb-10 m_px-4 m_pt-4 bg_white'>
                 <div className="container">
-                    <PhoneCallbackComponent className='' />
+                    <PhoneCallbackComponent className='about-pcb' />
                 </div>
             </section>
 
