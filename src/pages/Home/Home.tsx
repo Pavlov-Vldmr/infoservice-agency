@@ -88,7 +88,7 @@ function Home() {
   const FadeAdvDuration: number = 500
   return (
     <>
-      <section className="home-hero m_pt-20 pt-30">
+      <section className="home-hero ">
         <Grainient
           className='m-0 p-0 m_px-0 home-hero__grainient'
           color1="#1e3a8a"
@@ -114,7 +114,7 @@ function Home() {
           centerY={0}
           zoom={0.9}
         />
-        <div className="container home-hero__container m_px-4 p-10">
+        <div className="container home-hero__container m_px-4 pt-34 p-10">
 
           {/* <div style={{ width: '100%', height: '100%', position: 'absolute' }}> */}
 
@@ -122,7 +122,7 @@ function Home() {
 
 
           <div className="home-hero__main">
-            <span className="license">
+            <span className="license ">
               {companyInfo?.licenseShort || extraCompData.licenseShort}
             </span>
             <ShinyText
