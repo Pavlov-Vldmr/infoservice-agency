@@ -109,7 +109,7 @@ function PhoneCallbackComponent(props: { className?: string }) {
         <div className={`${props.className} callback`}>
             <div className="container callback__container p-10 m_p-4 mt-4 m_px-4">
                 <h2 className="text_white">Обратный звонок</h2>
-                <form onSubmit={handleSubmit(onSubmit)} >
+                <form className="callback__form" onSubmit={handleSubmit(onSubmit)} >
                     <span className="text_white">Проведем индивидуальную консультацию и поможем найти подходящее решение</span>
 
                     <div className="callback__phone">
