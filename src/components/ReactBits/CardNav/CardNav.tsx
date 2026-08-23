@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
-import './CardNav.css';
+import './CardNav.scss';
 
 import logoS from '@/assets/images/logo.png'
 
@@ -46,74 +46,64 @@ const CardNav: React.FC<CardNavProps> = ({
 }) => {
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const [previewImage, setPreviewImage] = useState<string | null>(null);
+
     const navRef = useRef<HTMLDivElement | null>(null);
     const cardsRef = useRef<HTMLDivElement[]>([]);
     const tlRef = useRef<gsap.core.Timeline | null>(null);
 
-    // const calculateHeight = () => {
-    //     const navEl = navRef.current;
-    //     if (!navEl) return 460;
+    const overlayRef = useRef<HTMLDivElement | null>(null);
+    const modalImgRef = useRef<HTMLImageElement | null>(null);
+    const modalTlRef = useRef<gsap.core.Timeline | null>(null);
 
-    //     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    //     if (isMobile) {
-    //         const contentEl = navEl.querySelector('.card-nav-content') as HTMLElement;
-    //         if (contentEl) {
-    //             const wasVisible = contentEl.style.visibility;
-    //             const wasPointerEvents = contentEl.style.pointerEvents;
-    //             const wasPosition = contentEl.style.position;
-    //             const wasHeight = contentEl.style.height;
+    // ЭФФЕКТ ДЛЯ АНИМАЦИИ ОТКРЫТИЯ МОДАЛКИ
 
-    //             contentEl.style.visibility = 'visible';
-    //             contentEl.style.pointerEvents = 'auto';
-    //             contentEl.style.position = 'static';
-    //             contentEl.style.height = 'auto';
+    React.useEffect(() => {
+        if (!previewImage) return;
 
-    //             contentEl.offsetHeight;
+        // Даем React один фрейм на очистку и рендер DOM
+        const ctx = gsap.context(() => {
+            if (overlayRef.current && modalImgRef.current) {
+                // Устанавливаем начальное состояние
+                gsap.set(overlayRef.current, { opacity: 0 });
+                gsap.set(modalImgRef.current, { opacity: 0, scale: 0.85 });
 
-    //             const topBar = 60;
-    //             const padding = 16;
-    //             const contentHeight = contentEl.scrollHeight;
+                // Анимируем появление
+                gsap.timeline({ defaults: { ease: 'power2.out', duration: 0.3 } })
+                    .to(overlayRef.current, { opacity: 1 })
+                    .to(modalImgRef.current, { scale: 1, opacity: 1 }, '-=0.15');
+            }
+        });
 
-    //             contentEl.style.visibility = wasVisible;
-    //             contentEl.style.pointerEvents = wasPointerEvents;
-    //             contentEl.style.position = wasPosition;
-    //             contentEl.style.height = wasHeight;
+        return () => ctx.revert(); // Автоматически очистит все анимации при размонтировании
+    }, [previewImage]);
 
-    //             return topBar + contentHeight + padding;
-    //         }
-    //     }
-    //     return 560;
-    // };
+    // ОТКРЫТИЕ ПРЕДПРОСМОТРА
+    const handleImageClick = (e: React.MouseEvent, imageUrl: string) => {
+        e.stopPropagation();
+        setPreviewImage(imageUrl);
+    };
 
-    // const calculateHeight = () => {
-    //     const navEl = navRef.current;
-    //     if (!navEl) return 460;
+    // ЗАКРЫТИЕ С АНИМАЦИЕЙ РЕВЕРСА
 
-    //     const contentEl = navEl.querySelector('.card-nav-content') as HTMLElement;
-    //     if (!contentEl) return 560;
+    const closePreview = (e: React.MouseEvent) => {
+        e.stopPropagation();
 
-    //     // 1. Создаем невидимый клон контента
-    //     const clone = contentEl.cloneNode(true) as HTMLElement;
-
-    //     // 2. Сбрасываем ограничения высоты и видимости для клона
-    //     clone.style.position = 'absolute';
-    //     clone.style.visibility = 'hidden';
-    //     clone.style.height = 'auto';
-    //     clone.style.maxHeight = 'none';
-    //     clone.style.opacity = '0';
-    //     clone.style.display = 'block'; // Если в CSS стоит display: none
-
-    //     // 3. Добавляем клон в DOM для расчета
-    //     document.body.appendChild(clone);
-    //     const contentHeight = clone.scrollHeight;
-    //     document.body.removeChild(clone); // Сразу удаляем
-
-    //     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    //     const topBarHeight = 70; // Высота вашей шапки в закрытом состоянии
-    //     const padding = isMobile ? 16 : 32; // Отступы
-
-    //     return topBarHeight + contentHeight + padding;
-    // };
+        if (overlayRef.current && modalImgRef.current) {
+            gsap.timeline({
+                defaults: { ease: 'power2.in', duration: 0.25 },
+                onComplete: () => {
+                    // Только после окончания анимации убираем из DOM
+                    setPreviewImage(null);
+                }
+            })
+                .to(modalImgRef.current, { scale: 0.85, opacity: 0 })
+                .to(overlayRef.current, { opacity: 0 }, '-=0.15');
+        } else {
+            setPreviewImage(null);
+        }
+    };
 
     const calculateHeight = () => {
         const navEl = navRef.current;
@@ -122,23 +112,42 @@ const CardNav: React.FC<CardNavProps> = ({
         const contentEl = navEl.querySelector('.card-nav-content') as HTMLElement;
         if (!contentEl) return 560;
 
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
         // Снимаем ограничения видимости для точного замера
         const originalVisibility = contentEl.style.visibility;
         const originalDisplay = contentEl.style.display;
 
         contentEl.style.visibility = 'hidden';
-        contentEl.style.display = window.matchMedia('(max-width: 768px)').matches ? 'flex' : 'grid';
+        // Принудительно ставим grid в 2 колонки для мобилки во время замера
+        contentEl.style.display = 'grid';
 
-        // Считаем чистую высоту контента
-        const contentHeight = contentEl.scrollHeight;
+        const cards = contentEl.querySelectorAll('.nav-card');
+        let contentHeight = 0;
+
+        if (cards.length > 0) {
+            // Находим самую верхнюю и самую нижнюю точку среди всех карточек сетки
+            let minTop = Infinity;
+            let maxBottom = -Infinity;
+
+            cards.forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < minTop) minTop = rect.top;
+                if (rect.bottom > maxBottom) maxBottom = rect.bottom;
+            });
+
+            // Чистая высота всей сетки с учетом текущего расположения колонок и строк
+            contentHeight = maxBottom - minTop;
+        } else {
+            contentHeight = contentEl.scrollHeight;
+        }
 
         // Возвращаем исходные стили
         contentEl.style.visibility = originalVisibility;
         contentEl.style.display = originalDisplay;
 
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
         const topBarHeight = 70; // Высота шапки в закрытом состоянии
-        const padding = isMobile ? 16 : 32;
+        const padding = isMobile ? 60 : 300; // Отступы снизу
 
         return topBarHeight + contentHeight + padding;
     };
@@ -221,7 +230,7 @@ const CardNav: React.FC<CardNavProps> = ({
     return (
         <div className={`card-nav-container ${className}`}>
             <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
-                <div className="card-nav-top">
+                <div onClick={toggleMenu} className="card-nav-top">
                     <div
                         className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
                         onClick={toggleMenu}
@@ -261,29 +270,40 @@ const CardNav: React.FC<CardNavProps> = ({
 
                 <div className="card-nav-content" aria-hidden={!isExpanded}>
                     {(items || []).slice(0, 5).map((item, idx) => (
-                        <div
+                        <div onClick={toggleMenu}
                             key={`${item.label}-${idx}`}
                             className="nav-card"
                             ref={setCardRef(idx)}
                             style={{ backgroundColor: item.bgColor, color: item.textColor }}
                         >
-                            <div className="nav-card-label">{item.label}</div>
+                            {/* <div className="nav-card-label">{item.label}</div> */}
                             <div className="nav-card-img">
-                                <img src={item.imageUrl} alt="" />
+                                <img className='nav-card-img__estimate'
+                                    src={item.imageUrl} alt=""
+                                    onClick={(e) => handleImageClick(e, item.imageUrl)}
+
+                                />
                             </div>
-                            <div className="nav-card-links">
+                            {/* <div className="nav-card-links">
                                 {item.links?.map((lnk, i) => (
                                     <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} download={'1.png'} aria-label={lnk.ariaLabel}>
                                         <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
                                         {lnk.label}
                                     </a>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     ))}
 
                 </div>
             </nav>
+            {previewImage && (
+                <div ref={overlayRef} className="image-preview-overlay" onClick={closePreview}>
+                    <div className="image-preview-content">
+                        <img src={previewImage} ref={modalImgRef} alt="Preview" />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

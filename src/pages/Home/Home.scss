@@ -33,7 +33,7 @@ $transition-speed: 0.3s;
 }
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == tablet {
+  @if $breakpoint == mobile {
     @media (max-width: 768px) {
       @content;
     }
@@ -285,7 +285,7 @@ $transition-speed: 0.3s;
 //  Адаптив (планшеты и мобильные)
 // ============================================================
 
-@include respond-to(tablet) {
+@include respond-to(mobile) {
   // ---- .home-hero ----
   .home-hero {
     &::before {
@@ -332,11 +332,11 @@ $transition-speed: 0.3s;
       gap: calc(#{$spacing-unit} * 4);
       grid-template-columns: repeat(2, 1fr);
 
-      > div {
+      div {
         .home-achievements__icons {
           margin-bottom: calc(#{$spacing-unit} * 3);
-          height: $icon-size-sm;
-          width: $icon-size-sm;
+          height: 40px;
+          width: 100%;
         }
       }
     }
@@ -356,8 +356,8 @@ $transition-speed: 0.3s;
 
       &__item {
         .item__icons {
-          height: $icon-size-sm;
-          width: $icon-size-sm;
+          height: 40px;
+          width: 40px;
           padding: calc(#{$spacing-unit} * 3);
         }
 

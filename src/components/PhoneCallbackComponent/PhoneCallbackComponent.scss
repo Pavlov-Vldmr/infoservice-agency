@@ -1,10 +1,10 @@
 .callback {
   align-items: center;
-  border-radius: 0.625rem;
+  // border-radius: 0.625rem;
   background-color: var(--accent);
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
 
-  form {
+  &__form {
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
@@ -17,7 +17,8 @@
     .callback__phone {
       position: relative;
       input {
-        padding: calc(var(--spacing) * 4);
+        height: 48px;
+        padding-inline: calc(var(--spacing) * 4);
         border: 1px solid var(--muted-foreground);
         border-radius: 0.325rem;
         font-size: var(--text-sm);
@@ -60,7 +61,9 @@
 
 @media (max-width: 768px) {
   .callback {
-    form {
+    border-radius: 0.625rem;
+
+    .callback__form {
       display: flex;
       flex-direction: column;
       gap: calc(var(--spacing) * 4);

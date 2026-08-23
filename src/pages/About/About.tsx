@@ -50,59 +50,17 @@ const items = [
     }
 ];
 
-
-// const items = [
-//     {
-//         label: "About",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Company", ariaLabel: "About Company", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/1.png"
-//     },
-//     {
-//         label: "Projects",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Featured", ariaLabel: "Featured Projects", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/2.png"
-//     },
-//     {
-//         label: "Contact",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Email", ariaLabel: "Email us", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/3.png"
-//     },
-//     {
-//         label: "Contact2",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Email", ariaLabel: "Email us", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/4.png"
-//     },
-//     {
-//         label: "Contact3",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Email", ariaLabel: "Email us", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/5.png"
-//     }
-// ];
-
 function About() {
-
 
     return (
         <>
             <PageTitle title="О компании ИнфоСервис" subTitle="Профессиональная охрана недвижимости с 2010 года" />
 
+            <section className="about-info pt-20 m_py-0">
+                <AboutComponent />
+            </section>
 
-            <section className=' py-20 bg_white m_p-4'>
+            <section className='  bg_white m_p-4 pt-10'>
                 <div className="container">
                     <CardNav
                         logoAlt="Благодарственные письма"
@@ -116,21 +74,6 @@ function About() {
                     />
                 </div>
             </section>
-
-            <section className="about-info pt-20 m_py-0">
-                <AboutComponent />
-            </section>
-
-
-
-
-
-            <section className=' m_px-4 m_pt-8 bg_white'>
-                <div className="container">
-                    <PhoneCallbackComponent className='' />
-                </div>
-            </section>
-
 
             <section className="about-sertificate py-10">
                 <div className="container about-sertificate__container p-8 m_p-4">
@@ -155,8 +98,11 @@ function About() {
                 </div>
             </section>
 
-
-
+            <section className='pb-10 m_px-4 m_pt-4 bg_white'>
+                <div className="container">
+                    <PhoneCallbackComponent className='about-pcb' />
+                </div>
+            </section>
 
 
         </>

@@ -57,7 +57,7 @@
 }
 
 // marging and padding
-$scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20, 22, 24, 30;
+$scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20, 22, 24, 30, 34;
 
 @each $scale in $scales {
   // Генерация маргинов (например, .mb-4)
@@ -205,6 +205,10 @@ a {
 }
 .text_muted {
   color: var(--muted-foreground);
+}
+
+.text_black {
+  color: #000;
 }
 
 .text_white {

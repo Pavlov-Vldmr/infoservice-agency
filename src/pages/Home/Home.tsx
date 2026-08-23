@@ -88,7 +88,7 @@ function Home() {
   const FadeAdvDuration: number = 500
   return (
     <>
-      <section className="home-hero m_pt-20 pt-30">
+      <section className="home-hero ">
         <Grainient
           className='m-0 p-0 m_px-0 home-hero__grainient'
           color1="#1e3a8a"
@@ -114,7 +114,7 @@ function Home() {
           centerY={0}
           zoom={0.9}
         />
-        <div className="container home-hero__container m_px-4 p-10">
+        <div className="container home-hero__container m_px-4 pt-34 p-10">
 
           {/* <div style={{ width: '100%', height: '100%', position: 'absolute' }}> */}
 
@@ -122,7 +122,7 @@ function Home() {
 
 
           <div className="home-hero__main">
-            <span className="license">
+            <span className="license ">
               {companyInfo?.licenseShort || extraCompData.licenseShort}
             </span>
             <ShinyText
@@ -383,7 +383,7 @@ function Home() {
 
 
       <section className='home-phoneCallback m_px-4 m_pt-8 bg_white'>
-        <PhoneCallbackComponent className='' />
+        <PhoneCallbackComponent />
       </section>
 
 
@@ -405,7 +405,7 @@ function Home() {
 
 
       <section id="scrollTest" className="home-contacts py-20">
-        <div className="container home-contacts__container  p-10 m_p-4">
+        <div className="container home-contacts__container  px-10 m_p-4">
           <div className="home-contacts__title mb-20">
             <h2 className="text_center mb-4">Контакты</h2>
             <p className="text_center text_muted py-4">

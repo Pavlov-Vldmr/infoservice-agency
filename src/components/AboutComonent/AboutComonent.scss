@@ -23,6 +23,8 @@
       .about-component__article-adv {
         display: flex;
         flex-direction: column;
+        gap: calc(var(--spacing) * 2);
+
         .about-component__article-adv__item {
           display: flex;
           .about-component__icons {
@@ -114,7 +116,7 @@
     }
     .home-achievements-plates {
       display: grid;
-      gap: calc(var(--spacing) * 2);
+      gap: calc(var(--spacing) * 6);
       grid-template-columns: repeat(2, minmax(0, 1fr));
       text-align: center;
       // margin-top: calc(var(--spacing) * 20);

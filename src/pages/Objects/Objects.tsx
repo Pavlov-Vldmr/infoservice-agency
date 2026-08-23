@@ -10,6 +10,7 @@ import PageTitle from "../../components/PageTitle/PageTitle"
 import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
+import MarqueeLogo from "../Home/components/MarqueeLogo/MarqueeLogo";
 
 function Objects() {
 
@@ -94,6 +95,12 @@ function Objects() {
                     )}
                 </div>
             </section>
+
+            <section className='home-marquee bg_white'>
+                <MarqueeLogo />
+            </section>
+
+
             <section className="objects-proposal pb-8 ">
                 <div className="container objects-proposal__container p-10 m_p-4">
                     <ProposalComonent />

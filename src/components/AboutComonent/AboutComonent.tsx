@@ -10,20 +10,20 @@ import FadeContent from "../ReactBits/FadeContent/FadeContent";
 import './AboutComonent.scss'
 
 
-function AboutComponent() {
+function AboutComponent(props: { className?: string }) {
     const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
     const FadeContentDuraton: number = 2000
     const AnimContentDuraton: number = 1.4
 
     return (
-        <div className='about-component'>
-            <div className="container about-component__container p-10 m_p-4 m_pt-20">
+        <div className={`${props.className} about-component`}>
+            <div className="container about-component__container px-10 m_p-4 m_pt-20">
                 <div className='about-component__top'>
                     <div className='about-component__guardian mt-8 m_mt-0'>
                         <img src={guardian} alt="" />
                     </div>
                     <div className='about-component__article'>
-                        <h2 className='mb-4'>О компании ООО "ИнфоСервис"</h2>
+                        <h2 className='mb-8'>О компании ООО "ИнфоСервис"</h2>
 
                         <AnimatedContent
                             distance={100}
@@ -83,11 +83,11 @@ function AboutComponent() {
                             threshold={0.1}
                             delay={0}
                         >
-                            <p className='some__text text_muted mt-4'>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
+                            <p className='some__text text_muted mt-4 '>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
 
                         </AnimatedContent>
 
-                        <div className='about-component__article-adv mt-8'>
+                        <div className='about-component__article-adv mt-8  m_px-4'>
                             <FadeContent blur={true} duration={FadeContentDuraton} easing="ease-out" initialOpacity={0}>
                                 <div className='about-component__article-adv__item'>
                                     <Icons.Shield className='about-component__icons icon_accent' />

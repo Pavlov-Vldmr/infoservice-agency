@@ -11,6 +11,11 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
 
 import "./Services.scss";
+import CallbackComponent from "@/components/CallbackComponent/CallbackComponent";
+import FeedbackForm from "@/features/FeedbackForm/FeedbackForm";
+import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
+import AboutComponent from "@/components/AboutComonent/AboutComonent";
+import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
 
 function Services() {
 
@@ -72,7 +77,32 @@ function Services() {
       />
 
       <section className="services">
-        <div className="container services__container  p-10 m_p-4">
+        <div className="container services__container price-download p-10 m_p-4">
+          <div className="">
+            <span>{files[0]?.title}</span>
+            <a
+              href={getStrapiMediaUrl(files[0]?.file?.url)}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-button"
+            >
+              <button className="btn btn_primary btn_bordered m_w100">Скачать прайс лист</button>
+            </a>
+          </div>
+
+          <MainActButton
+            to="#servicesFeedback"
+            variant="white"
+            title="Обратный звонок"
+            bordered
+          ></MainActButton>
+        </div>
+      </section>
+
+
+      <section className="services">
+        <div className="container services__container  pb-10 m_p-4">
           {services && services.length > 0 ? (
             services.map((item) => (
               <ServiceCard
@@ -99,23 +129,23 @@ function Services() {
         </div>
       </section>
 
-      <section className="services">
-        <div className="container services__container  p-10 m_p-4">
-          <h2>Прайс лист</h2>
-          <div>
-            <span>{files[0]?.title}</span>
-            <a
-              href={getStrapiMediaUrl(files[0]?.file?.url)}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="download-button"
-            >
-              <button>Скачать</button>
-            </a>
+
+
+      <section id="servicesFeedback" className="services services-feedback bg_white">
+        <div className="container">
+          <div className="services__title mb-20 pt-20">
+            <h2 className="text_center">Остались вопросы?</h2>
+          </div>
+          <div className="services-feedback__container  px-10 pb-10 m_p-4">
+
+            <ContactsInfo className="services-feedback__contacts" />
+            <FeedbackForm />
           </div>
         </div>
+
       </section>
+
+
     </>
   );
 }
