@@ -10,7 +10,7 @@ import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 import './ContactsInfo.scss'
 import BusinessHours from "../BusinessHours/BusinessHours";
 
-function ContactsInfo() {
+function ContactsInfo(props: { className?: string }) {
 
     const { companyInfo } = useCompany();
     const { city: cityC } = useCity();
@@ -21,7 +21,7 @@ function ContactsInfo() {
         <>
 
             <>
-                <div id="contactsForm" className="contacts__block p-0">
+                <div id="contactsForm" className={`${props.className} contacts__block p-0`}>
                     <div className="contacts__block__items">
 
                         <AnimatedContent

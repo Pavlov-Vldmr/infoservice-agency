@@ -60,7 +60,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
 
         const axis = direction === 'horizontal' ? 'x' : 'y';
         const offset = reverse ? -distance : distance;
-        const startPct = (1 - threshold) * 100;
+        const startPct = (1 - threshold) * 120;
 
         gsap.set(el, {
             [axis]: offset,

@@ -10,14 +10,14 @@ import FadeContent from "../ReactBits/FadeContent/FadeContent";
 import './AboutComonent.scss'
 
 
-function AboutComponent() {
+function AboutComponent(props: { className?: string }) {
     const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
     const FadeContentDuraton: number = 2000
     const AnimContentDuraton: number = 1.4
 
     return (
-        <div className='about-component'>
-            <div className="container about-component__container p-10 m_p-4 m_pt-20">
+        <div className={`${props.className} about-component`}>
+            <div className="container about-component__container px-10 m_p-4 m_pt-20">
                 <div className='about-component__top'>
                     <div className='about-component__guardian mt-8 m_mt-0'>
                         <img src={guardian} alt="" />

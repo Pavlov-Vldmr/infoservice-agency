@@ -383,7 +383,7 @@ function Home() {
 
 
       <section className='home-phoneCallback m_px-4 m_pt-8 bg_white'>
-        <PhoneCallbackComponent className='' />
+        <PhoneCallbackComponent />
       </section>
 
 
@@ -405,7 +405,7 @@ function Home() {
 
 
       <section id="scrollTest" className="home-contacts py-20">
-        <div className="container home-contacts__container  p-10 m_p-4">
+        <div className="container home-contacts__container  px-10 m_p-4">
           <div className="home-contacts__title mb-20">
             <h2 className="text_center mb-4">Контакты</h2>
             <p className="text_center text_muted py-4">
