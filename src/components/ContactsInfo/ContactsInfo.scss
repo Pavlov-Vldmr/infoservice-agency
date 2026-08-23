@@ -21,6 +21,18 @@
     .item__info {
       display: flex;
       flex-direction: column;
+      span {
+        padding-bottom: calc(var(--spacing) * 1);
+      }
+      .phone {
+        color: var(--accent);
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+          color: rgb(205, 50, 30);
+        }
+      }
+
       h4 {
         margin: 0;
         color: var(--rimary);
@@ -43,6 +55,13 @@
     max-width: 500px;
     .phone {
       font-size: var(--text-2xl);
+      a {
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+          color: rgb(205, 50, 30);
+        }
+      }
     }
   }
 }
@@ -68,6 +87,7 @@
       .item__info {
         display: flex;
         flex-direction: column;
+        padding-right: 40px;
         h4 {
           margin: 0;
           color: var(--rimary);

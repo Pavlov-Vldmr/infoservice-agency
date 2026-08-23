@@ -39,7 +39,7 @@ function ContactsInfo() {
                                 <Icons.Phone className="contacts__icon icon_accent" width={20} hanging={20} />
                                 <div className='item__info'>
                                     <h4>Телефон</h4>
-                                    <span className='text_muted'><PhoneComponent phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`} /></span>
+                                    <span className='text_muted'><PhoneComponent className="phone" phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`} /></span>
                                     {/* <span className="text_accent">Служба охраны 24/7</span> */}
                                 </div>
                             </div>
@@ -82,8 +82,11 @@ function ContactsInfo() {
                                 <Icons.ShieldAlt className="contacts__icon icon_accent" width={20} hanging={20} />
                                 <div className='item__info'>
                                     <h4>{companyInfo?.personal?.phisical?.department || extraCompData.personal.phisical.department}</h4>
-                                    <span className='text_muted'>{companyInfo?.personal?.phisical?.job || extraCompData.personal.phisical.job} {companyInfo?.personal?.phisical?.name || extraCompData.personal.phisical.name}</span>
-                                    <span className='text_muted'><PhoneComponent phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`} /> доб {companyInfo?.personal?.phisical?.phoneExt || extraCompData.personal.phisical.phoneExt}</span>
+                                    <span className='text_muted'>{companyInfo?.personal?.phisical?.job || extraCompData.personal.phisical.job}
+
+                                        <span className='text_black'> {companyInfo?.personal?.phisical?.name || extraCompData.personal.phisical.name}</span>
+                                    </span>
+                                    <span className='text_muted'><PhoneComponent className="phone" phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`} /> доб <span className="text_black">{companyInfo?.personal?.phisical?.phoneExt || extraCompData.personal.phisical.phoneExt}</span> </span>
                                     <span className='text_muted'>{companyInfo?.personal?.phisical?.jobTime || extraCompData.personal.phisical.jobTime} перерыв {companyInfo?.personal?.phisical?.jobBreak || extraCompData.personal.phisical.jobBreak}</span>
                                 </div>
                             </div>
@@ -104,8 +107,12 @@ function ContactsInfo() {
                                 <Icons.Tech className="contacts__icon icon_accent" width={20} hanging={20} />
                                 <div className='item__info'>
                                     <h4>{companyInfo?.personal?.technical?.department || extraCompData.personal.technical.department}</h4>
-                                    <span className='text_muted'>{companyInfo?.personal?.technical?.job || extraCompData.personal.technical.job} {companyInfo?.personal?.technical?.name || extraCompData.personal.technical.name}</span>
-                                    <span className='text_muted'><PhoneComponent phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`} /> доб {companyInfo?.personal?.technical?.phoneExt || extraCompData.personal.technical.phoneExt}</span>
+                                    <span className='text_muted'>{companyInfo?.personal?.technical?.job || extraCompData.personal.technical.job}
+
+                                        <span className='text_black'> {companyInfo?.personal?.technical?.name || extraCompData.personal.technical.name}</span>
+
+                                    </span>
+                                    <span className='text_muted'><PhoneComponent className="phone" phone={`${companyInfo?.phoneMain || extraCompData.phoneMain}`} /> доб <span className="text_black"> {companyInfo?.personal?.technical?.phoneExt || extraCompData.personal.technical.phoneExt}</span>  </span>
                                     <span className='text_muted'>{companyInfo?.personal?.technical?.jobTime || extraCompData.personal.technical.jobTime} перерыв {companyInfo?.personal?.technical?.jobBreak || extraCompData.personal.technical.jobBreak}</span>
                                 </div>
                             </div>
