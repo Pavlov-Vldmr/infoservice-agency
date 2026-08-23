@@ -50,10 +50,7 @@ const items = [
     }
 ];
 
-
-
 function About() {
-
 
     return (
         <>
@@ -63,7 +60,7 @@ function About() {
                 <AboutComponent />
             </section>
 
-            <section className=' py-20 bg_white m_p-4'>
+            <section className='  bg_white m_p-4'>
                 <div className="container">
                     <CardNav
                         logoAlt="Благодарственные письма"
@@ -77,14 +74,6 @@ function About() {
                     />
                 </div>
             </section>
-
-
-            <section className=' m_px-4 m_pt-4 bg_white'>
-                <div className="container">
-                    <PhoneCallbackComponent className='' />
-                </div>
-            </section>
-
 
             <section className="about-sertificate py-10">
                 <div className="container about-sertificate__container p-8 m_p-4">
@@ -109,8 +98,11 @@ function About() {
                 </div>
             </section>
 
-
-
+            <section className='pb-10 m_px-4 m_pt-4 bg_white'>
+                <div className="container">
+                    <PhoneCallbackComponent className='' />
+                </div>
+            </section>
 
 
         </>
