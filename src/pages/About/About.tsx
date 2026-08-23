@@ -79,7 +79,7 @@ function About() {
             </section>
 
 
-            <section className=' m_px-4 m_pt-8 bg_white'>
+            <section className=' m_px-4 m_pt-4 bg_white'>
                 <div className="container">
                     <PhoneCallbackComponent className='' />
                 </div>

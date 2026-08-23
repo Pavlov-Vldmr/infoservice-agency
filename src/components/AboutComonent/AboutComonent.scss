@@ -114,7 +114,7 @@
     }
     .home-achievements-plates {
       display: grid;
-      gap: calc(var(--spacing) * 2);
+      gap: calc(var(--spacing) * 6);
       grid-template-columns: repeat(2, minmax(0, 1fr));
       text-align: center;
       // margin-top: calc(var(--spacing) * 20);

@@ -83,11 +83,11 @@ function AboutComponent() {
                             threshold={0.1}
                             delay={0}
                         >
-                            <p className='some__text text_muted mt-4'>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
+                            <p className='some__text text_muted mt-4 '>Наша приверженность качеству и удовлетворенности клиентов сделала нас предпочтительным выбором для владельцев недвижимости, застройщиков и управляющих компаний по всему региону.</p>
 
                         </AnimatedContent>
 
-                        <div className='about-component__article-adv mt-8'>
+                        <div className='about-component__article-adv mt-8  m_px-4'>
                             <FadeContent blur={true} duration={FadeContentDuraton} easing="ease-out" initialOpacity={0}>
                                 <div className='about-component__article-adv__item'>
                                     <Icons.Shield className='about-component__icons icon_accent' />
