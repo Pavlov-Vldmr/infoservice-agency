@@ -51,48 +51,6 @@ const items = [
 ];
 
 
-// const items = [
-//     {
-//         label: "About",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Company", ariaLabel: "About Company", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/1.png"
-//     },
-//     {
-//         label: "Projects",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Featured", ariaLabel: "Featured Projects", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/2.png"
-//     },
-//     {
-//         label: "Contact",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Email", ariaLabel: "Email us", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/3.png"
-//     },
-//     {
-//         label: "Contact2",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Email", ariaLabel: "Email us", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/4.png"
-//     },
-//     {
-//         label: "Contact3",
-//         textColor: "#fff",
-//         links: [
-//             { label: "Email", ariaLabel: "Email us", href: '/' },
-//         ],
-//         imageUrl: "/infoservice-agency/src/assets/images/estimates/5.png"
-//     }
-// ];
 
 function About() {
 
@@ -101,6 +59,9 @@ function About() {
         <>
             <PageTitle title="О компании ИнфоСервис" subTitle="Профессиональная охрана недвижимости с 2010 года" />
 
+            <section className="about-info pt-20 m_py-0">
+                <AboutComponent />
+            </section>
 
             <section className=' py-20 bg_white m_p-4'>
                 <div className="container">
@@ -116,13 +77,6 @@ function About() {
                     />
                 </div>
             </section>
-
-            <section className="about-info pt-20 m_py-0">
-                <AboutComponent />
-            </section>
-
-
-
 
 
             <section className=' m_px-4 m_pt-8 bg_white'>
