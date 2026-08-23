@@ -23,6 +23,8 @@
       .about-component__article-adv {
         display: flex;
         flex-direction: column;
+        gap: calc(var(--spacing) * 2);
+
         .about-component__article-adv__item {
           display: flex;
           .about-component__icons {

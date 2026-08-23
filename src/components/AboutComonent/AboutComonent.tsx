@@ -23,7 +23,7 @@ function AboutComponent(props: { className?: string }) {
                         <img src={guardian} alt="" />
                     </div>
                     <div className='about-component__article'>
-                        <h2 className='mb-4'>О компании ООО "ИнфоСервис"</h2>
+                        <h2 className='mb-8'>О компании ООО "ИнфоСервис"</h2>
 
                         <AnimatedContent
                             distance={100}
