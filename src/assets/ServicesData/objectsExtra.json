@@ -5,9 +5,9 @@
     "text": "Физическая охрана, охрана имущества, осуществление контрольно-пропускного и внутриобъектового режимов на объектах по всей Сахалинской области с 2018 года.",
     "img_text": "Сахалинэнерго",
     "values": {
-      "square": "123 м2",
-      "guardians": "4 человека",
-      "since": "1980 года"
+      "square": "123",
+      "guardians": "4",
+      "since": "1980"
     },
     "imageUrl": "/infoservice-agency/assets/images/objects/se.jpg"
   },
@@ -17,18 +17,22 @@
     "text": "Физическая охрана, охрана имущества, осуществление контрольно-пропускного и внутриобъектового режимов, осуществление охраны порядка при проведении мероприятий с 2018 года.",
     "img_text": "Горный Воздух",
     "values": {
-      "square": "8000 м2",
-      "guardians": "6 человек",
-      "since": "2020 года"
+      "square": "8000",
+      "guardians": "6",
+      "since": "2020"
     },
     "imageUrl": "/infoservice-agency/assets/images/objects/gv.jpg"
   },
   {
     "id": 12,
     "title": "Кристалл",
-    "text": "",
+    "text": "Физическая охрана, охрана имущества, осуществление контрольно-пропускного и",
     "img_text": "Кристалл",
-    "values": null,
+    "values": {
+      "square": "82000",
+      "guardians": "16",
+      "since": "2012"
+    },
     "imageUrl": "/infoservice-agency/assets/images/objects/kris.jpg"
   },
   {
@@ -46,7 +50,7 @@
     "img_text": "ННК",
     "values": {
       "square": "18000",
-      "guardians": "12 человек",
+      "guardians": "12",
       "since": "1200"
     },
     "imageUrl": "/infoservice-agency/assets/images/objects/nnk.png"

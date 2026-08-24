@@ -1,8 +1,6 @@
 import type { ComponentType, ReactNode } from 'react';
 import ReactCountUp from "react-countup";
 import { ErrorBoundary } from "react-error-boundary";
-// import Marquee from 'react-fast-marquee';
-// import { default as Marquee } from 'react-fast-marquee';
 import { TailSpin } from 'react-loader-spinner';
 import { Link } from "react-router-dom";
 
@@ -14,10 +12,10 @@ import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
 import { Icons } from "@/components/Icons";
 import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent';
 import FadeContent from '@/components/ReactBits/FadeContent/FadeContent';
-// import FoldText from '@/components/ReactBits/FoldText/FoldText';
 import ShinyText from '@/components/ReactBits/ShinyText/ShinyText';
 import { useCompany } from '@/contexts/CompanyInfoContext';
 import { useFetch } from "@/hooks/useFetch";
+import { fetchCompanyObjects } from "@/services/objects"
 import { fetchCompanyServices } from "@/services/services";
 import YandexMap from "@/services/yandexMap";
 
@@ -28,6 +26,12 @@ import ServiceCard from "./components/ServiceCard/ServiceCard";
 
 import "./Home.scss";
 import Grainient from '@/components/ReactBits/Grainient/Grainient';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
+import { getStrapiMediaUrl } from '@/services/strapiClient';
+
+
+import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
+import ObjectCard from '../Objects/components/ObjectCard/ObjectCard';
 
 function Home() {
 
@@ -51,9 +55,26 @@ function Home() {
     error: servicesError,
   } = useFetch(fetchCompanyServices);
 
-  // if (servicesLoading) return <div>Загрузка...</div>;
-  if (servicesError) return <div>Ошибка: {servicesError}</div>;
-  // if (services.length === 0) return <div>Сервисы не найдены</div>;
+  interface IObjectsItem {
+    id: number;
+    title: string;
+    text: string;
+    values: {
+      square: string;
+      guardians: string;
+      since: string;
+    } | null;
+    img_text: string;
+    imageUrl: string;
+
+  }
+  const objectsEx: IObjectsItem[] = objectsExtra
+
+  // Важно: хук должен вызываться безусловно, ДО любых ранних return.
+  // Раньше он был объявлен после `if (servicesLoading) return ...`,
+  // из-за чего нарушался порядок хуков между рендерами (Rules of Hooks)
+  // и объекты переставали догружаться.
+  const { data: objects = [], loading, error } = useFetch(fetchCompanyObjects);
 
   const iconArr: ReactNode[] = [
     <Icons.ShieldAlt key="shield" className="item__icons icon_accent" />,
@@ -61,7 +82,12 @@ function Home() {
     <Icons.Shield key="settings" className="item__icons icon_accent" />
   ];
 
-  if (servicesLoading) {
+  // ---- Все хуки вызваны выше. Дальше — можно делать условные return. ----
+
+  if (servicesError) return <div>Ошибка: {servicesError}</div>;
+  if (error) return <div>Ошибка: {error}</div>;
+
+  if (servicesLoading || loading) {
     return (
       <div style={{
         display: 'flex',
@@ -86,6 +112,9 @@ function Home() {
   }
 
   const FadeAdvDuration: number = 500
+
+
+
   return (
     <>
       <section className="home-hero ">
@@ -184,18 +213,15 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-services px-8 m_px-4 py-20">
+      <section className="home-services px-8 m_px-4 pb-10">
         <div className="container home-services__container">
-          <div className="home-services__title mb-20">
-            <h2 className="text_center mb-4">Наши услуги по охране</h2>
-            <p className="text_center text_muted py-4">
-              Комплексные решения по безопасности для защиты вашей недвижимости
-            </p>
-          </div>
+          <SectionTitle
+            plate={"Услуги"}
+            title={"Наши услуги по охране"}
+            text={"Комплексные решения по обеспечению безопасности объектов любой сложности"}
+          />
 
-
-
-          <div className="home-services__items mb-8">
+          <div className="home-services__items mb-8 pt-10">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
                 <FadeContent className="home-services__items__item" blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
@@ -228,7 +254,6 @@ function Home() {
             <Link
               className="btn btn_primary btn_bordered m_w100"
               to="/infoservice-agency/services"
-
             >
               Все услуги
             </Link>
@@ -237,22 +262,54 @@ function Home() {
       </section>
 
       {/* slider OBJECTS */}
-      <section className="home-objects py-20 m_px-4">
+      <section className="home-objects pb-10 ">
         <div className="container">
-          <div className="home-objects__title mb-20">
-            <h2 className="text_center mb-4">Охраняемые объекты</h2>
-            <p className="text_center text_muted py-4">
-              Мы обеспечиваем безопасность разных типов недвижимости
-            </p>
-          </div>
-          <div className="home-objects__slider mb-8">
+          <SectionTitle
+            plate={"Объекты"}
+            title={"Охраняемые объекты"}
+            text={"Мы обеспечиваем безопасность разных типов недвижимости"}
+          />
+
+          {/* !!!!!  */}
+          {/* <div className="home-objects__slider mb-8">
             <ObjectsSlider />
+          </div> */}
+
+          <div className="container objects__container px-10 pb-10 m_p-4">
+            {Array.isArray(objects) && objects.length > 0 ? (
+              objects.slice(0, 3).map((obj) => (
+                <ObjectCard
+                  key={obj.documentId || obj.id}
+                  title={obj.title}
+                  text={obj.text}
+                  imgURL={getStrapiMediaUrl(obj.img?.url)}
+                  imgTitle={obj.img_text}
+                  square={obj.values?.square}
+                  guardians={obj.values?.guardians}
+                  since={obj.values?.since} />
+              ))
+            ) : (
+              Array.isArray(objectsEx) ? (
+                objectsEx.slice(0, 3).map((obj) => (
+                  <ObjectCard
+                    key={obj.id}
+                    title={obj.title}
+                    text={obj.text}
+                    imgTitle={obj.img_text}
+                    square={obj.values?.square}
+                    guardians={obj.values?.guardians}
+                    since={obj.values?.since}
+                    imgURL={obj.imageUrl}
+
+                  />
+                ))
+              ) : null)}
           </div>
-          <div className="home-objects__btn flex-center">
+
+          <div className="home-objects__btn flex-center m_px-4 m_py-4">
             <Link
               className="btn btn_primary btn_bordered m_w100"
               to="/infoservice-agency/objects"
-
             >
               Все объекты
             </Link>
@@ -260,15 +317,19 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-advantages py-20">
+      <section className="home-advantages pb-10  ">
         <div className="container">
-          <div className="home-advantages__title mb-20">
-            <h2 className="text_center mb-4">Почему выбирают нас</h2>
-            <p className="text_center px-4">
-              Наши преимущества делают нас лучшим выбором в сфере охраны
-              недвижимости
-            </p>
-          </div>
+          <SectionTitle
+            className={"text_white"}
+            plate={"Преимущества"}
+            plateColor='border-w text_gold'
+            pColor='text_white-7'
+            title={"Почему выбирают нас"}
+            hColor='text_white'
+            text={"Наши преимущества делают нас лучшим выбором в сфере охраны недвижимости"}
+          />
+
+
           <div className="home-advantages__plates">
 
             <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
@@ -388,14 +449,14 @@ function Home() {
 
 
       {/* slider REVIEWS */}
-      <section className="home-reviews py-20 m_px-4">
+      <section className="home-reviews pb-10 m_px-4">
         <div className="container">
-          <div className="home-reviews__title mb-10">
-            <h2 className="text_center mb-4">Отзывы наших клиентов</h2>
-            <p className="text_center text_muted py-4">
-              Что говорят о нас руководители компаний и владельцы недвижимости
-            </p>
-          </div>
+
+          <SectionTitle
+            plate={"Отзывы"}
+            title={"Что о нас говорят"}
+            text={"Что говорят о нас руководители компаний и владельцы недвижимости"}
+          />
           <div className="home-reviews__slider">
             <ReviewsSlider />
           </div>
@@ -404,15 +465,16 @@ function Home() {
 
 
 
-      <section id="scrollTest" className="home-contacts py-20">
+      <section id="scrollTest" className="home-contacts pb-10">
         <div className="container home-contacts__container  px-10 m_p-4">
-          <div className="home-contacts__title mb-20">
-            <h2 className="text_center mb-4">Контакты</h2>
-            <p className="text_center text_muted py-4">
-              Свяжитесь с нашими специалистами по безопасности для обсуждения
-              защиты вашей недвижимости
-            </p>
-          </div>
+
+
+          <SectionTitle
+            plate={"Контакты"}
+            title={"Свяжитесь с нами"}
+            text={"Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта."}
+          />
+
           <div className="home-contacts__content">
             <ContactsInfo />
             <div className="contacts__map">

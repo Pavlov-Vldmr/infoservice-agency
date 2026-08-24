@@ -17,6 +17,10 @@ import Objects from './pages/Objects/Objects'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 
 import './App.css'
+import '@fontsource/inter';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+
 
 const Services = lazy(() => import('./pages/Services/Services'));
 

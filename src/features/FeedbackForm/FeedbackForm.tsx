@@ -78,7 +78,7 @@ function FeedbackForm() {
 
 
     return (
-        <form className='feedbackform' id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
+        <form className='feedbackform m_py-10' id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
             <h4 className="text_primary">Свяжитесь со мной</h4>
 
             {/* Поле: Имя */}

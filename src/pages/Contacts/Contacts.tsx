@@ -35,8 +35,10 @@ function Contacts() {
 
     return (
         <>
-            <PageTitle title="Контакты" subTitle="Свяжитесь с нами любым удобным способом " />
+            <PageTitle plate="Контактты" title="Свяжитесь с нами" subTitle="Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта" />
             <section className="contacts">
+                {/* <h2 className="text_center pb-4">Контакты</h2> */}
+
                 <div className="container contacts__container  p-10 m_p-4">
                     <div className="contacts__content m_py-8" ref={targetRef}>
                         {/* <a href="" className="test text_primary">{companyInfo?.city[cityC].name}</a> */}

@@ -1,7 +1,16 @@
+// @font-face {
+//   font-family: "Inter", sans-serif;
+//   src: url("./assets/fonts/inter/Inter_18pt-Bold.ttf") format("ttf");
+//   font-weight: 700;
+// }
+
 :root {
   --text-white: #ffffff;
   --primary: #1e3a8a;
   --accent: #2563eb;
+  --gold: rgb(251 191 36);
+  --gold: rgba(251, 190, 36, 0.8);
+
   --foreground: oklch(14.5% 0 0);
   --muted-foreground: #717182;
   --muted-foreground-g: #0000cdef;
@@ -20,9 +29,14 @@
   --font-size: 16px;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
+  --text-l: 1rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
+  --text-2-3xl: 2rem;
+
   --text-2-5xl: 2.2rem;
+  --text-2-6xl: 2.6rem;
+  --text-2-10xl: 3rem;
 
   --text-3xl: 3rem;
 
@@ -31,8 +45,8 @@
   --container-xl: 80rem;
 
   --font-sans:
-    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
@@ -159,15 +173,13 @@ ul {
   padding: 0;
 }
 
-h1,
-h2 {
-  font-weight: 500;
-  line-height: 1;
-}
-
 h1 {
   font-size: 3.75rem;
   color: var(--text-white);
+  line-height: 1;
+
+  font-weight: 700;
+  font-family: "inter";
 
   @media (max-width: 1024px) {
     font-size: 36px;
@@ -177,6 +189,8 @@ h1 {
 h2 {
   font-size: 2.25rem;
   color: var(--primary);
+  line-height: 1;
+  font-weight: 500;
 
   @media (max-width: 1024px) {
     font-size: var(--text-2xl);
@@ -197,6 +211,10 @@ a {
   text-decoration: none;
 }
 
+.border-w {
+  border: 1px solid gray;
+}
+
 .text_center {
   text-align: center;
 }
@@ -214,6 +232,10 @@ a {
 .text_white {
   color: #fff;
 }
+
+.text_white-7 {
+  color: oklab(1 0 0 / 0.7);
+}
 .text_white-8 {
   color: oklab(1 0 0 / 0.8);
 }
@@ -223,6 +245,14 @@ a {
 
 .text_primary {
   color: var(--primary);
+}
+
+.text_gold {
+  color: var(--gold);
+}
+
+.text_gold-8 {
+  color: var(--gold-8);
 }
 
 .bg_white {
@@ -239,6 +269,11 @@ a {
   &_white {
     path {
       stroke: #fff;
+    }
+  }
+  &_gold {
+    path {
+      stroke: var(--gold);
     }
   }
 }

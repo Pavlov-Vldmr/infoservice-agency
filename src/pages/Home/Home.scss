@@ -258,10 +258,10 @@ $transition-speed: 0.3s;
 
 .home-reviews {
   background-color: #fff;
-  padding-block: calc(#{$spacing-unit} * 20);
+  // padding-block: calc(#{$spacing-unit} * 20);
 
   &__title {
-    margin-bottom: calc(#{$spacing-unit} * 20);
+    // margin-bottom: calc(#{$spacing-unit} * 20);
   }
 }
 

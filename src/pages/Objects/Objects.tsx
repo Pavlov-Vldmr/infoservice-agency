@@ -11,6 +11,7 @@ import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
 import MarqueeLogo from "../Home/components/MarqueeLogo/MarqueeLogo";
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
 function Objects() {
 
@@ -63,8 +64,13 @@ function Objects() {
 
 
         <>
-            <PageTitle title="Наши объекты" subTitle="Примеры охраняемых объектов и реализованных проектов" />
+            <PageTitle plate="Объекты" title="Доверенные нам объекты" subTitle="Промышленные предприятия, торговые центры и административные здания, которые мы охраняем по всей Сахалинской области." />
+
+
+
+
             <section className="objects">
+                <SectionTitle title={"Объекты под надёжной охраной"} text={"Более 120 объектов по всей Сахалинской области — от энергетики до торговых центров"} plate={"Наши объекты"} />
                 <div className="container objects__container p-10 m_p-4">
                     {objects && objects.length > 0 ? (
                         objects.map((obj) => (
@@ -99,7 +105,6 @@ function Objects() {
             <section className='home-marquee bg_white'>
                 <MarqueeLogo />
             </section>
-
 
             <section className="objects-proposal pb-8 ">
                 <div className="container objects-proposal__container p-10 m_p-4">
