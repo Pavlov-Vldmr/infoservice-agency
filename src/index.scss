@@ -9,6 +9,7 @@
   --primary: #1e3a8a;
   --accent: #2563eb;
   --gold: rgb(251 191 36);
+  --gold: rgba(251, 190, 36, 0.8);
 
   --foreground: oklch(14.5% 0 0);
   --muted-foreground: #717182;
@@ -28,6 +29,7 @@
   --font-size: 16px;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
+  --text-l: 1rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
   --text-2-3xl: 2rem;
@@ -209,6 +211,10 @@ a {
   text-decoration: none;
 }
 
+.border-w {
+  border: 1px solid gray;
+}
+
 .text_center {
   text-align: center;
 }
@@ -226,6 +232,10 @@ a {
 .text_white {
   color: #fff;
 }
+
+.text_white-7 {
+  color: oklab(1 0 0 / 0.7);
+}
 .text_white-8 {
   color: oklab(1 0 0 / 0.8);
 }
@@ -239,6 +249,10 @@ a {
 
 .text_gold {
   color: var(--gold);
+}
+
+.text_gold-8 {
+  color: var(--gold-8);
 }
 
 .bg_white {
