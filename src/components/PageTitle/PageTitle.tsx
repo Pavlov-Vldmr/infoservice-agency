@@ -1,4 +1,5 @@
 
+import { Icons } from '../Icons'
 import Grainient from '../ReactBits/Grainient/Grainient'
 import ShinyText from '../ReactBits/ShinyText/ShinyText'
 import './PageTitle.scss'
@@ -39,8 +40,12 @@ function PageTitle(props: { title: string, subTitle: string }) {
                 />
 
                 <div className="container title-component__container pt-30 pb-14 m_pt-14 m_pb-10 m_px-6">
+                    <div className="title-component__plate mt-10 m_mt-14 m_mb-6">
+                        <Icons.Reputation className="icon_gold" height={20} width={20} />
+                        <span>{props.title}</span>
+                    </div>
                     <ShinyText
-                        className='m_mb-4 pt-6'
+                        className='m_mb-4 m_mt-4 m_pt-0'
                         text={props.title}
                         speed={5}
                         delay={0}
