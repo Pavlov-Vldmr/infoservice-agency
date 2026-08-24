@@ -35,4 +35,12 @@
       flex-direction: column;
     }
   }
+
+  .services-feedback {
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__contacts {
+    }
+  }
 }
