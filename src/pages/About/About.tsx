@@ -54,7 +54,7 @@ function About() {
 
     return (
         <>
-            <PageTitle title="О компании ИнфоСервис" subTitle="Профессиональная охрана недвижимости с 2010 года" />
+            <PageTitle plate='О компании' title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
 
             <section className="about-info pt-20 m_py-0">
                 <AboutComponent />

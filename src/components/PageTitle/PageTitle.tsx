@@ -5,7 +5,7 @@ import ShinyText from '../ReactBits/ShinyText/ShinyText'
 import './PageTitle.scss'
 
 
-function PageTitle(props: { title: string, subTitle: string }) {
+function PageTitle(props: { title: string, subTitle: string, plate: string }) {
 
 
     return (
@@ -42,7 +42,7 @@ function PageTitle(props: { title: string, subTitle: string }) {
                 <div className="container title-component__container pt-30 pb-14 m_pt-14 m_pb-10 m_px-6">
                     <div className="title-component__plate mt-10 m_mt-14 m_mb-6">
                         <Icons.Reputation className="icon_gold" height={20} width={20} />
-                        <span>{props.title}</span>
+                        <span>{props.plate}</span>
                     </div>
                     <ShinyText
                         className='m_mb-4 m_mt-4 m_pt-0'
@@ -54,7 +54,7 @@ function PageTitle(props: { title: string, subTitle: string }) {
                         spread={120}
                         direction="left"
                     />
-                    <p>{props.subTitle}</p>
+                    <p className='text_white-8'>{props.subTitle}</p>
                 </div>
             </div>
 

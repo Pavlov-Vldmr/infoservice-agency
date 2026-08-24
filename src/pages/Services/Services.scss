@@ -1,5 +1,5 @@
 .services {
-  background-color: var(--bg-gray);
+  background-color: var(--bg);
 
   &__container {
     display: grid;
@@ -24,6 +24,71 @@
   }
 }
 
+.services-connection {
+  background-color: rgb(238, 240, 253);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(var(--spacing) * 20);
+  }
+  &__plate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #789ae4ad;
+    border-radius: 0.625rem;
+    padding: calc(var(--spacing) * 8);
+    background-color: white;
+
+    .plate-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .plate-img {
+        height: 30px;
+        width: auto;
+        background-color: #2564eb18;
+        padding: 8px;
+        width: fit-content;
+        border: 1px solid #789ae4e4;
+        border-radius: 0.325rem;
+      }
+
+      .plate-title {
+        font-weight: 700;
+        font-size: calc(var(--text-l) * 1.2);
+        padding-block: calc(var(--spacing) * 6);
+      }
+
+      .plate-text {
+        color: #000000c6;
+      }
+    }
+
+    .stage {
+      position: absolute;
+      font-size: calc(var(--text-2-10xl) * 1.4);
+      font-weight: bolder;
+      color: rgba(0, 0, 0, 0.056);
+      top: 10px;
+      right: 20px;
+    }
+  }
+  :not(:last-child) > &__plate::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(0%);
+
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #3498db;
+  }
+}
+
 @media (max-width: 768px) {
   .services {
     &__container {
@@ -33,6 +98,41 @@
 
     .price-download {
       flex-direction: column;
+    }
+  }
+
+  .services-connection {
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+      gap: calc(var(--spacing) * 10);
+      padding-inline: calc(var(--spacing) * 20);
+    }
+    &__plate {
+      &::after {
+        content: none;
+      }
+
+      .plate-img {
+      }
+
+      .plate-title {
+      }
+
+      .plate-text {
+      }
+      .stage {
+      }
+    }
+    :not(:last-child) > &__plate::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent #3498db;
     }
   }
 
