@@ -2,6 +2,8 @@
   --text-white: #ffffff;
   --primary: #1e3a8a;
   --accent: #2563eb;
+  --gold: color: rgb(251 191 36/var(1, 1));
+
   --foreground: oklch(14.5% 0 0);
   --muted-foreground: #717182;
   --muted-foreground-g: #0000cdef;
@@ -225,6 +227,10 @@ a {
   color: var(--primary);
 }
 
+.text_gold {
+  color: var(--gold);
+}
+
 .bg_white {
   background-color: #fff;
 }
@@ -239,6 +245,11 @@ a {
   &_white {
     path {
       stroke: #fff;
+    }
+  }
+  &_gold {
+    path {
+      stroke: var(--gold);
     }
   }
 }
