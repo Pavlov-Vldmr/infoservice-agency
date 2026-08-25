@@ -151,7 +151,7 @@ const Header: React.FC<HeaderProps> = ({
       ].join(" ").trim()}
     >
       <div className="site-header__inner container">
-        <a href="#home" className="site-header__logo" onClick={closeMenu}>
+        <a href="/infoservice-agency" className="site-header__logo" onClick={closeMenu}>
           <img src={logoSmall} alt="logo" height={50} width={"auto"} />
           {/* {logo} */}
           <div className="site-header__logo__text">
