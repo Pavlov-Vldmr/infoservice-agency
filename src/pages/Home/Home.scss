@@ -9,6 +9,8 @@ $transition-speed: 0.3s;
 
 @mixin gradient-bg($start, $end, $deg: 190deg) {
   background-color: $start;
+  background-image: url(../../assets/images/bg/home.jpg);
+
   background-image: linear-gradient($deg, $start, $end);
 }
 
@@ -49,6 +51,8 @@ $transition-speed: 0.3s;
   position: relative;
   overflow: hidden;
   color: var(--text-white);
+  height: 100vh;
+  height: 100dvh;
 
   .home-hero__grainient {
     position: absolute;
@@ -60,14 +64,15 @@ $transition-speed: 0.3s;
   &::before {
     content: "";
     position: absolute;
+    opacity: 30%;
     top: 0;
-    left: 30%;
-    width: 80%;
-    height: 100%;
-    background: url(../../assets/images/logo-transp-10.png) no-repeat center /
-      30%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: url(../../assets/images/bg/home.jpg) no-repeat 40%;
+    background-size: cover;
     z-index: 2;
-    transform: rotate(25deg);
     padding-top: calc(#{$spacing-unit} * 20);
   }
 
@@ -85,6 +90,10 @@ $transition-speed: 0.3s;
       z-index: 10;
 
       .license {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
         background-color: oklab(1 0 0 / 0.1);
         padding: 10px 20px;
         border-radius: $border-radius-default;
@@ -92,6 +101,7 @@ $transition-speed: 0.3s;
         font-size: var(--text-xs);
         text-align: center;
         z-index: 3;
+        border: 1px solid rgba(255, 255, 255, 0.229);
       }
 
       h1,
@@ -114,6 +124,16 @@ $transition-speed: 0.3s;
         }
       }
     }
+  }
+
+  &__scrolldown {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100dvw;
+    width: 100vw;
+    bottom: 20px;
+    z-index: 777;
   }
 }
 
@@ -289,7 +309,7 @@ $transition-speed: 0.3s;
   // ---- .home-hero ----
   .home-hero {
     &::before {
-      background-size: 95%;
+      // background-size: 95%;
     }
 
     &__container {

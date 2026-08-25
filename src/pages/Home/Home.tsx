@@ -32,6 +32,7 @@ import { getStrapiMediaUrl } from '@/services/strapiClient';
 
 import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
 import ObjectCard from '../Objects/components/ObjectCard/ObjectCard';
+import ScrollDown from '@/components/ScrollDown/ScrollDown';
 
 function Home() {
 
@@ -152,6 +153,7 @@ function Home() {
 
           <div className="home-hero__main">
             <span className="license ">
+              <Icons.Reputation className="icon_gold" height={20} width={20} />
               {companyInfo?.licenseShort || extraCompData.licenseShort}
             </span>
             <ShinyText
@@ -168,15 +170,27 @@ function Home() {
               Круглосуточный мониторинг, современное оборудование и опытные
               специалисты.
             </p>
-            <div className="home-hero__main__btns mt-4">
+            <div className="home-hero__main__btns mt-8">
               <MainActButton
                 to="/infoservice-agency/services"
                 variant="primary"
                 title="Наши услуги"
                 bordered
               ></MainActButton>
+              <MainActButton
+                to="/infoservice-agency/services"
+                variant="white"
+                title="Кнопка"
+                bordered
+              ></MainActButton>
             </div>
+
+
           </div>
+        </div>
+
+        <div className="home-hero__scrolldown">
+          <ScrollDown />
         </div>
       </section>
 
@@ -427,9 +441,6 @@ function Home() {
                 </p>
               </div>
             </FadeContent>
-
-
-
           </div>
         </div>
       </section>
@@ -443,7 +454,7 @@ function Home() {
       </section>
 
 
-      <section className='home-phoneCallback m_px-4 m_pt-8 bg_white'>
+      <section id='homePhoneCallBack' className='home-phoneCallback m_px-4 m_pt-8 bg_white'>
         <PhoneCallbackComponent />
       </section>
 
@@ -451,7 +462,6 @@ function Home() {
       {/* slider REVIEWS */}
       <section className="home-reviews pb-10 m_px-4">
         <div className="container">
-
           <SectionTitle
             plate={"Отзывы"}
             title={"Что о нас говорят"}
@@ -467,14 +477,11 @@ function Home() {
 
       <section id="scrollTest" className="home-contacts pb-10">
         <div className="container home-contacts__container  px-10 m_p-4">
-
-
           <SectionTitle
             plate={"Контакты"}
             title={"Свяжитесь с нами"}
             text={"Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта."}
           />
-
           <div className="home-contacts__content">
             <ContactsInfo />
             <div className="contacts__map">

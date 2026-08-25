@@ -8,6 +8,9 @@ import YandexMap from "@/services/yandexMap"
 import ContactsInfo from "../../components/ContactsInfo/ContactsInfo"
 import PageTitle from "../../components/PageTitle/PageTitle"
 
+import bgImg from '@/assets/images/bg/contacts.jpg'
+
+
 import './Contacts.scss'
 
 function Contacts() {
@@ -35,7 +38,7 @@ function Contacts() {
 
     return (
         <>
-            <PageTitle plate="Контактты" title="Свяжитесь с нами" subTitle="Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта" />
+            <PageTitle plate="Контактты" bgImg={bgImg} title="Свяжитесь с нами" subTitle="Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта" />
             <section className="contacts">
                 {/* <h2 className="text_center pb-4">Контакты</h2> */}
 
