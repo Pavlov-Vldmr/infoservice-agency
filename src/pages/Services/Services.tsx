@@ -1,4 +1,3 @@
-import type { ComponentType, ReactNode } from 'react';
 import { useState, useEffect } from 'react'; // Добавили хуки
 
 import { TailSpin } from "react-loader-spinner";
@@ -13,14 +12,15 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
 
 import "./Services.scss";
-import CallbackComponent from "@/components/CallbackComponent/CallbackComponent";
 import FeedbackForm from "@/features/FeedbackForm/FeedbackForm";
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
-import AboutComponent from "@/components/AboutComonent/AboutComonent";
 import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Icons } from "@/components/Icons";
 import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedContent";
+
+import bgImg from '@/assets/images/bg/serv.jpg'
+
 
 function Services() {
 
@@ -92,6 +92,7 @@ function Services() {
   return (
     <>
       <PageTitle
+        bgImg={bgImg}
         plate="Услуги"
         title="Наши услуги"
         subTitle="Комплексные решения по обеспечению безопасности вашей недвижимости"

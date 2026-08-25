@@ -13,6 +13,9 @@ import './Objects.scss'
 import MarqueeLogo from "../Home/components/MarqueeLogo/MarqueeLogo";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
+import bgImg from '@/assets/images/bg/obj.jpg'
+
+
 function Objects() {
 
     interface IObjectsItem {
@@ -64,7 +67,7 @@ function Objects() {
 
 
         <>
-            <PageTitle plate="Объекты" title="Доверенные нам объекты" subTitle="Промышленные предприятия, торговые центры и административные здания, которые мы охраняем по всей Сахалинской области." />
+            <PageTitle plate="Объекты" bgImg={bgImg} title="Доверенные нам объекты" subTitle="Промышленные предприятия, торговые центры и административные здания, которые мы охраняем по всей Сахалинской области." />
 
 
 
