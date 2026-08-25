@@ -32,6 +32,7 @@ import { getStrapiMediaUrl } from '@/services/strapiClient';
 
 import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
 import ObjectCard from '../Objects/components/ObjectCard/ObjectCard';
+import ScrollDown from '@/components/ScrollDown/ScrollDown';
 
 function Home() {
 
@@ -176,8 +177,20 @@ function Home() {
                 title="Наши услуги"
                 bordered
               ></MainActButton>
+              <MainActButton
+                to="/infoservice-agency/services"
+                variant="white"
+                title="Кнопка"
+                bordered
+              ></MainActButton>
             </div>
+
+
           </div>
+        </div>
+
+        <div className="home-hero__scrolldown">
+          <ScrollDown />
         </div>
       </section>
 

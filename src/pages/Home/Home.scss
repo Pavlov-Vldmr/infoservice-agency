@@ -64,14 +64,17 @@ $transition-speed: 0.3s;
   &::before {
     content: "";
     position: absolute;
+    // display: block;
     opacity: 30%;
     top: 0;
     left: 0;
+    // transform: translateX(-400px);
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    height: 100dvh;
     // background: url(../../assets/images/logo-transp-10.png) no-repeat center /
     //   30%;
-    background: url(../../assets/images/bg/home.jpg) no-repeat;
+    background: url(../../assets/images/bg/home.jpg) no-repeat 40%;
     background-size: cover;
     z-index: 2;
     // transform: rotate(25deg);
@@ -103,6 +106,7 @@ $transition-speed: 0.3s;
         font-size: var(--text-xs);
         text-align: center;
         z-index: 3;
+        border: 1px solid rgba(255, 255, 255, 0.229);
       }
 
       h1,
@@ -125,6 +129,16 @@ $transition-speed: 0.3s;
         }
       }
     }
+  }
+
+  &__scrolldown {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100dvw;
+    width: 100vw;
+    bottom: 20px;
+    z-index: 777;
   }
 }
 
@@ -300,7 +314,7 @@ $transition-speed: 0.3s;
   // ---- .home-hero ----
   .home-hero {
     &::before {
-      background-size: 95%;
+      // background-size: 95%;
     }
 
     &__container {
