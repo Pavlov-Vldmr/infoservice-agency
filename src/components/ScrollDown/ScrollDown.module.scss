@@ -1,0 +1,111 @@
+.scrollDown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: inherit;
+
+  padding: 8px;
+  outline: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+}
+
+.label {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+// "Мышка" с колёсиком, внутри которого катится точка
+.mouse {
+  position: relative;
+  width: 24px;
+  height: 38px;
+  border: 2px solid currentColor;
+  border-radius: 14px;
+}
+
+.wheel {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: currentColor;
+  animation: wheelScroll 1.6s ease-in-out infinite;
+}
+
+@keyframes wheelScroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+// Три стрелки-шеврона с волновой анимацией
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.2;
+  animation: arrowPulse 1.6s ease-in-out infinite;
+
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes arrowPulse {
+  0% {
+    opacity: 0.2;
+    transform: translateY(-4px) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(4px) rotate(45deg);
+  }
+}
