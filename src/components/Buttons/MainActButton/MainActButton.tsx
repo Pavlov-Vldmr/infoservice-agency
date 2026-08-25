@@ -52,6 +52,8 @@ interface MainActButtonProps {
     variant?: string;
     type?: string;
     bordered?: boolean;
+    className?: string;
+
     onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
