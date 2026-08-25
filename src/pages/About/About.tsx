@@ -50,6 +50,9 @@ const items = [
     }
 ];
 
+
+
+//  background: url(../../assets/images/bg/home.jpg) no-repeat;
 function About() {
 
     return (
