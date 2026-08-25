@@ -6,6 +6,8 @@ import PageTitle from "../../components/PageTitle/PageTitle"
 import './About.scss'
 import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent'
 import CardNav from '@/components/ReactBits/CardNav/CardNav'
+import bgImg from '@/assets/images/bg/about.jpg'
+
 
 const items = [
     {
@@ -51,13 +53,11 @@ const items = [
 ];
 
 
-
-//  background: url(../../assets/images/bg/home.jpg) no-repeat;
 function About() {
 
     return (
         <>
-            <PageTitle plate='О компании' title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
+            <PageTitle plate='О компании' bgImg={bgImg} title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
 
             <section className="about-info pt-20 m_py-0">
                 <AboutComponent />
