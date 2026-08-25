@@ -6,7 +6,9 @@
   height: 48px;
   border-radius: 50%;
   border: none;
-  background: #27459f;
+  opacity: 50%;
+  background: var(--primary);
+
   color: #fff;
   cursor: pointer;
   display: flex;

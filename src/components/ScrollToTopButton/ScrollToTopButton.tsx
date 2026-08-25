@@ -41,7 +41,7 @@ export default function ScrollToTopButton({ threshold = 300 }: ScrollToTopButton
                 // alignItems: 'center',
                 // justifyContent: 'center',
                 // boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                opacity: visible ? 1 : 0,
+                opacity: visible ? .8 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(16px)',
                 pointerEvents: visible ? 'auto' : 'none',
                 // transition: 'opacity 0.3s ease, transform 0.3s ease',
