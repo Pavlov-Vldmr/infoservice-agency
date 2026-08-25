@@ -1,0 +1,25 @@
+.scroll-to-top-btn {
+  position: fixed; // Обычно для таких кнопок нужен fixed или absolute
+  right: 48px;
+  bottom: 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #27459f;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all ease-in-out 0.3s;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+
+  &:hover {
+    background: #4c61a1;
+  }
+}

@@ -20,6 +20,7 @@ import './App.css'
 import '@fontsource/inter';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton'
 
 
 const Services = lazy(() => import('./pages/Services/Services'));
@@ -52,7 +53,7 @@ function App() {
             </Routes>
           </Suspense>
         </div>
-
+        <ScrollToTopButton />
         <CookieConsent
           buttonText="Принять"
           cookieName="site_privacy_cookie"
@@ -67,6 +68,8 @@ function App() {
         </CookieConsent>
         <Footer />
       </CompanyProvider>
+
+
 
     </>
   )
