@@ -38,7 +38,7 @@
         transition: all ease-in-out 0.2s;
 
         &:hover {
-          color: rgb(205, 50, 30);
+          color: var(--gold);
         }
       }
 
@@ -68,7 +68,7 @@
         transition: all ease-in-out 0.2s;
 
         &:hover {
-          color: rgb(205, 50, 30);
+          color: var(--gold);
         }
       }
     }
