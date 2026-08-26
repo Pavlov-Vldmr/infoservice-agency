@@ -1,10 +1,15 @@
 .btn {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   background-color: var(--accent);
   border-radius: 0.55rem;
-  font-family: var(--default-font-famali);
+  font-family: var(--default-font-family);
   font-size: var(--font-size);
+  font-weight: 500;
+  letter-spacing: 0.01em;
   border: none;
   cursor: pointer;
   padding: calc(var(--spacing) * 3) calc(var(--spacing) * 8);
@@ -12,39 +17,81 @@
   min-height: 50px;
   color: #fff;
   text-align: center;
-  transition: ease-in 0.1s;
-  box-shadow: 3px 7px 10px #0000004e;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+  // box-shadow: 3px 7px 10px #00000022;
+  border: 1px solid transparent; // резервируем место под рамку
+  box-sizing: border-box;
+
+  &_shadow {
+    box-shadow: 1px 1px 10px #00000036;
+  }
 
   &:hover {
-    // background-color: #ffffff96;
-  }
-}
-.btn_primary {
-  // color: #fff;
-  &:hover {
-    background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
 
-  &.btn_bordered {
-    border: 1px solid rgb(255, 255, 255);
+  &:active {
+    transform: translateY(1px);
   }
-}
 
-.btn_mobile {
-  width: 100%;
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
 }
 
 .btn_white {
   color: var(--primary);
   background-color: #fff;
   &:hover {
-    background-color: rgba(246, 246, 246, 0.8);
-    // background-color: color-mix(in oklab, var(--whtie) 10%, transparent);
+    background-color: var(--accent);
+    color: #fff;
   }
   &.btn_bordered {
-    border: 1px solid var(--primary);
-    // box-shadow: 1px 1px 10px #00000036;
+    border-color: #52609a5b;
+    &:hover {
+      border-color: #ffffff43;
+    }
   }
+}
+.btn_primary {
+  &:hover {
+    color: var(--primary);
+
+    background-color: #fff;
+  }
+
+  &.btn_bordered {
+    border-color: #ffffff43;
+    &:hover {
+      border-color: #52609a5b;
+    }
+  }
+}
+
+.btn_gold {
+  // color: rgb(43, 60, 176);
+  // color: rgb(17, 29, 102);
+  text-shadow: 1px 1px 10px #0d0c0c69;
+  color: #fff;
+  background-color: var(--gold);
+  &:hover {
+    color: #fff;
+    background-color: var(--accent);
+  }
+  &.btn_bordered {
+    border-color: #52609a5b;
+    &:hover {
+      border-color: #939ecda4;
+    }
+  }
+}
+
+.btn_mobile {
+  width: 100%;
 }
 
 .btn_callback {
