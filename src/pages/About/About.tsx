@@ -103,7 +103,7 @@ function About() {
 
             <section className='pb-10 m_px-4 m_pt-4 bg_white'>
                 <div className="container">
-                    <PhoneCallbackComponent className='about-pcb' />
+                    <PhoneCallbackComponent className='about-pcb border_radius ' />
                 </div>
             </section>
 
