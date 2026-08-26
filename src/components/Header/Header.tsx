@@ -30,6 +30,7 @@ const DEFAULT_ITEMS: NavItem[] = [
   { label: "Услуги", href: "/infoservice-agency/services" },
   { label: "Объекты", href: "/infoservice-agency/objects" },
   { label: "Контакты", href: "/infoservice-agency/contacts" },
+  { label: "CMP", href: "/infoservice-agency/components" },
 ];
 
 
