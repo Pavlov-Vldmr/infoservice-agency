@@ -1,6 +1,9 @@
+.border_radius {
+  border-radius: var(--border-radius);
+}
+
 .callback {
   align-items: center;
-  // border-radius: 0.625rem;
   background-color: var(--accent);
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
 
