@@ -1,0 +1,61 @@
+$spacing-unit: var(--spacing);
+$icon-size-sm: var(--text-sm);
+$border-radius-default: 20px;
+$transition-speed: 0.3s;
+
+.advantages__card {
+  &__item {
+    box-sizing: border-box;
+    background-color: rgba(219, 219, 219, 0.17);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0.625rem;
+    padding: calc(#{$spacing-unit} * 6);
+    transition: all ease-in-out $transition-speed;
+    height: 100%;
+    position: relative;
+
+    .advantages__card__icons {
+      margin-bottom: calc(#{$spacing-unit} * 6);
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+      border: 1px solid rgba(242, 240, 240, 0.4);
+      border-radius: var(--border-radius);
+      background-color: #2034b856;
+    }
+    span {
+      color: rgba(250, 235, 215, 0.203);
+      font-weight: 500;
+      position: absolute;
+      right: calc(#{$spacing-unit} * 6);
+      border-radius: 50%;
+      padding: 10px;
+      background-color: rgba(128, 128, 128, 0.09);
+      transition: all ease-in-out $transition-speed;
+    }
+
+    h3 {
+      font-size: var(--text-xl);
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: calc(#{$spacing-unit} * 3);
+    }
+
+    p {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.77);
+      line-height: 1.675rem;
+    }
+
+    &:hover {
+      background-color: rgba(219, 219, 219, 0.27);
+      transform: scale(1.02);
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.237);
+      span {
+        color: rgb(250, 235, 215);
+
+        background-color: rgba(57, 46, 146, 0.236);
+      }
+    }
+  }
+}
