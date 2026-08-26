@@ -33,6 +33,7 @@ import { getStrapiMediaUrl } from '@/services/strapiClient';
 import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
 import ObjectCard from '../Objects/components/ObjectCard/ObjectCard';
 import ScrollDown from '@/components/ScrollDown/ScrollDown';
+import AdvantagesCards from './components/AdvantagesCards/AdvantagesCards';
 
 function Home() {
 
@@ -114,8 +115,6 @@ function Home() {
 
   const FadeAdvDuration: number = 500
 
-
-
   return (
     <>
       <section className="home-hero ">
@@ -152,38 +151,49 @@ function Home() {
 
 
           <div className="home-hero__main">
-            <span className="license ">
-              <Icons.Reputation className="icon_gold" height={20} width={20} />
-              {companyInfo?.licenseShort || extraCompData.licenseShort}
-            </span>
-            <ShinyText
-              text="Охрана недвижимости под надежной защитой"
-              speed={5}
-              delay={0}
-              color="#fff"
-              shineColor="#879cd3"
-              spread={120}
-              direction="left"
-            />
-            <p>
-              Профессиональная охрана коммерческой и жилой недвижимости.
-              Круглосуточный мониторинг, современное оборудование и опытные
-              специалисты.
-            </p>
-            <div className="home-hero__main__btns mt-8">
-              <MainActButton
-                to="/infoservice-agency/services"
-                variant="primary"
-                title="Наши услуги"
-                bordered
-              ></MainActButton>
-              <MainActButton
-                to="/infoservice-agency/services"
-                variant="white"
-                title="Кнопка"
-                bordered
-              ></MainActButton>
-            </div>
+            <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
+              <span className="license ">
+                <Icons.Reputation className="icon_gold" height={20} width={20} />
+                {companyInfo?.licenseShort || extraCompData.licenseShort}
+              </span>
+            </FadeContent>
+
+            <FadeContent blur={true} delay={.6} duration={1000} easing="ease-out" initialOpacity={0} >
+              <ShinyText
+                text="Охрана недвижимости под надежной защитой"
+                speed={5}
+                delay={.4}
+                color="#fff"
+                shineColor="#879cd3"
+                spread={120}
+                direction="left"
+              />
+            </FadeContent>
+            <FadeContent blur={true} delay={.9} duration={1000} easing="ease-out" initialOpacity={0}>
+              <p>
+                Профессиональная охрана коммерческой и жилой недвижимости.
+                Круглосуточный мониторинг, современное оборудование и опытные
+                специалисты.
+              </p>
+            </FadeContent>
+            <FadeContent blur={true} delay={1.2} duration={1000} initialOpacity={0}
+              threshold={.1} easing="ease-out" >
+              <div className="home-hero__main__btns mt-8">
+                <MainActButton
+                  to="/infoservice-agency/services"
+                  variant="primary"
+                  title="Наши услуги"
+                  bordered
+                ></MainActButton>
+                <MainActButton
+                  to="/infoservice-agency/services"
+                  variant="gold"
+                  title="Кнопка"
+                  bordered
+                ></MainActButton>
+              </div>
+            </FadeContent>
+
 
 
           </div>
@@ -238,7 +248,7 @@ function Home() {
           <div className="home-services__items mb-8 pt-10">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
-                <FadeContent className="home-services__items__item" blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" delay={.3 * index} blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.documentId || item.id}
                     title={item.title}
@@ -252,7 +262,7 @@ function Home() {
             ) : (
               servicesEx.slice(0, 3).map((item, index) => (
 
-                <FadeContent className="home-services__items__item" blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" delay={.3 * index} blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.id}
                     title={item.title}
@@ -291,42 +301,74 @@ function Home() {
 
           <div className="container objects__container px-10 pb-10 m_p-4">
             {Array.isArray(objects) && objects.length > 0 ? (
-              objects.slice(0, 3).map((obj) => (
-                <ObjectCard
-                  key={obj.documentId || obj.id}
-                  title={obj.title}
-                  text={obj.text}
-                  imgURL={getStrapiMediaUrl(obj.img?.url)}
-                  imgTitle={obj.img_text}
-                  square={obj.values?.square}
-                  guardians={obj.values?.guardians}
-                  since={obj.values?.since} />
-              ))
-            ) : (
-              Array.isArray(objectsEx) ? (
-                objectsEx.slice(0, 3).map((obj) => (
+              objects.slice(0, 3).map((obj, index) => (
+
+                <FadeContent
+                  key={index}
+                  className="advantages__card"
+                  blur
+                  duration={FadeAdvDuration}
+                  easing="ease-out"
+                  initialOpacity={0}
+                  threshold={.1}
+                  delay={.3 * index}
+                >
+                  =
                   <ObjectCard
-                    key={obj.id}
+                    key={obj.documentId || obj.id}
                     title={obj.title}
                     text={obj.text}
+                    imgURL={getStrapiMediaUrl(obj.img?.url)}
                     imgTitle={obj.img_text}
                     square={obj.values?.square}
                     guardians={obj.values?.guardians}
-                    since={obj.values?.since}
-                    imgURL={obj.imageUrl}
+                    since={obj.values?.since} />
+                </FadeContent>
 
-                  />
+              ))
+            ) : (
+              Array.isArray(objectsEx) ? (
+                objectsEx.slice(0, 3).map((obj, index) => (
+
+                  <FadeContent
+                    key={index}
+                    className="advantages__card"
+                    blur
+                    duration={FadeAdvDuration}
+                    easing="ease-out"
+                    initialOpacity={0}
+                    threshold={.1}
+                    delay={.3 * index}
+                  >
+
+                    <ObjectCard
+                      key={obj.id}
+                      title={obj.title}
+                      text={obj.text}
+                      imgTitle={obj.img_text}
+                      square={obj.values?.square}
+                      guardians={obj.values?.guardians}
+                      since={obj.values?.since}
+                      imgURL={obj.imageUrl}
+                    />
+                  </FadeContent>
+
+
                 ))
               ) : null)}
           </div>
 
           <div className="home-objects__btn flex-center m_px-4 m_py-4">
-            <Link
-              className="btn btn_primary btn_bordered m_w100"
-              to="/infoservice-agency/objects"
-            >
-              Все объекты
-            </Link>
+
+            <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
+              <Link
+                className="btn btn_primary btn_bordered m_w100"
+                to="/infoservice-agency/objects"
+              >
+                Все объекты
+              </Link>
+            </FadeContent>
+
           </div>
         </div>
       </section>
@@ -337,111 +379,15 @@ function Home() {
             className={"text_white"}
             plate={"Преимущества"}
             plateColor='border-w text_gold'
-            pColor='text_white-7'
+            pColor='text_white-8'
             title={"Почему выбирают нас"}
             hColor='text_white'
             text={"Наши преимущества делают нас лучшим выбором в сфере охраны недвижимости"}
           />
-
-
           <div className="home-advantages__plates">
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Reputation className="home-advantages__icons icon_white" />
-                <h3>Коммерческая репутация</h3>
-                <p>
-                  Нашему предприятию 28 лет доверяют охранять свое имущество более
-                  1000 клиентов на территории Сахалинской области.
-                </p>
-              </div>
-            </FadeContent>
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Reputation className="home-advantages__icons icon_white" />
-                <h3>Коммерческая репутация</h3>
-                <p>
-                  Нашему предприятию 28 лет доверяют охранять свое имущество более
-                  1000 клиентов на территории Сахалинской области.
-                </p>
-              </div>
-            </FadeContent>
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.ShieldAlt className="home-advantages__icons icon_white" />
-                <h3>Финансовая проверка</h3>
-                <p>
-                  Отсутствие задолженностей в местные, региональные, федеральные
-                  бюджеты, фонды обязательных платежей в течение всего срока
-                  существования предприятия. Отсутствие неисполненных обязательств
-                  перед заказчиками, клиентами.
-                </p>
-              </div>
-            </FadeContent>
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Person className="home-advantages__icons icon_white" />
-                <h3>Профессиональный состав</h3>
-                <p>
-                  184 сотрудника охраны, лицензированных в соответствии с
-                  действующим законодательством России.
-                </p>
-              </div>
-            </FadeContent>
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Lock className="home-advantages__icons icon_white" />
-                <h3>Проверка работы в прошлом</h3>
-                <p>
-                  Проверки деятельности контролирующими государственными органами
-                  (ЦЛРР Росгвардии, налоговые органы, Пенсионный фонд, Инспекция
-                  по труду, военкомат), нарушений не выявлено.
-                </p>
-              </div>
-            </FadeContent>
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Headphones className="home-advantages__icons icon_white" />
-                <h3>Всегда рядом</h3>
-                <p>
-                  Услуги оказываются 24 часа в сутки. Имеется круглосуточные
-                  службы мониторинга, охраны, операторов и дежурного технического
-                  персонала в городах Южно-Сахалинск, Корсаков, Холмск.
-                </p>
-              </div>
-            </FadeContent>
-
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Recomendation className="home-advantages__icons icon_white" />
-                <h3>Проверка рекомендаций</h3>
-                <p>
-                  Охрана более 1000 объектов: физическая охрана и с помощью
-                  различных технических средств охраны в городах: Южно-Сахалинск,
-                  Корсаков, Холмск, Оха, Невельск, Ноглики, Макаров, Поронайск,
-                  Смирных, Тымовское, Озерское, Долинск.
-                </p>
-              </div>
-            </FadeContent>
-            <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
-              <div >
-                <Icons.Cube className="home-advantages__icons icon_white" />
-                <h3>Прозрачность в работе</h3>
-                <p>
-                  Отчет по работе по договору предоставляется по запросу Клиента
-                  или с частотой, указанной в договоре (отчет включает в себя
-                  графики несения службы, количество отработанных часов,
-                  количество задействованных сотрудников, инциденты, принятые
-                  меры, нанесенный и возмещенный ущерб и т.д.).
-                </p>
-              </div>
-            </FadeContent>
+            <AdvantagesCards />
           </div>
+
         </div>
       </section>
 

@@ -6,9 +6,15 @@
 
 :root {
   --text-white: #ffffff;
+  --white: #fff;
+  --white-6: rgba(255, 255, 255, 0.6);
+
+  --white-8: rgba(255, 255, 255, 0.8);
   --primary: #1e3a8a;
   --accent: #2563eb;
-  --gold: rgb(251 191 36);
+  // --gold: rgb(217 119 6);
+  --gold: #f59e0b;
+
   --gold-8: rgba(251, 190, 36, 0.8);
 
   --foreground: oklch(14.5% 0 0);
@@ -18,11 +24,12 @@
   --border: #0000001a;
   --muted: #ececf0;
   --bg: #fff;
-  // --bg-gray: color-mix(in oklab, var(--muted) 30%, transparent);
   --bg-gray: #ececf0;
   --input-background: #f3f3f5;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.4);
+
+  --border-radius: 0.625rem;
 
   --spacing: 0.25rem;
 
@@ -50,7 +57,7 @@
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --default-font-famaly: var(--font-sans);
+  --default-font-family: var(--font-sans);
 
   letter-spacing: 0.18px;
   color-scheme: light dark;
@@ -147,7 +154,7 @@ $scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20, 22, 24, 30, 34;
 #root {
   /* width: 1126px; */
   font-size: var(--font-size);
-  font-family: var(--default-font-famaly);
+  font-family: var(--default-font-family);
 
   max-width: 100%;
   margin: 0 auto;
@@ -218,45 +225,61 @@ a {
 .text_center {
   text-align: center;
 }
-.text_muted-g {
-  color: var(--muted-foreground-g);
-}
-.text_muted {
-  color: var(--muted-foreground);
+
+// TEXT COLORS
+.text {
+  &_black {
+    color: #000;
+  }
+  &_white {
+    color: #fff;
+  }
+  &_white-6 {
+    color: oklab(1 0 0 / 0.6);
+  }
+  &_white-7 {
+    color: oklab(1 0 0 / 0.7);
+  }
+  &_white-8 {
+    color: oklab(1 0 0 / 0.8);
+  }
+  &_accent {
+    color: var(--accent);
+  }
+  &_primary {
+    color: var(--primary);
+  }
+  &_gold {
+    color: var(--gold);
+  }
+  &_gold-8 {
+    color: var(--gold-8);
+  }
+  &_muted-g {
+    color: var(--muted-foreground-g);
+  }
+  &_muted {
+    color: var(--muted-foreground);
+  }
 }
 
-.text_black {
-  color: #000;
-}
+// BG COLORS
+.bg {
+  &_white {
+    background-color: #fff;
+  }
 
-.text_white {
-  color: #fff;
-}
+  &_gray {
+    background-color: var(--bg-gray);
+  }
 
-.text_white-7 {
-  color: oklab(1 0 0 / 0.7);
-}
-.text_white-8 {
-  color: oklab(1 0 0 / 0.8);
-}
-.text_accent {
-  color: var(--accent);
-}
+  &_primary {
+    background-color: var(--primary);
+  }
 
-.text_primary {
-  color: var(--primary);
-}
-
-.text_gold {
-  color: var(--gold);
-}
-
-.text_gold-8 {
-  color: var(--gold-8);
-}
-
-.bg_white {
-  background-color: #fff;
+  &_accent {
+    background-color: var(--accent);
+  }
 }
 
 .icon {

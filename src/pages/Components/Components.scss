@@ -1,0 +1,17 @@
+.cmp-cont {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    div {
+      // width: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

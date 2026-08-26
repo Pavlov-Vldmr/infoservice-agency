@@ -21,6 +21,7 @@ import '@fontsource/inter';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton'
+import Components from './pages/Components/Components'
 
 
 const Services = lazy(() => import('./pages/Services/Services'));
@@ -48,6 +49,7 @@ function App() {
               <Route path='/infoservice-agency/services' element={<Services />} />
               <Route path='/infoservice-agency/contacts' element={<Contacts />} />
               <Route path='/infoservice-agency/calculator' element={<Calculator />} />
+              <Route path='/infoservice-agency/components' element={<Components />} />
               <Route path='/infoservice-agency/*' element={<NotFound />} />
               <Route path="/infoservice-agency/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
