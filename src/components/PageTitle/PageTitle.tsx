@@ -9,7 +9,7 @@ import './PageTitle.scss'
 //     import: 'default',
 // }) as Record<string, string>;
 function PageTitle(props: { title: string, subTitle: string, plate: string, bgImg?: string }) {
-    // console.log('bgImg= ' + props.bgImg); // bg= /infoservice-agency/src/assets/images/bg/about.jpg
+    // console.log('bgImg= ' + props.bgImg); // bg= /infoservice-agency/src/assets/images/bg/about.avif
 
     // const filename = props.bgImg?.split('/').pop();
     // const matchedPath = Object.keys(bgImages).find(path => path.endsWith(`/${filename}`));

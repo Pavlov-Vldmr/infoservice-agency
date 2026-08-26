@@ -19,7 +19,7 @@ import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Icons } from "@/components/Icons";
 import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedContent";
 
-import bgImg from '@/assets/images/bg/serv.jpg'
+import bgImg from '@/assets/images/bg/serv.avif'
 
 
 function Services() {

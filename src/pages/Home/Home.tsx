@@ -114,6 +114,9 @@ function Home() {
   }
 
   const FadeAdvDuration: number = 500
+  const FadeContentDuration: number = 400
+  const FadeContentDelay: number = .2
+
 
   return (
     <>
@@ -151,14 +154,14 @@ function Home() {
 
 
           <div className="home-hero__main">
-            <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
+            <FadeContent blur={true} delay={.1} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
               <span className="license ">
                 <Icons.Reputation className="icon_gold" height={20} width={20} />
                 {companyInfo?.licenseShort || extraCompData.licenseShort}
               </span>
             </FadeContent>
 
-            <FadeContent blur={true} delay={.6} duration={1000} easing="ease-out" initialOpacity={0} >
+            <FadeContent blur={true} delay={FadeContentDelay * 1} duration={FadeContentDuration} easing="ease-out" initialOpacity={0} >
               <ShinyText
                 text="Охрана недвижимости под надежной защитой"
                 speed={5}
@@ -169,14 +172,14 @@ function Home() {
                 direction="left"
               />
             </FadeContent>
-            <FadeContent blur={true} delay={.9} duration={1000} easing="ease-out" initialOpacity={0}>
+            <FadeContent blur={true} delay={FadeContentDelay * 2} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
               <p>
                 Профессиональная охрана коммерческой и жилой недвижимости.
                 Круглосуточный мониторинг, современное оборудование и опытные
                 специалисты.
               </p>
             </FadeContent>
-            <FadeContent blur={true} delay={1.2} duration={1000} initialOpacity={0}
+            <FadeContent blur={true} delay={FadeContentDelay * 3} duration={FadeContentDuration} initialOpacity={0}
               threshold={.1} easing="ease-out" >
               <div className="home-hero__main__btns mt-8">
                 <MainActButton
@@ -248,7 +251,7 @@ function Home() {
           <div className="home-services__items mb-8 pt-10">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
-                <FadeContent className="home-services__items__item" delay={.3 * index} blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" delay={FadeContentDelay * index} blur={true} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.documentId || item.id}
                     title={item.title}
@@ -262,7 +265,7 @@ function Home() {
             ) : (
               servicesEx.slice(0, 3).map((item, index) => (
 
-                <FadeContent className="home-services__items__item" delay={.3 * index} blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" delay={FadeContentDelay * index} blur={true} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.id}
                     title={item.title}
@@ -311,7 +314,7 @@ function Home() {
                   easing="ease-out"
                   initialOpacity={0}
                   threshold={.1}
-                  delay={.3 * index}
+                  delay={FadeContentDelay * index}
                 >
                   =
                   <ObjectCard
@@ -338,7 +341,7 @@ function Home() {
                     easing="ease-out"
                     initialOpacity={0}
                     threshold={.1}
-                    delay={.3 * index}
+                    delay={FadeContentDelay * index}
                   >
 
                     <ObjectCard
@@ -360,7 +363,7 @@ function Home() {
 
           <div className="home-objects__btn flex-center m_px-4 m_py-4">
 
-            <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
+            <FadeContent blur={true} delay={FadeContentDelay} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
               <Link
                 className="btn btn_primary btn_bordered m_w100"
                 to="/infoservice-agency/objects"

@@ -13,7 +13,7 @@ import './Objects.scss'
 import MarqueeLogo from "../Home/components/MarqueeLogo/MarqueeLogo";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
-import bgImg from '@/assets/images/bg/obj.jpg'
+import bgImg from '@/assets/images/bg/obj.avif'
 
 
 function Objects() {
