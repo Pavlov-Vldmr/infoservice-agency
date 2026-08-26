@@ -98,6 +98,7 @@ $transition-speed: 0.3s;
     position: relative;
 
     .home-hero__main {
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: calc(#{$spacing-unit} * 2);
@@ -125,12 +126,14 @@ $transition-speed: 0.3s;
 
       p {
         font-size: var(--text-xl);
+        line-height: 1.7rem;
       }
 
       .home-hero__main__btns {
+        position: relative;
         display: inline-flex;
         gap: 20px;
-        z-index: 3;
+        z-index: 999;
 
         .callback-btn {
           display: flex;
@@ -147,7 +150,7 @@ $transition-speed: 0.3s;
     width: 100dvw;
     width: 100vw;
     bottom: 20px;
-    z-index: 777;
+    z-index: 5;
   }
 }
 

@@ -179,7 +179,7 @@ function Home() {
               ></MainActButton>
               <MainActButton
                 to="/infoservice-agency/services"
-                variant="white"
+                variant="gold"
                 title="Кнопка"
                 bordered
               ></MainActButton>
@@ -314,7 +314,6 @@ function Home() {
                     guardians={obj.values?.guardians}
                     since={obj.values?.since}
                     imgURL={obj.imageUrl}
-
                   />
                 ))
               ) : null)}
@@ -337,13 +336,11 @@ function Home() {
             className={"text_white"}
             plate={"Преимущества"}
             plateColor='border-w text_gold'
-            pColor='text_white-7'
+            pColor='text_white-8'
             title={"Почему выбирают нас"}
             hColor='text_white'
             text={"Наши преимущества делают нас лучшим выбором в сфере охраны недвижимости"}
           />
-
-
           <div className="home-advantages__plates">
 
             <FadeContent className="home-advantages__plates__item" blur={true} duration={FadeAdvDuration} easing="ease-out" initialOpacity={0}>
