@@ -50,7 +50,7 @@
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --default-font-famaly: var(--font-sans);
+  --default-font-family: var(--font-sans);
 
   letter-spacing: 0.18px;
   color-scheme: light dark;
@@ -147,7 +147,7 @@ $scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20, 22, 24, 30, 34;
 #root {
   /* width: 1126px; */
   font-size: var(--font-size);
-  font-family: var(--default-font-famaly);
+  font-family: var(--default-font-family);
 
   max-width: 100%;
   margin: 0 auto;
