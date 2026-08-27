@@ -4,23 +4,11 @@ import Grainient from '../ReactBits/Grainient/Grainient'
 import ShinyText from '../ReactBits/ShinyText/ShinyText'
 import './PageTitle.scss'
 
-// const bgImages = import.meta.glob('../../assets/images/bg/*.{jpg,jpeg,png,webp}', {
-//     eager: true,
-//     import: 'default',
-// }) as Record<string, string>;
 function PageTitle(props: { title: string, subTitle: string, plate: string, bgImg?: string }) {
-    // console.log('bgImg= ' + props.bgImg); // bg= /infoservice-agency/src/assets/images/bg/about.avif
-
-    // const filename = props.bgImg?.split('/').pop();
-    // const matchedPath = Object.keys(bgImages).find(path => path.endsWith(`/${filename}`));
-    // const dynamicImageUrl = matchedPath ? bgImages[matchedPath] : undefined;
-
 
     return (
         <>
-            {/* <div className="title-component pt-20 pb-12 px-8 mt-14 m_px-0"> */}
             <div className="title-component"
-            // style={{ '--dynamic-bg': dynamicImageUrl ? `url(${dynamicImageUrl})` : 'none' } as React.CSSProperties}
             >
                 <div className="title-component__bg">
                     <img src={props.bgImg} alt="" />
