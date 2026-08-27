@@ -59,20 +59,22 @@
   }
 
   &__plate {
-    box-sizing: border-box;
-    padding-inline: 20px;
-    padding-block: 10px;
-    font-weight: 500;
-    height: auto;
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: calc(var(--spacing) * 2);
-    background-color: #ffffff1a;
-    border: 1px solid #fff3;
-    border-radius: 25px;
-    span {
-      flex-grow: 1;
+    div {
+      box-sizing: border-box;
+      padding-inline: 20px;
+      padding-block: 10px;
+      font-weight: 500;
+      height: auto;
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: calc(var(--spacing) * 2);
+      background-color: #ffffff1a;
+      border: 1px solid #fff3;
+      border-radius: 25px;
+      span {
+        flex-grow: 1;
+      }
     }
   }
 }

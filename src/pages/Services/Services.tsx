@@ -131,7 +131,6 @@ function Services() {
 
 
 
-            <span>file</span>
             <a
               href=''
               download

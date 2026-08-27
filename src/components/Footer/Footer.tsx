@@ -37,7 +37,7 @@ function Footer() {
                             <img className='logo__img' src={logo} alt="Логотип Инфосервис" />
                             <p className='mt-4'>Профессиональные решения по охране недвижимости, которым можно доверять.</p>
                         </div>
-                        <nav className='footer__nav'>
+                        {/* <nav className='footer__nav'>
                             <h4 className='mb-4'>Навигация</h4>
                             <ul>
                                 <li> <Link to="/infoservice-agency/">Главная</Link></li>
@@ -46,7 +46,7 @@ function Footer() {
                                 <li> <Link to="/infoservice-agency/objects">Объъекты</Link></li>
                                 <li> <Link to="/infoservice-agency/contacts">Контакты</Link></li>
                             </ul>
-                        </nav>
+                        </nav> */}
                         {/* <nav>
                             <h4 className='mb-4'>Наши услуги</h4>
                             <ul>

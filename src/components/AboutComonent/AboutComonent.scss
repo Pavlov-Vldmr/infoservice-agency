@@ -19,6 +19,7 @@
     .about-component__article {
       p {
         margin-bottom: calc(var(--spacing) * 4);
+        line-height: 1.6rem;
       }
       .about-component__article-adv {
         display: flex;
@@ -41,11 +42,13 @@
 
             h4 {
               color: var(--primary);
+              padding-bottom: 5px;
             }
             p {
               color: var(--muted-foreground);
               margin: 0;
               font-size: var(--text-sm);
+              line-height: 1.2rem;
             }
           }
         }

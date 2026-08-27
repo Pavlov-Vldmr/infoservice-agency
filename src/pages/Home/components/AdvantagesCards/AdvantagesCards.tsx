@@ -18,48 +18,48 @@ const ADVANTAGES_ITEMS: IAdvantagesItem[] = [
     {
         title: "Коммерческая репутация",
         text: "Нашему предприятию 28 лет доверяют охранять свое имущество более 1000 клиентов на территории Сахалинской области.",
-        icon: <Icons.Reputation className="advantages__card__icons icon_white" />,
+        icon: <Icons.Reputation className="advantages__card__icons icon_gold-8" />,
     },
     {
         title: "Финансовая проверка",
         text: "Отсутствие задолженностей в местные, региональные, федеральные бюджеты, фонды обязательных платежей в течение всего срока существования предприятия.",
-        icon: <Icons.ShieldAlt className="advantages__card__icons icon_white" />,
+        icon: <Icons.ShieldAlt className="advantages__card__icons icon_gold-8" />,
     },
     {
         title: "Профессиональный состав",
         text: "184 сотрудника охраны, лицензированных в соответствии с действующим законодательством России.",
-        icon: <Icons.Person className="advantages__card__icons icon_white" />,
+        icon: <Icons.Person className="advantages__card__icons icon_gold-8" />,
     },
     {
         title: "Проверка работы в прошлом",
         text: "Проверки деятельности контролирующими государственными органами (ЦЛРР Росгвардии, налоговые органы, Пенсионный фонд, Инспекция по труду, военкомат), нарушений не выявлено.",
-        icon: <Icons.Lock className="advantages__card__icons icon_white" />,
+        icon: <Icons.Lock className="advantages__card__icons icon_gold-8" />,
     },
     {
         title: "Всегда рядом",
         text: "Услуги оказываются 24 часа в сутки. Имеется круглосуточные службы мониторинга, охраны, операторов и дежурного технического персонала в городах Южно-Сахалинск, Корсаков, Холмск.",
-        icon: <Icons.Headphones className="advantages__card__icons icon_white" />,
+        icon: <Icons.Headphones className="advantages__card__icons icon_gold-8" />,
     },
     {
         title: "Проверка рекомендаций",
         text: "Охрана более 1000 объектов: физическая охрана и с помощью различных технических средств охраны в городах области.",
-        icon: <Icons.Recomendation className="advantages__card__icons icon_white" />,
+        icon: <Icons.Recomendation className="advantages__card__icons icon_gold-8" />,
     },
     {
         title: "Прозрачность в работе",
         text: "Отчет по работе по договору предоставляется по запросу Клиента или с частотой, указанной в договоре (отчет включает в себя графики несения службы, количество отработанных часов, количество задействованных сотрудников, инциденты, принятые меры, нанесенный и возмещенный ущерб и т.д.).",
-        icon: <Icons.Cube className="advantages__card__icons icon_white" />,
+        icon: <Icons.Cube className="advantages__card__icons icon_gold-8" />,
     },
 
 ];
 
-const delay: number = .5
+const delay: number = .2
 function AdvantagesCards() {
 
 
-    // { title: "", text: "", icon: `<Icons.Reputation className="advantages__card__icons icon_white" />` },
-    // { title: "", text: "", icon: `<Icons.Reputation className="advantages__card__icons icon_white" />`  },
-    // { title: "", text: "", icon: `<Icons.ShieldAlt className="advantages__card__icons icon_white" />`  },
+    // { title: "", text: "", icon: `<Icons.Reputation className="advantages__card__icons icon_gold-8" />` },
+    // { title: "", text: "", icon: `<Icons.Reputation className="advantages__card__icons icon_gold-8" />`  },
+    // { title: "", text: "", icon: `<Icons.ShieldAlt className="advantages__card__icons icon_gold-8" />`  },
     // { ... }
 
 

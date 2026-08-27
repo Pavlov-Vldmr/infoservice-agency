@@ -11,6 +11,7 @@ import "./Header.scss";
 import logoSmall from "@/assets/images/logo.png"
 import { useCompany } from "@/contexts/CompanyInfoContext";
 import PhoneComponent from "@/features/model/PhoneComponent";
+import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 // import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 
 interface NavItem {
@@ -143,6 +144,15 @@ const Header: React.FC<HeaderProps> = ({
   const closeMenu = useCallback(() => setMenuOpen(false), []);
   const { companyInfo } = useCompany();
 
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  const animDelay: number = .1
+  const animDistance: number = 10
+  const animDelayDesctop: number = .1
+  const animDuration = isMobile ? .3 : .1;
+
+
   return (
     <header
       className={[
@@ -164,10 +174,25 @@ const Header: React.FC<HeaderProps> = ({
 
         {/* Desktop nav */}
         <nav className="site-header__nav" aria-label="Основная навигация">
-          {items.map((item) => (
+          {items.map((item, i) => (
+
+
+            // <AnimatedContent direction="horizontal"
+            //   reverse
+            //   distance={animDistance}
+            //   duration={animDuration}
+            //   ease="power3.out"
+            //   initialOpacity={0}
+            //   animateOpacity
+            //   scale={1}
+            //   threshold={0.1}
+            //   delay={isMobile ? animDelay * i : animDelayDesctop * i}>
             <NavLink key={item.href} to={item.href} className="site-header__link" end>
               {item.label}
             </NavLink>
+            // {/* </AnimatedContent> */ }
+
+
           ))}
         </nav>
         <div className="site-header__callBack">
@@ -213,9 +238,23 @@ const Header: React.FC<HeaderProps> = ({
               className="mobile-menu__item"
               style={{ transitionDelay: menuOpen ? `${80 + i * 60}ms` : "0ms" }}
             >
+              {/* 
+              <AnimatedContent direction="horizontal"
+                reverse
+                distance={animDistance}
+                duration={animDuration}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={isMobile ? animDelay * i : animDelayDesctop * i}> */}
               <NavLink key={item.href} to={item.href} onClick={closeMenu} className="mobile-menu__items" end>
                 {item.label}
               </NavLink>
+              {/* </AnimatedContent> */}
+
+
             </li>
           ))}
 
