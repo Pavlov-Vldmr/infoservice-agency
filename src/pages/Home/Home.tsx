@@ -1,4 +1,4 @@
-import type { ComponentType, ReactNode } from 'react';
+import { useState, type ComponentType, type ReactNode } from 'react';
 import ReactCountUp from "react-countup";
 import { ErrorBoundary } from "react-error-boundary";
 import { TailSpin } from 'react-loader-spinner';
@@ -34,6 +34,8 @@ import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
 import ObjectCard from '../Objects/components/ObjectCard/ObjectCard';
 import ScrollDown from '@/components/ScrollDown/ScrollDown';
 import AdvantagesCards from './components/AdvantagesCards/AdvantagesCards';
+import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent';
+import AchievmentsItems from './components/AchievmentsItems/AchievmentsItems';
 
 function Home() {
 
@@ -72,11 +74,11 @@ function Home() {
   }
   const objectsEx: IObjectsItem[] = objectsExtra
 
-  // Важно: хук должен вызываться безусловно, ДО любых ранних return.
-  // Раньше он был объявлен после `if (servicesLoading) return ...`,
-  // из-за чего нарушался порядок хуков между рендерами (Rules of Hooks)
-  // и объекты переставали догружаться.
-  const { data: objects = [], loading, error } = useFetch(fetchCompanyObjects);
+
+
+  {/* не удалять */ }
+
+  // const { data: objects = [], loading, error } = useFetch(fetchCompanyObjects);
 
   const iconArr: ReactNode[] = [
     <Icons.ShieldAlt key="shield" className="item__icons icon_accent" />,
@@ -87,33 +89,48 @@ function Home() {
   // ---- Все хуки вызваны выше. Дальше — можно делать условные return. ----
 
   if (servicesError) return <div>Ошибка: {servicesError}</div>;
-  if (error) return <div>Ошибка: {error}</div>;
 
-  if (servicesLoading || loading) {
-    return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '800px',
-        width: '100%',
-        top: '40%'
-      }}>
-        <TailSpin
-          visible={true}
-          height="80"
-          width="80"
-          color="#2563eb"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
-      </div>
-    );
-  }
 
-  const FadeAdvDuration: number = 500
+  {/* не удалять */ }
+
+  // if (error) return <div>Ошибка: {error}</div>;
+  // if (servicesLoading || loading) {
+  //   return (
+  //     <div style={{
+  //       display: 'flex',
+  //       justifyContent: 'center',
+  //       alignItems: 'center',
+  //       minHeight: '800px',
+  //       width: '100%',
+  //       top: '40%'
+  //     }}>
+  //       <TailSpin
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         color="#2563eb"
+  //         ariaLabel="tail-spin-loading"
+  //         radius="1"
+  //         wrapperStyle={{}}
+  //         wrapperClass=""
+  //       />
+  //     </div>
+  //   );
+  // }
+
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  const FadeAdvDuration: number = 300
+  const FadeContentDuration: number = 500
+  const FadeContentDelay: number = .3
+
+  const animDelay: number = .1
+  const animDistance: number = 50
+  const animDelayDesctop: number = .2
+  const animDuration = isMobile ? .4 : .8;
+
+
 
   return (
     <>
@@ -145,20 +162,36 @@ function Home() {
         />
         <div className="container home-hero__container m_px-4 pt-34 p-10">
 
-          {/* <div style={{ width: '100%', height: '100%', position: 'absolute' }}> */}
-
-          {/* </div> */}
-
-
           <div className="home-hero__main">
-            <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
+
+            <AnimatedContent direction="horizontal"
+              reverse
+              distance={animDistance}
+              duration={animDuration}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1}
+              threshold={0.1}
+              delay={isMobile ? animDelay * 1 : animDelayDesctop * 1}>
               <span className="license ">
                 <Icons.Reputation className="icon_gold" height={20} width={20} />
                 {companyInfo?.licenseShort || extraCompData.licenseShort}
               </span>
-            </FadeContent>
+            </AnimatedContent>
 
-            <FadeContent blur={true} delay={.6} duration={1000} easing="ease-out" initialOpacity={0} >
+
+            <AnimatedContent direction="horizontal"
+              reverse
+              distance={animDistance}
+              duration={animDuration}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1}
+              threshold={0.1}
+              delay={isMobile ? animDelay * 2 : animDelayDesctop * 2}>
+
               <ShinyText
                 text="Охрана недвижимости под надежной защитой"
                 speed={5}
@@ -168,34 +201,67 @@ function Home() {
                 spread={120}
                 direction="left"
               />
-            </FadeContent>
-            <FadeContent blur={true} delay={.9} duration={1000} easing="ease-out" initialOpacity={0}>
+            </AnimatedContent>
+
+
+            <AnimatedContent direction="horizontal"
+              reverse
+              distance={animDistance}
+              duration={animDuration}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1}
+              threshold={0.1}
+              delay={isMobile ? animDelay * 3 : animDelayDesctop * 3}>
               <p>
                 Профессиональная охрана коммерческой и жилой недвижимости.
                 Круглосуточный мониторинг, современное оборудование и опытные
                 специалисты.
               </p>
-            </FadeContent>
-            <FadeContent blur={true} delay={1.2} duration={1000} initialOpacity={0}
-              threshold={.1} easing="ease-out" >
-              <div className="home-hero__main__btns mt-8">
+            </AnimatedContent>
+
+
+
+            <div className="home-hero__main__btns mt-8">
+              <AnimatedContent direction="horizontal"
+                reverse
+                distance={animDistance}
+                duration={animDuration}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={isMobile ? animDelay * 4 : animDelayDesctop * 4}>
                 <MainActButton
                   to="/infoservice-agency/services"
                   variant="primary"
                   title="Наши услуги"
                   bordered
+                  type='mobile'
                 ></MainActButton>
+              </AnimatedContent>
+              <AnimatedContent direction="horizontal"
+                reverse
+                distance={animDistance / 2}
+                duration={animDuration}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={isMobile ? animDelay * 5 : animDelayDesctop * 5}>
                 <MainActButton
                   to="/infoservice-agency/services"
                   variant="gold"
                   title="Кнопка"
                   bordered
+                  type='mobile'
+
                 ></MainActButton>
-              </div>
-            </FadeContent>
-
-
-
+              </AnimatedContent>
+            </div>
           </div>
         </div>
 
@@ -205,36 +271,88 @@ function Home() {
       </section>
 
       <section className="home-achievements py-4">
+
+
         <div className="container home-achievements__container p-2">
-          <div>
+          {/* <AchievmentsItems /> */}
+
+
+
+          <AnimatedContent direction="vertical"
+            distance={animDistance / 2}
+            duration={animDuration}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            scale={1}
+            threshold={.2}
+            delay={isMobile ? animDelay * 1 : animDelayDesctop * 1}>
+
             <Icons.Chart className="home-achievements__icons icon_accent" />
-            <span className="value"><CountUp end={1000} duration={4} suffix="+" enableScrollSpy={true}
-              scrollSpyOnce={true} /></span>
+            <span className="value">
+              <CountUp end={1000} duration={4} suffix="+" enableScrollSpy={true}
+                scrollSpyOnce={true} />
+            </span>
             <span className="text">Охраняемых объектов</span>
-          </div>
-          <div>
+
+          </AnimatedContent>
+
+
+          <AnimatedContent direction="vertical"
+            distance={animDistance / 2}
+            duration={animDuration}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            scale={1}
+            threshold={.2}
+            delay={isMobile ? animDelay * 2 : animDelayDesctop * 2}>
+
+
             <Icons.Clock className="home-achievements__icons icon_accent" />
             <span className="value"><CountUp end={24} duration={4} suffix="\" enableScrollSpy={true} scrollSpyOnce={true} />
               <CountUp end={7} duration={4} enableScrollSpy={true} scrollSpyOnce={true} />
 
             </span>
             <span className="text">Круглосуточная охрана</span>
-          </div>
-          <div>
+          </AnimatedContent>
+
+          <AnimatedContent direction="vertical"
+            distance={animDistance / 2}
+            duration={animDuration}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            scale={1}
+            threshold={.2}
+            delay={isMobile ? animDelay * 3 : animDelayDesctop * 3}>
+
             <Icons.Person className="home-achievements__icons icon_accent" />
 
             <span className="value"><CountUp end={184} duration={4} enableScrollSpy={true}
               scrollSpyOnce={true} /></span>
             <span className="text">Охранника</span>
-          </div>
-          <div>
+
+          </AnimatedContent>
+
+          <AnimatedContent direction="vertical"
+            distance={animDistance / 2}
+            duration={animDuration}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            scale={1}
+            threshold={.2}
+            delay={isMobile ? animDelay * 4 : animDelayDesctop * 4}>
             <Icons.Shield className="home-achievements__icons icon_accent" />
 
             <span className="value"><CountUp end={99.9} duration={4} decimals={1} suffix="%" enableScrollSpy={true}
               scrollSpyOnce={true} /></span>
             <span className="text">Надёжность</span>
-          </div>
+          </AnimatedContent>
+
         </div>
+
       </section>
 
       <section className="home-services px-8 m_px-4 pb-10">
@@ -248,7 +366,7 @@ function Home() {
           <div className="home-services__items mb-8 pt-10">
             {services && services.length > 0 ? (
               services.slice(0, 3).map((item, index) => (
-                <FadeContent className="home-services__items__item" delay={.3 * index} blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" delay={FadeContentDelay * index} blur={false} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.documentId || item.id}
                     title={item.title}
@@ -262,7 +380,7 @@ function Home() {
             ) : (
               servicesEx.slice(0, 3).map((item, index) => (
 
-                <FadeContent className="home-services__items__item" delay={.3 * index} blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="home-services__items__item" delay={FadeContentDelay * index} blur={false} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
                   <ServiceCard
                     key={item.id}
                     title={item.title}
@@ -300,7 +418,11 @@ function Home() {
           </div> */}
 
           <div className="container objects__container px-10 pb-10 m_p-4">
-            {Array.isArray(objects) && objects.length > 0 ? (
+
+
+            {/* не удалять */}
+
+            {/* {Array.isArray(objects) && objects.length > 0 ? (
               objects.slice(0, 3).map((obj, index) => (
 
                 <FadeContent
@@ -311,7 +433,7 @@ function Home() {
                   easing="ease-out"
                   initialOpacity={0}
                   threshold={.1}
-                  delay={.3 * index}
+                  delay={FadeContentDelay * index}
                 >
                   =
                   <ObjectCard
@@ -338,7 +460,7 @@ function Home() {
                     easing="ease-out"
                     initialOpacity={0}
                     threshold={.1}
-                    delay={.3 * index}
+                    delay={FadeContentDelay * index}
                   >
 
                     <ObjectCard
@@ -355,18 +477,53 @@ function Home() {
 
 
                 ))
-              ) : null)}
+              ) : null)} */}
+            {Array.isArray(objectsEx) ? (
+              objectsEx.slice(0, 3).map((obj, index) => (
+
+                <FadeContent
+                  key={index}
+                  className="advantages__card"
+                  blur
+                  duration={FadeAdvDuration}
+                  easing="ease-out"
+                  initialOpacity={0}
+                  threshold={.1}
+                  delay={FadeContentDelay * index}
+                >
+
+                  <ObjectCard
+                    key={obj.id}
+                    title={obj.title}
+                    text={obj.text}
+                    imgTitle={obj.img_text}
+                    square={obj.values?.square}
+                    guardians={obj.values?.guardians}
+                    since={obj.values?.since}
+                    imgURL={obj.imageUrl}
+                  />
+                </FadeContent>
+
+
+              ))
+            ) : null}
+
+
           </div>
 
           <div className="home-objects__btn flex-center m_px-4 m_py-4">
 
-            <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
-              <Link
-                className="btn btn_primary btn_bordered m_w100"
+            <FadeContent blur={false} delay={FadeContentDelay} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
+              <div className="m_w100"><MainActButton
                 to="/infoservice-agency/objects"
-              >
-                Все объекты
-              </Link>
+                variant="primary"
+                shadow
+                title="Все объекты"
+                bordered
+                className='m_w100'
+
+              ></MainActButton></div>
+
             </FadeContent>
 
           </div>
@@ -391,7 +548,18 @@ function Home() {
         </div>
       </section>
 
-      <section className='home-marquee bg_white'>
+      <section className='home-marquee bg_gray-6'>
+
+        {/* <SectionTitle
+          plate={"Нам доверяют"}
+          className='p_reset'
+          classNameSe='pt-20 m_pt-10 '
+          hColor='display_none'
+          pColor='display_none'
+
+        /> */}
+
+
         <MarqueeLogo />
       </section>
 

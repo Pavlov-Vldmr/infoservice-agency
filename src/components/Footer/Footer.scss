@@ -1,12 +1,12 @@
 footer {
   background-color: var(--primary);
-  // padding-block: calc(var(--spacing) * 12);
 
   .top {
     &__container {
       display: grid;
-      gap: calc(var(--spacing) * 1);
+      gap: var(--spacing); // Убрали лишний calc(* 1)
       grid-template-columns: repeat(4, minmax(0, 1fr));
+
       .logo {
         img {
           display: block;
@@ -14,29 +14,38 @@ footer {
           height: auto;
         }
         p {
-          color: oklab(1 0 0 / 0.8);
+          color: rgba(
+            255,
+            255,
+            255,
+            0.8
+          ); // Заменили oklab для стабильности в Safari
         }
       }
-      nav {
+
+      .footer__nav {
         grid-column-start: 3;
+        text-align: right;
+
         h4 {
-          // margin-top: 0;
           color: var(--text-white);
         }
+
         ul {
           list-style: none;
-          // padding: 0%;
-          li {
-            // margin-bottom: calc(var(--spacing) * 2);
 
+          li {
+            display: flex;
+            justify-content: flex-end;
             font-size: var(--text-sm);
 
             a {
-              // background-color: red;
               display: block;
-              padding-block: calc(var(--spacing));
+              // Заменили padding-block на стандартные свойства для старых Safari
+              padding-top: var(--spacing);
+              padding-bottom: var(--spacing);
               text-decoration: none;
-              color: oklab(1 0 0 / 0.8);
+              color: rgba(255, 255, 255, 0.8);
               max-width: 200px;
             }
           }
@@ -45,15 +54,18 @@ footer {
 
       .footer__contacts {
         grid-column-start: 4;
+        text-align: right;
+
         h4 {
-          // margin-top: 0;
           color: var(--text-white);
         }
+
         ul {
-          color: oklab(1 0 0 / 0.8);
+          list-style: none;
+          color: rgba(255, 255, 255, 0.8);
+
           li {
             margin-bottom: calc(var(--spacing) * 2);
-
             font-size: var(--text-sm);
           }
         }
@@ -67,64 +79,55 @@ footer {
       display: flex;
       align-items: center;
       justify-content: center;
+
       span {
         padding-top: calc(var(--spacing) * 8);
         font-size: var(--text-sm);
-        color: oklab(1 0 0 / 0.8);
+        color: rgba(255, 255, 255, 0.8);
       }
     }
   }
 }
 
+// Мобильные стили
 @media (max-width: 768px) {
   footer {
     .top {
       &__container {
-        gap: calc(var(--spacing) * 0);
-        // grid-template-columns: repeat(2, minmax(0, 1fr));
-        flex-direction: column;
-        display: flex;
-        justify-content: flex-end;
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing) * 4);
+        text-align: center;
+
         .logo {
-          // display: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
           p {
             display: none;
           }
         }
+
         .footer__nav {
           display: none;
-          grid-column-start: 1;
-          ul {
-            li {
-              margin-bottom: calc(var(--spacing));
-
-              font-size: var(--text-xs);
-              a {
-                margin: 0;
-                padding-bottom: calc(var(--spacing) * 0);
-              }
-            }
-          }
         }
 
         .footer__contacts {
+          grid-column-start: auto;
+          text-align: center;
+
           h4 {
             display: none;
           }
+
           ul {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
 
             li {
-              margin-bottom: calc(var(--spacing));
+              margin-bottom: calc(var(--spacing) * 2);
               font-size: var(--text-xs);
-
-              margin: 0;
-              a {
-                padding-bottom: calc(var(--spacing) * 1);
-              }
             }
           }
         }
@@ -135,7 +138,7 @@ footer {
       .copyright-container {
         span {
           padding-top: calc(var(--spacing) * 4);
-          color: #babac0e4;
+          color: rgba(186, 186, 192, 0.9);
         }
       }
     }

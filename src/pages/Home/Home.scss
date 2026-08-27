@@ -9,7 +9,7 @@ $transition-speed: 0.3s;
 
 @mixin gradient-bg($start, $end, $deg: 190deg) {
   background-color: $start;
-  background-image: url(../../assets/images/bg/home.jpg);
+  background-image: url(../../assets/images/bg/home.avif);
 
   background-image: linear-gradient($deg, $start, $end);
 }
@@ -42,17 +42,16 @@ $transition-speed: 0.3s;
   }
 }
 
-// ============================================================
-//  .home-hero
-// ============================================================
-
 .home-hero {
   @include gradient-bg(var(--primary), var(--accent), 190deg);
   position: relative;
   overflow: hidden;
   color: var(--text-white);
-  height: 100vh;
-  height: 100dvh;
+  // height: 100vh;
+  // height: 100dvh;
+  height: 100vh; /* Фолбек для старых браузеров */
+  height: -webkit-fill-available; /* Идеально растягивает по доступной области в iOS */
+  height: 100svh; /* Исключает интерфейс браузера (Small Viewport Height) */
 
   .home-hero__grainient {
     position: absolute;
@@ -70,7 +69,7 @@ $transition-speed: 0.3s;
     width: 100%;
     height: 100vh;
     height: 100dvh;
-    background: url(../../assets/images/bg/home.jpg) no-repeat 40%;
+    background: url(../../assets/images/bg/home.avif) no-repeat 40%;
     background-size: cover;
     z-index: 2;
     padding-top: calc(#{$spacing-unit} * 20);
@@ -126,7 +125,7 @@ $transition-speed: 0.3s;
 
       p {
         font-size: var(--text-xl);
-        line-height: 1.7rem;
+        line-height: 2rem;
       }
 
       .home-hero__main__btns {
@@ -153,10 +152,6 @@ $transition-speed: 0.3s;
     z-index: 5;
   }
 }
-
-// ============================================================
-//  .home-achievements
-// ============================================================
 
 .home-achievements {
   background-color: #fff;
@@ -195,10 +190,6 @@ $transition-speed: 0.3s;
   }
 }
 
-// ============================================================
-//  .home-services
-// ============================================================
-
 .home-services {
   background-color: #fff;
 
@@ -209,17 +200,9 @@ $transition-speed: 0.3s;
   }
 }
 
-// ============================================================
-//  .home-objects
-// ============================================================
-
 .home-objects {
   background-color: var(--bg-gray);
 }
-
-// ============================================================
-//  .home-advantages
-// ============================================================
 
 .home-advantages {
   @include gradient-bg(var(--primary), var(--accent), -245deg);
@@ -281,31 +264,16 @@ $transition-speed: 0.3s;
   }
 }
 
-// ============================================================
-//  .home-about
-// ============================================================
-
 .home-about {
   background-color: #fff;
 }
 
-// ============================================================
-//  .home-reviews
-// ============================================================
-
 .home-reviews {
   background-color: #fff;
-  // padding-block: calc(#{$spacing-unit} * 20);
 
   &__title {
-    // margin-bottom: calc(#{$spacing-unit} * 20);
   }
 }
-
-// ============================================================
-//  .home-contacts
-// ============================================================
-
 .home-contacts {
   background-color: var(--bg-gray);
 
@@ -325,6 +293,9 @@ $transition-speed: 0.3s;
 @include respond-to(mobile) {
   // ---- .home-hero ----
   .home-hero {
+    height: 100vh; /* Фолбек для старых браузеров */
+    height: -webkit-fill-available; /* Идеально растягивает по доступной области в iOS */
+    height: 100svh; /* Исключает интерфейс браузера (Small Viewport Height) */
     &::after {
       display: none;
     }
@@ -356,11 +327,17 @@ $transition-speed: 0.3s;
             display: flex;
           }
         }
+
+        &__btns {
+          width: 100%;
+        }
       }
+    }
+    &__scrolldown {
+      bottom: 0px;
     }
   }
 
-  // ---- .home-achievements ----
   .home-achievements {
     padding-block: calc(#{$spacing-unit} * 4);
 
@@ -379,7 +356,6 @@ $transition-speed: 0.3s;
     }
   }
 
-  // ---- .home-services ----
   .home-services {
     padding: calc(#{$spacing-unit} * 10) calc(#{$spacing-unit} * 4);
 
@@ -418,14 +394,12 @@ $transition-speed: 0.3s;
     }
   }
 
-  // ---- .home-objects ----
   .home-objects {
     &__title {
       margin-bottom: calc(#{$spacing-unit} * 10);
     }
   }
 
-  // ---- .home-advantages ----
   .home-advantages {
     padding-block: calc(#{$spacing-unit} * 10);
 
@@ -453,7 +427,6 @@ $transition-speed: 0.3s;
     }
   }
 
-  // ---- .home-reviews ----
   .home-reviews {
     padding-block: calc(#{$spacing-unit} * 10);
 
@@ -462,7 +435,6 @@ $transition-speed: 0.3s;
     }
   }
 
-  // ---- .home-contacts ----
   .home-contacts {
     padding-block: calc(#{$spacing-unit} * 4);
 

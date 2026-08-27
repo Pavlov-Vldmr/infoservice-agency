@@ -5,7 +5,7 @@ import PageTitle from "../../components/PageTitle/PageTitle"
 
 import './Components.scss'
 
-import bgImg from '@/assets/images/bg/about.jpg'
+import bgImg from '@/assets/images/bg/about.avif'
 
 
 

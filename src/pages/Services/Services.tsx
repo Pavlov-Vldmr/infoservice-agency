@@ -19,7 +19,7 @@ import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Icons } from "@/components/Icons";
 import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedContent";
 
-import bgImg from '@/assets/images/bg/serv.jpg'
+import bgImg from '@/assets/images/bg/serv.avif'
 
 
 function Services() {
@@ -34,17 +34,19 @@ function Services() {
 
   const servicesEx: IServiceItem[] = servicesExtra
 
-  const {
-    data: services = [],
-    loading: servicesLoading,
-    error: servicesError,
-  } = useFetch(fetchCompanyServices);
+  {/* не удалять */ }
 
-  const {
-    data: files = [],
-    loading: filesLoading,
-    error: filesError,
-  } = useFetch(fetchFiles);
+  // const {
+  //   data: services = [],
+  //   loading: servicesLoading,
+  //   error: servicesError,
+  // } = useFetch(fetchCompanyServices);
+
+  // const {
+  //   data: files = [],
+  //   loading: filesLoading,
+  //   error: filesError,
+  // } = useFetch(fetchFiles);
 
   // Определение мобильного экрана
   const [isMobile, setIsMobile] = useState(false);
@@ -59,35 +61,39 @@ function Services() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  if (servicesLoading || filesLoading) {
-    return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '800px',
-        width: '100%',
-        top: '40%'
-      }}>
-        <TailSpin
-          visible={true}
-          height="80"
-          width="80"
-          color="#2563eb"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
-      </div>
-    );
-  }
+  {/* не удалять */ }
+
+  // if (servicesLoading || filesLoading) {
+  //   return (
+  //     <div style={{
+  //       display: 'flex',
+  //       justifyContent: 'center',
+  //       alignItems: 'center',
+  //       minHeight: '800px',
+  //       width: '100%',
+  //       top: '40%'
+  //     }}>
+  //       <TailSpin
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         color="#2563eb"
+  //         ariaLabel="tail-spin-loading"
+  //         radius="1"
+  //         wrapperStyle={{}}
+  //         wrapperClass=""
+  //       />
+  //     </div>
+  //   );
+  // }
 
   // Динамическая длительность: на мобилке 0.6с, на десктопе 1.4с
   const animDuration = isMobile ? 1 : 1.8;
 
-  if (servicesError || filesError)
-    return <div style={{ textAlign: 'center', padding: '40px', color: 'red' }}>Ошибка: {servicesError || filesError}</div>;
+  {/* не удалять */ }
+
+  // if (servicesError || filesError)
+  //   return <div style={{ textAlign: 'center', padding: '40px', color: 'red' }}>Ошибка: {servicesError || filesError}</div>;
 
   return (
     <>
@@ -109,9 +115,24 @@ function Services() {
         />
         <div className="container services__container price-download pb-10 m_p-4">
           <div className="">
-            <span>{files[0]?.title}</span>
+
+            {/* не удалять */}
+
+            {/* <span>{files[0]?.title}</span>
             <a
               href={getStrapiMediaUrl(files[0]?.file?.url)}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-button"
+            >
+              <button className="btn btn_primary btn_bordered m_w100">Скачать прайс лист</button>
+            </a> */}
+
+
+
+            <a
+              href=''
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -131,7 +152,11 @@ function Services() {
 
       <section className="services bg_white">
         <div className="container services__container  pb-10 m_p-4">
-          {services && services.length > 0 ? (
+
+
+          {/* не удалять */}
+
+          {/* {services && services.length > 0 ? (
             services.map((item) => (
               <ServiceCard
                 key={item.documentId || item.id}
@@ -152,7 +177,17 @@ function Services() {
                 imgURL={item.imageUrl}
               />
             ))
-          )}
+          )} */}
+
+          {servicesEx.map((item) => (
+            <ServiceCard
+              key={item.id}
+              title={item.title}
+              text={item.text}
+              price={item.price}
+              imgURL={item.imageUrl}
+            />
+          ))}
         </div>
       </section>
 

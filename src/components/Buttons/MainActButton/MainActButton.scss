@@ -100,3 +100,8 @@
     background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
 }
+@media (max-width: 768px) {
+  .m_w100 {
+    width: 100%;
+  }
+}

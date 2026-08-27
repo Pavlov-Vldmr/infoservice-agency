@@ -1,26 +1,24 @@
 
+import { useState } from 'react';
 import { Icons } from '../Icons'
 import Grainient from '../ReactBits/Grainient/Grainient'
 import ShinyText from '../ReactBits/ShinyText/ShinyText'
 import './PageTitle.scss'
+import AnimatedContent from '../ReactBits/AnimatedContent/AnimatedContent';
 
-// const bgImages = import.meta.glob('../../assets/images/bg/*.{jpg,jpeg,png,webp}', {
-//     eager: true,
-//     import: 'default',
-// }) as Record<string, string>;
 function PageTitle(props: { title: string, subTitle: string, plate: string, bgImg?: string }) {
-    // console.log('bgImg= ' + props.bgImg); // bg= /infoservice-agency/src/assets/images/bg/about.jpg
 
-    // const filename = props.bgImg?.split('/').pop();
-    // const matchedPath = Object.keys(bgImages).find(path => path.endsWith(`/${filename}`));
-    // const dynamicImageUrl = matchedPath ? bgImages[matchedPath] : undefined;
+    const [isMobile, setIsMobile] = useState(false);
 
+
+    const animDelay: number = .1
+    const animDistance: number = 50
+    const animDelayDesctop: number = .2
+    const animDuration = isMobile ? .4 : .8;
 
     return (
         <>
-            {/* <div className="title-component pt-20 pb-12 px-8 mt-14 m_px-0"> */}
             <div className="title-component"
-            // style={{ '--dynamic-bg': dynamicImageUrl ? `url(${dynamicImageUrl})` : 'none' } as React.CSSProperties}
             >
                 <div className="title-component__bg">
                     <img src={props.bgImg} alt="" />
@@ -51,22 +49,60 @@ function PageTitle(props: { title: string, subTitle: string, plate: string, bgIm
                     zoom={0.9}
                 />
 
+
+
+
                 <div className="container title-component__container pt-30 pb-14 m_pt-14 m_pb-10 m_px-6">
                     <div className="title-component__plate mt-10 m_mt-14 m_mb-6">
-                        <Icons.Reputation className="icon_gold" height={20} width={20} />
-                        <span>{props.plate}</span>
+                        <AnimatedContent direction="horizontal"
+                            reverse
+                            distance={animDistance}
+                            duration={animDuration}
+                            ease="power3.out"
+                            initialOpacity={0}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.1}
+                            delay={isMobile ? animDelay * 1 : animDelayDesctop * 1}>
+                            <Icons.Reputation className="icon_gold" height={20} width={20} />
+                            <span>{props.plate}</span>
+                        </AnimatedContent>
+
                     </div>
-                    <ShinyText
-                        className='m_mb-4 m_mt-4 m_pt-0'
-                        text={props.title}
-                        speed={5}
-                        delay={0}
-                        color="#fff"
-                        shineColor="#879cd3"
-                        spread={120}
-                        direction="left"
-                    />
-                    <p className='text_white-8'>{props.subTitle}</p>
+                    <AnimatedContent direction="horizontal"
+                        reverse
+                        distance={animDistance}
+                        duration={animDuration}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={isMobile ? animDelay * 2 : animDelayDesctop * 2}>
+                        <ShinyText
+                            className='m_mb-4 m_mt-4 m_pt-0'
+                            text={props.title}
+                            speed={5}
+                            delay={0}
+                            color="#fff"
+                            shineColor="#879cd3"
+                            spread={120}
+                            direction="left"
+                        />
+                    </AnimatedContent>
+                    <AnimatedContent direction="horizontal"
+                        reverse
+                        distance={animDistance}
+                        duration={animDuration}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={isMobile ? animDelay * 3 : animDelayDesctop * 3}>
+                        <p className='text_white-8'>{props.subTitle}</p>
+                    </AnimatedContent>
+
                 </div>
             </div>
 

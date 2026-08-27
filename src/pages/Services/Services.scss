@@ -48,10 +48,10 @@
       align-items: flex-start;
       .plate-img {
         height: 30px;
-        width: auto;
+        width: 30px;
         background-color: #2564eb18;
         padding: 8px;
-        width: fit-content;
+        // width: fit-content;
         border: 1px solid #789ae4e4;
         border-radius: 0.325rem;
       }
@@ -64,6 +64,7 @@
 
       .plate-text {
         color: #000000c6;
+        line-height: 1.4rem;
       }
     }
 
@@ -103,16 +104,25 @@
 
   .services-connection {
     &__container {
+      // display: flex;
+      // flex-direction: column;
       grid-template-columns: repeat(1, 1fr);
       gap: calc(var(--spacing) * 10);
       padding-inline: calc(var(--spacing) * 20);
     }
     &__plate {
+      // width: 100%;
+
+      .plate-info {
+        // width: 100%;
+      }
+
       &::after {
         content: none;
       }
 
       .plate-img {
+        width: 40px;
       }
 
       .plate-title {

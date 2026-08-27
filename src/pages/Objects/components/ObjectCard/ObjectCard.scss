@@ -5,7 +5,7 @@
   position: relative;
   // max-width: 400px;
   border-radius: 0.625rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: ease-in-out 0.3s;
   box-sizing: border-box;
   height: 100%;
@@ -42,6 +42,8 @@
     font-weight: 500;
     color: #fff;
     background-color: var(--accent);
+    border: 1px solid rgba(228, 221, 221, 0.19);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.54);
     position: absolute;
     top: 150px;
     left: 20px;
@@ -60,7 +62,7 @@
 
     p {
       flex-grow: 1;
-      line-height: 1.225rem;
+      line-height: 1.6rem;
     }
 
     &__info {

@@ -13,7 +13,7 @@ import './Objects.scss'
 import MarqueeLogo from "../Home/components/MarqueeLogo/MarqueeLogo";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
-import bgImg from '@/assets/images/bg/obj.jpg'
+import bgImg from '@/assets/images/bg/obj.avif'
 
 
 function Objects() {
@@ -33,34 +33,38 @@ function Objects() {
     }
     const objectsEx: IObjectsItem[] = objectsExtra
 
-    const { data: objects, loading, error } = useFetch(fetchCompanyObjects);
+    {/* не удалять */ }
+
+    // const { data: objects, loading, error } = useFetch(fetchCompanyObjects);
 
     // if (loading) return <div>Загрузка объектов...</div>;
-    if (error) return <div>Ошибка: {error}</div>;
+    // if (error) return <div>Ошибка: {error}</div>;
 
-    if (loading) {
-        return (
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minHeight: '800px',
-                width: '100%',
-                top: '40%'
-            }}>
-                <TailSpin
-                    visible={true}
-                    height="80"
-                    width="80"
-                    color="#2563eb"
-                    ariaLabel="tail-spin-loading"
-                    radius="1"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                />
-            </div>
-        );
-    }
+    {/* не удалять */ }
+
+    // if (loading) {
+    //     return (
+    //         <div style={{
+    //             display: 'flex',
+    //             justifyContent: 'center',
+    //             alignItems: 'center',
+    //             minHeight: '800px',
+    //             width: '100%',
+    //             top: '40%'
+    //         }}>
+    //             <TailSpin
+    //                 visible={true}
+    //                 height="80"
+    //                 width="80"
+    //                 color="#2563eb"
+    //                 ariaLabel="tail-spin-loading"
+    //                 radius="1"
+    //                 wrapperStyle={{}}
+    //                 wrapperClass=""
+    //             />
+    //         </div>
+    //     );
+    // }
 
 
     return (
@@ -75,7 +79,10 @@ function Objects() {
             <section className="objects">
                 <SectionTitle title={"Объекты под надёжной охраной"} text={"Более 120 объектов по всей Сахалинской области — от энергетики до торговых центров"} plate={"Наши объекты"} />
                 <div className="container objects__container p-10 m_p-4">
-                    {objects && objects.length > 0 ? (
+
+                    {/* не удалять */}
+
+                    {/* {objects && objects.length > 0 ? (
                         objects.map((obj) => (
                             <ObjectCard
                                 key={obj.documentId || obj.id}
@@ -101,7 +108,22 @@ function Objects() {
 
                             />
                         ))
-                    )}
+                    )} */}
+
+
+                    {objectsEx.map((obj) => (
+                        <ObjectCard
+                            key={obj.id}
+                            title={obj.title}
+                            text={obj.text}
+                            imgTitle={obj.img_text}
+                            square={obj.values?.square}
+                            guardians={obj.values?.guardians}
+                            since={obj.values?.since}
+                            imgURL={obj.imageUrl}
+
+                        />
+                    ))}
                 </div>
             </section>
 

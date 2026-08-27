@@ -1,5 +1,5 @@
 .marquee-logo {
-  background-color: var(--bg-gray);
+  // background-color: var(--bg-gray-6);
   width: 100%;
   padding-block: 40px;
 
@@ -7,7 +7,7 @@
     box-sizing: border-box;
     background-size: cover;
     padding-inline: 80px;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     opacity: 80%;
     height: 60px;
   }

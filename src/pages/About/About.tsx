@@ -6,7 +6,7 @@ import PageTitle from "../../components/PageTitle/PageTitle"
 import './About.scss'
 import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent'
 import CardNav from '@/components/ReactBits/CardNav/CardNav'
-import bgImg from '@/assets/images/bg/about.jpg'
+import bgImg from '@/assets/images/bg/about.avif'
 
 
 const items = [

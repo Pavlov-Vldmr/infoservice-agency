@@ -8,7 +8,7 @@ import YandexMap from "@/services/yandexMap"
 import ContactsInfo from "../../components/ContactsInfo/ContactsInfo"
 import PageTitle from "../../components/PageTitle/PageTitle"
 
-import bgImg from '@/assets/images/bg/contacts.jpg'
+import bgImg from '@/assets/images/bg/contacts.avif'
 
 
 import './Contacts.scss'

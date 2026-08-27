@@ -24,7 +24,8 @@ function ObjectCard(props: {
   return (
     <>
       <div className="object-card">
-        <span className="pseudo p-1 text_center">                        <Icons.Reputation className="icon_white" height={20} width={20} />
+        <span className="pseudo p-1 text_center">
+          <Icons.Reputation className="icon_gold" height={20} width={20} />
           {props.imgTitle}</span>
 
         <img
