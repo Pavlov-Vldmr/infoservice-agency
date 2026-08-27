@@ -72,11 +72,11 @@ function Home() {
   }
   const objectsEx: IObjectsItem[] = objectsExtra
 
-  // Важно: хук должен вызываться безусловно, ДО любых ранних return.
-  // Раньше он был объявлен после `if (servicesLoading) return ...`,
-  // из-за чего нарушался порядок хуков между рендерами (Rules of Hooks)
-  // и объекты переставали догружаться.
-  const { data: objects = [], loading, error } = useFetch(fetchCompanyObjects);
+
+
+  {/* не удалять */ }
+
+  // const { data: objects = [], loading, error } = useFetch(fetchCompanyObjects);
 
   const iconArr: ReactNode[] = [
     <Icons.ShieldAlt key="shield" className="item__icons icon_accent" />,
@@ -87,35 +87,38 @@ function Home() {
   // ---- Все хуки вызваны выше. Дальше — можно делать условные return. ----
 
   if (servicesError) return <div>Ошибка: {servicesError}</div>;
-  if (error) return <div>Ошибка: {error}</div>;
 
-  if (servicesLoading || loading) {
-    return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '800px',
-        width: '100%',
-        top: '40%'
-      }}>
-        <TailSpin
-          visible={true}
-          height="80"
-          width="80"
-          color="#2563eb"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
-      </div>
-    );
-  }
+
+  {/* не удалять */ }
+
+  // if (error) return <div>Ошибка: {error}</div>;
+  // if (servicesLoading || loading) {
+  //   return (
+  //     <div style={{
+  //       display: 'flex',
+  //       justifyContent: 'center',
+  //       alignItems: 'center',
+  //       minHeight: '800px',
+  //       width: '100%',
+  //       top: '40%'
+  //     }}>
+  //       <TailSpin
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         color="#2563eb"
+  //         ariaLabel="tail-spin-loading"
+  //         radius="1"
+  //         wrapperStyle={{}}
+  //         wrapperClass=""
+  //       />
+  //     </div>
+  //   );
+  // }
 
   const FadeAdvDuration: number = 500
-  const FadeContentDuration: number = 400
-  const FadeContentDelay: number = .2
+  const FadeContentDuration: number = 700
+  const FadeContentDelay: number = .3
 
 
   return (
@@ -303,7 +306,11 @@ function Home() {
           </div> */}
 
           <div className="container objects__container px-10 pb-10 m_p-4">
-            {Array.isArray(objects) && objects.length > 0 ? (
+
+
+            {/* не удалять */}
+
+            {/* {Array.isArray(objects) && objects.length > 0 ? (
               objects.slice(0, 3).map((obj, index) => (
 
                 <FadeContent
@@ -358,7 +365,38 @@ function Home() {
 
 
                 ))
-              ) : null)}
+              ) : null)} */}
+            {Array.isArray(objectsEx) ? (
+              objectsEx.slice(0, 3).map((obj, index) => (
+
+                <FadeContent
+                  key={index}
+                  className="advantages__card"
+                  blur
+                  duration={FadeAdvDuration}
+                  easing="ease-out"
+                  initialOpacity={0}
+                  threshold={.1}
+                  delay={FadeContentDelay * index}
+                >
+
+                  <ObjectCard
+                    key={obj.id}
+                    title={obj.title}
+                    text={obj.text}
+                    imgTitle={obj.img_text}
+                    square={obj.values?.square}
+                    guardians={obj.values?.guardians}
+                    since={obj.values?.since}
+                    imgURL={obj.imageUrl}
+                  />
+                </FadeContent>
+
+
+              ))
+            ) : null}
+
+
           </div>
 
           <div className="home-objects__btn flex-center m_px-4 m_py-4">
