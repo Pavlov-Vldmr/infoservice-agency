@@ -2,7 +2,8 @@ $header-height: 72px;
 $header-height-mobile: 80px;
 $header-bg-solid: rgba(255, 255, 255, 0.96);
 $header-text: #ffffff;
-$header-text-solid: #14141a;
+$header-text-solid: var(--primary);
+// $header-text-solid: #14141a;
 $transition-fast: 220ms cubic-bezier(0.4, 0, 0.2, 1);
 $mobile-breakpoint: 768px;
 
