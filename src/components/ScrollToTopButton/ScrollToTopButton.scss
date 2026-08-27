@@ -20,6 +20,7 @@
   opacity: 0;
   transform: translateY(16px);
   pointer-events: none;
+  border: 1px solid gray;
 
   &:hover {
     background: #4c61a1;
