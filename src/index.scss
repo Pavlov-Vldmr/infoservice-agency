@@ -3,6 +3,52 @@
 //   src: url("./assets/fonts/inter/Inter_18pt-Bold.ttf") format("ttf");
 //   font-weight: 700;
 // }
+@mixin gradient-bg($start, $end, $deg: 190deg) {
+  background-color: $start;
+
+  background-image: linear-gradient($deg, $start, $end);
+}
+
+@mixin pseudo-circle(
+  $size: 600px,
+  $top: 0,
+  $right: 0,
+  $bottom: auto,
+  $left: auto
+) {
+  position: absolute;
+  content: "";
+  width: $size;
+  height: $size;
+  background-color: rgba(255, 255, 255, 0.11);
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.11);
+  border-radius: 50%;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: 1;
+}
+
+@keyframes float-circle-1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, -20px);
+  }
+}
+
+@keyframes float-circle-2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, 15px);
+  }
+}
 
 :root {
   --text-white: #ffffff;
@@ -13,6 +59,7 @@
   --primary: #1e3a8a;
   --accent: #2563eb;
   // --gold: rgb(217 119 6);
+  --gold-l: #ffbb00;
   --gold: #f59e0b;
 
   --gold-8: rgba(251, 190, 36, 0.8);
@@ -23,6 +70,7 @@
 
   --border: #0000001a;
   --muted: #ececf0;
+  --muted-6: #ececf0ad;
   --bg: #fff;
   --bg-gray: #ececf0;
   --bg-gray-6: #ececf096;
@@ -289,6 +337,23 @@ a {
 
   &_accent {
     background-color: var(--accent);
+  }
+
+  &_gradient-circle {
+    @include gradient-bg(var(--primary), var(--accent), -245deg);
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      @include pseudo-circle(600px, -300px, -300px);
+      animation: float-circle-1 8s ease-in-out infinite;
+    }
+
+    &::after {
+      @include pseudo-circle(600px, auto, auto, -390px, -300px);
+      animation: float-circle-2 10s ease-in-out infinite;
+    }
   }
 }
 
