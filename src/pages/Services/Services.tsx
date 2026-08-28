@@ -106,22 +106,14 @@ function Services() {
       />
 
 
-      <section className="services-accordion-main bg_white">
-        <SectionTitle
-          plate={"Вопросы"}
-          title={"Частые вопросы"}
-          text={"Отвечаем на самые популярные вопросы клиентов"}
-        />
-        <div className="container services-accordion__container pb-10 m_p-4">
-          <AccordionComponent />
-        </div>
-      </section>
+
       {/* Остальной контент без изменений */}
       <section className="services">
         <SectionTitle
           plate={"Что мы делаем"}
           title={"Полный спектр услуг"}
           text={"Комплексные решения по обеспечению безопасности объектов любой сложности"}
+          className='p-1'
         />
         <div className="container services__container price-download pb-10 m_p-4">
           <div className="">
@@ -154,7 +146,7 @@ function Services() {
             </a>
           </div>
           <MainActButton
-            to="#servicesFeedback"
+            to="#callBackForm"
             variant="white"
             title="Обратный звонок"
             bordered
@@ -203,7 +195,17 @@ function Services() {
         </div>
       </section>
 
-      <section className="services services-connection">
+      <section className="services-accordion-main bg_white py-4">
+        <SectionTitle
+          plate={"Вопросы"}
+          title={"Частые вопросы"}
+          text={"Отвечаем на самые популярные вопросы клиентов"}
+        />
+        <div className="container services-accordion__container pb-10 m_p-4">
+          <AccordionComponent />
+        </div>
+      </section>
+      <section className="services services-connection pt-4">
 
         <SectionTitle
           plate={"Как мы работаем"}
@@ -296,18 +298,29 @@ function Services() {
         </div>
 
       </section>
-
-      <section id="servicesFeedback" className="services services-feedback bg_white">
+      <section className="services services-feedback bg_white py-10">
         <div className="container">
           <div className="services__title mb-20 pt-20 m_mb-10 m_pt-20 ">
-            <h2 className="text_center">Остались вопросы?</h2>
+            <SectionTitle
+              plate={"Контакты"}
+              title={"Свяжитесь с нами"}
+              text={"Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта."}
+            />
+            {/* <h2 className="text_center">Остались вопросы?</h2> */}
           </div>
           <div className="services-feedback__container  px-10 pb-10 m_p-4">
             <ContactsInfo className="services-feedback__contacts" />
+
             <FeedbackForm />
+
+
           </div>
         </div>
       </section>
+
+
+
+
     </>
   );
 }
