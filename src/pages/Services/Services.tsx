@@ -20,6 +20,7 @@ import { Icons } from "@/components/Icons";
 import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedContent";
 
 import bgImg from '@/assets/images/bg/serv.avif'
+import AccordionComponent from './components/Accordion/Accordion';
 
 
 function Services() {
@@ -105,7 +106,16 @@ function Services() {
       />
 
 
-
+      <section className="services-accordion-main bg_white">
+        <SectionTitle
+          plate={"Вопросы"}
+          title={"Частые вопросы"}
+          text={"Отвечаем на самые популярные вопросы клиентов"}
+        />
+        <div className="container services-accordion__container pb-10 m_p-4">
+          <AccordionComponent />
+        </div>
+      </section>
       {/* Остальной контент без изменений */}
       <section className="services">
         <SectionTitle
@@ -115,6 +125,8 @@ function Services() {
         />
         <div className="container services__container price-download pb-10 m_p-4">
           <div className="">
+
+
 
             {/* не удалять */}
 
