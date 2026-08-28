@@ -9,6 +9,9 @@ import CardNav from '@/components/ReactBits/CardNav/CardNav'
 import bgImg from '@/assets/images/bg/about.avif'
 import SectionTitle from '@/components/SectionTitle/SectionTitle'
 import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
+import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent'
+import MainActButton from '@/components/Buttons/MainActButton/MainActButton'
+import { useState } from 'react'
 
 
 const items = [
@@ -55,11 +58,68 @@ const items = [
 ];
 
 
+
 function About() {
 
+    const [isMobile, setIsMobile] = useState(false);
+
+
+    const animDelay: number = .1
+    const animDistance: number = 50
+    const animDelayDesctop: number = .2
+    const animDuration = isMobile ? .4 : .8;
     return (
         <>
             <PageTitle plate='О компании' bgImg={bgImg} title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
+
+            <section className="about-info pt-20 py-20 m_py-0">
+                <AboutComponent />
+            </section>
+
+            <section className='about-btns m_px-4 m_py-10 pb-10'>
+                <div className="container about-btns__container">
+                    <AnimatedContent direction="horizontal"
+                        reverse
+                        distance={animDistance}
+                        duration={animDuration}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={isMobile ? animDelay * 2 : animDelayDesctop * 2}>
+                        <MainActButton
+                            to="/infoservice-agency/services"
+                            variant="primary"
+                            title="Наши услуги"
+                            bordered
+                            type='mobile'
+                        ></MainActButton>
+                    </AnimatedContent>
+                    <AnimatedContent direction="horizontal"
+                        reverse
+                        distance={animDistance / 2}
+                        duration={animDuration}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0.1}
+                        delay={isMobile ? animDelay * 3 : animDelayDesctop * 3}>
+                        <MainActButton
+                            to="/infoservice-agency/contacts"
+                            variant="gold"
+                            title="Связаться с нами"
+                            bordered
+                            type='mobile'
+
+                        ></MainActButton>
+                    </AnimatedContent>
+                </div>
+
+
+            </section>
+
             <section className="about-timeline px-8 m_px-4 pb-10  bg_gradient-circle ">
                 <div className="container about-timeline__container">
                     <SectionTitle
@@ -74,14 +134,9 @@ function About() {
 
                 </div>
             </section>
-            <section className="about-info pt-20 m_py-0">
-                <AboutComponent />
-            </section>
 
 
-
-
-            <section className='  bg_white m_p-4 pt-10'>
+            <section className='  bg_white m_p-4 pt-10 m_mt-10'>
                 <div className="container">
                     <CardNav
                         logoAlt="Благодарственные письма"
@@ -96,7 +151,7 @@ function About() {
                 </div>
             </section>
 
-            <section className="about-sertificate py-10">
+            <section className="about-sertificate py-10 ">
                 <div className="container about-sertificate__container p-8 m_p-4">
                     <div className="about-sertificate__title mb-12">
                         <h2 className="text_primary mb-4 m_mt-4">Лицензии и сертификаты</h2>
