@@ -9,16 +9,16 @@ function SectionTitle(props: { title?: string, text?: string, plate?: string, cl
 
     return (
         <>
-            <div className={`pt-20 p-10 m_pt-10 ${props.className} container section-title `}>
-                <div className={` ${props.classNameSe} section-title m_p-4 m_pt-10  `}>
-                    <FadeContent className='mb-6' blur={false} delay={.2} duration={1000} easing="ease-out" initialOpacity={0}>
+            <div className={` ${props.className} pt-20 p-10 m_pt-10 m_pb-6 container section-title `}>
+                <div className={` ${props.classNameSe} section-title `}>
+                    <FadeContent className='mb-10 m_mb-8' blur={false} delay={.2} duration={1000} easing="ease-out" initialOpacity={0}>
                         <span className={`${props.plateColor} section-title__plate `}>{props.plate}</span>
                     </FadeContent>
-                    <FadeContent blur={false} delay={.4} duration={1000} easing="ease-out" initialOpacity={0}>
-                        <h2 className={`${props.hColor} text_center mb-4`}>{props.title}</h2>
+                    <FadeContent className='mb-6 m_mb-4' blur={false} delay={.4} duration={1000} easing="ease-out" initialOpacity={0}>
+                        <h2 className={`${props.hColor} text_center`}>{props.title}</h2>
                     </FadeContent>
                     <FadeContent blur={false} delay={.6} duration={1000} easing="ease-out" initialOpacity={0}>
-                        <p className={`${props.pColor} text_center py-4`}>
+                        <p className={`${props.pColor} text_center`}>
                             {props.text}
                         </p>
                     </FadeContent>
