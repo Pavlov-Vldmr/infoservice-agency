@@ -135,20 +135,26 @@ function PhoneCallbackComponent(props: { className?: string }) {
                 </form>
 
                 <div className="callback__policy mt-8">
-                    <input
-                        type="checkbox"
-                        id="policy"
-                        disabled={loading}
-                        {...register("policy", {
-                            required: "Необходимо согласиться с политикой конфиденциальности" // Валидация на true
-                        })}
-                    />
-                    <label htmlFor="policy" className="text_white-8">
-                        Я согласен с <a href="/infoservice-agency/privacy-policy" target="_blank" rel="noopener noreferrer" className="text_white-8">
-                            политикой конфиденциальности
-                        </a>
+                    <label htmlFor="policy" className="callback__policy-label text_white-8">
+                        <input
+                            type="checkbox"
+                            id="policy"
+                            className="callback__checkbox"
+                            disabled={loading}
+                            {...register("policy", {
+                                required: "Необходимо согласиться с политикой конфиденциальности"
+                            })}
+                        />
+                        {/* Кастомный квадрат, который мы будем рисовать в CSS */}
+                        <span className="callback__custom-checkbox"></span>
+                        <span className="callback__policy-text">
+                            Я согласен с{" "}
+                            <a href="/infoservice-agency/privacy-policy" target="_blank" rel="noopener noreferrer" className="text_white-8">
+                                политикой конфиденциальности
+                            </a>
+                        </span>
                     </label>
-                    {errors.policy && <p style={{ color: "red", margin: 0 }}>{errors.policy.message}</p>}
+                    {errors.policy && <p className="policy-error" style={{ color: "red", margin: 0 }}>{errors.policy.message}</p>}
                 </div>
 
             </div>

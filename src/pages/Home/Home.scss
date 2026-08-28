@@ -205,17 +205,17 @@ $transition-speed: 0.3s;
 }
 
 .home-advantages {
-  @include gradient-bg(var(--primary), var(--accent), -245deg);
-  color: var(--text-white);
-  position: relative;
-  overflow: hidden;
+  // @include gradient-bg(var(--primary), var(--accent), -245deg);
+  // color: var(--text-white);
+  // position: relative;
+  // overflow: hidden;
 
-  &::before {
-    @include pseudo-circle(600px, -300px, -300px);
-  }
-  &::after {
-    @include pseudo-circle(600px, auto, auto, -390px, -300px);
-  }
+  // &::before {
+  //   @include pseudo-circle(600px, -300px, -300px);
+  // }
+  // &::after {
+  //   @include pseudo-circle(600px, auto, auto, -390px, -300px);
+  // }
 
   &__title {
     h2 {
@@ -334,7 +334,7 @@ $transition-speed: 0.3s;
       }
     }
     &__scrolldown {
-      bottom: 0px;
+      display: none;
     }
   }
 

@@ -530,7 +530,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-advantages pb-10  ">
+      <section className="home-advantages pb-10 bg_gradient-circle ">
         <div className="container">
           <SectionTitle
             className={"text_white"}
