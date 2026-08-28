@@ -1,0 +1,188 @@
+// Переменные для быстрой кастомизации темы
+$primary-color: #0056b3; // Строгий синий цвет безопасности
+$text-dark: #212529;
+$text-muted: #6c757d;
+$bg-card: #ffffff;
+$border-color: #dee2e64c;
+$breakpoint-md: 768px;
+
+.timeline-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+
+  // Центральная вертикальная линия
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $border-color;
+    transform: translateX(-50%);
+  }
+
+  &-item {
+    position: relative;
+    width: 50%;
+    // margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-end;
+
+    // Элементы справа
+    &.right {
+      margin-left: auto;
+      justify-content: flex-start;
+      padding-left: 30px;
+
+      .timeline-dot {
+        left: 23px;
+      }
+    }
+
+    // Элементы слева
+    &.left {
+      padding-right: 30px;
+
+      .timeline-dot {
+        right: 23px;
+      }
+
+      .timeline-content {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
+      .timeline-description {
+        text-align: right;
+      }
+    }
+  }
+
+  // Круглые точки на оси времени
+  &-dot {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold-l);
+    // border: 3px solid #fff;
+    // right: 0px;
+    z-index: 2;
+  }
+
+  // Карточка с контентом
+  &-content {
+    // background: $bg-card;
+    padding: 24px;
+    border-radius: 8px;
+    // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    // border: 1px solid rgba($border-color, 0.5);
+    max-width: 450px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  &-year {
+    display: inline-block;
+    font-size: var(--text-2-3xl);
+    font-weight: 900;
+    color: var(--gold-l);
+    margin-bottom: 8px;
+  }
+
+  &-title {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    padding-top: 10px;
+    color: var(--white);
+    line-height: 1.4;
+  }
+
+  &-description {
+    font-size: 0.95rem;
+    color: var(--muted-6);
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+// --- Адаптивность для мобильных экранов ---
+@media (max-width: $breakpoint-md) {
+  .timeline {
+    // Сдвигаем линию к левому краю
+    &::before {
+      left: 20px;
+    }
+
+    &-item {
+      width: 100%;
+      justify-content: flex-start !important;
+      padding-left: 45px !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+
+      &.left {
+        padding-right: 30px;
+
+        .timeline-dot {
+          right: 23px;
+        }
+
+        .timeline-content {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+        .timeline-description {
+          text-align: left;
+        }
+      }
+
+      // Переносим все точки на левую линию
+      .timeline-dot {
+        left: 14px !important;
+        right: auto !important;
+      }
+    }
+
+    &-content {
+      max-width: 100%;
+    }
+
+    &-year {
+      display: inline-block;
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      color: var(--gold-l);
+      margin-bottom: 8px;
+    }
+
+    &-title {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      padding-top: 10px;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    &-description {
+      font-size: 0.95rem;
+      color: var(--muted-6);
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+}
