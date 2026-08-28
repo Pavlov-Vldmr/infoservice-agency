@@ -7,6 +7,8 @@ import './About.scss'
 import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent'
 import CardNav from '@/components/ReactBits/CardNav/CardNav'
 import bgImg from '@/assets/images/bg/about.avif'
+import SectionTitle from '@/components/SectionTitle/SectionTitle'
+import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
 
 
 const items = [
@@ -58,10 +60,26 @@ function About() {
     return (
         <>
             <PageTitle plate='О компании' bgImg={bgImg} title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
+            <section className="about-timeline px-8 m_px-4 pb-10  bg_gradient-circle ">
+                <div className="container about-timeline__container">
+                    <SectionTitle
+                        plate={"История"}
+                        plateColor='text_gold'
+                        title={"Наш путь"}
+                        pColor='text_white-8'
+                        text={"Ключевые этапы развития компании с момента основания"}
+                        hColor='text_white'
+                    />
+                    < CompanyTimeline />
 
+                </div>
+            </section>
             <section className="about-info pt-20 m_py-0">
                 <AboutComponent />
             </section>
+
+
+
 
             <section className='  bg_white m_p-4 pt-10'>
                 <div className="container">
