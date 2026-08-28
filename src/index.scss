@@ -345,6 +345,18 @@ a {
     position: relative;
     overflow: hidden;
 
+    &-sm {
+      &::before {
+        @include pseudo-circle(300px, -300px, -300px);
+        animation: float-circle-1 8s ease-in-out infinite;
+      }
+
+      &::after {
+        @include pseudo-circle(300px, auto, auto, -390px, -300px);
+        animation: float-circle-2 10s ease-in-out infinite;
+      }
+    }
+
     &::before {
       @include pseudo-circle(600px, -300px, -300px);
       animation: float-circle-1 8s ease-in-out infinite;
@@ -352,6 +364,22 @@ a {
 
     &::after {
       @include pseudo-circle(600px, auto, auto, -390px, -300px);
+      animation: float-circle-2 10s ease-in-out infinite;
+    }
+  }
+  &_gradient-circle-sm {
+    @include gradient-bg(var(--primary), var(--accent), -245deg);
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      @include pseudo-circle(300px, -150px, -150px);
+      animation: float-circle-1 8s ease-in-out infinite;
+    }
+
+    &::after {
+      @include pseudo-circle(300px, auto, auto, -180px, -150px);
       animation: float-circle-2 10s ease-in-out infinite;
     }
   }
