@@ -9,7 +9,7 @@
       "guardians": "4",
       "since": "1980"
     },
-    "imageUrl": "/assets/images/objects/se.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/se.jpg"
   },
   {
     "id": 10,
@@ -21,7 +21,7 @@
       "guardians": "6",
       "since": "2020"
     },
-    "imageUrl": "/assets/images/objects/gv.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/gv.jpg"
   },
   {
     "id": 12,
@@ -33,7 +33,7 @@
       "guardians": "16",
       "since": "2012"
     },
-    "imageUrl": "/assets/images/objects/kris.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/kris.jpg"
   },
   {
     "id": 14,
@@ -41,7 +41,7 @@
     "text": "",
     "img_text": "Газпром",
     "values": null,
-    "imageUrl": "/assets/images/objects/gp.jpg"
+    "imageUrl": "/infoservice-agency/assets/images/objects/gp.jpg"
   },
   {
     "id": 15,
@@ -53,6 +53,6 @@
       "guardians": "12",
       "since": "1200"
     },
-    "imageUrl": "/assets/images/objects/nnk.png"
+    "imageUrl": "/infoservice-agency/assets/images/objects/nnk.png"
   }
 ]

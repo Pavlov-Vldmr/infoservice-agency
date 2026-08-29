@@ -1,7 +1,5 @@
-
-
 import { memo, type MouseEventHandler } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './MainActButton.scss';
 
 interface MainActButtonProps {
@@ -60,8 +58,6 @@ const MainActButton = memo(({
     tooltip = 'test',
     className: externalClassName,
 }: MainActButtonProps) => {
-    const navigate = useNavigate();
-
     const className = [
         'btn',
         `btn_${variant}`,
@@ -71,24 +67,18 @@ const MainActButton = memo(({
         externalClassName ?? ''
     ].filter(Boolean).join(' ');
 
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleScrollClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         // Если передан внешний onClick, выполняем его
         if (onClick) {
-            onClick(e as any);
+            onClick(e);
         }
 
-        // Проверяем, является ли путь хэш-ссылкой (начинается с #)
-        if (to.startsWith('#')) {
-            e.preventDefault();
-            const targetId = to.replace('#', '');
-            const element = document.getElementById(targetId);
+        e.preventDefault();
+        const targetId = to.replace('#', '');
+        const element = document.getElementById(targetId);
 
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        } else if (to) {
-            // Если это обычная ссылка, переходим на другую страницу
-            navigate(to);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
 
@@ -96,7 +86,7 @@ const MainActButton = memo(({
     if (to.startsWith('#')) {
         return (
             <button
-                onClick={handleClick}
+                onClick={handleScrollClick}
                 className={className}
                 type="button"
                 data-tooltip={tooltip}
@@ -109,16 +99,16 @@ const MainActButton = memo(({
     }
 
     return (
-        <a
-            href={to}
-            onClick={handleClick as any}
+        <Link
+            to={to}
+            onClick={onClick as any}
             className={className}
             data-tooltip={tooltip}
             aria-label={tooltip ?? title}
             title={tooltip}
         >
             {title}
-        </a>
+        </Link>
     );
 });
 
