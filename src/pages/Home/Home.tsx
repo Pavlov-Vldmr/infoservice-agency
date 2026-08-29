@@ -253,9 +253,9 @@ function Home() {
                 threshold={0.1}
                 delay={isMobile ? animDelay * 5 : animDelayDesctop * 5}>
                 <MainActButton
-                  to="/services"
+                  to="#homePhoneCallBack"
                   variant="gold"
-                  title="Кнопка"
+                  title="Обратный звонок"
                   bordered
                   type='mobile'
 
