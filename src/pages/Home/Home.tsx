@@ -235,7 +235,7 @@ function Home() {
                 threshold={0.1}
                 delay={isMobile ? animDelay * 4 : animDelayDesctop * 4}>
                 <MainActButton
-                  to="/infoservice-agency/services"
+                  to="/services"
                   variant="primary"
                   title="Наши услуги"
                   bordered
@@ -253,7 +253,7 @@ function Home() {
                 threshold={0.1}
                 delay={isMobile ? animDelay * 5 : animDelayDesctop * 5}>
                 <MainActButton
-                  to="/infoservice-agency/services"
+                  to="/services"
                   variant="gold"
                   title="Кнопка"
                   bordered
@@ -395,7 +395,7 @@ function Home() {
           <div className="home-services__btn flex-center">
             <Link
               className="btn btn_primary btn_bordered m_w100"
-              to="/infoservice-agency/services"
+              to="/services"
             >
               Все услуги
             </Link>
@@ -515,7 +515,7 @@ function Home() {
 
             <FadeContent blur={false} delay={FadeContentDelay} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
               <div className="m_w100"><MainActButton
-                to="/infoservice-agency/objects"
+                to="/objects"
                 variant="primary"
                 shadow
                 title="Все объекты"

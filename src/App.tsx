@@ -43,15 +43,15 @@ function App() {
           <div className='main'>
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/infoservice-agency" element={<Home />} />
-                <Route path='/infoservice-agency/about' element={<About />} />
-                <Route path='/infoservice-agency/objects' element={<Objects />} />
-                <Route path='/infoservice-agency/services' element={<Services />} />
-                <Route path='/infoservice-agency/contacts' element={<Contacts />} />
-                <Route path='/infoservice-agency/calculator' element={<Calculator />} />
-                <Route path='/infoservice-agency/components' element={<Components />} />
-                <Route path='/infoservice-agency/*' element={<NotFound />} />
-                <Route path="/infoservice-agency/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/" element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/objects' element={<Objects />} />
+                <Route path='/services' element={<Services />} />
+                <Route path='/contacts' element={<Contacts />} />
+                <Route path='/calculator' element={<Calculator />} />
+                <Route path='/components' element={<Components />} />
+                <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                <Route path='*' element={<NotFound />} />
               </Routes>
             </Suspense>
           </div>
@@ -64,7 +64,7 @@ function App() {
             expires={150}
           >
             Этот сайт использует файлы cookie. Продолжая работу, вы соглашаетесь с нашей{" "}
-            <Link to="/infoservice-agency/privacy-policy" style={{ color: "#4eaff3" }}>
+            <Link to="/privacy-policy" style={{ color: "#4eaff3" }}>
               Политикой конфиденциальности
             </Link>.
           </CookieConsent>

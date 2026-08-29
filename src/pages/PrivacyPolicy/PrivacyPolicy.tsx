@@ -559,7 +559,7 @@ function PrivacyPolicy() {
                                     </div>
                                     <div className="li">
                                         12.3. Актуальная версия Политики в&nbsp;свободном доступе расположена
-                                        в&nbsp;сети Интернет по&nbsp;адресу <span id="owner-privacy-url-value" className="link mark owner-privacy-url-field" data-scroll-to="#owner-privacy-url-field">https://infoservice-agency/privacy-policy</span>.
+                                        в&nbsp;сети Интернет по&nbsp;адресу <span id="owner-privacy-url-value" className="link mark owner-privacy-url-field" data-scroll-to="#owner-privacy-url-field">https://privacy-policy</span>.
                                     </div>
                                 </div>
                             </div>

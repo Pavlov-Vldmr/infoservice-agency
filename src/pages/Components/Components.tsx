@@ -20,20 +20,20 @@ function Components() {
                         <h4 className="text_black">clear</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
 
@@ -44,20 +44,20 @@ function Components() {
                         <h4 className="text_black">bordered</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -68,7 +68,7 @@ function Components() {
                         <h4 className="text_black">border +  shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
@@ -76,7 +76,7 @@ function Components() {
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
@@ -84,7 +84,7 @@ function Components() {
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -97,21 +97,21 @@ function Components() {
                         <h4 className="text_black">shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 shadow
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 shadow
@@ -128,20 +128,20 @@ function Components() {
                         <h4 className="text_black">clear</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
 
@@ -152,20 +152,20 @@ function Components() {
                         <h4 className="text_black">bordered</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -176,7 +176,7 @@ function Components() {
                         <h4 className="text_black">border +  shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
@@ -184,7 +184,7 @@ function Components() {
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
@@ -192,7 +192,7 @@ function Components() {
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -205,21 +205,21 @@ function Components() {
                         <h4 className="text_black">shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 shadow
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 shadow
@@ -236,20 +236,20 @@ function Components() {
                         <h4 className="text_black">clear</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
 
@@ -260,20 +260,20 @@ function Components() {
                         <h4 className="text_black">bordered</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -284,7 +284,7 @@ function Components() {
                         <h4 className="text_black">border +  shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
@@ -292,7 +292,7 @@ function Components() {
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
@@ -300,7 +300,7 @@ function Components() {
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -313,21 +313,21 @@ function Components() {
                         <h4 className="text_black">shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 shadow
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 shadow
@@ -346,20 +346,20 @@ function Components() {
                         <h4 className="text_black">clear</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
 
@@ -370,20 +370,20 @@ function Components() {
                         <h4 className="text_black">bordered</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -394,7 +394,7 @@ function Components() {
                         <h4 className="text_black">border +  shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
@@ -402,7 +402,7 @@ function Components() {
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 bordered
@@ -410,7 +410,7 @@ function Components() {
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 bordered
@@ -423,21 +423,21 @@ function Components() {
                         <h4 className="text_black">shad</h4>
                         <div>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="white"
                                 title="Кнопка"
                                 type=""
                                 shadow
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="primary"
                                 title="Кнопка"
                                 shadow
 
                             ></MainActButton>
                             <MainActButton
-                                to="/infoservice-agency/services"
+                                to="/services"
                                 variant="gold"
                                 title="Кнопка"
                                 shadow

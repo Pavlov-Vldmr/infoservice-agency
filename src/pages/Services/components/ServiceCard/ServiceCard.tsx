@@ -11,7 +11,7 @@ function ServiceCard(props: {
   return (
     <>
       <div className="service-card">
-        {/* <Link to={`/infoservice-agency/services/${props.link}`} className="service-card"  > */}
+        {/* <Link to={`/services/${props.link}`} className="service-card"  > */}
         <div className="service-card__img">
           <img src={props.imgURL}>
             {/* <Icons.Camera className="service-card__img__icon p-2" /> */}

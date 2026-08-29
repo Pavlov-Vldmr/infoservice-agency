@@ -20,10 +20,10 @@ function Footer() {
     const location = useLocation();
 
     const handleLogoClick = (): void => {
-        if (location.pathname === '/infoservice-agency/') {
+        if (location.pathname === '/') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            navigate('/infoservice-agency/');
+            navigate('/');
             window.scrollTo(0, 0);
         }
     };
@@ -40,17 +40,17 @@ function Footer() {
                         {/* <nav className='footer__nav'>
                             <h4 className='mb-4'>Навигация</h4>
                             <ul>
-                                <li> <Link to="/infoservice-agency/">Главная</Link></li>
-                                <li> <Link to="/infoservice-agency/about">О компании</Link></li>
-                                <li> <Link to="/infoservice-agency/services">Услуги</Link></li>
-                                <li> <Link to="/infoservice-agency/objects">Объъекты</Link></li>
-                                <li> <Link to="/infoservice-agency/contacts">Контакты</Link></li>
+                                <li> <Link to="/">Главная</Link></li>
+                                <li> <Link to="/about">О компании</Link></li>
+                                <li> <Link to="/services">Услуги</Link></li>
+                                <li> <Link to="/objects">Объъекты</Link></li>
+                                <li> <Link to="/contacts">Контакты</Link></li>
                             </ul>
                         </nav> */}
                         {/* <nav>
                             <h4 className='mb-4'>Наши услуги</h4>
                             <ul>
-                                <li><Link to="/infoservice-agency/services/Ohrana-zhilih-kompl">Охрана жилых комплексов</Link></li>
+                                <li><Link to="/services/Ohrana-zhilih-kompl">Охрана жилых комплексов</Link></li>
                                 <li><Link to="/">Видеонаблюдение</Link></li>
                                 <li><Link to="/">Контроль доступа</Link></li>
                                 <li><Link to="/">Пультовая охрана</Link></li>
