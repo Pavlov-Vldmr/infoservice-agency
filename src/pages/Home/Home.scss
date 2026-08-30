@@ -401,7 +401,7 @@ $transition-speed: 0.3s;
   }
 
   .home-advantages {
-    padding-block: calc(#{$spacing-unit} * 10);
+    // padding-block: calc(#{$spacing-unit} * 10);
 
     &::before {
       @include pseudo-circle(300px, -150px, -150px);
@@ -436,7 +436,7 @@ $transition-speed: 0.3s;
   }
 
   .home-contacts {
-    padding-block: calc(#{$spacing-unit} * 4);
+    // padding-block: calc(#{$spacing-unit} * 4);
 
     &__container {
       .home-contacts__title {
