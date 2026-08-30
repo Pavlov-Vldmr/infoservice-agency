@@ -6,13 +6,13 @@
   gap: 1rem;
 
   background-color: #fff;
-  height: 70vh;
+  // height: 70vh;
 
   &__title {
-    font-size: calc(var(--text-3xl)*2);
+    font-size: calc(var(--text-3xl) * 2);
     color: var(--primary);
   }
-  &__desc{
+  &__desc {
     font-size: var(--text-3xl);
     color: var(--muted-foreground);
     text-align: center;
@@ -22,7 +22,7 @@
     color: var(--primary);
     font-size: var(--text-2xl);
 
-    &::before{
+    &::before {
       content: "\00AB";
       padding-right: 0.5rem;
     }
@@ -30,16 +30,15 @@
 }
 
 @media (max-width: 768px) {
-  .not-found{
-    &__title{
+  .not-found {
+    &__title {
       font-size: var(--text-3xl);
     }
-    &__desc{
+    &__desc {
       font-size: var(--text-2xl);
     }
-      &__link {
-        font-size: var(--text-xl);
+    &__link {
+      font-size: var(--text-xl);
     }
   }
-  
 }
