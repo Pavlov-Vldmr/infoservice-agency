@@ -12,6 +12,7 @@ import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
 import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent'
 import MainActButton from '@/components/Buttons/MainActButton/MainActButton'
 import { useState } from 'react'
+import MarqueeText from './components/MarqueText/MarqueeText'
 
 
 const items = [
@@ -21,7 +22,7 @@ const items = [
         links: [
             { label: "Company", ariaLabel: "About Company", href: '/' },
         ],
-        imageUrl: "/assets/images/estimates/1.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/1.png"
     },
     {
         label: "Projects",
@@ -29,7 +30,7 @@ const items = [
         links: [
             { label: "Featured", ariaLabel: "Featured Projects", href: '/' },
         ],
-        imageUrl: "/assets/images/estimates/2.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/2.png"
     },
     {
         label: "Contact",
@@ -37,7 +38,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/assets/images/estimates/3.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/3.png"
     },
     {
         label: "Contact2",
@@ -45,7 +46,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/assets/images/estimates/4.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/4.png"
     },
     {
         label: "Contact3",
@@ -53,7 +54,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/assets/images/estimates/5.png"
+        imageUrl: "/infoservice-agency/assets/images/estimates/5.png"
     }
 ];
 
@@ -71,8 +72,10 @@ function About() {
     return (
         <>
             <PageTitle plate='О компании' bgImg={bgImg} title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
-
-            <section className="about-info pt-20 py-20 m_py-0">
+            <section className="pt-2 bg_white">
+                <MarqueeText />
+            </section>
+            <section className="about-info py-10 m_py-0 m_pt-0">
                 <AboutComponent />
             </section>
 
@@ -124,7 +127,7 @@ function About() {
                 <div className="container about-timeline__container">
                     <SectionTitle
                         plate={"История"}
-                        plateColor='text_gold'
+                        plateColor='text_gold-l'
                         title={"Наш путь"}
                         pColor='text_white-8'
                         text={"Ключевые этапы развития компании с момента основания"}
@@ -153,7 +156,7 @@ function About() {
 
             <section className="about-sertificate py-10 ">
                 <div className="container about-sertificate__container p-8 m_p-4">
-                    <div className="about-sertificate__title mb-12">
+                    <div className="about-sertificate__title">
                         <h2 className="text_primary mb-4 m_mt-4">Лицензии и сертификаты</h2>
                         <p className="text_muted py-4">ООО "ИнфоСервис" имеет все необходимые лицензии для осуществления частной охранной деятельности. Наша компания полностью застрахована, что гарантирует безопасность ваших объектов.</p>
                     </div>
@@ -162,14 +165,14 @@ function About() {
                             <a href={license} download={'license.txt'}>Лицензия на охранную деятельность</a>
                             <p>Свидетельство о государственной регистрации</p>
                         </div>
-                        <div className="about-sertificate__list__item">
+                        {/* <div className="about-sertificate__list__item">
                             <a href={license} download={'license.txt'}>Лицензия на охранную деятельность</a>
                             <p>Свидетельство о государственной регистрации</p>
                         </div>
                         <div className="about-sertificate__list__item">
                             <a href={license} download={'license.txt'}>Лицензия на охранную деятельность</a>
                             <p>Свидетельство о государственной регистрации</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
