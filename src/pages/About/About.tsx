@@ -21,7 +21,7 @@ const items = [
         links: [
             { label: "Company", ariaLabel: "About Company", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/assets/images/estimates/1.png"
+        imageUrl: "/assets/images/estimates/1.png"
     },
     {
         label: "Projects",
@@ -29,7 +29,7 @@ const items = [
         links: [
             { label: "Featured", ariaLabel: "Featured Projects", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/assets/images/estimates/2.png"
+        imageUrl: "/assets/images/estimates/2.png"
     },
     {
         label: "Contact",
@@ -37,7 +37,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/assets/images/estimates/3.png"
+        imageUrl: "/assets/images/estimates/3.png"
     },
     {
         label: "Contact2",
@@ -45,7 +45,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/assets/images/estimates/4.png"
+        imageUrl: "/assets/images/estimates/4.png"
     },
     {
         label: "Contact3",
@@ -53,7 +53,7 @@ const items = [
         links: [
             { label: "Email", ariaLabel: "Email us", href: '/' },
         ],
-        imageUrl: "/infoservice-agency/assets/images/estimates/5.png"
+        imageUrl: "/assets/images/estimates/5.png"
     }
 ];
 
@@ -89,7 +89,7 @@ function About() {
                         threshold={0.1}
                         delay={isMobile ? animDelay * 2 : animDelayDesctop * 2}>
                         <MainActButton
-                            to="/infoservice-agency/services"
+                            to="/services"
                             variant="primary"
                             title="Наши услуги"
                             bordered
@@ -107,7 +107,7 @@ function About() {
                         threshold={0.1}
                         delay={isMobile ? animDelay * 3 : animDelayDesctop * 3}>
                         <MainActButton
-                            to="/infoservice-agency/contacts"
+                            to="/contacts"
                             variant="gold"
                             title="Связаться с нами"
                             bordered

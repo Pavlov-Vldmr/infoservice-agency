@@ -149,7 +149,7 @@ function PhoneCallbackComponent(props: { className?: string }) {
                         <span className="callback__custom-checkbox"></span>
                         <span className="callback__policy-text">
                             Я согласен с{" "}
-                            <a href="/infoservice-agency/privacy-policy" target="_blank" rel="noopener noreferrer" className="text_white-8">
+                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text_white-8">
                                 политикой конфиденциальности
                             </a>
                         </span>

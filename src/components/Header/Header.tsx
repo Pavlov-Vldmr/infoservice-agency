@@ -26,12 +26,12 @@ interface HeaderProps {
 }
 
 const DEFAULT_ITEMS: NavItem[] = [
-  { label: "Главная", href: "/infoservice-agency" },
-  { label: "О нас", href: "/infoservice-agency/about" },
-  { label: "Услуги", href: "/infoservice-agency/services" },
-  { label: "Объекты", href: "/infoservice-agency/objects" },
-  { label: "Контакты", href: "/infoservice-agency/contacts" },
-  // { label: "CMP", href: "/infoservice-agency/components" },
+  { label: "Главная", href: "/" },
+  { label: "О нас", href: "/about" },
+  { label: "Услуги", href: "/services" },
+  { label: "Объекты", href: "/objects" },
+  { label: "Контакты", href: "/contacts" },
+  // { label: "CMP", href: "/components" },
 ];
 
 
@@ -126,12 +126,12 @@ const Header: React.FC<HeaderProps> = ({
   const getButtonProps = (): ButtonProps | null => {
     const path = location.pathname;
 
-    if (path === '/infoservice-agency') {
+    if (path === '/') {
       return { text: 'Позвоните нам', to: '#homePhoneCallBack' };
     }
 
-    if (matchPath({ path: '/infoservice-agency/*' }, path)) {
-      return { text: 'Позвоните нам', to: '/infoservice-agency/contacts' };
+    if (matchPath({ path: '/*' }, path)) {
+      return { text: 'Позвоните нам', to: '/contacts' };
     }
 
     return null;
@@ -162,7 +162,7 @@ const Header: React.FC<HeaderProps> = ({
       ].join(" ").trim()}
     >
       <div className="site-header__inner container">
-        <a href="/infoservice-agency" className="site-header__logo" onClick={closeMenu}>
+        <a href="/" className="site-header__logo" onClick={closeMenu}>
           <img src={logoSmall} alt="logo" height={50} width={"auto"} />
           {/* {logo} */}
           <div className="site-header__logo__text">
@@ -261,8 +261,8 @@ const Header: React.FC<HeaderProps> = ({
         </ul>
 
         <div className="p-4 m_pt-10 mobile-menu__btn-callback">
-          {/* <MainActButton to="/infoservice-agency/calculator" variant=" primary" title="Заказать онлайн"></MainActButton> */}
-          <MainActButton to="/infoservice-agency/contacts" variant="primary" type="mobile" bordered title="Позвоните нам"></MainActButton>
+          {/* <MainActButton to="/calculator" variant=" primary" title="Заказать онлайн"></MainActButton> */}
+          <MainActButton to="/contacts" variant="primary" type="mobile" bordered title="Позвоните нам"></MainActButton>
         </div>
 
         <div className=" mobile-menu__contacts px-4 mt-6">

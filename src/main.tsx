@@ -11,11 +11,11 @@ import './index.scss'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <CityProvider>
-        <App />
-      </CityProvider>
-    </BrowserRouter>
+    {/* <BrowserRouter> */}
+    <CityProvider>
+      <App />
+    </CityProvider>
+    {/* </BrowserRouter> */}
   </StrictMode>,
 )
 
