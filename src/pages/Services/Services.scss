@@ -20,12 +20,18 @@
   background-color: white;
 
   &__container {
-    display: grid;
+    display: flex;
+    gap: calc(var(--spacing) * 10);
+    form {
+      min-width: 500px;
+    }
 
-    grid-template-columns: repeat(3, 1fr);
+    // display: grid;
+
+    // grid-template-columns: repeat(3, 1fr);
   }
   &__contacts {
-    grid-column: span 2 / span 2;
+    // grid-column: span 2 / span 2;
   }
 }
 
@@ -153,7 +159,11 @@
 
   .services-feedback {
     &__container {
-      grid-template-columns: repeat(1, 1fr);
+      flex-direction: column;
+      form {
+        min-width: auto;
+      }
+      // grid-template-columns: repeat(1, 1fr);
     }
     &__contacts {
     }
