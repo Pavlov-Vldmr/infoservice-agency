@@ -1,4 +1,5 @@
 
+import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
 import "./ServiceCard.scss";
 
 function ServiceCard(props: {
@@ -19,10 +20,24 @@ function ServiceCard(props: {
         </div>
 
         <div className="service-card__content p-8">
-          <h3 className="text_primary mb-2">{props.title}</h3>
-          <p className="text text_muted mb-4">{props.text}</p>
-          {/* <span className="service-card_link">Подробнее</span> */}
-          <span className="service-card_price">{props.price} руб.</span>
+          <div className="service-card__content__info">
+            <h3 className="text_primary m_mt-4">{props.title}</h3>
+            <p className="text text_muted mt-8 mb-10 m_mb-0 m_mt-4">{props.text}</p>
+          </div>
+          <div className="service-card__content__price m_mt-10 m_pb-4 m_pt-8">
+            <div className="service-card__content__price-text pt-8 m_pt-2">
+              <span className="service-card_subtitle text_muted">Стоимость</span>
+              <span className="service-card_price pt-2">{props.price} руб.</span>
+            </div>
+            <div className="service-card__content__price-order">
+              <MainActButton to="" title="Заказать" variant="primary"
+
+                bordered
+                type='mobile' />
+            </div>
+
+          </div>
+
         </div>
         {/* </Link> */}
       </div>

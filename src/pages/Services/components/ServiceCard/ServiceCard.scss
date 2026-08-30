@@ -1,7 +1,6 @@
 .service-card {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   background-color: #fff;
   border-radius: 0.625rem;
@@ -17,6 +16,7 @@
     img {
       transform: scale(1.09);
       transition: transform 0.5s ease-in-out;
+      position: relative;
     }
   }
 
@@ -24,12 +24,27 @@
     height: 200px;
     object-fit: cover;
     background-color: rgb(122, 122, 122);
-
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "Услуга";
+      color: var(--accent);
+      border-radius: calc(var(--border-radius) * 4);
+      padding-inline: 16px;
+      padding-block: 4px;
+      background-color: var(--white);
+      left: 20px;
+      top: 15px;
+      font-weight: 700;
+      font-size: var(--text-sm);
+      border: 1px solid var(--accent);
+    }
     img {
       transition: transform 0.5s ease-in-out;
       object-fit: cover;
       height: 100%;
       width: 100%;
+      position: relative;
     }
 
     &__icon {
@@ -44,30 +59,53 @@
   &__content {
     display: flex;
     flex-direction: column;
-    h3 {
-      font-size: var(--text-xl);
-      font-weight: 500;
-    }
-    .text {
-      flex-grow: 1;
+    justify-content: space-between;
+    height: 100%;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      h3 {
+        font-size: var(--text-xl);
+        font-weight: 500;
+        color: #000;
+        line-height: 1.6rem;
+
+        // min-height: 100px;
+      }
+      .text {
+        min-width: 80%;
+        line-height: 1.6rem;
+        flex-grow: 1;
+      }
     }
 
-    .service-card_link {
-      text-decoration: none;
-      color: var(--accent);
-      &::after {
-        position: absolute;
-        content: "\2192";
-        padding-left: calc(var(--spacing) * 2);
-      }
-      &::hover:after {
-        color: red;
-        padding-left: calc(var(--spacing) * 10);
-      }
-    }
+    &__price {
+      border-top: 1px solid rgba(128, 128, 128, 0.232);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      &-text {
+        display: flex;
+        flex-direction: column;
+        .service-card_subtitle {
+          font-size: var(--text-sm);
+        }
 
-    .service-card_price {
-      color: #000;
+        .service-card_price {
+          // padding-top: calc(var(--spacing) * 2);
+
+          color: var(--accent);
+          font-size: var(--text-2xl);
+          font-weight: 900;
+        }
+      }
+
+      &-order {
+      }
     }
   }
 }
