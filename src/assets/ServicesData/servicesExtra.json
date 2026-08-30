@@ -2,21 +2,21 @@
   {
     "id": 13,
     "title": "Замена,установка датчиков охраны",
-    "text": "",
+    "text": "Системы контроля и управления доступом: турникеты, шлагбаумы, электронные пропуска и биометрия",
     "price": 650,
     "imageUrl": "/infoservice-agency/assets/images/services/motion_sensor_ohran_ulitsi_24.jpeg"
   },
   {
     "id": 16,
     "title": "Замена установка пожарных извещателей,оповещателей",
-    "text": "",
+    "text": "Установка и подключение к пульту централизованного наблюдения с мгновенным реагированием.",
     "price": 650,
     "imageUrl": "/infoservice-agency/assets/images/services/sens.jpg"
   },
   {
     "id": 17,
     "title": "Настройка удалённого доступа, для системы видеонаблюдения",
-    "text": "",
+    "text": "Проектирование, монтаж и обслуживание систем видеонаблюдения с удалённым доступом и записью.",
     "price": 1500,
     "imageUrl": "/infoservice-agency/assets/images/services/cabel.jpg"
   }

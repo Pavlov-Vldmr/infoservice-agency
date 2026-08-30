@@ -6,7 +6,7 @@ import ShinyText from '../ReactBits/ShinyText/ShinyText'
 import './PageTitle.scss'
 import AnimatedContent from '../ReactBits/AnimatedContent/AnimatedContent';
 
-function PageTitle(props: { title: string, subTitle: string, plate: string, bgImg?: string }) {
+function PageTitle(props: { title: string, subTitle?: string, plate: string, bgImg?: string }) {
 
     const [isMobile, setIsMobile] = useState(false);
 

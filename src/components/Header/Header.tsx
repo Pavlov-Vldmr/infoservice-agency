@@ -2,7 +2,7 @@
 import extraCompData from "@/assets/ServicesData/companyInfo.json"
 
 
-import { matchPath, NavLink, useLocation } from "react-router-dom";
+import { Link, matchPath, NavLink, useLocation } from "react-router-dom";
 
 import MainActButton from "../Buttons/MainActButton/MainActButton";
 
@@ -162,7 +162,7 @@ const Header: React.FC<HeaderProps> = ({
       ].join(" ").trim()}
     >
       <div className="site-header__inner container">
-        <a href="/" className="site-header__logo" onClick={closeMenu}>
+        <Link to="/" className="site-header__logo" onClick={closeMenu}>
           <img src={logoSmall} alt="logo" height={50} width={"auto"} />
           {/* {logo} */}
           <div className="site-header__logo__text">
@@ -170,7 +170,7 @@ const Header: React.FC<HeaderProps> = ({
             <span className="site-header__logo__text__m">инфосервис</span>
             <span className="site-header__logo__text__b">частное охранное предприятие</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="site-header__nav" aria-label="Основная навигация">

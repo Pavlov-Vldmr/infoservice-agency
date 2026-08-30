@@ -15,10 +15,10 @@ import DriftWall from "../ReactBits/DriftWall/DriftWall";
 function AboutComponent(props: { className?: string }) {
 
     const items = [
-        { image: 'https://picsum.photos/id/1015/600/400', title: 'Peaks', href: 'https://example.com/one' },
-        { image: 'https://picsum.photos/id/1015/600/400', title: 'Falls', href: 'https://example.com/fs' },
-        { image: 'https://picsum.photos/id/1025/600/400', title: 'Pup', href: 'https://example.com/two' },
-        { image: 'https://picsum.photos/id/1039/600/400', title: 'Falls', href: 'https://example.com/three' },
+        { image: 'https://picsum.photos/id/617/600/400', title: 'Peaks', href: 'https://example.com/one' },
+        { image: 'https://picsum.photos/id/668/600/400', title: 'Falls', href: 'https://example.com/fs' },
+        { image: 'https://picsum.photos/id/983/600/400', title: 'Pup', href: 'https://example.com/two' },
+        { image: 'https://picsum.photos/id/1033/600/400', title: 'Falls', href: 'https://example.com/three' },
     ];
     const CountUp = (ReactCountUp as { default?: ComponentType<unknown> }).default || ReactCountUp;
     const FadeContentDuraton: number = 2000
@@ -50,7 +50,7 @@ function AboutComponent(props: { className?: string }) {
 
     return (
         <div className={`${props.className} about-component`}>
-            <div className="container about-component__container px-10 m_p-4 m_pt-20">
+            <div className="container about-component__container px-10 m_p-4">
                 <div className='about-component__top'>
                     <div className='about-component__driftwall mt-8 m_mt-0'>
                         {/* <img src={guardian} alt="" /> */}

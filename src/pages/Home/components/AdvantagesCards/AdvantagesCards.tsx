@@ -57,37 +57,34 @@ const delay: number = .2
 function AdvantagesCards() {
 
 
-    // { title: "", text: "", icon: `<Icons.Reputation className="advantages__card__icons icon_gold-8" />` },
-    // { title: "", text: "", icon: `<Icons.Reputation className="advantages__card__icons icon_gold-8" />`  },
-    // { title: "", text: "", icon: `<Icons.ShieldAlt className="advantages__card__icons icon_gold-8" />`  },
-    // { ... }
 
 
     return (
-        <>       {ADVANTAGES_ITEMS.map((item, index) => (
-            <FadeContent
-                key={index}
-                className="advantages__card"
-                blur
-                duration={FadeAdvDuration}
-                easing="ease-out"
-                initialOpacity={0}
-                threshold={.1}
-                delay={delay * index}
-            >
-                <div className='advantages__card__item'>
-                    <span>0{index + 1}</span>
+        <>
+            {ADVANTAGES_ITEMS.slice(0, 3).map((item, index) => (
+                <FadeContent
+                    key={index}
+                    className="advantages__card"
+                    blur
+                    duration={FadeAdvDuration}
+                    easing="ease-out"
+                    initialOpacity={0}
+                    threshold={.1}
+                    delay={delay * index}
+                >
+                    <div className='advantages__card__item'>
+                        <span>0{index + 1}</span>
 
-                    <div >
-                        {item.icon}
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
+                        <div >
+                            {item.icon}
+                            <h3>{item.title}</h3>
+                            <p>{item.text}</p>
+                        </div>
+
                     </div>
 
-                </div>
-
-            </FadeContent>
-        ))}
+                </FadeContent>
+            ))}
         </>
 
 

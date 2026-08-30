@@ -310,6 +310,10 @@ a {
   &_gold-8 {
     color: var(--gold-8);
   }
+
+  &_gold-l {
+    color: var(--gold-l);
+  }
   &_muted-g {
     color: var(--muted-foreground-g);
   }
@@ -405,6 +409,12 @@ a {
   &_gold-8 {
     path {
       stroke: var(--gold-8);
+    }
+  }
+
+  &_gold-l {
+    path {
+      stroke: var(--gold-l);
     }
   }
 }

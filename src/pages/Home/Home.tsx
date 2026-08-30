@@ -37,6 +37,7 @@ import AdvantagesCards from './components/AdvantagesCards/AdvantagesCards';
 import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent';
 import AchievmentsItems from './components/AchievmentsItems/AchievmentsItems';
 
+
 function Home() {
 
   interface IServiceItem {
@@ -404,7 +405,7 @@ function Home() {
       </section>
 
       {/* slider OBJECTS */}
-      <section className="home-objects pb-10 ">
+      <section className="home-objects pb-10 m_pt-4">
         <div className="container">
           <SectionTitle
             plate={"Объекты"}
@@ -511,18 +512,18 @@ function Home() {
 
           </div>
 
-          <div className="home-objects__btn flex-center m_px-4 m_py-4">
+          <div className="home-objects__btn m_px-4 m_py-4 flex-center">
 
-            <FadeContent blur={false} delay={FadeContentDelay} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
-              <div className="m_w100"><MainActButton
+            <FadeContent className='m_w100' blur={false} delay={FadeContentDelay} duration={FadeContentDuration} easing="ease-out" initialOpacity={0}>
+              <MainActButton
                 to="/objects"
                 variant="primary"
                 shadow
                 title="Все объекты"
                 bordered
-                className='m_w100'
+                type='mobile'
 
-              ></MainActButton></div>
+              ></MainActButton>
 
             </FadeContent>
 
@@ -530,25 +531,27 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-advantages pb-10 bg_gradient-circle ">
+      <section className="home-advantages pb-10 m_pt-4 bg_gradient-circle ">
         <div className="container">
           <SectionTitle
             className={"text_white"}
             plate={"Преимущества"}
-            plateColor='border-w text_gold'
+            plateColor='border-w text_gold-l'
             pColor='text_white-8'
             title={"Почему выбирают нас"}
             hColor='text_white'
             text={"Наши преимущества делают нас лучшим выбором в сфере охраны недвижимости"}
           />
           <div className="home-advantages__plates">
+
+
             <AdvantagesCards />
           </div>
 
         </div>
       </section>
 
-      <section className='home-marquee bg_gray-6'>
+      <section className='home-marquee bg_white'>
 
         {/* <SectionTitle
           plate={"Нам доверяют"}
@@ -563,7 +566,7 @@ function Home() {
         <MarqueeLogo />
       </section>
 
-      <section className="home-about py-20 m_py-0 ">
+      <section className="home-about py-10 m_py-0 ">
         <AboutComponent />
       </section>
 
@@ -589,7 +592,7 @@ function Home() {
 
 
 
-      <section id="scrollTest" className="home-contacts pb-10">
+      <section id="scrollTest" className="home-contacts pb-10 m_pb-0">
         <div className="container home-contacts__container  px-10 m_p-4">
           <SectionTitle
             plate={"Контакты"}
@@ -597,7 +600,7 @@ function Home() {
             text={"Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта."}
           />
           <div className="home-contacts__content">
-            <ContactsInfo />
+            <ContactsInfo className='vertical' />
             <div className="contacts__map">
               <div className="container contacts__map__container ">
                 <h2 className="text_primary px-8 pt-8">Карта проезда</h2>

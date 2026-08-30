@@ -290,6 +290,7 @@
 
       .about-component__article-adv__item {
         margin-top: calc(var(--spacing) * 4);
+        height: fit-content;
 
         &__text {
           display: flex;

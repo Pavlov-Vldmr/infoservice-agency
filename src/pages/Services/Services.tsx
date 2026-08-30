@@ -21,6 +21,7 @@ import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedCont
 
 import bgImg from '@/assets/images/bg/serv.avif'
 import AccordionComponent from './components/Accordion/Accordion';
+import ContactsInfoPlates from '@/components/ContactsInfoPlates/ContactsInfoPlates';
 
 
 function Services() {
@@ -298,9 +299,9 @@ function Services() {
         </div>
 
       </section>
-      <section className="services services-feedback bg_white py-10">
+      <section className="services services-feedback bg_white py-0">
         <div className="container">
-          <div className="services__title mb-20 pt-20 m_mb-10 m_pt-20 ">
+          <div className="services__title mb-10 pt-0 m_mb-10 m_pt-4 ">
             <SectionTitle
               plate={"Контакты"}
               title={"Свяжитесь с нами"}
@@ -308,9 +309,9 @@ function Services() {
             />
             {/* <h2 className="text_center">Остались вопросы?</h2> */}
           </div>
-          <div className="services-feedback__container  px-10 pb-10 m_p-4">
-            <ContactsInfo className="services-feedback__contacts" />
-
+          <div className="services-feedback__container flex-center  px-10 pb-10 m_p-4">
+            {/* <ContactsInfo className="services-feedback__contacts" /> */}
+            <ContactsInfoPlates className='vertical' />
             <FeedbackForm />
 
 

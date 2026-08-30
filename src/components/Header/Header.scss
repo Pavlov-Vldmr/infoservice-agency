@@ -107,7 +107,7 @@ $mobile-breakpoint: 768px;
 
     &:hover {
       opacity: 1;
-      color: var(--gold);
+      color: var(--gold-l);
 
       // color: var(--accent);
     }
@@ -115,7 +115,7 @@ $mobile-breakpoint: 768px;
 
   &__link.active {
     font-weight: 700;
-    color: var(--gold);
+    color: var(--gold-l);
   }
 
   // ---- solid (scrolled) state ----

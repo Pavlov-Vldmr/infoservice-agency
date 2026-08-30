@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import './CardNav.scss';
 
-import logoS from '@/assets/images/logo.png'
+// import logoS from '@/assets/images/logo.png'
 
 type CardNavLink = {
     label: string;
@@ -231,6 +231,10 @@ const CardNav: React.FC<CardNavProps> = ({
         <div className={`card-nav-container ${className}`}>
             <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
                 <div onClick={toggleMenu} className="card-nav-top">
+                    <div className="">
+                        {/* <img src={logo} alt={logoAlt} className="logo" /> */}
+                        <h4 className='text_white'>{logoAlt}</h4>
+                    </div>
                     <div
                         className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
                         onClick={toggleMenu}
@@ -250,14 +254,11 @@ const CardNav: React.FC<CardNavProps> = ({
                         <div className="hamburger-line" />
                     </div>
 
-                    <div className="">
-                        {/* <img src={logo} alt={logoAlt} className="logo" /> */}
-                        <h4 className='text_white'>{logoAlt}</h4>
-                    </div>
 
-                    <div className="logo-container">
+
+                    {/* <div className="logo-container">
                         <img src={logoS} className="logo" width={'100%'} height={50} />
-                    </div>
+                    </div> */}
 
                     {/* <button
                         type="button"
