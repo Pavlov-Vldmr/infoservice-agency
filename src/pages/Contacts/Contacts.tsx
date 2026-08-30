@@ -12,6 +12,9 @@ import bgImg from '@/assets/images/bg/contacts.avif'
 
 
 import './Contacts.scss'
+import ContactsInfoPlates from "@/components/ContactsInfoPlates/ContactsInfoPlates"
+import CallbackComponent from "@/components/CallbackComponent/CallbackComponent"
+import FeedbackForm from "@/features/FeedbackForm/FeedbackForm"
 
 function Contacts() {
 
@@ -41,12 +44,15 @@ function Contacts() {
             <PageTitle plate="Контактты" bgImg={bgImg} title="Свяжитесь с нами" subTitle="Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта" />
             <section className="contacts">
                 {/* <h2 className="text_center pb-4">Контакты</h2> */}
+                <div className="container contacts__container  p-10 m_p-4">
+                    <ContactsInfoPlates />
 
+                </div>
                 <div className="container contacts__container  p-10 m_p-4">
                     <div className="contacts__content m_py-8" ref={targetRef}>
                         {/* <a href="" className="test text_primary">{companyInfo?.city[cityC].name}</a> */}
-                        <ContactsInfo />
-
+                        {/* <ContactsInfo /> */}
+                        <FeedbackForm />
                         <div className="contacts__map">
                             <div className="container contacts__map__container ">
                                 <h2 className="text_primary px-8 pt-8">Карта проезда</h2>
