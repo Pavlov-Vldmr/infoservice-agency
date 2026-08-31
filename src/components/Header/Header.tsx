@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import "./Header.scss";
 import logoSmall from "@/assets/images/logo.png"
 import { useCompany } from "@/contexts/CompanyInfoContext";
-import PhoneComponent from "@/features/model/PhoneComponent";
+import PhoneComponent from "@/components/PhoneComponent/PhoneComponent";
 import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 // import NavLinksComponent from "./components/NavLinksComponent/NavLinksComponent";
 

@@ -2,17 +2,17 @@
 import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import { useCity } from "@/contexts/CityContext"
 import { useCompany } from "@/contexts/CompanyInfoContext"
-import PhoneComponent from '@/features/model/PhoneComponent';
+import PhoneComponent from '@/components/PhoneComponent/PhoneComponent';
 
 import { Icons } from '../Icons'
 import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 
-import './ContactsInfo.scss'
-import BusinessHours from "../BusinessHours/BusinessHours";
+import './ContactsInfoComponent.scss'
+import BusinessHours from "../BusinessHoursComponent/BusinessHoursComponent";
 import FadeContent from "../ReactBits/FadeContent/FadeContent";
 import ContactsInfoPlates from "../ContactsInfoPlates/ContactsInfoPlates";
 
-function ContactsInfo(props: { className?: string }) {
+function ContactsInfoComponent(props: { className?: string }) {
 
     const { companyInfo } = useCompany();
     const { city: cityC } = useCity();
@@ -48,4 +48,4 @@ function ContactsInfo(props: { className?: string }) {
     )
 }
 
-export default ContactsInfo
+export default ContactsInfoComponent

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import "./PhoneCallbackComponent.scss"
+import "./PhoneCallback.scss"
 interface PhoneFormData {
     phone: string;
 }
@@ -24,7 +24,7 @@ type Inputs = {
     policy: boolean;
 };
 
-function PhoneCallbackComponent(props: { className?: string }) {
+function PhoneCallback(props: { className?: string }) {
     const [loading, setLoading] = useState<boolean>(false);
     const [message, setMessage] = useState<string>('');
 
@@ -166,4 +166,4 @@ function PhoneCallbackComponent(props: { className?: string }) {
     );
 };
 
-export default PhoneCallbackComponent;
+export default PhoneCallback;

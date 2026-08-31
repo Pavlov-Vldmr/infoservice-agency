@@ -7,7 +7,7 @@ import { Icons } from '../Icons'
 import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 import FadeContent from "../ReactBits/FadeContent/FadeContent";
 
-import './AboutComonent.scss'
+import './AboutComponent.scss'
 import MainActButton from "../Buttons/MainActButton/MainActButton";
 import DriftWall from "../ReactBits/DriftWall/DriftWall";
 

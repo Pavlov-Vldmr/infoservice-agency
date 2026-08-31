@@ -2,16 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 
-import MainActButton from "../Buttons/MainActButton/MainActButton";
+import MainActButton from "../../components/Buttons/MainActButton/MainActButton";
 
-import './CallbackComponent.scss';
+import './PhoneCallbackPopUp.scss';
 
 type Inputs = {
     name: string;
     phone: string;
 };
 
-function CallbackComponent() {
+function PhoneCallbackPopUp() {
     const [open, setOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
@@ -120,4 +120,4 @@ function CallbackComponent() {
     );
 }
 
-export default CallbackComponent;
+export default PhoneCallbackPopUp;

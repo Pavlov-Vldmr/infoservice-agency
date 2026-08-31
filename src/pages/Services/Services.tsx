@@ -8,14 +8,14 @@ import { fetchFiles } from "@/services/files";
 import { fetchCompanyServices } from "@/services/services";
 import { getStrapiMediaUrl } from "@/services/strapiClient";
 
-import PageTitle from "../../components/PageTitle/PageTitle";
-import ServiceCard from "./components/ServiceCard/ServiceCard";
+import PageTitle from "../../components/PageTitleComponent/PageTitleComponent";
+import ServiceCard from "./components/ServicesCard/ServicesCard";
 
 import "./Services.scss";
 import FeedbackForm from "@/features/FeedbackForm/FeedbackForm";
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
-import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import ContactsInfo from "@/components/ContactsInfoComponent/ContactsInfoComponent";
+import SectionTitle from "@/components/SectionTitleComponent/SectionTitleComponent";
 import { Icons } from "@/components/Icons";
 import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedContent";
 
@@ -163,7 +163,7 @@ function Services() {
 
           {/* {services && services.length > 0 ? (
             services.map((item) => (
-              <ServiceCard
+              <ServicesCard
                 key={item.documentId || item.id}
                 title={item.title}
                 text={item.text}
@@ -174,7 +174,7 @@ function Services() {
             ))
           ) : (
             servicesEx.map((item) => (
-              <ServiceCard
+              <ServicesCard
                 key={item.id}
                 title={item.title}
                 text={item.text}
@@ -299,7 +299,7 @@ function Services() {
         </div>
 
       </section>
-      <section className="services services-feedback bg_white py-0">
+      <section className="services services-feedback bg_white py-0 pb-10">
         <div className="container">
           <div className="services__title mb-10 pt-0 m_mb-10 m_pt-4 ">
             <SectionTitle

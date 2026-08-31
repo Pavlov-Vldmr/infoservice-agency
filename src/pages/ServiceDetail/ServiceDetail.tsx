@@ -1,9 +1,9 @@
 import { data, useParams } from 'react-router-dom';
 
 import { Icons } from '@/components/Icons';
-import PageTitle from '@/components/PageTitle/PageTitle';
-import ProposalComonent from '@/components/ProposalComponent/ProposalComonent';
-import PhoneComponent from '@/features/model/PhoneComponent';
+import PageTitle from '@/components/PageTitleComponent/PageTitleComponent';
+import ProposalComonent from '@/components/ProposalComponent/ProposalComponent';
+import PhoneComponent from '@/components/PhoneComponent/PhoneComponent';
 import { useFetch } from '@/hooks/useFetch';
 import { fetchCompanyServices } from '@/services/services';
 

@@ -2,13 +2,13 @@
 import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import { useCity } from "@/contexts/CityContext"
 import { useCompany } from "@/contexts/CompanyInfoContext"
-import PhoneComponent from '@/features/model/PhoneComponent';
+import PhoneComponent from '@/components/PhoneComponent/PhoneComponent';
 
 import { Icons } from '../Icons'
 import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 
 import './ContactsInfoPlates.scss'
-import BusinessHours from "../BusinessHours/BusinessHours";
+import BusinessHours from "../BusinessHoursComponent/BusinessHoursComponent";
 import FadeContent from "../ReactBits/FadeContent/FadeContent";
 
 function ContactsInfoPlates(props: { className?: string }) {

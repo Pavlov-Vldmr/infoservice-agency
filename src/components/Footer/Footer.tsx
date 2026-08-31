@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import { useCity } from "@/contexts/CityContext"
 import { useCompany } from "@/contexts/CompanyInfoContext"
-import PhoneComponent from '@/features/model/PhoneComponent';
+import PhoneComponent from '@/components/PhoneComponent/PhoneComponent';
 
 import logo from '../../assets/images/logo-full-light.svg';
 

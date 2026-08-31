@@ -1,19 +1,19 @@
 import { useEffect, useRef } from "react"
 import { useLocation } from "react-router-dom"
 
-import ErrorBoundary from "@/components/common/ErrorBoundary"
-import PhoneCallbackComponent from "@/components/PhoneCallbackComponent/PhoneCallbackComponent"
-import YandexMap from "@/services/yandexMap"
+import ErrorBoundary from "@/components/ErrorBoundary"
+import PhoneCallbackComponent from "@/features/PhoneCallback/PhoneCallback"
+import YandexMap from "@/features/YandexMap/yandexMap"
 
-import ContactsInfo from "../../components/ContactsInfo/ContactsInfo"
-import PageTitle from "../../components/PageTitle/PageTitle"
+import ContactsInfo from "../../components/ContactsInfoComponent/ContactsInfoComponent"
+import PageTitle from "../../components/PageTitleComponent/PageTitleComponent"
 
 import bgImg from '@/assets/images/bg/contacts.avif'
 
 
 import './Contacts.scss'
 import ContactsInfoPlates from "@/components/ContactsInfoPlates/ContactsInfoPlates"
-import CallbackComponent from "@/components/CallbackComponent/CallbackComponent"
+import CallbackComponent from "@/features/PhoneCallbackPopUp/PhoneCallbackPopUp"
 import FeedbackForm from "@/features/FeedbackForm/FeedbackForm"
 
 function Contacts() {

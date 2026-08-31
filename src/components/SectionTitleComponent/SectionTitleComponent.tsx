@@ -1,7 +1,7 @@
 
 
 import FadeContent from '../ReactBits/FadeContent/FadeContent'
-import './SectionTitle.scss'
+import './SectionTitleComponent.scss'
 
 
 function SectionTitle(props: { title?: string, text?: string, plate?: string, className?: string, classNameSe?: string, hColor?: string, pColor?: string, plateColor?: string }) {

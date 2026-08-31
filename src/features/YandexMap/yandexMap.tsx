@@ -1,7 +1,7 @@
 // import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 import { Map, Placemark, YMaps } from '@iminside/react-yandex-maps';
 
-import config from "@/config/congig.json"
+const apiUrl: string = import.meta.env.VITE_API_URL;
 
 export default function App() {
   const defaultState = {
@@ -12,7 +12,7 @@ export default function App() {
   // throw new Error("Тестовая ошибка карты!");
 
   return (
-    <YMaps query={{ apikey: config.YMAP_API_KEY }}>
+    <YMaps query={{ apikey: apiUrl }}>
       <Map className='yandex-map' style={{ overflow: "hidden", borderRadius: ".625rem", width: "", height: "100%", minHeight: "400px" }} defaultState={defaultState}>
         <Placemark geometry={defaultState.center} />
       </Map>

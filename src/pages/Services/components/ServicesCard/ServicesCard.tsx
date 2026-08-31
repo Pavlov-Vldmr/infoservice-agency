@@ -1,8 +1,8 @@
 
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
-import "./ServiceCard.scss";
+import "./ServicesCard.scss";
 
-function ServiceCard(props: {
+function ServicesCard(props: {
   title: string;
   text: string;
   link?: string;
@@ -45,4 +45,4 @@ function ServiceCard(props: {
   );
 }
 
-export default ServiceCard;
+export default ServicesCard;

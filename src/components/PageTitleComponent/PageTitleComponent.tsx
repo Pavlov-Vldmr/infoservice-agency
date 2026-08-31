@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { Icons } from '../Icons'
 import Grainient from '../ReactBits/Grainient/Grainient'
 import ShinyText from '../ReactBits/ShinyText/ShinyText'
-import './PageTitle.scss'
+import './PageTitleComponent.scss'
 import AnimatedContent from '../ReactBits/AnimatedContent/AnimatedContent';
 
-function PageTitle(props: { title: string, subTitle?: string, plate: string, bgImg?: string }) {
+function PageTitleComponent(props: { title: string, subTitle?: string, plate: string, bgImg?: string }) {
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -110,4 +110,4 @@ function PageTitle(props: { title: string, subTitle?: string, plate: string, bgI
     )
 }
 
-export default PageTitle
+export default PageTitleComponent

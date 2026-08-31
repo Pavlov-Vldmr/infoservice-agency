@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ScrollDown.module.scss';
+import styles from './ScrollDownComponent.module.scss';
 
 interface ScrollDownProps {
   /** Текст подписи */

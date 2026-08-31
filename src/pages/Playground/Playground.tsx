@@ -1,15 +1,15 @@
 
 
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton"
-import PageTitle from "../../components/PageTitle/PageTitle"
+import PageTitle from "../../components/PageTitleComponent/PageTitleComponent"
 
-import './Components.scss'
+import './Playground.scss'
 
 import bgImg from '@/assets/images/bg/about.avif'
 
 
 
-function Components() {
+function Playground() {
 
     return (
         <>
@@ -463,4 +463,4 @@ function Components() {
     )
 }
 
-export default Components
+export default Playground

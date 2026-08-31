@@ -1,10 +1,10 @@
 
 import MainActButton from '../Buttons/MainActButton/MainActButton'
 
-import './ProposalComonent.scss'
+import './ProposalComponent.scss'
 
 
-function ProposalComonent() {
+function ProposalComponent() {
 
 
     return (
@@ -22,4 +22,4 @@ function ProposalComonent() {
     )
 }
 
-export default ProposalComonent
+export default ProposalComponent
