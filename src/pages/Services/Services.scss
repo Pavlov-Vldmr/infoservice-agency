@@ -9,6 +9,7 @@
   }
   .price-download {
     display: flex;
+    gap: calc(var(--spacing) * 4);
   }
 }
 

@@ -262,7 +262,7 @@ const Header: React.FC<HeaderProps> = ({
 
         <div className="p-4 m_pt-10 mobile-menu__btn-callback">
           {/* <MainActButton to="/calculator" variant=" primary" title="Заказать онлайн"></MainActButton> */}
-          <MainActButton to="/contacts" variant="primary" type="mobile" bordered title="Позвоните нам"></MainActButton>
+          <MainActButton onClick={closeMenu} to="/contacts" variant="primary" type="mobile" bordered title="Позвоните нам"></MainActButton>
         </div>
 
         <div className=" mobile-menu__contacts px-4 mt-6">

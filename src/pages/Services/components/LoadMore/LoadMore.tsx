@@ -140,7 +140,7 @@ function LoadMoreList() {
             {/* Блок подгрузки */}
             <div className="load-more-box py-8" style={{ textAlign: 'center' }}>
                 {hasMore ? (
-                    <button className="btn btn_primary btn_bordered flex-center" onClick={handleLoadMore} disabled={isLoading}>
+                    <button className="btn btn_primary btn_bordered flex-center m_w100" onClick={handleLoadMore} disabled={isLoading}>
                         {isLoading ? 'Загрузка...' : 'Загрузить ещё'}
                     </button>
                 ) : (

@@ -156,6 +156,9 @@ function Services() {
         </div>
       </section>
 
+
+
+
       <section className="services bg_white">
         <div className="container services__container  pb-10 m_p-4">
 
@@ -200,16 +203,7 @@ function Services() {
         </div>
       </section>
 
-      <section className="services-accordion-main bg_white py-4">
-        <SectionTitle
-          plate={"Вопросы"}
-          title={"Частые вопросы"}
-          text={"Отвечаем на самые популярные вопросы клиентов"}
-        />
-        <div className="container services-accordion__container pb-10 m_p-4">
-          <AccordionComponent />
-        </div>
-      </section>
+
       <section className="services services-connection pt-4">
 
         <SectionTitle
@@ -303,6 +297,21 @@ function Services() {
         </div>
 
       </section>
+
+      <section className="services-accordion-main bg_white py-4">
+        <SectionTitle
+          plate={"Вопросы"}
+          title={"Частые вопросы"}
+          text={"Отвечаем на самые популярные вопросы клиентов"}
+        />
+        <div className="container services-accordion__container pb-10 m_p-4">
+          <AccordionComponent />
+        </div>
+      </section>
+
+
+
+
       <section className="services services-feedback bg_white py-0 pb-10">
         <div className="container">
           <div className="services__title mb-10 pt-0 m_mb-10 m_pt-4 ">
