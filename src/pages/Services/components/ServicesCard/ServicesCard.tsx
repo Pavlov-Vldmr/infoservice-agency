@@ -4,9 +4,9 @@ import "./ServicesCard.scss";
 
 function ServicesCard(props: {
   title: string;
-  text: string;
+  text?: string;
   link?: string;
-  price: number;
+  price: string;
   imgURL?: string;
 }) {
   return (
@@ -21,8 +21,8 @@ function ServicesCard(props: {
 
         <div className="service-card__content p-8">
           <div className="service-card__content__info">
-            <h3 className="text_primary m_mt-4">{props.title}</h3>
-            <p className="text text_muted mt-8 mb-10 m_mb-0 m_mt-4">{props.text}</p>
+            <h3 className="text_primary m_mt-4 pb-8">{props.title}</h3>
+            {/* <p className="text text_muted mt-8 mb-10 m_mb-0 m_mt-4">{props.text}</p> */}
           </div>
           <div className="service-card__content__price m_mt-10 m_pb-4 m_pt-8">
             <div className="service-card__content__price-text pt-8 m_pt-2">

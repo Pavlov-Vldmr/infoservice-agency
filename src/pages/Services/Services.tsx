@@ -22,6 +22,7 @@ import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedCont
 import bgImg from '@/assets/images/bg/serv.avif'
 import AccordionComponent from './components/Accordion/Accordion';
 import ContactsInfoPlates from '@/components/ContactsInfoPlates/ContactsInfoPlates';
+import LoadMore from './components/LoadMore/LoadMore';
 
 
 function Services() {
@@ -30,7 +31,7 @@ function Services() {
     id: number;
     title: string;
     text: string;
-    price: number;
+    price: string;
     imageUrl: string;
   }
 
@@ -107,7 +108,6 @@ function Services() {
       />
 
 
-
       {/* Остальной контент без изменений */}
       <section className="services">
         <SectionTitle
@@ -116,6 +116,7 @@ function Services() {
           text={"Комплексные решения по обеспечению безопасности объектов любой сложности"}
           className='p-1'
         />
+
         <div className="container services__container price-download pb-10 m_p-4">
           <div className="">
 
@@ -184,15 +185,18 @@ function Services() {
             ))
           )} */}
 
-          {servicesEx.map((item) => (
+          {/* {servicesEx.map((item) => (
             <ServiceCard
               key={item.id}
               title={item.title}
-              text={item.text}
+              // text={item.text}
               price={item.price}
               imgURL={item.imageUrl}
             />
-          ))}
+          ))} */}
+
+          <LoadMore />
+
         </div>
       </section>
 

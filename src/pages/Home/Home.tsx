@@ -44,7 +44,7 @@ function Home() {
     id: number;
     title: string;
     text: string;
-    price: number;
+    price: string;
     imageUrl: string;
   }
 

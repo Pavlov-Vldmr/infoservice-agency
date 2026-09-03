@@ -226,10 +226,7 @@ body {
 .main {
   flex-grow: 1;
 }
-.flex-center {
-  display: flex;
-  justify-content: center;
-}
+
 ul {
   list-style: none;
   padding: 0;
@@ -421,6 +418,11 @@ a {
 
 .check {
   color: red !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 .display_none {
   display: none;
