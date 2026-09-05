@@ -1,20 +1,19 @@
 import license from '@/assets/ServicesData/license.txt'
-import AboutComponent from "@/components/AboutComonent/AboutComonent"
+import AboutComponent from "@/components/AboutComponent/AboutComponent"
 
-import PageTitle from "../../components/PageTitle/PageTitle"
+import PageTitle from "../../components/PageTitleComponent/PageTitleComponent"
 
 import './About.scss'
-import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent'
+import PhoneCallbackComponent from '@/features/PhoneCallback/PhoneCallback'
 import CardNav from '@/components/ReactBits/CardNav/CardNav'
 import bgImg from '@/assets/images/bg/about.avif'
-import SectionTitle from '@/components/SectionTitle/SectionTitle'
-import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
+import SectionTitle from '@/components/SectionTitleComponent/SectionTitleComponent'
 import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent'
 import MainActButton from '@/components/Buttons/MainActButton/MainActButton'
 import { useState } from 'react'
-import MarqueeText from './components/MarqueText/MarqueeText'
 
-
+import photo from '@/assets/images/security.jpg'
+import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
 const items = [
     {
         label: "About",
@@ -72,10 +71,10 @@ function About() {
     return (
         <>
             <PageTitle plate='О компании' bgImg={bgImg} title="Безопасность — наша профессия" subTitle="ЧОП «Инфосервис» более 16 лет обеспечивает охрану объектов Сахалинской области" />
-            <section className="pt-2 bg_white">
+            {/* <section className="pt-2 bg_white">
                 <MarqueeText />
-            </section>
-            <section className="about-info py-10 m_py-0 m_pt-0">
+            </section> */}
+            <section className="about-info py-20 m_py-0 m_pt-0">
                 <AboutComponent />
             </section>
 
@@ -134,6 +133,9 @@ function About() {
                         hColor='text_white'
                     />
                     < CompanyTimeline />
+                    {/* <div className="photo">
+                        <img src={photo} alt="security" width="100%" height="auto" />
+                    </div> */}
 
                 </div>
             </section>

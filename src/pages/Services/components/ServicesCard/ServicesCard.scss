@@ -1,0 +1,201 @@
+.service-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-2);
+  overflow: hidden;
+  transition: ease-in-out 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--box-shadow-hover);
+
+    img {
+      transform: scale(1.09);
+      transition: transform 0.5s ease-in-out;
+      position: relative;
+    }
+  }
+
+  &__img {
+    height: 200px;
+    object-fit: cover;
+    background-color: rgb(122, 122, 122);
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "Услуга";
+      color: var(--accent);
+      border-radius: calc(var(--border-radius) * 4);
+      padding-inline: 16px;
+      padding-block: 4px;
+      background-color: var(--white);
+      left: 20px;
+      top: 15px;
+      font-weight: 700;
+      font-size: var(--text-sm);
+      border: 1px solid var(--accent);
+    }
+    img {
+      transition: transform 0.5s ease-in-out;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    &__icon {
+      width: 50px;
+      height: 50px;
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      h3 {
+        font-size: var(--text-xl);
+        font-weight: 500;
+        color: #000;
+        line-height: 1.6rem;
+
+        // min-height: 100px;
+      }
+      .text {
+        min-width: 80%;
+        line-height: 1.6rem;
+        flex-grow: 1;
+      }
+    }
+
+    &__price {
+      border-top: 1px solid var(--border-2);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      &-text {
+        display: flex;
+        flex-direction: column;
+        .service-card_subtitle {
+          font-size: var(--text-sm);
+        }
+
+        .service-card_price {
+          // padding-top: calc(var(--spacing) * 2);
+
+          color: var(--accent);
+          font-size: var(--text-2xl);
+          font-weight: 900;
+        }
+      }
+
+      &-order {
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-2);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: var(--box-shadow-hover);
+
+      img {
+        transform: scale(1.09);
+        transition: transform 0.5s ease-in-out;
+        position: relative;
+      }
+    }
+
+    &__img {
+      height: 200px;
+      object-fit: cover;
+      background-color: rgb(122, 122, 122);
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "Услуга";
+        color: var(--accent);
+        border-radius: calc(var(--border-radius) * 4);
+        padding-inline: 16px;
+        padding-block: 4px;
+        background-color: var(--white);
+        left: 20px;
+        top: 15px;
+        font-weight: 700;
+        font-size: var(--text-sm);
+        border: 1px solid var(--accent);
+      }
+      img {
+        transition: transform 0.5s ease-in-out;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+        path {
+          stroke: #fff;
+        }
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        h3 {
+          font-size: var(--text-xl);
+          font-weight: 500;
+          color: #000;
+          line-height: 1.6rem;
+
+          // min-height: 100px;
+        }
+        .text {
+          min-width: 80%;
+          line-height: 1.6rem;
+          flex-grow: 1;
+        }
+      }
+
+      &__price {
+      }
+    }
+  }
+}

@@ -21,10 +21,10 @@
   }
   background-color: var(--bg-gray);
   &__container {
-    border-radius: 0.625rem;
+    border-radius: var(--border-radius);
     background-color: white;
     padding: calc(var(--spacing) * 0);
-    border-radius: 0.625rem;
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     height: -webkit-fill-available;

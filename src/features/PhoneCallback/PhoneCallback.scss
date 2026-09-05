@@ -1,0 +1,264 @@
+.border_radius {
+  border-radius: var(--border-radius);
+}
+
+.callback {
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  background-color: var(--accent);
+  background-image: linear-gradient(190deg, var(--primary), var(--accent));
+
+  /* --- НАЧАЛО БЛОКА С КРУГАМИ --- */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    pointer-events: none; /* Чтобы круги не мешали кликам по форме */
+    z-index: 0; /* Размещаем строго под контентом */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+
+  &::before {
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    left: -50px;
+    animation: floatBottomLeft 8s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    width: 200px;
+    height: 200px;
+    top: -60px;
+    right: -60px;
+    animation: floatTopRight 10s ease-in-out infinite alternate;
+  }
+  /* --- КОНЕЦ БЛОКА С КРУГАМИ --- */
+
+  &__form {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: calc(var(--spacing) * 4);
+
+    span {
+      flex-grow: 1;
+    }
+
+    .callback__phone {
+      position: relative;
+      input {
+        height: 50px;
+        padding-inline: calc(var(--spacing) * 4);
+        border: 1px solid var(--muted-foreground);
+        border-radius: var(--border-radius);
+        // border-radius: 0.325rem;
+        font-size: var(--text-sm);
+        color: var(--text-muted);
+        background-color: var(--input-background);
+        border-color: var(--border);
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary);
+          box-shadow: 0px 0px 0px 3px
+            color-mix(in oklab, var(--primary) 20%, transparent);
+        }
+      }
+      p {
+        position: absolute;
+        right: 0;
+      }
+    }
+    .callback__btn {
+      button {
+        border-radius: var(--border-radius);
+
+        box-sizing: border-box;
+        border: 1px solid rgba(247, 245, 245, 0.2);
+      }
+    }
+  }
+
+  &__policy {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+
+    &-label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      gap: calc(var(--spacing) * 2);
+    }
+
+    /* Скрываем дефолтный чекбокс, но сохраняем его для кликов и клавиатуры */
+    .callback__checkbox {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+
+      /* Когда дефолтный чекбокс активен (нажат), красим наш кастомный */
+      &:checked + .callback__custom-checkbox {
+        background-color: oklch(14.5% 0 0deg);
+        border-color: oklch(14.5% 0 0deg);
+
+        /* Рисуем галочку внутри кастомного чекбокса */
+        &::after {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 2px;
+          width: 4px;
+          height: 8px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+
+      /* Стили фокуса с клавиатуры для доступности (Accessibility) */
+      &:focus-visible + .callback__custom-checkbox {
+        outline: 2px solid oklch(27.529% 0.08025 283.824);
+        outline-offset: 2px;
+      }
+    }
+
+    /* Новый кастомный чекбокс */
+    .callback__custom-checkbox {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid oklch(14.5% 0 0deg);
+      border-radius: 4px;
+      background-color: white;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .callback__policy-text {
+      font-size: var(--text-sm);
+      line-height: 1.2;
+
+      a {
+        color: rgb(214, 214, 214);
+        border-bottom: 1px solid rgba(235, 231, 231, 0.874);
+      }
+    }
+
+    .callback__error {
+      margin-top: calc(var(--spacing) * 1);
+      font-size: var(--text-xs);
+    }
+
+    .policy-error {
+      position: absolute;
+      top: 25px;
+      font-size: var(--text-sm);
+    }
+  }
+}
+
+/* --- АНИМАЦИИ ДВИЖЕНИЯ (Плавное покачивание и масштабирование) --- */
+@keyframes floatBottomLeft {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(15px, -20px) scale(1.1);
+  }
+  100% {
+    transform: translate(-10px, -5px) scale(0.95);
+  }
+}
+
+@keyframes floatTopRight {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-25px, 15px) scale(1.05);
+  }
+  100% {
+    transform: translate(10px, 30px) scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .callback {
+    border-radius: var(--border-radius);
+
+    /* На мобильных можно уменьшить размер кругов, чтобы они не перекрывали текст */
+    &::before {
+      width: 100px;
+      height: 100px;
+    }
+    &::after {
+      width: 130px;
+      height: 130px;
+    }
+
+    .callback__form {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--spacing) * 2);
+      padding: 0;
+
+      span {
+        flex-grow: 1;
+        margin-top: calc(var(--spacing) * 4);
+      }
+
+      .callback__phone {
+        width: 100%;
+        input {
+          box-sizing: border-box;
+          margin-top: calc(var(--spacing) * 4);
+          width: 100%;
+
+          &:focus {
+          }
+        }
+        p {
+          top: 34px;
+          right: 10px;
+        }
+      }
+      .callback__btn {
+        width: 100%;
+
+        button {
+          margin-top: calc(var(--spacing) * 3);
+          width: 100%;
+        }
+      }
+    }
+    .callback__policy {
+      margin-top: calc(var(--spacing) * 4);
+      margin-bottom: calc(var(--spacing) * 8);
+      justify-content: flex-start;
+
+      label {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: baseline;
+        // justify-content: space-evenly;
+      }
+      p {
+        // top: 40px;
+      }
+    }
+  }
+}

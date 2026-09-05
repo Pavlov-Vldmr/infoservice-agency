@@ -1,17 +1,17 @@
 import { TailSpin } from "react-loader-spinner";
 
 import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
-import ProposalComonent from "@/components/ProposalComponent/ProposalComonent"
+import ProposalComonent from "@/components/ProposalComponent/ProposalComponent"
 import { useFetch } from "@/hooks/useFetch"
 import { fetchCompanyObjects } from "@/services/objects"
 import { getStrapiMediaUrl } from "@/services/strapiClient";
 
-import PageTitle from "../../components/PageTitle/PageTitle"
+import PageTitle from "../../components/PageTitleComponent/PageTitleComponent"
 import ObjectCard from "./components/ObjectCard/ObjectCard"
 
 import './Objects.scss'
 import MarqueeLogo from "../Home/components/MarqueeLogo/MarqueeLogo";
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import SectionTitle from "@/components/SectionTitleComponent/SectionTitleComponent";
 
 import bgImg from '@/assets/images/bg/obj.avif'
 

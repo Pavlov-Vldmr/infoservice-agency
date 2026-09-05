@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import "./NotFound.scss";
-import PageTitle from "@/components/PageTitle/PageTitle";
+import PageTitle from "@/components/PageTitleComponent/PageTitleComponent";
 function NotFound() {
   return (
     <>

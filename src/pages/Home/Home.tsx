@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 
 import extraCompData from "@/assets/ServicesData/companyInfo.json"
 import servicesExtra from "@/assets/ServicesData/servicesExtra.json";
-import AboutComponent from "@/components/AboutComonent/AboutComonent";
+import AboutComponent from "@/components/AboutComponent/AboutComponent";
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
-import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
+import ContactsInfo from "@/components/ContactsInfoComponent/ContactsInfoComponent";
 import { Icons } from "@/components/Icons";
-import PhoneCallbackComponent from '@/components/PhoneCallbackComponent/PhoneCallbackComponent';
+import PhoneCallback from '@/features/PhoneCallback/PhoneCallback';
 import FadeContent from '@/components/ReactBits/FadeContent/FadeContent';
 import ShinyText from '@/components/ReactBits/ShinyText/ShinyText';
 import { useCompany } from '@/contexts/CompanyInfoContext';
 import { useFetch } from "@/hooks/useFetch";
 import { fetchCompanyObjects } from "@/services/objects"
 import { fetchCompanyServices } from "@/services/services";
-import YandexMap from "@/services/yandexMap";
+import YandexMap from "@/features/YandexMap/yandexMap";
 
 import MarqueeLogo from './components/MarqueeLogo/MarqueeLogo';
 import ObjectsSlider from "./components/ObjectsSlider/ObjectsSlider";
@@ -26,13 +26,13 @@ import ServiceCard from "./components/ServiceCard/ServiceCard";
 
 import "./Home.scss";
 import Grainient from '@/components/ReactBits/Grainient/Grainient';
-import SectionTitle from '@/components/SectionTitle/SectionTitle';
+import SectionTitle from '@/components/SectionTitleComponent/SectionTitleComponent';
 import { getStrapiMediaUrl } from '@/services/strapiClient';
 
 
 import objectsExtra from "@/assets/ServicesData/objectsExtra.json";
 import ObjectCard from '../Objects/components/ObjectCard/ObjectCard';
-import ScrollDown from '@/components/ScrollDown/ScrollDown';
+import ScrollDown from '@/components/ScrollDownComponent/ScrollDownComponent';
 import AdvantagesCards from './components/AdvantagesCards/AdvantagesCards';
 import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent';
 import AchievmentsItems from './components/AchievmentsItems/AchievmentsItems';
@@ -44,7 +44,7 @@ function Home() {
     id: number;
     title: string;
     text: string;
-    price: number;
+    price: string;
     imageUrl: string;
   }
 
@@ -552,17 +552,6 @@ function Home() {
       </section>
 
       <section className='home-marquee bg_white'>
-
-        {/* <SectionTitle
-          plate={"Нам доверяют"}
-          className='p_reset'
-          classNameSe='pt-20 m_pt-10 '
-          hColor='display_none'
-          pColor='display_none'
-
-        /> */}
-
-
         <MarqueeLogo />
       </section>
 
@@ -572,7 +561,7 @@ function Home() {
 
 
       <section id='homePhoneCallBack' className='home-phoneCallback m_px-4 m_pt-8 bg_white'>
-        <PhoneCallbackComponent />
+        <PhoneCallback />
       </section>
 
 

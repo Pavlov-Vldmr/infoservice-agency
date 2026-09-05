@@ -7,9 +7,8 @@ import { CompanyProvider } from '@/contexts/CompanyInfoContext'
 
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import ScrollToTop from './features/ScrollToTop'
+import ScrollToTop from './features/common/ScrollToTop'
 import About from './pages/About/About'
-import Calculator from './pages/Calculator/Calculator'
 import Contacts from './pages/Contacts/Contacts'
 import Home from './pages/Home/Home'
 import NotFound from './pages/NotFound/NotFound'
@@ -20,8 +19,9 @@ import './App.css'
 import '@fontsource/inter';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
-import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton'
-import Components from './pages/Components/Components'
+import ScrollToTopButton from './components/Buttons/ScrollToTopButton/ScrollToTopButton'
+import Components from './pages/Playground/Playground'
+import Playground from './pages/Playground/Playground'
 
 
 const Services = lazy(() => import('./pages/Services/Services'));
@@ -48,8 +48,7 @@ function App() {
                 <Route path='/objects' element={<Objects />} />
                 <Route path='/services' element={<Services />} />
                 <Route path='/contacts' element={<Contacts />} />
-                <Route path='/calculator' element={<Calculator />} />
-                <Route path='/components' element={<Components />} />
+                <Route path='/playground' element={<Playground />} />
                 <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                 <Route path='*' element={<NotFound />} />
               </Routes>

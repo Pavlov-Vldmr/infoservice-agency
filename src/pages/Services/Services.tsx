@@ -8,20 +8,21 @@ import { fetchFiles } from "@/services/files";
 import { fetchCompanyServices } from "@/services/services";
 import { getStrapiMediaUrl } from "@/services/strapiClient";
 
-import PageTitle from "../../components/PageTitle/PageTitle";
-import ServiceCard from "./components/ServiceCard/ServiceCard";
+import PageTitle from "../../components/PageTitleComponent/PageTitleComponent";
+import ServiceCard from "./components/ServicesCard/ServicesCard";
 
 import "./Services.scss";
 import FeedbackForm from "@/features/FeedbackForm/FeedbackForm";
 import MainActButton from "@/components/Buttons/MainActButton/MainActButton";
-import ContactsInfo from "@/components/ContactsInfo/ContactsInfo";
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import ContactsInfo from "@/components/ContactsInfoComponent/ContactsInfoComponent";
+import SectionTitle from "@/components/SectionTitleComponent/SectionTitleComponent";
 import { Icons } from "@/components/Icons";
 import AnimatedContent from "@/components/ReactBits/AnimatedContent/AnimatedContent";
 
 import bgImg from '@/assets/images/bg/serv.avif'
 import AccordionComponent from './components/Accordion/Accordion';
 import ContactsInfoPlates from '@/components/ContactsInfoPlates/ContactsInfoPlates';
+import LoadMore from './components/LoadMore/LoadMore';
 
 
 function Services() {
@@ -30,7 +31,7 @@ function Services() {
     id: number;
     title: string;
     text: string;
-    price: number;
+    price: string;
     imageUrl: string;
   }
 
@@ -107,7 +108,6 @@ function Services() {
       />
 
 
-
       {/* Остальной контент без изменений */}
       <section className="services">
         <SectionTitle
@@ -116,6 +116,7 @@ function Services() {
           text={"Комплексные решения по обеспечению безопасности объектов любой сложности"}
           className='p-1'
         />
+
         <div className="container services__container price-download pb-10 m_p-4">
           <div className="">
 
@@ -155,6 +156,9 @@ function Services() {
         </div>
       </section>
 
+
+
+
       <section className="services bg_white">
         <div className="container services__container  pb-10 m_p-4">
 
@@ -163,7 +167,7 @@ function Services() {
 
           {/* {services && services.length > 0 ? (
             services.map((item) => (
-              <ServiceCard
+              <ServicesCard
                 key={item.documentId || item.id}
                 title={item.title}
                 text={item.text}
@@ -174,7 +178,7 @@ function Services() {
             ))
           ) : (
             servicesEx.map((item) => (
-              <ServiceCard
+              <ServicesCard
                 key={item.id}
                 title={item.title}
                 text={item.text}
@@ -184,28 +188,22 @@ function Services() {
             ))
           )} */}
 
-          {servicesEx.map((item) => (
+          {/* {servicesEx.map((item) => (
             <ServiceCard
               key={item.id}
               title={item.title}
-              text={item.text}
+              // text={item.text}
               price={item.price}
               imgURL={item.imageUrl}
             />
-          ))}
+          ))} */}
+
+          <LoadMore />
+
         </div>
       </section>
 
-      <section className="services-accordion-main bg_white py-4">
-        <SectionTitle
-          plate={"Вопросы"}
-          title={"Частые вопросы"}
-          text={"Отвечаем на самые популярные вопросы клиентов"}
-        />
-        <div className="container services-accordion__container pb-10 m_p-4">
-          <AccordionComponent />
-        </div>
-      </section>
+
       <section className="services services-connection pt-4">
 
         <SectionTitle
@@ -299,7 +297,22 @@ function Services() {
         </div>
 
       </section>
-      <section className="services services-feedback bg_white py-0">
+
+      <section className="services-accordion-main bg_white py-4">
+        <SectionTitle
+          plate={"Вопросы"}
+          title={"Частые вопросы"}
+          text={"Отвечаем на самые популярные вопросы клиентов"}
+        />
+        <div className="container services-accordion__container pb-10 m_p-4">
+          <AccordionComponent />
+        </div>
+      </section>
+
+
+
+
+      <section className="services services-feedback bg_white py-0 pb-10">
         <div className="container">
           <div className="services__title mb-10 pt-0 m_mb-10 m_pt-4 ">
             <SectionTitle

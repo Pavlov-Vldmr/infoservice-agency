@@ -17,8 +17,8 @@
     box-sizing: border-box;
 
     flex-direction: row;
-    border-radius: 0.625rem;
-    box-shadow: 6px 6px 20px rgba(128, 128, 128, 0.307);
+    border-radius: var(--border-radius);
+    box-shadow: 6px 6px 20px var(--box-shadow);
   }
 
   &__title {
@@ -41,7 +41,7 @@
       min-width: 300px;
       height: fit-content;
       text-align: center;
-      border-radius: 0.625rem;
+      border-radius: var(--border-radius);
       background-color: rgb(241, 241, 241);
       padding: calc(var(--spacing) * 6);
       a {
@@ -65,7 +65,7 @@
 }
 
 .about-pcb {
-  border-radius: 0.625rem;
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 768px) {
