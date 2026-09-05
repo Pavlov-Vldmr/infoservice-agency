@@ -6,6 +6,8 @@ import guardian from '../../assets/images/security.jpg'
 import { Icons } from '../Icons'
 import AnimatedContent from "../ReactBits/AnimatedContent/AnimatedContent";
 import FadeContent from "../ReactBits/FadeContent/FadeContent";
+import photo from '@/assets/images/security.jpg'
+
 
 import './AboutComponent.scss'
 import MainActButton from "../Buttons/MainActButton/MainActButton";
@@ -50,7 +52,7 @@ function AboutComponent(props: { className?: string }) {
 
     return (
         <div className={`${props.className} about-component`}>
-            <div className="container about-component__container px-10 m_p-4">
+            <div className="container about-component__container px-10 m_px-4 m_py-10">
                 <div className='about-component__top'>
                     <div className='about-component__driftwall mt-8 m_mt-0'>
                         {/* <img src={guardian} alt="" /> */}
@@ -66,29 +68,9 @@ function AboutComponent(props: { className?: string }) {
                             </div>
 
                         </div>
-                        <DriftWall
-                            items={items}
-                            columns={isMobile ? 1 : 2}
-                            tileWidth={280}
-                            tileHeight={214}
-                            gap={18}
-                            tilt={isMobile ? 0 : 14}
-                            turn={isMobile ? 0 : -10}
-                            perspective={1550}
-                            depth={120}
-                            speed={isMobile ? 10 : 4}
-                            direction="down"
-                            variance={.3}
-                            parallax={isMobile ? 0 : 0.6}
-                            lift={isMobile ? 0 : 32}
-                            fade={.2}
-                            dim={1}
-                            overlayColor=""
-                            radius={8}
-                            roll={0}
-                            pauseOnHover={isMobile ? false : false}
-                            grayscale={false}
-                        />
+                        <div className="photo">
+                            <img src={photo} alt="security" width="100%" height="auto" />
+                        </div>
                         <div className="about-component__driftwall-plate-year">
                             <div className='about-component__driftwall-plate-year__text'>
                                 <h4>16+</h4>

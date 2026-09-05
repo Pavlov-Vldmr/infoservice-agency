@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 0.625rem;
+  border-radius: var(--border-radius);
   background-color: var(--accent);
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
 }

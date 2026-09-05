@@ -7,8 +7,8 @@ $transition-speed: 0.3s;
   &__item {
     box-sizing: border-box;
     background-color: rgba(219, 219, 219, 0.17);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 0.625rem;
+    border: 1px solid var(--border-2);
+    border-radius: var(--border-radius);
     padding: calc(#{$spacing-unit} * 6);
     transition: all ease-in-out $transition-speed;
     height: 100%;

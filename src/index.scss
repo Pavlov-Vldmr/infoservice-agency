@@ -69,14 +69,15 @@
   --muted-foreground-g: #0000cdef;
 
   --border: #0000001a;
+  --border-2: rgba(128, 128, 128, 0.252);
   --muted: #ececf0;
   --muted-6: #ececf0ad;
   --bg: #fff;
   --bg-gray: #ececf0;
   --bg-gray-6: #ececf096;
   --input-background: #f3f3f5;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --box-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0);
+  --box-shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.1);
 
   --border-radius: 0.625rem;
 

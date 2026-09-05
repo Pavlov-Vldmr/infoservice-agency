@@ -234,7 +234,7 @@ $transition-speed: 0.3s;
     // &__item {
     //   background-color: rgba(219, 219, 219, 0.17);
     //   border: 1px solid rgba(255, 255, 255, 0.18);
-    //   border-radius: 0.625rem;
+    //   border-radius: var(--border-radius);
     //   padding: calc(#{$spacing-unit} * 6);
     //   transition: ease-in-out $transition-speed;
 

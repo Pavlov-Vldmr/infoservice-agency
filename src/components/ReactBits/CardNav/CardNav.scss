@@ -49,7 +49,7 @@
   box-sizing: border-box;
 
   background-image: linear-gradient(190deg, var(--primary), var(--accent));
-  border-radius: 0.625rem;
+  border-radius: var(--border-radius);
   cursor: pointer;
 
   transition: ease-in-out 1s;

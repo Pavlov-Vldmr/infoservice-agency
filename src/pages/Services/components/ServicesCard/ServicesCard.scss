@@ -3,15 +3,15 @@
   flex-direction: column;
   text-decoration: none;
   background-color: #fff;
-  border-radius: 0.625rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-2);
   overflow: hidden;
   transition: ease-in-out 0.3s;
-  border: 1px solid rgba(128, 128, 128, 0.252);
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow-hover);
 
     img {
       transform: scale(1.09);
@@ -84,7 +84,7 @@
     }
 
     &__price {
-      border-top: 1px solid rgba(128, 128, 128, 0.232);
+      border-top: 1px solid var(--border-2);
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -116,15 +116,13 @@
     flex-direction: column;
     text-decoration: none;
     background-color: #fff;
-    border-radius: 0.625rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: ease-in-out 0.3s;
-    border: 1px solid rgba(128, 128, 128, 0.252);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-2);
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      box-shadow: var(--box-shadow-hover);
 
       img {
         transform: scale(1.09);

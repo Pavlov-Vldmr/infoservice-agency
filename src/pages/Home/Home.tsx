@@ -552,17 +552,6 @@ function Home() {
       </section>
 
       <section className='home-marquee bg_white'>
-
-        {/* <SectionTitle
-          plate={"Нам доверяют"}
-          className='p_reset'
-          classNameSe='pt-20 m_pt-10 '
-          hColor='display_none'
-          pColor='display_none'
-
-        /> */}
-
-
         <MarqueeLogo />
       </section>
 

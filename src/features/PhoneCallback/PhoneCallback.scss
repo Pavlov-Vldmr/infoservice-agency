@@ -198,7 +198,7 @@
 
 @media (max-width: 768px) {
   .callback {
-    border-radius: 0.625rem;
+    border-radius: var(--border-radius);
 
     /* На мобильных можно уменьшить размер кругов, чтобы они не перекрывали текст */
     &::before {

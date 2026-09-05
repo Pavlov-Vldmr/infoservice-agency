@@ -8,13 +8,12 @@ import PhoneCallbackComponent from '@/features/PhoneCallback/PhoneCallback'
 import CardNav from '@/components/ReactBits/CardNav/CardNav'
 import bgImg from '@/assets/images/bg/about.avif'
 import SectionTitle from '@/components/SectionTitleComponent/SectionTitleComponent'
-import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
 import AnimatedContent from '@/components/ReactBits/AnimatedContent/AnimatedContent'
 import MainActButton from '@/components/Buttons/MainActButton/MainActButton'
 import { useState } from 'react'
-import MarqueeText from './components/MarqueText/MarqueeText'
 
-
+import photo from '@/assets/images/security.jpg'
+import CompanyTimeline from './components/CompanyTimeline/CompanyTimeline'
 const items = [
     {
         label: "About",
@@ -134,6 +133,9 @@ function About() {
                         hColor='text_white'
                     />
                     < CompanyTimeline />
+                    {/* <div className="photo">
+                        <img src={photo} alt="security" width="100%" height="auto" />
+                    </div> */}
 
                 </div>
             </section>

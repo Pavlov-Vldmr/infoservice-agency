@@ -51,7 +51,7 @@
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid #789ae4ad;
-    border-radius: 0.625rem;
+    border-radius: var(--border-radius);
     padding: calc(var(--spacing) * 8);
     background-color: white;
 
