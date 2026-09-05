@@ -1,68 +1,67 @@
 import { type SubmitHandler, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 
 import './FeedbackForm.scss';
-
-type Inputs = {
-    name: string;
-    email: string;
-    phone: string;
-    service: string;
-    comment: string;
-};
 
 const FORBIDDEN_SQL_WORDS = [
     'SELECT', 'INSERT', 'UPDATE', 'DELETE', 'DROP',
     'UNION', 'ALTER', 'GRANT', 'REVOKE', 'TRUNCATE'
 ];
 
-const VALIDATION_RULES = {
-    name: {
-        required: "Имя обязательно для заполнения",
-        minLength: { value: 2, message: "Минимум 2 символа" },
-        maxLength: { value: 30, message: "Максимум 30 символов" },
-        pattern: {
-            value: /^[A-Za-zА-Яа-яЁё\s\-]+$/,
-            message: "Имя может содержать только буквы, пробелы и дефис"
-        }
-    },
-    email: {
-        pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: "Некорректный адрес электронной почты"
-        }
-    },
-    phone: {
-        required: "Номер телефона обязателен",
-        pattern: {
-            value: /^\+?[1-9]\d{1,14}$/,
-            message: "Неверный формат"
-        }
-    },
-    comment: {
-        maxLength: { value: 500, message: "Максимум 500 символов" },
-        pattern: {
-            value: /^[^'"`\\;<>]*$/,
-            message: "Текст содержит недопустимые символы (кавычки, точки с запятой, знаки < >)"
-        },
-        // Кастомная валидация на SQL-слова
-        validate: (value: string) => {
-            if (!value) return true; // Если поле пустое, пропускаем (оно необязательное)
-
-            const upperValue = value.toUpperCase();
-
-            // Проверяем каждое запрещенное слово
-            const hasSqlWord = FORBIDDEN_SQL_WORDS.some(word => {
-                // Регулярное выражение ищет слово целиком, чтобы не блокировать, например, "SELECTIVE" или "UPDATED"
-                const regex = new RegExp(`\\b${word}\\b`, 'i');
-                return regex.test(upperValue);
-            });
-
-            return hasSqlWord
-                ? "Недействительные данные"
-                : true;
-        }
-    }
+// Проверка на наличие запрещенных SQL-слов (целых слов, без учета регистра)
+const containsSqlWord = (value: string): boolean => {
+    if (!value) return false;
+    const upperValue = value.toUpperCase();
+    return FORBIDDEN_SQL_WORDS.some((word) => {
+        const regex = new RegExp(`\\b${word}\\b`, 'i');
+        return regex.test(upperValue);
+    });
 };
+
+const NAME_PATTERN = /^[A-Za-zА-Яа-яЁё\s\-]+$/;
+const EMAIL_PATTERN = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const PHONE_PATTERN = /^\+?[1-9]\d{1,14}$/;
+const SAFE_TEXT_PATTERN = /^[^'"`\\;<>]*$/;
+
+const feedbackSchema = z.object({
+    name: z
+        .string()
+        .min(1, "Имя обязательно для заполнения")
+        .min(2, "Минимум 2 символа")
+        .max(30, "Максимум 30 символов")
+        .regex(NAME_PATTERN, "Имя может содержать только буквы, пробелы и дефис"),
+
+    // Необязательное поле — пустая строка допустима, иначе должен совпасть формат email
+    email: z
+        .string()
+        .optional()
+        .refine((value) => !value || EMAIL_PATTERN.test(value), {
+            message: "Некорректный адрес электронной почты",
+        }),
+
+    phone: z
+        .string()
+        .min(1, "Номер телефона обязателен")
+        .regex(PHONE_PATTERN, "Неверный формат"),
+
+    service: z.string().optional(),
+
+    comment: z
+        .string()
+        .optional()
+        .refine((value) => !value || value.length <= 500, {
+            message: "Максимум 500 символов",
+        })
+        .refine((value) => !value || SAFE_TEXT_PATTERN.test(value), {
+            message: "Текст содержит недопустимые символы (кавычки, точки с запятой, знаки < >)",
+        })
+        .refine((value) => !value || !containsSqlWord(value), {
+            message: "Недействительные данные",
+        }),
+});
+
+type Inputs = z.infer<typeof feedbackSchema>;
 
 function FeedbackForm() {
     const {
@@ -70,12 +69,11 @@ function FeedbackForm() {
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>({
+        resolver: zodResolver(feedbackSchema),
         mode: "onBlur"
     });
 
-    // const onSubmit: SubmitHandler<Inputs> = (data) => alert(data);
     const onSubmit: SubmitHandler<Inputs> = (data) => alert(data.name + " " + data.phone)
-
 
     return (
         <form className='feedbackform m_py-10' id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -87,7 +85,7 @@ function FeedbackForm() {
                 id="name"
                 type="text"
                 placeholder="Имя"
-                {...register("name", VALIDATION_RULES.name)}
+                {...register("name")}
             />
             {errors.name && (
                 <p className="pb-4 pt-1 px-2" style={{ color: "red" }}>
@@ -101,7 +99,7 @@ function FeedbackForm() {
                 id="email"
                 type="email"
                 placeholder="Email"
-                {...register("email", VALIDATION_RULES.email)}
+                {...register("email")}
             />
             {errors.email && (
                 <p style={{ color: "red" }}>{errors.email.message}</p>
@@ -114,7 +112,7 @@ function FeedbackForm() {
                 type="tel"
                 className="text_primary mb-4"
                 placeholder="Телефон"
-                {...register("phone", VALIDATION_RULES.phone)}
+                {...register("phone")}
             />
             {errors.phone && (
                 <p className="pb-4 pt-1 px-2" style={{ color: "red" }}>
@@ -137,14 +135,12 @@ function FeedbackForm() {
                 id="comment"
                 className="comment"
                 placeholder="Дополнительная информация"
-                {...register("comment", VALIDATION_RULES.comment)}
+                {...register("comment")}
             />
             {errors.comment && (
                 <p style={{ color: "red" }}>{errors.comment.message}</p>
             )}
 
-            {/* <input type="submit" value="Отправить" />
-             */}
             <button type="submit" onClick={handleSubmit(onSubmit)} className="btn btn_primary">Отправить</button>
 
         </form>
