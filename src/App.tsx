@@ -20,7 +20,6 @@ import '@fontsource/inter';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import ScrollToTopButton from './components/Buttons/ScrollToTopButton/ScrollToTopButton'
-import Components from './pages/Playground/Playground'
 import Playground from './pages/Playground/Playground'
 
 
