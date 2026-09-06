@@ -61,7 +61,7 @@ function AdvantagesCards() {
 
     return (
         <>
-            {ADVANTAGES_ITEMS.slice(0, 3).map((item, index) => (
+            {ADVANTAGES_ITEMS.slice(0, 6).map((item, index) => (
                 <FadeContent
                     key={index}
                     className="advantages__card"

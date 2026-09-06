@@ -205,9 +205,10 @@ $transition-speed: 0.3s;
 }
 
 .home-advantages {
+  border: var(--border);
   // @include gradient-bg(var(--primary), var(--accent), -245deg);
   // color: var(--text-white);
-  // position: relative;
+  // position9: relative;
   // overflow: hidden;
 
   // &::before {

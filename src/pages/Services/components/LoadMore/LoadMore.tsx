@@ -4,7 +4,7 @@ import ServicesCard from '../ServicesCard/ServicesCard';
 
 import './LoadMore.scss';
 
-const LIMIT = 3; // Сколько элементов показывать за раз
+const LIMIT = 6; // Сколько элементов показывать за раз
 
 interface IServiceItem {
     id: number;

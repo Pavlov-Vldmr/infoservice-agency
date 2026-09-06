@@ -9,9 +9,9 @@
     transition: ease-in-out 0.3s;
 
     .item__icons {
-      height: 30px;
-      width: 30px;
-      padding: 16px;
+      width: 32px;
+      height: 32px;
+      padding: 7px;
       background-color: color-mix(in oklab, var(--accent) 10%, transparent);
       border-radius: var(--border-radius);
       transition: ease-in-out 0.3s;

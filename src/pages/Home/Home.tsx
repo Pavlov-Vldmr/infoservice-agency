@@ -518,7 +518,7 @@ function Home() {
               <MainActButton
                 to="/objects"
                 variant="primary"
-                shadow
+
                 title="Все объекты"
                 bordered
                 type='mobile'
