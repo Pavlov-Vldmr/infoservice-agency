@@ -4,7 +4,7 @@ footer {
   .top {
     &__container {
       display: grid;
-      gap: var(--spacing); // Убрали лишний calc(* 1)
+      gap: var(--spacing);
       grid-template-columns: repeat(4, minmax(0, 1fr));
 
       .logo {
@@ -14,12 +14,7 @@ footer {
           height: auto;
         }
         p {
-          color: rgba(
-            255,
-            255,
-            255,
-            0.8
-          ); // Заменили oklab для стабильности в Safari
+          color: rgba(255, 255, 255, 0.8);
         }
       }
 
@@ -41,7 +36,6 @@ footer {
 
             a {
               display: block;
-              // Заменили padding-block на стандартные свойства для старых Safari
               padding-top: var(--spacing);
               padding-bottom: var(--spacing);
               text-decoration: none;
@@ -89,7 +83,6 @@ footer {
   }
 }
 
-// Мобильные стили
 @media (max-width: 768px) {
   footer {
     .top {

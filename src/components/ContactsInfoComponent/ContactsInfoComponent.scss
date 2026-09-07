@@ -1,8 +1,8 @@
 .contacts__block {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   justify-content: space-between;
-  padding: calc(var(--spacing) * 10);
   padding-bottom: 0;
   &__item {
     display: flex;
@@ -77,7 +77,6 @@
 
 @media (max-width: 768px) {
   .contacts__block {
-    padding: calc(var(--spacing) * 4);
     padding-bottom: 0;
     &__item {
       display: flex;
@@ -118,7 +117,6 @@
       color: var(--text-white);
       background-color: var(--primary);
       background-image: linear-gradient(190deg, var(--primary), var(--accent));
-      padding: calc(var(--spacing) * 8);
       border-radius: var(--border-radius);
       max-width: 500px;
       .phone {

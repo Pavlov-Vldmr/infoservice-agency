@@ -109,7 +109,7 @@ function Services() {
 
 
       {/* Остальной контент без изменений */}
-      <section className="services">
+      <section className="services m_px-4">
         <SectionTitle
           plate={"Что мы делаем"}
           title={"Полный спектр услуг"}
@@ -117,7 +117,7 @@ function Services() {
           className='p-1'
         />
 
-        <div className="container services__container price-download pb-10 m_p-4">
+        <div className="container services__container price-download pb-10 ">
           <div className="">
 
 
@@ -160,7 +160,7 @@ function Services() {
 
 
       <section className="services bg_white">
-        <div className="container services__container  pb-10 m_p-4">
+        <div className="container services__container  pb-10 m_px-4">
 
 
           {/* не удалять */}
@@ -204,14 +204,14 @@ function Services() {
       </section>
 
 
-      <section className="services services-connection pt-4">
+      <section className="services services-connection pt-4 ">
 
         <SectionTitle
           plate={"Как мы работаем"}
           title={"Процесс подключения"}
           text={"Четыре простых шага до полной безопасности вашего объекта"}
         />
-        <div className="container services-connection__container pb-20 m_p-4 m_pb-10">
+        <div className="container services-connection__container  pb-20 m_pb-10">
 
           <AnimatedContent direction="horizontal"
             reverse
@@ -304,7 +304,7 @@ function Services() {
           title={"Частые вопросы"}
           text={"Отвечаем на самые популярные вопросы клиентов"}
         />
-        <div className="container services-accordion__container pb-10 m_p-4">
+        <div className="container services-accordion__container pb-10 m_px-4">
           <AccordionComponent />
         </div>
       </section>

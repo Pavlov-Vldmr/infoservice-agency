@@ -23,7 +23,7 @@ function ContactsInfoComponent(props: { className?: string }) {
         <>
 
             <>
-                <div id="contactsForm" className={`${props.className} contacts__block p-0`}>
+                <div id="contactsForm" className={`${props.className} contacts__block `}>
                     <div className="contacts__block__items">
 
                         <ContactsInfoPlates />
@@ -34,7 +34,7 @@ function ContactsInfoComponent(props: { className?: string }) {
                     </div>
 
                     <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>
-                        <div className="contacts__block__emergency m_mb-10 mt-10 bg_gradient-circle-sm">
+                        <div className="contacts__block__emergency mt-10 bg_gradient-circle-sm m_p-4">
                             <h4 className='mb-2'>Экстренная связь</h4>
                             <p>Для экстренных случаев и вызова группы быстрого реагирования звоните круглосуточно</p>
                             <span className="phone py-4"><PhoneComponent className='text_white' phone={`${companyInfo?.phoneEmergency || extraCompData.phoneEmergency}`} /></span>

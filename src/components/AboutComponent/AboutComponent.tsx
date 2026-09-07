@@ -52,8 +52,8 @@ function AboutComponent(props: { className?: string }) {
 
     return (
         <div className={`${props.className} about-component`}>
-            <div className="container about-component__container px-10 m_px-4 m_py-10">
-                <div className='about-component__top'>
+            <div className="container about-component__container m_py-10">
+                <div className='about-component__top  m_px-4 '>
                     <div className='about-component__driftwall mt-8 m_mt-0'>
                         {/* <img src={guardian} alt="" /> */}
                         <div className="about-component__driftwall-plate">
@@ -68,7 +68,7 @@ function AboutComponent(props: { className?: string }) {
                             </div>
 
                         </div>
-                        <div className="photo">
+                        <div className="photo ">
                             <img src={photo} alt="security" width="100%" height="auto" />
                         </div>
                         <div className="about-component__driftwall-plate-year">
@@ -150,7 +150,7 @@ function AboutComponent(props: { className?: string }) {
 
 
                 </div>
-                <div className='about-component__article-adv mt-8'>
+                <div className='about-component__article-adv mt-8  m_px-4 '>
                     <FadeContent blur={true} duration={FadeContentDuraton} easing="ease-out" initialOpacity={0}>
                         <div className='about-component__article-adv__item'>
                             <div className="about-component__article-adv__item-icon">

@@ -30,7 +30,7 @@ function Footer() {
 
     return (
         <>
-            <footer className='py-12 m_p-4'>
+            <footer className='py-12 m_p-4 '>
                 <div className="top mb-4">
                     <div className="container top__container ">
                         <div onClick={handleLogoClick} style={{ cursor: 'pointer' }} className="logo m_mt-2">

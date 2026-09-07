@@ -75,7 +75,7 @@ function ContactsInfoPlates(props: { className?: string }) {
     ];
 
     return (
-        <div className={`${props.className} contacts__plates p-0`}>
+        <div className={`${props.className} contacts__plates `}>
             <div className="contacts__plates__items">
                 {platesData.map((plate) => (
                     <AnimatedContent
@@ -91,8 +91,8 @@ function ContactsInfoPlates(props: { className?: string }) {
                         threshold={0.1}
                         delay={0}
                     >
-                        <div className='contacts__plates__item'>
-                            <div className="contacts__plates__item-icon-container">
+                        <div className='contacts__plates__item '>
+                            <div className="contacts__plates__item-icon-container ">
                                 {plate.icon}
                             </div>
                             <div className='item__info'>

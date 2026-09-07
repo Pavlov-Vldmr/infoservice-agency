@@ -52,7 +52,7 @@ function PageTitleComponent(props: { title: string, subTitle?: string, plate: st
 
 
 
-                <div className="container title-component__container pt-30 pb-14 m_pt-14 m_pb-10 m_px-6">
+                <div className="container title-component__container pt-30 pb-14 m_pt-14 m_pb-10 m_px-4">
                     <div className="title-component__plate mt-10 m_mt-14 m_mb-6">
                         <AnimatedContent direction="horizontal"
                             reverse

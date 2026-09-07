@@ -78,7 +78,7 @@ function Objects() {
 
             <section className="objects">
                 <SectionTitle title={"Объекты под надёжной охраной"} text={"Более 120 объектов по всей Сахалинской области — от энергетики до торговых центров"} plate={"Наши объекты"} />
-                <div className="container objects__container p-10 m_p-4">
+                <div className="container objects__container p-10 m_px-4">
 
                     {/* не удалять */}
 
@@ -131,8 +131,8 @@ function Objects() {
                 <MarqueeLogo />
             </section>
 
-            <section className="objects-proposal pb-8 ">
-                <div className="container objects-proposal__container p-10 m_p-4">
+            <section className="objects-proposal pb-8 m_px-4 ">
+                <div className="container objects-proposal__container ">
                     <ProposalComonent />
                 </div>
             </section>

@@ -76,8 +76,8 @@ function FeedbackForm() {
     const onSubmit: SubmitHandler<Inputs> = (data) => alert(data.name + " " + data.phone)
 
     return (
-        <form className='feedbackform m_py-10' id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
-            <h4 className="text_primary">Свяжитесь со мной</h4>
+        <form className='feedbackform m_py-10 m_px-4' id='callBackForm' onSubmit={handleSubmit(onSubmit)} noValidate>
+            <h4 className="text_primary px-6">Свяжитесь со мной</h4>
 
             {/* Поле: Имя */}
             <label htmlFor="name">Ваше имя *</label>

@@ -12,8 +12,6 @@
   align-items: center;
   z-index: 99999;
   cursor: zoom-out;
-  /* Начальные состояния для плавности, если GSAP инициализируется на микросекунду позже */
-  /* opacity: 0; */
 }
 
 .image-preview-content {
