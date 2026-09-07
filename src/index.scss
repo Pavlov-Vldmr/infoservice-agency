@@ -3,6 +3,7 @@
 //   src: url("./assets/fonts/inter/Inter_18pt-Bold.ttf") format("ttf");
 //   font-weight: 700;
 // }
+
 @mixin gradient-bg($start, $end, $deg: 190deg) {
   background-color: $start;
 
@@ -81,8 +82,6 @@
 
   --border-radius: 0.625rem;
 
-  --spacing: 0.25rem;
-
   --font-size: 16px;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -97,9 +96,17 @@
 
   --text-3xl: 3rem;
 
-  --container-sm: 24rem;
-  --container-lg: 32rem;
-  --container-xl: 80rem;
+  --spacing: 0.25rem;
+
+  // --container-sm: 24rem;
+  // --container-lg: 32rem;
+  // --container-xl: 80rem;
+
+  --container-xxl: 82.5rem; /* 1320px */
+  --container-xl: 71.25rem; /* 1140px */
+  --container-lg: 60rem; /* 960px */
+  --container-md: 45rem; /* 720px */
+  --container-sm: 33.75rem; /* 540px */
 
   --font-sans:
     "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -113,6 +120,7 @@
   color-scheme: light dark;
   color: var(--foreground);
   background: var(--bg);
+  box-sizing: border-box;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -197,12 +205,44 @@ $scales: 0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 20, 22, 24, 30, 34;
 }
 //
 
+// .container {
+//   margin: auto;
+//   max-width: var(--container-xl);
+
+//   @media (max-width: 1024px) {
+//     max-width: var(--container-lg);
+//   }
+
+//   @media (max-width: 768px) {
+//     max-width: var(--container-sm);
+//   }
+// }
+
 .container {
+  width: 100%;
   margin: auto;
+  // margin-inline: auto; /* Центрирование (заменяет left и right) */
+  // padding-inline: 0.9375rem; /* Боковые отступы 15px для безопасности */
   max-width: var(--container-xl);
 
-  @media (max-width: 1024px) {
-    max-width: var(--container-xs);
+  /* Сверхбольшие десктопы (от 1400px) */
+  @media (width >= 87.5rem) {
+    max-width: var(--container-xxl);
+  }
+
+  /* Ноутбуки (до 1200px) */
+  @media (width < 75rem) {
+    max-width: var(--container-lg);
+  }
+
+  /* Планшеты альбомные (до 992px) */
+  @media (width < 62rem) {
+    max-width: var(--container-md);
+  }
+
+  /* Планшеты портретные (до 768px) */
+  @media (width < 48rem) {
+    max-width: var(--container-sm);
   }
 }
 
