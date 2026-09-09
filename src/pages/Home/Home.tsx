@@ -581,17 +581,17 @@ function Home() {
 
 
 
-      <section id="scrollTest" className="home-contacts pb-10 m_pb-8">
+      <section id="scrollTest" className="home-contacts pb-10 m_pb-8 m_px-4">
         <div className="container home-contacts__container">
           <SectionTitle
             plate={"Контакты"}
             title={"Свяжитесь с нами"}
             text={"Готовы ответить на ваши вопросы и помочь с выбором охранных услуг для вашего объекта."}
           />
-          <div className="home-contacts__content  m_px-4 ">
+          <div className="home-contacts__content">
             <ContactsInfo className='vertical' />
             <div className="contacts__map  ">
-              <div className="container contacts__map__container ">
+              <div className=" contacts__map__container ">
                 <h2 className="text_primary px-8 pt-8">Карта проезда</h2>
                 <div className="map__element p-8 m_p-4">
                   <ErrorBoundary fallback={<div>Ошибка при загрузке карты или компонента!</div>}>

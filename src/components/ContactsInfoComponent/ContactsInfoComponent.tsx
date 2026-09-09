@@ -23,14 +23,10 @@ function ContactsInfoComponent(props: { className?: string }) {
         <>
 
             <>
-                <div id="contactsForm" className={`${props.className} contacts__block `}>
+                <div id="contactsForm" className={`${props.className} contacts__block container`}>
                     <div className="contacts__block__items">
 
                         <ContactsInfoPlates />
-
-
-
-
                     </div>
 
                     <FadeContent blur={true} delay={.3} duration={1000} easing="ease-out" initialOpacity={0}>

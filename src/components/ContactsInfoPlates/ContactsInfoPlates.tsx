@@ -97,7 +97,9 @@ function ContactsInfoPlates(props: { className?: string }) {
                             </div>
                             <div className='item__info'>
                                 <h4>{plate.title}</h4>
-                                {plate.content}
+                                <span className='item__info-content'>
+                                    {plate.content}
+                                </span>
                             </div>
                         </div>
                     </AnimatedContent>

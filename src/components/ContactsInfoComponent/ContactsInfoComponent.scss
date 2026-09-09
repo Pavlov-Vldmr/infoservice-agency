@@ -55,11 +55,13 @@
 
   &__emergency {
     display: flex;
+    box-sizing: border-box;
+    // width: 100%;
     flex-direction: column;
     color: var(--text-white);
     background-color: var(--primary);
     background-image: linear-gradient(190deg, var(--primary), var(--accent));
-    padding: calc(var(--spacing) * 8);
+    // padding: calc(var(--spacing) * 8);
     border-radius: var(--border-radius);
     max-width: 500px;
     .phone {
@@ -83,6 +85,7 @@
       gap: calc(var(--spacing) * 4);
       margin-bottom: calc(var(--spacing) * 8);
       align-items: flex-start;
+      box-sizing: border-box;
 
       &-icon-container {
         height: 30px;
