@@ -63,21 +63,24 @@
       }
     }
 
-    // Кастомный кружок для иконки плюса (как в вашем HTML)
+    // Кастомный кружок для иконки плюса
     .MuiAccordionSummary-expandIconWrapper {
-      width: 32px;
-      height: 32px;
+      box-sizing: border-box;
+      width: 32px !important;
+      height: 32px !important;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #f3f4f6; // bg-brand-50 / gray-100 для закрытого
-      color: var(--accent); // text-brand-700
+      background-color: #f3f4f6;
+      color: var(--accent);
       transition: all 0.2s ease-in-out;
 
       // Сбрасываем дефолтный поворот MUI стрелочки, так как мы сами крутим плюс
       &.Mui-expanded {
         transform: rotate(45deg) !important;
+        width: 32px !important;
+        height: 32px !important;
       }
     }
   }
@@ -149,20 +152,10 @@
         }
       }
 
-      // Кастомный кружок для иконки плюса (как в вашем HTML)
+      // Кастомный кружок для иконки плюса
       .MuiAccordionSummary-expandIconWrapper {
-        // Сбрасываем дефолтный поворот MUI стрелочки, так как мы сами крутим плюс
-        width: 32px;
-        height: 26px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f3f4f6; // bg-brand-50 / gray-100 для закрытого
-        color: var(--primary); // text-brand-700
-        transition: all 0.2s ease-in-out;
         &.Mui-expanded {
-          transform: rotate(45deg) !important;
+          // transform: rotate(45deg) !important;
         }
       }
     }
